@@ -4,7 +4,7 @@ I'm scrolling Reddit. It's late. I see a Dunkin' ad. Fine. But then I see the *o
 
 | The ad | The "toddler" | The landing page |
 |:---:|:---:|:---:|
-| <img src="investigations/dunkin/intake-2026-04-13/dunkin1.jpg" height="350"> | <img src="investigations/dunkin/intake-2026-04-13/dunkin2.jpg" height="350"> | <img src="investigations/dunkin/intake-2026-04-13/dunkin3.jpg" height="350"> |
+| <img src="investigations/dunkin/intake-2026-04-13/dunkin1.jpg" width="100%"> | <img src="investigations/dunkin/intake-2026-04-13/dunkin2.jpg" width="100%"> | <img src="investigations/dunkin/intake-2026-04-13/dunkin3.jpg" width="100%"> |
 
 Read the middle one. Read it again. A corporate account — verified, promoted, paid money to put this in my feed — posted this:
 
