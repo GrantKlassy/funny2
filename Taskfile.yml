@@ -1,28 +1,6 @@
 version: "3"
 
 tasks:
-  build:
-    desc: Build the investigator container image
-    cmds:
-      - podman build -t investigator -f Containerfile.investigator .
-
-  verify:
-    desc: Verify all tools are present in the investigator image
-    cmds:
-      - |
-        podman run --rm investigator bash -c '
-        FAIL=0
-        for cmd in curl wget dig whois ncat openssl jq exiftool nmap strings file xxd node npx redis-cli; do
-          if command -v "$cmd" >/dev/null 2>&1; then
-            echo "OK  $cmd"
-          else
-            echo "MISSING  $cmd"
-            FAIL=1
-          fi
-        done
-        exit $FAIL
-        '
-
   check:
     desc: Run all standard repo checks
     cmds:
