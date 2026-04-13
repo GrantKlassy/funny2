@@ -2,9 +2,162 @@
 
 Structured OSINT investigation workspace. Successor to [funny](https://github.com/GrantKlassy/funny).
 
-## Investigations
+---
 
-None yet. See [GRAPH.md](GRAPH.md) for the index.
+## I Reverse-Engineered Dunkin's Entire Mobile Infrastructure Because Their Reddit Ad Annoyed Me
+
+I'm scrolling Reddit. It's late. I see this:
+
+![dunkin ad 1](investigations/dunkin/intake-2026-04-13/dunkin1.jpg)
+
+Fine. A Dunkin' ad. I can ignore a Dunkin' ad. But then I see the *other* one:
+
+![dunkin ad 2](investigations/dunkin/intake-2026-04-13/dunkin2.jpg)
+
+Read that text. Read it again. A corporate account — verified, promoted, paid money to put this in my feed — posted this:
+
+```
+Wjkhsgjkhdgkhkjfhgdfgdogihdgcatmomdfgddgjkk
+kidogsyjkdffkkjkddadadadadadadadamommmmmmmdf
+d7766Vvvqg8888
+AAAAAAAAAaaaaaasssvIFFGHF7ghfh88
+```
+
+Followed by "Sorry, toddler had my phone."
+
+No. No, your toddler did not have your phone. Your *copywriter* had your phone. And I can prove it.
+
+### The Toddler Is a Lie
+
+I ran the "gibberish" through keyboard distribution analysis. If a toddler actually mashed a keyboard, you'd expect roughly equal hits across all three rows — they don't know where the home row is. They're a toddler. They eat crayons.
+
+Here's what the analysis found:
+
+| Keyboard Row | Expected (toddler) | Actual |
+|---|---|---|
+| Top row (qwerty) | ~33% | **10%** |
+| Home row (asdf) | ~33% | **77%** |
+| Bottom row (zxcv) | ~33% | **12%** |
+
+**Seventy-seven percent home row.** That's not a toddler. That's a grown adult resting their fingers on asdfghjkl and wiggling them around. The gibberish also contains strategically embedded words:
+
+- `cat` (1x), `dog` (2x), `kid` (1x), `mom` (2x), `dad` (4x), `dada` (4x)
+
+All family-and-pet themed. All placed to make you go "aww that's relatable" instead of "this is an ad." The last line — `mamamama dad dad dad momm mom mom mommm78499` — is so obviously written by a 28-year-old in a WeWork that it hurts.
+
+It's a promoted post designed to look organic. The toddler is a psyop. Dunkin' is running narrative warfare on Reddit and the narrative is "I'm just like you, fellow parent."
+
+### But Then I Clicked It
+
+Against my better judgment, I tapped the ad. The URL was:
+
+```
+https://ulink.prod.ddmprod.dunkindonuts.com/dunkin/orders/category/119
+```
+
+And I landed here:
+
+![landing page](investigations/dunkin/intake-2026-04-13/dunkin3.jpg)
+
+Wait. `ulink.prod.ddmprod.dunkindonuts.com`? That's not a normal marketing URL. That's a subdomain four levels deep with what looks like internal environment naming. `prod.ddmprod`? Production inside... another production? What is `ddmprod`?
+
+So I did what any reasonable person would do. I opened a container and started running dig.
+
+### What Is ddmprod?
+
+**ddmprod** stands for **Dunkin' Donuts Mobile Production.** It's their entire internal mobile app platform. The name predates their 2018 rebrand from "Dunkin' Donuts" to just "Dunkin'" — the infrastructure team apparently didn't get the memo. Or didn't care. Either way, the ghost of "Donuts" lives on in their DNS.
+
+Here's the thing about TLS certificates — they have to list every domain they cover. The cert on `ulink.prod.ddmprod.dunkindonuts.com` has a Subject Alternative Names list that reads like someone left the architecture diagram on a public bus:
+
+| Service | What It Does |
+|---------|-------------|
+| `mapi-dun` | **Mobile API** — the actual app backend. This is the primary CN on the cert. `ulink` is just riding along. |
+| `ulink` | **Universal Links** — the thing I clicked. Routes you to the app or the web depending on your device. |
+| `ode` | **Order Delivery Engine** — exactly what it sounds like |
+| `swi` | Nobody knows. Wayback shows 404s since 2024. Rest in peace, swi. |
+| `dun-assets` | Static asset CDN. Serves `dunkin_logo@2x.png` to the app. |
+| `cloud` | Only seen in preprod via Wayback. Mysterious. |
+
+All of these exist in both `prod` and `preprod` environments. The whole thing runs on **Akamai CDN** with **DigiCert ECC certificates** issued to **Dunkin' Brands, Inc., Canton, Massachusetts.**
+
+I mapped 22 entities from one drink ad. I know more about Dunkin's mobile backend than most of their employees.
+
+### The Three-Way Split
+
+The `ulink` service is a Node.js/Express app that sniffs your User-Agent and makes a decision:
+
+**If you're on an iPhone with the app installed:** iOS Universal Links kick in. The app opens directly to `dunkin://orders/category/119`. You never see a webpage. You're just suddenly looking at drinks.
+
+**If you're on a phone without the app:** You get the interstitial page (the "GET THE APP" screen I screenshotted). The "Continue on App" button is the good part — it links to:
+
+```
+https://dunkin.smart.link/f6iexb4x5?destination=dunkin://orders/category/119
+```
+
+`dunkin.smart.link` — that's **Branch.io**, the deep linking vendor. They're the ones who make sure that if you install the app from the App Store, you still land on the right category page. Deferred deep linking. It's actually kind of clever, if you ignore everything else about this situation.
+
+**If you're on a desktop or you're a bot:** HTTP 302 redirect to `www.dunkindonuts.com/en/mobile-app`. Go away, you're not buying a drink from your laptop.
+
+### How Many Companies Does It Take to Sell a Mango Drink
+
+| Vendor | Role | How I Found It |
+|--------|------|----------------|
+| **Branch.io** | Deep linking | `dunkin.smart.link` in the landing page HTML |
+| **OLO** | Online ordering | `order.dunkindonuts.com` CNAMEs to `whitelabel.olo.com` |
+| **CardFree** | Mobile payments / gift cards | Listed in the Apple App Site Association file as `com.cardfree.ddnationalprd` |
+| **Akamai** | CDN | CNAME chain: `edgekey.net` → `akamaiedge.net` |
+| **Proofpoint** | Email security | MX records, SPF, DMARC. Policy is `p=reject` — at least their email security is tight |
+| **DigiCert** | TLS certificates for mobile | ECC SHA384 certs for the ddmprod platform |
+| **AWS** | Everything else | Route 53 DNS, Application Load Balancer, ACM certs for the root domain |
+
+Seven vendors to sell you a zero-calorie tropical mango beverage. The `order.dunkindonuts.com` → `whitelabel.olo.com` CNAME was my favorite find. OLO is a restaurant ordering platform. The word "whitelabel" is right there in the DNS. It's like leaving the price tag on a gift.
+
+### Why Was This Ad Targeted at Me?
+
+The Wayback Machine answered this one. Historical snapshots of the `ulink` URLs preserved the full UTM parameters from previous campaigns:
+
+```
+utm_source=reddit
+utm_medium=paidsocial
+utm_campaign=dunkinrun
+utm_content=interests
+```
+
+The targeting parameter is literally called `interests`. Reddit served me this ad because of my subreddit engagement patterns. Dunkin' paid Reddit to show me a fake toddler post based on an algorithmic guess about what I might enjoy.
+
+Conversion tracking uses Reddit Click IDs (`rdt_cid` parameters) — unique identifiers appended to every ad click URL so Dunkin' can trace the journey from "saw ad on Reddit" to "ordered a drink in the app." There are at least 8 distinct `rdt_cid` values captured in Wayback from different campaign runs. Previous campaigns targeted categories 28, 53, and 70. Mine was 119.
+
+### Bonus Round: The www Certificate
+
+I checked the TLS cert on `www.dunkindonuts.com` for good measure. It lists **44 Subject Alternative Names.** Forty-four. Including:
+
+- `dev2.dunkindonuts.com`, `qa.dunkindonuts.com`, `qa2.dunkindonuts.com`, `staging.dunkindonuts.com`, `staging3.dunkindonuts.com`, `uat.dunkindonuts.com` — their entire development lifecycle is in this cert
+- `ssoprd.dunkindonuts.com`, `social-ssoprd.dunkindonuts.com` — SSO infrastructure
+- `menu-pricing-prd.dunkindonuts.com` — the menu pricing API, in production
+- `franchiseecentral.dunkinbrands.com` — the franchisee portal
+- `www.baskinrobbins.com`, `staging.baskinrobbins.com`, `qa.baskinrobbins.com` — Baskin-Robbins shares the cert
+
+Nothing is exposed or exploitable. But the fact that you can learn the names of all their internal environments from a single `openssl s_client` command is... very Dunkin'.
+
+### The u/dunkin Reddit Account
+
+Created **October 18, 2018** — right when Dunkin' dropped "Donuts" from the name. The account was born with the rebrand. It has 62 link karma and 67 comment karma after 7+ years. The promoted posts don't appear in Reddit's public API because they're served through the ad system, not the user's post history. It's a ghost account that only exists to run paid campaigns.
+
+It is verified. It is a moderator. It has almost no karma. It pretends a toddler typed on its phone to sell you a drink. It is `u/dunkin`.
+
+### Methodology
+
+All probes ran inside containerized environments (`podman run --rm --dns 8.8.8.8 investigator`). DNS enumeration, HTTP redirect tracing, TLS certificate inspection, Wayback Machine CDX queries, Apple App Site Association file retrieval, Reddit public API, iTunes Search API, nmap port scanning. Zero exploitation, zero auth bypass, zero interaction with any service beyond reading what they publicly serve.
+
+I just looked at what was already there. Dunkin' made it easy.
+
+---
+
+## Investigation Files
+
+- **[GRAPH.md](investigations/dunkin/GRAPH.md)** — The serious version. 22 entities, 18 edges, 4 clusters. Structured for machines.
+- **[Investigation directory](investigations/dunkin/)** — Evidence, artifacts, reproducible scripts.
+- **[GRAPH.md (index)](GRAPH.md)** — Investigation index.
 
 ## Setup
 
