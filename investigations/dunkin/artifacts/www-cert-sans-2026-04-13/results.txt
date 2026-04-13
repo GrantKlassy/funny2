@@ -1,0 +1,87 @@
+# www Cert SAN Resolution + Brand Domains — 2026-04-13
+# Container: podman run --rm --dns 8.8.8.8 investigator
+
+=== DNS RESOLUTION ===
+
+--- SDLC Environments ---
+HIT  dev2.dunkindonuts.com → CNAME dev2.dunkindonuts.com.edgekey.net. (Akamai e5079)
+HIT  qa.dunkindonuts.com → A: 52.71.129.172,44.221.191.180 (direct AWS, NOT Akamai)
+HIT  qa2.dunkindonuts.com → CNAME qa2.dunkindonuts.com.edgekey.net. (Akamai e5079)
+HIT  staging.dunkindonuts.com → CNAME www.dunkindonuts.com.edgekey.net. (shares www Akamai config)
+HIT  staging3.dunkindonuts.com → CNAME staging3.dunkindonuts.com-v1.edgekey.net. (Akamai e5079)
+HIT  uat.dunkindonuts.com → A: 216.255.76.18 (DIFFERENT IP — possibly Cognizant/contractor)
+
+--- SSO ---
+HIT  ssoprd.dunkindonuts.com → CNAME ssoprd.dunkindonuts.com.edgekey.net. (Akamai)
+HIT  ssostg.dunkindonuts.com → CNAME ssostg.dunkindonuts.com.edgekey.net. (Akamai)
+HIT  social-ssoprd.dunkindonuts.com → CNAME social-ssoprd.dunkindonuts.com.edgekey.net. (Akamai)
+
+--- Menu/Pricing API ---
+HIT  menu-pricing-prd.dunkindonuts.com → CNAME menu-pricing-prd.dunkindonuts.com.edgekey.net. (Akamai)
+HIT  menu-pricing-stg.dunkindonuts.com → CNAME menu-pricing-stg.dunkindonuts.com.edgekey.net. (Akamai)
+
+--- dunkinbrands.com ---
+HIT  star.dunkinbrands.com → CNAME star.dunkinbrands.com.edgekey.net. (Akamai)
+HIT  afm.dunkinbrands.com → A: 164.109.97.13 (DIFFERENT network — non-AWS, non-Akamai)
+HIT  fps.dunkinbrands.com → CNAME caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com. (AWS ELB — "caas" = Content As A Service?)
+HIT  qrmenu.dunkinbrands.com → A: 3.228.192.233,98.95.146.26 (AWS)
+HIT  franchiseecentral.dunkinbrands.com → CNAME franchiseecentral.dunkinbrands.com.cdn.cloudflare.net. (Cloudflare + AWSALB backend)
+MISS loyalty.dunkindonuts.com
+
+--- Brand Domains ---
+HIT  dunkinnation.com → A: 35.171.76.215,44.218.38.45 (AWS)
+HIT  dunkinrewards.com → A: 35.173.143.243,35.153.79.184 (AWS ALB)
+HIT  dunkinrun.com → A: 35.153.79.184,35.173.143.243 (AWS ALB → 301 → www.dunkinrun.com → 302 → www.dunkindonuts.com)
+HIT  dunkinemail.com → A: 35.173.143.243,35.153.79.184 (AWS ALB)
+HIT  dunkinfranchising.com → Cloudflare → 301 → franchising.inspirebrands.com/dunkin
+HIT  ddglobalfranchising.com → A: 52.0.33.13,35.169.92.22 (SAME AS DUNKINDONUTS.COM ROOT)
+HIT  ddperks.com → A: 35.153.79.184,35.173.143.243 (AWS ALB)
+HIT  baskinrobbinsfranchising.com → Cloudflare → 301 → franchising.inspirebrands.com/baskin-robbins
+HIT  dunkinperks.com → A: 35.173.143.243,35.153.79.184 (AWS ALB)
+HIT  dunkinbrands.com → A: 130.211.9.50 (GCP — separate from all other Dunkin' infra)
+HIT  www.dunkinbrands.com → CNAME dunkinbrands.com.iprsoftware.com. (IPR Software — investor relations platform)
+MISS www2.baskinrobbins.com
+HIT  staging.baskinrobbins.com → A: 54.87.41.104 (direct AWS)
+HIT  qa.baskinrobbins.com → CNAME qa.baskinrobbins.com.edgekey.net. (Akamai)
+HIT  www.brglobalfranchising.com → CNAME san.dunkinbrands.com.edgekey.net. (Akamai — shared SAN config)
+HIT  wsvc.dunkinrun.com → A: 164.109.96.225 (same /16 as afm.dunkinbrands.com)
+
+=== HTTP STATUS ===
+dev2.dunkindonuts.com → 301 (Apache)
+qa.dunkindonuts.com → 302 (Apache)
+qa2.dunkindonuts.com → 301 (Apache)
+staging.dunkindonuts.com → 403 (AkamaiGHost — blocked)
+staging3.dunkindonuts.com → 301 (Apache)
+uat.dunkindonuts.com → connection fail
+ssoprd.dunkindonuts.com → 200 (LIVE SSO)
+ssostg.dunkindonuts.com → 200 (LIVE SSO staging)
+social-ssoprd.dunkindonuts.com → 403
+menu-pricing-prd.dunkindonuts.com → 404 (JSON response — REST API!)
+menu-pricing-stg.dunkindonuts.com → 404 (JSON response — REST API!)
+star.dunkinbrands.com → 405 (Method Not Allowed — API)
+afm.dunkinbrands.com → connection fail
+fps.dunkinbrands.com → connection fail
+qrmenu.dunkinbrands.com → 404 (Kestrel / ASP.NET)
+franchiseecentral.dunkinbrands.com → 200 (Cloudflare + ASP.NET + AWSALB)
+dunkinnation.com → connection fail
+dunkinrewards.com → 301 → www.dunkinrewards.com (ALB)
+dunkinrun.com → 301 → www.dunkinrun.com → 302 → www.dunkindonuts.com
+dunkinemail.com → 301 → www.dunkinemail.com (ALB)
+dunkinfranchising.com → 301 → franchising.inspirebrands.com/dunkin
+ddglobalfranchising.com → 301 → www.ddglobalfranchising.com
+ddperks.com → 301 → www.ddperks.com (ALB)
+baskinrobbinsfranchising.com → 301 → franchising.inspirebrands.com/baskin-robbins
+dunkinperks.com → 301 → www.dunkinperks.com (ALB)
+www.dunkinbrands.com → 200 (IPR Software investor relations)
+staging.baskinrobbins.com → 503
+qa.baskinrobbins.com → 503 (AkamaiGHost)
+www.brglobalfranchising.com → 302 → global.dunkinfranchising.com (Akamai)
+wsvc.dunkinrun.com → connection fail
+
+=== DEEP PROBES ===
+franchiseecentral.dunkinbrands.com: Cloudflare CDN → ASP.NET + AWSALB (last-modified: 2016-07-12!)
+menu-pricing-prd.dunkindonuts.com: JSON 404 with security headers (HSTS, X-Content-Type-Options, X-Frame-Options) — Spring Boot REST API
+ssoprd.dunkindonuts.com: 200, 149 bytes, X-Frame-Options: DENY (SSO redirect page)
+qrmenu.dunkinbrands.com: Kestrel server (ASP.NET Core), 404
+dunkinrun.com: double redirect → dunkindonuts.com (campaign vanity domain)
+www.baskinrobbins.com AASA: empty/not found

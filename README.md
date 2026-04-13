@@ -139,6 +139,75 @@ I checked the TLS cert on `www.dunkindonuts.com` for good measure. It lists **44
 
 Nothing is exposed or exploitable. But the fact that you can learn the names of all their internal environments from a single `openssl s_client` command is... very Dunkin'.
 
+But wait. I said 44 SANs. I lied. It's actually **47.** I miscounted the first time because I was too busy being amazed. Let me resolve every single one of them.
+
+### I Resolved All 47 SANs and Most of Them Are Live
+
+Nearly every domain on that cert resolves. Most of them are behind Akamai. But a few rebels broke free:
+
+- **`qa.dunkindonuts.com`** goes DIRECT to AWS (`52.71.129.172`) — no Akamai. The QA team said "we don't need a CDN, we're just testing." Bold move.
+- **`uat.dunkindonuts.com`** resolves to `216.255.76.18` — a completely different IP range from everything else. Contractor hosting? A managed testing vendor? Nobody knows. It doesn't respond to HTTPS.
+- **`ssoprd.dunkindonuts.com`** is LIVE. HTTP 200. 149 bytes. It's the SSO redirect page for production. Just sitting there. Behind Akamai, at least.
+- **`menu-pricing-prd.dunkindonuts.com`** returns a JSON 404 with Spring Boot security headers. It's a REST API for menu pricing. The endpoint exists. It works. It just doesn't know what you want because you didn't provide a path.
+- **`star.dunkinbrands.com`** returns HTTP 405 — Method Not Allowed. It's an API that will only talk to you if you know the right HTTP verb. I do not know the right HTTP verb.
+- **`fps.dunkinbrands.com`** has an AWS ELB called `caas-prod-dunkinbrands-com`. "CAAS" — Content As A Service? Connection refused. The ELB exists but nothing's home.
+
+And then there's **`franchiseecentral.dunkinbrands.com`**. It's live. It's running ASP.NET behind Cloudflare and AWSALB. Its `Last-Modified` header says **July 12, 2016**. The franchisee portal has not been updated in ten years. It was built before the rebrand. It was built before the Inspire Brands acquisition. It may have been built before some of its franchise owners were born.
+
+### Baskin-Robbins Is Literally Dunkin'
+
+I figured while I was here, I'd check the Inspire Brands sister brands. Arby's, Buffalo Wild Wings, Sonic, Jimmy John's, Baskin-Robbins. Do any of them use the ddmprod pattern?
+
+No. None of them. ddmprod is Dunkin'-only. Each sister brand has completely different infrastructure — different registrars, different CDNs, different cert authorities. It's like Inspire Brands acquired six restaurants and said "you guys figure out your own IT."
+
+But then I looked at Baskin-Robbins more carefully and things got weird.
+
+`baskinrobbins.com` resolves to **`52.0.33.13` and `35.169.92.22`**. Those are the same A records as `dunkindonuts.com`. The *exact same IPs*. I checked the cert — it's the same GeoTrust cert with the 47 SANs. Same Route 53 nameservers. Baskin-Robbins isn't just "sharing infrastructure" with Dunkin'. Baskin-Robbins IS Dunkin'. They're the same box. You request `baskinrobbins.com` and the same server that serves you `dunkindonuts.com` goes "oh, you wanted ice cream? Same building, different door."
+
+The only difference: Dunkin' uses OLO for ordering (`whitelabel.olo.com`), but Baskin-Robbins uses **Tillster** (`www-br-us.tillster.com`). Two different ordering vendors for two brands on the same server. The server doesn't even know they're different companies.
+
+### CardFree Runs Everything
+
+Remember CardFree from the Apple App Site Association file? I said they handled "mobile payments." I was wrong. They handle *everything*.
+
+The Android Asset Links file (`assetlinks.json`) on `ulink.prod.ddmprod` lists the Android packages:
+
+```
+com.cardfree.android.dunkindonuts.DEV
+com.cardfree.android.dunkindonuts.UAT
+```
+
+CardFree isn't just the payment vendor. CardFree **builds the entire Dunkin' mobile app** — iOS and Android. All environments. One signing key across DEV and UAT. The app in your pocket that says "Dunkin'" was made by a company called CardFree. The name "Dunkin' Brands" is on the certs but CardFree is on the code.
+
+### Branch.io Leaks Its Own Kubernetes
+
+I probed the Branch.io smart link and it returned HTTP 405 with these headers:
+
+```
+server: istio-envoy
+x-envoy-decorator-operation: inboarder.links-inboarder.svc.cluster.local:80/*
+```
+
+That's an Istio service mesh on Kubernetes. The internal service is called `inboarder` in a namespace called `links-inboarder`. Branch.io's infrastructure is leaking its own service topology through response headers. The deep linking company has a shallow header policy.
+
+### 931 Certificate Transparency Entries
+
+I queried `crt.sh` for `%.dunkinbrands.com` and got back **931 certificate entries**. Nine hundred and thirty-one. This is the pre-Inspire Brands corporate infrastructure, fossilized in certificate transparency logs:
+
+- **`citrix.dunkinbrands.com`** — Citrix remote access
+- **`sslvpn.dunkinbrands.com`** (and sslvpn2) — SSL VPN
+- **`vdi.dunkinbrands.com`** — Virtual Desktop Infrastructure
+- **`xen.dunkinbrands.com`** — Xen virtualization (vintage!)
+- **`quickplace.dunkinbrands.com`**, **`quickr.dunkinbrands.com`**, **`inotes.dunkinbrands.com`** — IBM collaboration stack. QuickPlace was discontinued in 2007. The cert was issued anyway.
+- **`smartsolve.dunkinbrands.com`** — SmartSolve EQMS (quality management)
+- **`genesisproduction.dunkinbrands.com`** — an internal platform called "Genesis"
+- **`rbos.dunkinbrands.com`** — RBOS. Restaurant Business Operating System? Nobody will confirm or deny.
+- **`smartphone.dunkinbrands.com`** (and smartphone2, smartphone3) — three separate mobile device management endpoints
+
+And then, buried in the entries: **`terry.ursino@dunkinbrands.com`**. Someone's email address. In a certificate Common Name. Submitted to public Certificate Transparency logs. Forever.
+
+Hi Terry. I hope you're doing well. Your email is in the blockchain of certificates now and there's nothing anyone can do about it.
+
 ### The u/dunkin Reddit Account
 
 Created **October 18, 2018** — right when Dunkin' dropped "Donuts" from the name. The account was born with the rebrand. It has 62 link karma and 67 comment karma after 7+ years. The promoted posts don't appear in Reddit's public API because they're served through the ad system, not the user's post history. It's a ghost account that only exists to run paid campaigns.
@@ -155,7 +224,8 @@ I just looked at what was already there. Dunkin' made it easy.
 
 ## Investigation Files
 
-- **[GRAPH.md](investigations/dunkin/GRAPH.md)** — The serious version. 22 entities, 18 edges, 4 clusters. Structured for machines.
+- **[Interactive Network Graph](investigations/dunkin/graph/network-visualization.html)** — 39 entities, 8 clusters. Hover to explore, search to filter, drag to rearrange. The pretty version.
+- **[GRAPH.md](investigations/dunkin/GRAPH.md)** — The serious version. 39 entities, 33 edges, 8 clusters. Structured for machines.
 - **[Investigation directory](investigations/dunkin/)** — Evidence, artifacts, reproducible scripts.
 - **[GRAPH.md (index)](GRAPH.md)** — Investigation index.
 

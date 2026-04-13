@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dunkin' Ad Infrastructure — Interactive Graph</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0a0a0f; overflow: hidden; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; color: #c0c0c0; }
+#graph { width: 100vw; height: 100vh; }
+
+#title {
+  position: fixed; top: 20px; left: 20px; z-index: 10; pointer-events: none;
+  text-shadow: 0 0 20px rgba(255,100,50,0.4);
+}
+#title h1 { font-size: 18px; color: #ff6633; font-weight: 700; letter-spacing: 1px; }
+#title h2 { font-size: 11px; color: #666; font-weight: 400; margin-top: 4px; }
+
+#stats {
+  position: fixed; bottom: 20px; left: 20px; z-index: 10; font-size: 10px; color: #444;
+  pointer-events: none;
+}
+
+#legend {
+  position: fixed; top: 20px; right: 20px; z-index: 10;
+  background: rgba(10,10,15,0.85); border: 1px solid #222; border-radius: 6px;
+  padding: 12px 16px; font-size: 10px; backdrop-filter: blur(8px);
+  max-height: calc(100vh - 40px); overflow-y: auto;
+}
+#legend h3 { color: #888; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+.legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.legend-label { color: #777; }
+
+#tooltip {
+  position: fixed; z-index: 100; pointer-events: none; display: none;
+  background: rgba(10,10,20,0.95); border: 1px solid #333; border-radius: 6px;
+  padding: 10px 14px; font-size: 11px; max-width: 400px;
+  backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+#tooltip .tt-type { font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; }
+#tooltip .tt-label { font-size: 13px; color: #eee; font-weight: 600; margin-bottom: 6px; }
+#tooltip .tt-meta { color: #888; line-height: 1.5; }
+#tooltip .tt-meta span { color: #aaa; }
+
+#search {
+  position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 10;
+}
+#search input {
+  background: rgba(10,10,15,0.85); border: 1px solid #333; border-radius: 20px;
+  padding: 8px 20px; color: #ccc; font-size: 12px; width: 280px;
+  font-family: inherit; outline: none; backdrop-filter: blur(8px);
+  transition: border-color 0.2s;
+}
+#search input:focus { border-color: #ff6633; }
+#search input::placeholder { color: #444; }
+
+#controls {
+  position: fixed; bottom: 20px; right: 20px; z-index: 10;
+  display: flex; gap: 8px;
+}
+#controls button {
+  background: rgba(10,10,15,0.85); border: 1px solid #333; border-radius: 4px;
+  padding: 6px 12px; color: #888; font-size: 10px; font-family: inherit;
+  cursor: pointer; backdrop-filter: blur(8px); transition: all 0.2s;
+}
+#controls button:hover { border-color: #ff6633; color: #ff6633; }
+
+svg .link { stroke-opacity: 0.15; }
+svg .link.highlighted { stroke-opacity: 0.7; }
+svg .link.dimmed { stroke-opacity: 0.03; }
+svg .node circle { cursor: pointer; transition: filter 0.15s; }
+svg .node.dimmed circle { opacity: 0.08; }
+svg .node.dimmed text { opacity: 0; }
+svg .node.highlighted circle { filter: drop-shadow(0 0 8px currentColor); }
+svg .node text { fill: #888; font-size: 9px; pointer-events: none; user-select: none; }
+svg .node.dimmed text { fill: transparent; }
+svg .cluster-hull { stroke-width: 1.5; stroke-dasharray: 4 2; }
+</style>
+</head>
+<body>
+<div id="title">
+  <h1>DUNKIN' AD INFRASTRUCTURE</h1>
+  <h2>39 entities &middot; 33 connections &middot; 8 clusters &middot; scroll to zoom &middot; drag to pan &middot; hover to explore</h2>
+</div>
+<div id="search"><input type="text" placeholder="Search nodes... (type to filter)"></div>
+<div id="legend"></div>
+<div id="tooltip"></div>
+<div id="stats"></div>
+<div id="controls">
+  <button onclick="resetZoom()">Reset Zoom</button>
+  <button onclick="toggleLabels()">Toggle Labels</button>
+  <button onclick="toggleClusters()">Toggle Clusters</button>
+</div>
+<div id="graph"></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+// ========== COLOR SCHEME ==========
+const typeColors = {
+  domain:         '#ff6633',
+  service:        '#4dabf7',
+  platform:       '#20c997',
+  vendor:         '#cc5de8',
+  'mobile-app':   '#51cf66',
+  'parent-company':'#ffd93d',
+  'reddit-account':'#ff922b',
+  'ad-network':   '#e64980',
+  'deep-link':    '#339af0',
+  'ad-creative':  '#f06595',
+  org:            '#fcc419',
+  'ct-exposure':  '#ff6b6b',
+  portal:         '#845ef7',
+};
+
+const clusterColors = {
+  'CL1': '#4dabf733', 'CL2': '#e6498033', 'CL3': '#cc5de833',
+  'CL4': '#4dabf722', 'CL5': '#ffd93d33', 'CL6': '#51cf6633',
+  'CL7': '#ff6b6b33', 'CL8': '#ff663322',
+};
+const clusterStrokes = {
+  'CL1': '#4dabf755', 'CL2': '#e6498055', 'CL3': '#cc5de855',
+  'CL4': '#4dabf744', 'CL5': '#ffd93d55', 'CL6': '#51cf6655',
+  'CL7': '#ff6b6b55', 'CL8': '#ff663344',
+};
+
+// ========== GRAPH DATA ==========
+const graphData = {
+  nodes: [
+    // ===== CL1: ddmprod Platform =====
+    { id: 'E4', type: 'platform', label: 'ddmprod', cluster: 'CL1', meta: 'Dunkin\' Donuts Mobile Production\nCustom in-house mobile platform\nEnvironments: prod, preprod\nPre-2018 naming (ghost of "Donuts")' },
+    { id: 'E2', type: 'service', label: 'ulink.prod.ddmprod', cluster: 'CL1', meta: 'Universal Links router\nNode.js/Express behind Akamai\nUA-based: mobile\u2192200, desktop\u2192302\nThe ad click landing page' },
+    { id: 'E3', type: 'service', label: 'k.prod.ddmprod', cluster: 'CL1', meta: 'App kickout service\nDoes not resolve externally\nBehind Akamai edge only\nSeen in dunkin3.jpg browser bar' },
+    { id: 'E17', type: 'service', label: 'mapi-dun.prod.ddmprod', cluster: 'CL1', meta: 'Mobile API \u2014 PRIMARY CN on cert\nBackbone of the Dunkin\' app\nPreprod: edgekey-staging.net\n(separate Akamai staging config!)' },
+    { id: 'E18', type: 'service', label: 'ode.prod.ddmprod', cluster: 'CL1', meta: 'Order Delivery Engine\nProd only \u2014 preprod does NOT resolve\nPossibly decommissioned in preprod' },
+    { id: 'E19', type: 'service', label: 'swi.prod.ddmprod', cluster: 'CL1', meta: 'Unknown service "SWI"\nWayback: 404 since 2024\nPreprod still resolves\nWhat was this?' },
+    { id: 'E20', type: 'service', label: 'dun-assets.prod.ddmprod', cluster: 'CL1', meta: 'Static asset CDN\nServes dunkin_logo@2x.png\nPreprod on CloudFront (not Akamai!)' },
+    { id: 'E23', type: 'service', label: 'cloud-preprod.ddmprod', cluster: 'CL1', meta: 'Cloud infrastructure (preprod)\nCNAME \u2192 d25cpty3ekbo1l.cloudfront.net\nNOT Akamai \u2014 different CDN strategy\nWayback: 403 in 2023' },
+
+    // ===== CL2: Ad \u2192 App Conversion Pipeline =====
+    { id: 'E5', type: 'reddit-account', label: 'u/dunkin', cluster: 'CL2', meta: 'Created 2018-10-18 (rebrand era)\nVerified, moderator\n62 link / 67 comment karma\nGhost account \u2014 ads only' },
+    { id: 'E6', type: 'ad-network', label: 'Reddit Ads', cluster: 'CL2', meta: 'utm_medium=paidsocial\nutm_campaign=dunkinrun\nutm_content=interests\n8+ rdt_cid conversion IDs captured' },
+    { id: 'E7', type: 'deep-link', label: 'dunkin://orders/category/119', cluster: 'CL2', meta: 'App URI deep link\nCategory 119 = current campaign\nPrevious: 28, 53, 70\nAll categories 100-130 wildcard routed' },
+    { id: 'E21', type: 'ad-creative', label: '"Toddler typing" ad', cluster: 'CL2', meta: '77% home-row keyboard distribution\nEmbedded words: cat, dog, kid, mom, dad\nAdult copywriter, not toddler\nThe toddler is a psyop' },
+    { id: 'E28', type: 'domain', label: 'dunkinrun.com', cluster: 'CL2', meta: 'Campaign vanity domain\n301\u2192www.dunkinrun.com\u2192302\u2192dunkindonuts.com\nutm_campaign=dunkinrun matches domain\nAWS ALB' },
+
+    // ===== CL3: Vendor Stack =====
+    { id: 'E9', type: 'vendor', label: 'Branch.io', cluster: 'CL3', meta: 'Deep linking vendor\ndunkin.smart.link (GCP 34.36.249.118)\nKubernetes/Istio service mesh\nLeaks: inboarder.links-inboarder.svc.cluster.local' },
+    { id: 'E10', type: 'vendor', label: 'OLO', cluster: 'CL3', meta: 'Online ordering\norder.dunkindonuts.com \u2192 whitelabel.olo.com\n"whitelabel" right in the DNS\nCloudflare fronted' },
+    { id: 'E11', type: 'vendor', label: 'CardFree', cluster: 'CL3', meta: 'Builds ENTIRE Dunkin\' mobile app\niOS: com.cardfree.ddnationalprd\nAndroid: com.cardfree.android.dunkindonuts\nDEV/UAT/prod builds, single signing key' },
+    { id: 'E12', type: 'vendor', label: 'Akamai', cluster: 'CL3', meta: 'CDN for ddmprod + www\nddmprod: e36726.dsca.akamaiedge.net\nwww: e5079.{a,b,dsca}.akamaiedge.net\nStaging: edgekey-staging.net' },
+    { id: 'E13', type: 'vendor', label: 'Proofpoint', cluster: 'CL3', meta: 'Email security\nMX \u2192 psmtp.com\nSPF \u2192 pphosted.com\nDMARC: p=reject (tight)' },
+    { id: 'E14', type: 'vendor', label: 'DigiCert', cluster: 'CL3', meta: 'TLS certificates\nddmprod: ECC SHA384\nwww: GeoTrust RSA (subsidiary)\n47 SANs on www cert' },
+    { id: 'E15', type: 'vendor', label: 'AWS', cluster: 'CL3', meta: 'Route 53 DNS, ALB, ACM certs\nCloudFront for some preprod\nQA env direct (no Akamai)\nHosts everything except dunkinbrands.com' },
+    { id: 'E24', type: 'vendor', label: 'Tillster', cluster: 'CL3', meta: 'Online ordering for Baskin-Robbins\norder.baskinrobbins.com \u2192 www-br-us.tillster.com\nCloudFront backend\nDifferent vendor than Dunkin\' (OLO)' },
+    { id: 'E27', type: 'vendor', label: 'IPR Software', cluster: 'CL3', meta: 'Investor relations platform\nHosts www.dunkinbrands.com\nGCP (35.190.35.217)' },
+    { id: 'E39', type: 'vendor', label: 'Cloudflare', cluster: 'CL3', meta: 'CDN for franchising portals\nfranchiseecentral.dunkinbrands.com\ndunkinfranchising.com\nbaskinrobbinsfranchising.com' },
+
+    // ===== CL4: www Infrastructure =====
+    { id: 'E1', type: 'domain', label: 'dunkindonuts.com', cluster: 'CL4', meta: 'Root domain, registered 1995-07-13\nAWS Route 53 NS\nA: 35.169.92.22, 52.0.33.13\nShares infra with baskinrobbins.com' },
+    { id: 'E30', type: 'service', label: 'ssoprd.dunkindonuts.com', cluster: 'CL4', meta: 'SSO production \u2014 LIVE (HTTP 200)\n149 bytes, behind Akamai\nX-Frame-Options: DENY\nLast-modified: 2025-07-31' },
+    { id: 'E31', type: 'service', label: 'menu-pricing-prd', cluster: 'CL4', meta: 'Menu pricing REST API\nReturns JSON 404\nSpring Boot security headers\nHSTS, X-Content-Type-Options, X-Frame-Options' },
+    { id: 'E33', type: 'service', label: 'star.dunkinbrands.com', cluster: 'CL4', meta: 'Unknown API "STAR"\nHTTP 405 (Method Not Allowed)\nBehind Akamai\nWhat is this?' },
+
+    // ===== CL5: Inspire Brands Corporate =====
+    { id: 'E8', type: 'parent-company', label: 'Inspire Brands', cluster: 'CL5', meta: 'Acquired Dunkin\' Brands 2020\nParent of: Dunkin\', Baskin-Robbins,\nArby\'s, BWW, Sonic, Jimmy John\'s\nEach brand: completely different infra' },
+    { id: 'E22', type: 'org', label: 'Dunkin\' Brands, Inc.', cluster: 'CL5', meta: 'Pre-acquisition entity\nStill on TLS certs\nCanton, Massachusetts\nGhost of the old company' },
+    { id: 'E35', type: 'portal', label: 'franchising.inspirebrands.com', cluster: 'CL5', meta: 'Central franchising portal\ndunkinfranchising.com \u2192 /dunkin\nbaskinrobbinsfranchising.com \u2192 /baskin-robbins\nCloudflare hosted' },
+
+    // ===== CL6: Baskin-Robbins =====
+    { id: 'E36', type: 'domain', label: 'baskinrobbins.com', cluster: 'CL6', meta: 'Sister brand domain\nSAME A records as dunkindonuts.com\nSAME www cert (47 SANs)\nSAME Route 53 NS\nLiterally the same infrastructure' },
+
+    // ===== CL7: dunkinbrands.com Legacy =====
+    { id: 'E25', type: 'domain', label: 'dunkinbrands.com', cluster: 'CL7', meta: 'Corporate domain\nA: 130.211.9.50 (GCP \u2014 unique)\n931 CT log entries\nPre-Inspire legacy infrastructure' },
+    { id: 'E26', type: 'service', label: 'www.dunkinbrands.com', cluster: 'CL7', meta: 'Investor relations\nCNAME \u2192 dunkinbrands.com.iprsoftware.com\nHosted on GCP (35.190.35.217)' },
+    { id: 'E29', type: 'service', label: 'franchiseecentral', cluster: 'CL7', meta: 'Franchisee portal\nCloudflare \u2192 ASP.NET + AWSALB\nLast-modified: 2016-07-12\nTEN YEARS OLD and still serving' },
+    { id: 'E38', type: 'ct-exposure', label: 'CT Log Exposure (931)', cluster: 'CL7', meta: '931 cert entries from crt.sh\nExposes: Citrix, VPN (SSL/web/password),\nVDI, Xen, IBM collab, Genesis,\nSmartSolve, PLM, RBOS, POSHC, STS\nEmail leak: terry.ursino@dunkinbrands.com' },
+    { id: 'E37', type: 'service', label: 'fps.dunkinbrands.com', cluster: 'CL7', meta: 'Unknown "FPS" service\nAWS ELB: caas-prod-dunkinbrands-com\nCAAS = Content As A Service?\nConnection refused' },
+    { id: 'E32', type: 'service', label: 'qrmenu.dunkinbrands.com', cluster: 'CL7', meta: 'QR menu service\nKestrel server (ASP.NET Core)\nHTTP 404\nAWS hosted' },
+
+    // ===== CL8: Vanity Domains =====
+    { id: 'vanity:ddperks', type: 'domain', label: 'ddperks.com', cluster: 'CL8', meta: 'Pre-rebrand loyalty name\n"DD Perks" \u2192 "Dunkin\' Rewards"\nAWS ALB redirect' },
+    { id: 'vanity:dunkinrewards', type: 'domain', label: 'dunkinrewards.com', cluster: 'CL8', meta: 'Rewards program domain\nAWS ALB redirect\nPost-rebrand equivalent of ddperks' },
+    { id: 'vanity:dunkinemail', type: 'domain', label: 'dunkinemail.com', cluster: 'CL8', meta: 'Email campaign domain\nAWS ALB redirect\n35.173.143.243, 35.153.79.184' },
+
+    // ===== Mobile Apps =====
+    { id: 'E16', type: 'mobile-app', label: 'Dunkin\' iOS App', cluster: 'CL1', meta: 'Bundle: com.dunkinbrands.otgo\nOTGO = Order To Go\nTeam ID: 7UARB5Z69S\nApp Store ID: 1056813463\nApp Clips: com.dunkinbrands.otgo.Clip' },
+    { id: 'E34', type: 'mobile-app', label: 'Dunkin\' Android App', cluster: 'CL1', meta: 'Package: com.cardfree.android.dunkindonuts\nBuilt by CardFree\nEnvironments: DEV, UAT, prod\nSingle signing key across all envs' },
+  ],
+
+  edges: [
+    // Ad pipeline
+    { source: 'E5', target: 'E6', type: 'PROMOTES_VIA', label: 'promoted post' },
+    { source: 'E6', target: 'E2', type: 'LINKS_TO', label: 'ad click URL' },
+    { source: 'E6', target: 'E7', type: 'TRACKS', label: 'rdt_cid conversion' },
+    { source: 'E6', target: 'E21', type: 'TARGETS', label: 'interest-based' },
+    { source: 'E28', target: 'E6', type: 'CAMPAIGN_DOMAIN', label: 'utm_campaign=dunkinrun' },
+    { source: 'E28', target: 'E1', type: 'REDIRECTS_TO', label: '301/302 chain' },
+
+    // ulink routing
+    { source: 'E2', target: 'E16', type: 'MOBILE_ROUTE', label: 'Universal Links' },
+    { source: 'E2', target: 'E9', type: 'FALLBACK', label: 'Branch.io smart link' },
+    { source: 'E2', target: 'E1', type: 'DESKTOP_REDIRECT', label: '302 to www' },
+    { source: 'E2', target: 'E34', type: 'ANDROID_LINKS', label: 'assetlinks.json' },
+
+    // ddmprod platform
+    { source: 'E4', target: 'E2', type: 'CONTAINS' },
+    { source: 'E4', target: 'E3', type: 'CONTAINS' },
+    { source: 'E4', target: 'E17', type: 'CONTAINS' },
+    { source: 'E4', target: 'E18', type: 'CONTAINS' },
+    { source: 'E4', target: 'E19', type: 'CONTAINS' },
+    { source: 'E4', target: 'E20', type: 'CONTAINS' },
+    { source: 'E4', target: 'E23', type: 'CONTAINS' },
+
+    // Hosting
+    { source: 'E2', target: 'E12', type: 'HOSTED_ON', label: 'Akamai CDN' },
+    { source: 'E2', target: 'E14', type: 'CERT_BY', label: 'DigiCert ECC' },
+    { source: 'E1', target: 'E15', type: 'HOSTED_ON', label: 'AWS' },
+    { source: 'E1', target: 'E13', type: 'EMAIL_VIA', label: 'Proofpoint' },
+    { source: 'E23', target: 'E15', type: 'HOSTED_ON', label: 'CloudFront (not Akamai!)' },
+
+    // Vendor connections
+    { source: 'E1', target: 'E10', type: 'ORDERING', label: 'whitelabel.olo.com' },
+    { source: 'E16', target: 'E11', type: 'BUILT_BY', label: 'CardFree (iOS)' },
+    { source: 'E34', target: 'E11', type: 'BUILT_BY', label: 'CardFree (Android)' },
+    { source: 'E25', target: 'E27', type: 'IR_VIA', label: 'IPR Software' },
+
+    // Corporate
+    { source: 'E1', target: 'E8', type: 'OWNED_BY', label: '2020 acquisition' },
+    { source: 'E4', target: 'E22', type: 'MANAGED_BY', label: 'cert O field' },
+    { source: 'E8', target: 'E22', type: 'PARENT_OF' },
+    { source: 'E8', target: 'E35', type: 'OPERATES', label: 'central franchising' },
+    { source: 'E8', target: 'E36', type: 'PARENT_OF', label: 'sister brand' },
+
+    // Cross-infrastructure
+    { source: 'E1', target: 'E36', type: 'SHARES_INFRA', label: 'same A records + cert' },
+    { source: 'E36', target: 'E24', type: 'ORDERING', label: 'Tillster (not OLO)' },
+    { source: 'E25', target: 'E38', type: 'CT_EXPOSES', label: '931 cert entries' },
+    { source: 'E29', target: 'E39', type: 'HOSTED_ON', label: 'Cloudflare + AWSALB' },
+    { source: 'E30', target: 'E12', type: 'HOSTED_ON', label: 'Akamai' },
+    { source: 'E31', target: 'E12', type: 'HOSTED_ON', label: 'Akamai' },
+
+    // Vanity domains
+    { source: 'vanity:ddperks', target: 'E1', type: 'REDIRECTS_TO', label: 'ALB redirect' },
+    { source: 'vanity:dunkinrewards', target: 'E1', type: 'REDIRECTS_TO', label: 'ALB redirect' },
+    { source: 'vanity:dunkinemail', target: 'E1', type: 'REDIRECTS_TO', label: 'ALB redirect' },
+  ]
+};
+
+// ========== BUILD GRAPH ==========
+const nodeMap = new Map();
+graphData.nodes.forEach(n => nodeMap.set(n.id, n));
+
+const degree = new Map();
+graphData.nodes.forEach(n => degree.set(n.id, 0));
+graphData.edges.forEach(e => {
+  if (degree.has(e.source)) degree.set(e.source, degree.get(e.source) + 1);
+  if (degree.has(e.target)) degree.set(e.target, degree.get(e.target) + 1);
+});
+
+const validEdges = graphData.edges.filter(e =>
+  nodeMap.has(typeof e.source === 'string' ? e.source : e.source.id) &&
+  nodeMap.has(typeof e.target === 'string' ? e.target : e.target.id)
+);
+
+const nodes = graphData.nodes.map(n => ({...n, degree: degree.get(n.id) || 0}));
+const links = validEdges.map(e => ({...e}));
+
+// ========== D3 SETUP ==========
+const width = window.innerWidth;
+const height = window.innerHeight;
+
+const svg = d3.select('#graph').append('svg')
+  .attr('width', width)
+  .attr('height', height);
+
+const g = svg.append('g');
+let currentTransform = d3.zoomIdentity;
+const zoom = d3.zoom()
+  .scaleExtent([0.1, 8])
+  .on('zoom', (event) => {
+    currentTransform = event.transform;
+    g.attr('transform', event.transform);
+    g.selectAll('.node text')
+      .attr('font-size', Math.max(6, Math.min(11, 9 / event.transform.k)) + 'px')
+      .style('opacity', event.transform.k > 0.4 ? 1 : 0);
+  });
+svg.call(zoom);
+
+// Glow filter
+const defs = svg.append('defs');
+const filter = defs.append('filter').attr('id', 'glow');
+filter.append('feGaussianBlur').attr('stdDeviation', '3').attr('result', 'coloredBlur');
+const feMerge = filter.append('feMerge');
+feMerge.append('feMergeNode').attr('in', 'coloredBlur');
+feMerge.append('feMergeNode').attr('in', 'SourceGraphic');
+
+// ========== CLUSTER LAYOUT ==========
+const clusterCenters = {};
+const clusterList = [...new Set(nodes.map(n => n.cluster).filter(Boolean))];
+const angleStep = (2 * Math.PI) / clusterList.length;
+clusterList.forEach((c, i) => {
+  const r = Math.min(width, height) * 0.3;
+  clusterCenters[c] = {
+    x: width / 2 + r * Math.cos(i * angleStep - Math.PI / 2),
+    y: height / 2 + r * Math.sin(i * angleStep - Math.PI / 2)
+  };
+});
+
+// ========== FORCE SIMULATION ==========
+const simulation = d3.forceSimulation(nodes)
+  .force('link', d3.forceLink(links).id(d => d.id).distance(d => {
+    const s = nodeMap.get(typeof d.source === 'string' ? d.source : d.source.id);
+    const t = nodeMap.get(typeof d.target === 'string' ? d.target : d.target.id);
+    if (s && t && s.cluster === t.cluster) return 55;
+    return 140;
+  }).strength(0.4))
+  .force('charge', d3.forceManyBody().strength(-200).distanceMax(500))
+  .force('center', d3.forceCenter(width / 2, height / 2).strength(0.05))
+  .force('collision', d3.forceCollide().radius(d => nodeRadius(d) + 5))
+  .force('cluster', alpha => {
+    nodes.forEach(n => {
+      if (n.cluster && clusterCenters[n.cluster]) {
+        const c = clusterCenters[n.cluster];
+        n.vx += (c.x - n.x) * alpha * 0.08;
+        n.vy += (c.y - n.y) * alpha * 0.08;
+      }
+    });
+  })
+  .alphaDecay(0.01)
+  .velocityDecay(0.4);
+
+function nodeRadius(d) {
+  const base = d.type === 'platform' || d.type === 'parent-company' ? 9 :
+               d.type === 'domain' ? 7 :
+               d.type === 'vendor' ? 6 : 5;
+  return base + Math.sqrt(d.degree || 0) * 1.8;
+}
+
+// ========== CLUSTER HULLS ==========
+let showClusters = true;
+const hullGroup = g.append('g').attr('class', 'hulls');
+
+function updateHulls() {
+  hullGroup.selectAll('path').remove();
+  if (!showClusters) return;
+
+  clusterList.forEach(clusterId => {
+    const clusterNodes = nodes.filter(n => n.cluster === clusterId);
+    if (clusterNodes.length < 3) return;
+
+    const points = clusterNodes.map(n => [n.x, n.y]);
+    const hull = d3.polygonHull(points);
+    if (!hull) return;
+
+    const cx = d3.mean(hull, p => p[0]);
+    const cy = d3.mean(hull, p => p[1]);
+    const expanded = hull.map(p => {
+      const dx = p[0] - cx, dy = p[1] - cy;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      const expand = 35;
+      return [p[0] + (dx/dist) * expand, p[1] + (dy/dist) * expand];
+    });
+
+    hullGroup.append('path')
+      .attr('d', 'M' + expanded.join('L') + 'Z')
+      .attr('class', 'cluster-hull')
+      .attr('fill', clusterColors[clusterId] || '#ffffff11')
+      .attr('stroke', clusterStrokes[clusterId] || '#ffffff22');
+  });
+}
+
+// ========== DRAW EDGES ==========
+const linkGroup = g.append('g').attr('class', 'links');
+const link = linkGroup.selectAll('line')
+  .data(links)
+  .enter().append('line')
+  .attr('class', 'link')
+  .attr('stroke', d => {
+    const t = d.type;
+    if (t === 'SHARES_INFRA') return '#51cf66';
+    if (t === 'OWNED_BY' || t === 'PARENT_OF' || t === 'MANAGED_BY') return '#ffd93d';
+    if (t === 'CT_EXPOSES') return '#ff6b6b';
+    if (t === 'BUILT_BY') return '#51cf66';
+    if (t === 'MOBILE_ROUTE' || t === 'ANDROID_LINKS') return '#51cf66';
+    if (t === 'PROMOTES_VIA' || t === 'TARGETS' || t === 'TRACKS') return '#e64980';
+    if (t === 'LINKS_TO' || t === 'FALLBACK' || t === 'DESKTOP_REDIRECT') return '#4dabf7';
+    if (t === 'REDIRECTS_TO' || t === 'CAMPAIGN_DOMAIN') return '#ff663388';
+    return '#445';
+  })
+  .attr('stroke-width', d => {
+    if (d.type === 'SHARES_INFRA' || d.type === 'CT_EXPOSES') return 2.5;
+    if (d.type === 'BUILT_BY' || d.type === 'OWNED_BY') return 2;
+    if (d.type === 'LINKS_TO' || d.type === 'MOBILE_ROUTE') return 1.8;
+    return 1;
+  });
+
+// ========== DRAW NODES ==========
+const nodeGroup = g.append('g').attr('class', 'nodes');
+const node = nodeGroup.selectAll('g')
+  .data(nodes)
+  .enter().append('g')
+  .attr('class', 'node')
+  .call(d3.drag()
+    .on('start', dragstarted)
+    .on('drag', dragged)
+    .on('end', dragended));
+
+node.append('circle')
+  .attr('r', d => nodeRadius(d))
+  .attr('fill', d => typeColors[d.type] || '#666')
+  .attr('stroke', d => {
+    if (d.type === 'ct-exposure') return '#ff6b6b88';
+    if (d.id === 'E2') return '#ff663388'; // ulink - the entry point
+    return 'transparent';
+  })
+  .attr('stroke-width', d => (d.type === 'ct-exposure' || d.id === 'E2') ? 2 : 0)
+  .style('filter', 'url(#glow)');
+
+let showLabels = true;
+node.append('text')
+  .text(d => d.label)
+  .attr('dx', d => nodeRadius(d) + 4)
+  .attr('dy', 3)
+  .attr('font-size', '9px');
+
+// ========== TOOLTIP ==========
+const tooltip = d3.select('#tooltip');
+
+node.on('mouseover', function(event, d) {
+  const connected = new Set();
+  connected.add(d.id);
+  links.forEach(l => {
+    const sid = typeof l.source === 'string' ? l.source : l.source.id;
+    const tid = typeof l.target === 'string' ? l.target : l.target.id;
+    if (sid === d.id) connected.add(tid);
+    if (tid === d.id) connected.add(sid);
+  });
+
+  node.classed('dimmed', n => !connected.has(n.id));
+  node.classed('highlighted', n => n.id === d.id);
+  link.classed('dimmed', l => {
+    const sid = typeof l.source === 'string' ? l.source : l.source.id;
+    const tid = typeof l.target === 'string' ? l.target : l.target.id;
+    return !connected.has(sid) || !connected.has(tid);
+  });
+  link.classed('highlighted', l => {
+    const sid = typeof l.source === 'string' ? l.source : l.source.id;
+    const tid = typeof l.target === 'string' ? l.target : l.target.id;
+    return (sid === d.id || tid === d.id);
+  });
+
+  const color = typeColors[d.type] || '#888';
+  let metaHtml = '';
+  if (d.meta) {
+    metaHtml = d.meta.split('\n').map(l => `<span>${l}</span>`).join('<br>');
+  }
+  metaHtml += `<br><span style="color:#555">Connections: ${d.degree}</span>`;
+  if (d.cluster) metaHtml += `<br><span style="color:#555">Cluster: ${d.cluster}</span>`;
+
+  tooltip.html(`
+    <div class="tt-type" style="color:${color}">${d.type.replace(/-/g, ' ')}</div>
+    <div class="tt-label">${d.label}</div>
+    <div class="tt-meta">${metaHtml}</div>
+  `).style('display', 'block');
+
+  const ttEl = tooltip.node();
+  let tx = event.clientX + 15;
+  let ty = event.clientY - 10;
+  if (tx + ttEl.offsetWidth > window.innerWidth - 20) tx = event.clientX - ttEl.offsetWidth - 15;
+  if (ty + ttEl.offsetHeight > window.innerHeight - 20) ty = window.innerHeight - ttEl.offsetHeight - 20;
+  tooltip.style('left', tx + 'px').style('top', ty + 'px');
+})
+.on('mousemove', function(event) {
+  const ttEl = tooltip.node();
+  let tx = event.clientX + 15;
+  let ty = event.clientY - 10;
+  if (tx + ttEl.offsetWidth > window.innerWidth - 20) tx = event.clientX - ttEl.offsetWidth - 15;
+  if (ty + ttEl.offsetHeight > window.innerHeight - 20) ty = window.innerHeight - ttEl.offsetHeight - 20;
+  tooltip.style('left', tx + 'px').style('top', ty + 'px');
+})
+.on('mouseout', function() {
+  node.classed('dimmed', false).classed('highlighted', false);
+  link.classed('dimmed', false).classed('highlighted', false);
+  tooltip.style('display', 'none');
+});
+
+// ========== SIMULATION TICK ==========
+simulation.on('tick', () => {
+  link
+    .attr('x1', d => d.source.x)
+    .attr('y1', d => d.source.y)
+    .attr('x2', d => d.target.x)
+    .attr('y2', d => d.target.y);
+
+  node.attr('transform', d => `translate(${d.x},${d.y})`);
+
+  updateHulls();
+});
+
+// ========== DRAG ==========
+function dragstarted(event, d) {
+  if (!event.active) simulation.alphaTarget(0.1).restart();
+  d.fx = d.x; d.fy = d.y;
+}
+function dragged(event, d) {
+  d.fx = event.x; d.fy = event.y;
+}
+function dragended(event, d) {
+  if (!event.active) simulation.alphaTarget(0);
+  d.fx = null; d.fy = null;
+}
+
+// ========== SEARCH ==========
+const searchInput = document.querySelector('#search input');
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.toLowerCase();
+  if (!q) {
+    node.style('opacity', 1);
+    node.selectAll('text').style('opacity', 1);
+    link.style('opacity', null);
+    return;
+  }
+  const matches = new Set();
+  nodes.forEach(n => {
+    if (n.label.toLowerCase().includes(q) || n.id.toLowerCase().includes(q) ||
+        (n.type && n.type.toLowerCase().includes(q)) ||
+        (n.meta && n.meta.toLowerCase().includes(q)) ||
+        (n.cluster && n.cluster.toLowerCase().includes(q))) {
+      matches.add(n.id);
+    }
+  });
+  const expanded = new Set(matches);
+  links.forEach(l => {
+    const sid = typeof l.source === 'string' ? l.source : l.source.id;
+    const tid = typeof l.target === 'string' ? l.target : l.target.id;
+    if (matches.has(sid)) expanded.add(tid);
+    if (matches.has(tid)) expanded.add(sid);
+  });
+
+  node.style('opacity', n => expanded.has(n.id) ? 1 : 0.05);
+  node.selectAll('text').style('opacity', n => matches.has(n.id) ? 1 : 0);
+  link.style('opacity', l => {
+    const sid = typeof l.source === 'string' ? l.source : l.source.id;
+    const tid = typeof l.target === 'string' ? l.target : l.target.id;
+    return (matches.has(sid) || matches.has(tid)) ? 0.4 : 0.02;
+  });
+});
+
+// ========== LEGEND ==========
+const legendEl = document.getElementById('legend');
+const typeLabels = {
+  domain: 'Domain', service: 'Service', platform: 'Platform',
+  vendor: 'Vendor', 'mobile-app': 'Mobile App', 'parent-company': 'Parent Company',
+  'reddit-account': 'Reddit Account', 'ad-network': 'Ad Network',
+  'deep-link': 'Deep Link', 'ad-creative': 'Ad Creative',
+  org: 'Organization', 'ct-exposure': 'CT Log Exposure', portal: 'Portal',
+};
+let legendHtml = '<h3>Entity Types</h3>';
+for (const [type, label] of Object.entries(typeLabels)) {
+  if (!nodes.some(n => n.type === type)) continue;
+  legendHtml += `<div class="legend-item"><div class="legend-dot" style="background:${typeColors[type]}"></div><span class="legend-label">${label}</span></div>`;
+}
+legendHtml += '<h3 style="margin-top:12px">Clusters</h3>';
+const clusterNames = {
+  CL1: 'ddmprod Platform', CL2: 'Ad Pipeline', CL3: 'Vendor Stack',
+  CL4: 'www Infrastructure', CL5: 'Inspire Brands', CL6: 'Baskin-Robbins',
+  CL7: 'dunkinbrands.com Legacy', CL8: 'Vanity Domains',
+};
+for (const [id, name] of Object.entries(clusterNames)) {
+  legendHtml += `<div class="legend-item"><div class="legend-dot" style="background:${clusterStrokes[id]?.replace('55','cc').replace('44','cc').replace('22','cc') || '#666'}"></div><span class="legend-label">${id}: ${name}</span></div>`;
+}
+legendEl.innerHTML = legendHtml;
+
+// ========== STATS ==========
+document.getElementById('stats').textContent =
+  `${nodes.length} nodes \u00B7 ${links.length} edges \u00B7 ${clusterList.length} clusters \u00B7 from GRAPH.md \u00B7 probed 2026-04-13`;
+
+// ========== CONTROLS ==========
+function resetZoom() {
+  svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
+}
+function toggleLabels() {
+  showLabels = !showLabels;
+  node.selectAll('text').style('display', showLabels ? null : 'none');
+}
+function toggleClusters() {
+  showClusters = !showClusters;
+  updateHulls();
+}
+
+// Initial zoom to fit
+setTimeout(() => {
+  const bounds = g.node().getBBox();
+  const fullWidth = bounds.width + 100;
+  const fullHeight = bounds.height + 100;
+  const scale = Math.min(width / fullWidth, height / fullHeight, 1.5) * 0.85;
+  const tx = width / 2 - (bounds.x + bounds.width / 2) * scale;
+  const ty = height / 2 - (bounds.y + bounds.height / 2) * scale;
+  svg.transition().duration(1500).call(
+    zoom.transform,
+    d3.zoomIdentity.translate(tx, ty).scale(scale)
+  );
+}, 3000);
+</script>
+</body>
+</html>

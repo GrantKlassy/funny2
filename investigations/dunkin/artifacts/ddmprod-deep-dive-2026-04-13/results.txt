@@ -1,0 +1,94 @@
+# ddmprod Deep Dive + Vendor Stack — 2026-04-13
+# Container: podman run --rm --dns 8.8.8.8 investigator
+
+=== DDMPROD PREPROD RESOLUTION ===
+HIT  ulink.preprod.ddmprod.dunkindonuts.com → CNAME ulink.preprod.ddmprod.dunkindonuts.com.edgekey.net.
+HIT  mapi-dun.preprod.ddmprod.dunkindonuts.com → CNAME mapi-dun.preprod.ddmprod.dunkindonuts.com.edgekey-staging.net.
+      ^^^ NOTE: edgekey-STAGING.net — separate Akamai staging config for Mobile API preprod!
+MISS ode.preprod.ddmprod.dunkindonuts.com (decommissioned?)
+HIT  swi.preprod.ddmprod.dunkindonuts.com → CNAME swi.preprod.ddmprod.dunkindonuts.com.edgekey.net.
+HIT  dun-assets.preprod.ddmprod.dunkindonuts.com → A: 99.84.41.93 (CloudFront IP — NOT Akamai!)
+HIT  cloud-preprod.ddmprod.dunkindonuts.com → CNAME d25cpty3ekbo1l.cloudfront.net.
+      ^^^ CRITICAL: preprod "cloud" service runs on CloudFront, not Akamai. Different CDN strategy.
+MISS k.preprod.ddmprod.dunkindonuts.com
+
+=== DDMPROD SUBDOMAIN BRUTEFORCE ===
+Checked 56 combinations (28 names × 2 envs). 0 new hits.
+The known ddmprod services are the complete set: mapi-dun, ulink, ode, swi, k, dun-assets, cloud.
+
+=== CT LOGS ===
+
+>> %.ddmprod.dunkindonuts.com: TIMEOUT (rate limited)
+
+>> %.dunkinbrands.com: 931 ENTRIES — JACKPOT
+Notable subdomains from CT transparency:
+  citrix.dunkinbrands.com           — Citrix remote access
+  sslvpn.dunkinbrands.com (x2)     — SSL VPN endpoints
+  vdi.dunkinbrands.com              — Virtual Desktop Infrastructure
+  xen.dunkinbrands.com              — Xen virtualization
+  webvpn.dunkinbrands.com           — Web VPN
+  passlvpn.dunkinbrands.com         — Password VPN
+  thecenter.dunkinbrands.com        — "The Center" internal portal (+ UAT)
+  genesisproduction.dunkinbrands.com — "Genesis" platform (+ sandbox)
+  plmsupplier.dunkinbrands.com      — Product Lifecycle Management
+  smartsolve.dunkinbrands.com       — SmartSolve EQMS (quality management)
+  recognition.dunkinbrands.com      — Employee recognition
+  investor.dunkinbrands.com         — Investor relations
+  careers.dunkinbrands.com          — Careers portal
+  smartphone.dunkinbrands.com (x3)  — Mobile device mgmt
+  flq-prod-idp.dunkinbrands.com     — Identity Provider
+  rbos.dunkinbrands.com             — RBOS (Restaurant Business Operating System?)
+  poshc.dunkinbrands.com            — POSHC (POS Hosting/Config?)
+  bam.dunkinbrands.com              — BAM (Brand Access Management?)
+  fps.dunkinbrands.com              — FPS (unknown)
+  star.dunkinbrands.com             — STAR (unknown, returns 405)
+  sts.dunkinbrands.com              — Security Token Service
+  wsapi.dunkinbrands.com            — Web Service API (+ test)
+  publisher-dev.dunkinbrands.com    — Content publishing
+  quickplace.dunkinbrands.com       — IBM QuickPlace (collaboration)
+  quickr.dunkinbrands.com           — IBM Quickr (collab successor)
+  inotes.dunkinbrands.com           — IBM iNotes (webmail)
+  strategicsupply.dunkinbrands.com  — Strategic supply chain
+
+  ANOMALY: terry.ursino@dunkinbrands.com — AN EMAIL ADDRESS leaked into cert CN!
+
+  Wildcard certs: *.dunkinbrands.com, *.corporateportal.dunkinbrands.com,
+                  *.franchisee.dunkinbrands.com, *.itdns.dunkinbrands.com
+
+=== BRANCH.IO ===
+dunkin.smart.link → 34.36.249.118 (GCP)
+dunkin.app.link → 18.154.144.x (CloudFront)
+
+Smart link f6iexb4x5 returns HTTP 405 (Method Not Allowed)
+Server: istio-envoy — Branch.io runs on KUBERNETES with ISTIO service mesh
+x-envoy-decorator-operation: inboarder.links-inboarder.svc.cluster.local:80/*
+  → Internal service name "inboarder" in namespace "links-inboarder"
+
+=== OLO ===
+order.dunkindonuts.com: No response (connection timeout)
+OLO cert: Could not connect
+
+Inspire brands ordering vendors:
+  order.arbys.com — no CNAME (direct Cloudflare)
+  order.buffalowildwings.com — no CNAME (no ordering subdomain)
+  order.sonicdrivein.com → order.sonicdrivein.com.cdn.cloudflare.net.
+  order.jimmyjohns.com — no CNAME
+  order.baskinrobbins.com → www-br-us.tillster.com. (Tillster)
+
+=== WAYBACK: DDMPROD ===
+mapi-dun.prod: captured 2025-02-28 (301 redirect)
+ode.prod: no captures
+swi.prod: no captures (only found via cert SANs)
+dun-assets.prod: no captures
+cloud-preprod: captured 2023-02-23 (403 forbidden)
+
+=== ANDROID ASSET LINKS ===
+ulink.prod.ddmprod.dunkindonuts.com/.well-known/assetlinks.json — FOUND!
+
+CardFree builds the ENTIRE Android app:
+  com.cardfree.android.dunkindonuts.DEV  — Development build
+  com.cardfree.android.dunkindonuts.UAT  — UAT build
+  (production package likely com.cardfree.android.dunkindonuts)
+
+SHA256 fingerprint: CE:A1:2D:A2:01:CF:9C:D0:CF:5B:05:2D:B7:FC:D0:FB:46:5B:33:9C:6A:98:8E:EF:53:B6:4F:F0:29:C4:D8:64
+Same fingerprint for both DEV and UAT — single signing key.

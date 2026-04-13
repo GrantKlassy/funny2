@@ -1,0 +1,52 @@
+# Sister Brand Infrastructure Probe — 2026-04-13
+# Container: podman run --rm --dns 8.8.8.8 investigator
+
+=== INSPIRE BRANDS SISTER BRANDS ===
+
+=== arbys (arbys.com) ===
+  HIT  order.arbys.com → 104.18.43.71 172.64.144.185
+  NS: dee.ns.cloudflare.com.,javon.ns.cloudflare.com.
+  A:  104.18.43.71,172.64.144.185,
+  CERT: CN=arbys.com, Issuer: Let's Encrypt E7
+  SANs: 2 domains
+  AASA: not found
+
+=== buffalowildwings (buffalowildwings.com) ===
+  NS: dns2.cscdns.net.,dns1.cscdns.net.
+  A:  104.18.6.152
+  CERT: CN=www.buffalowildwings.com, Issuer: Let's Encrypt E8
+  SANs: 1 domain
+  AASA: not found
+
+=== sonicdrivein (sonicdrivein.com) ===
+  HIT  order.sonicdrivein.com → order.sonicdrivein.com.cdn.cloudflare.net. (172.64.144.93, 104.18.43.163)
+  NS: dns1.cscdns.net.,dns2.cscdns.net.
+  A:  104.18.14.52
+  CERT: CN=www.sonicdrivein.com, Issuer: Google Trust Services WE1
+  SANs: 1 domain
+  AASA: not found
+
+=== baskinrobbins (baskinrobbins.com) ===
+  HIT  order.baskinrobbins.com → www-br-us.tillster.com. → d958sif0b5nej.cloudfront.net.
+  NS: awsdns (Route 53 — SAME as dunkindonuts.com)
+  A:  52.0.33.13,35.169.92.22 — SAME IPs AS DUNKINDONUTS.COM
+  CERT: CN=www.dunkindonuts.com, O=Dunkin' Brands, Inc., Issuer: GeoTrust TLS RSA CA G1 (DigiCert)
+  SANs: 47 domains — SAME CERT AS DUNKINDONUTS.COM
+  ORDER: order.baskinrobbins.com → www-br-us.tillster.com. (Tillster, NOT OLO)
+
+  CRITICAL FINDING: baskinrobbins.com resolves to the SAME A records as dunkindonuts.com
+  and serves the SAME www cert. They are literally on the same infrastructure.
+
+=== jimmyjohns (jimmyjohns.com) ===
+  NS: may.ns.cloudflare.com.,beau.ns.cloudflare.com.
+  A:  104.18.219.87 (Cloudflare)
+  CERT: CN=www.jimmyjohns.com, Issuer: Google Trust Services WR3
+  SANs: 1 domain
+  AASA app IDs: CUH3SHJHG7.com.jimmyjohns.jimmyjohns, CUH3SHJHG7.com.jimmyjohns.jimmyjohns.beta
+
+=== SUMMARY ===
+- NO sister brand uses ddmprod-style infrastructure — unique to Dunkin'
+- baskinrobbins.com shares infra (A records, cert, Route 53) with dunkindonuts.com
+- Each brand has its own ordering vendor: Dunkin'→OLO, BR→Tillster, Sonic→Cloudflare, Arbys→Cloudflare
+- Only Jimmy Johns has AASA (different team ID: CUH3SHJHG7)
+- BWW and Sonic use CSC Corporate Domains NS (not AWS like Dunkin'/BR)
