@@ -51,7 +51,7 @@ Wait. `ulink.prod.ddmprod.dunkindonuts.com`? That's not a normal marketing URL. 
 
 So I did what any reasonable person would do. I opened a container and started running dig.
 
-> **[EXPLORE THE INTERACTIVE NETWORK GRAPH](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)** — 39 entities, 33 edges, 8 clusters. Every vendor, every subdomain, every cert SAN — connected. Drag it. Zoom it. Search it. One Reddit ad, fully deconstructed in a force-directed D3.js visualization.
+> **[EXPLORE THE INTERACTIVE NETWORK GRAPH](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)** — 56 entities, 57 connections, 12 clusters. Every vendor, every subdomain, every cert SAN — connected. Drag it. Zoom it. Search it. One Reddit ad, fully deconstructed in a force-directed D3.js visualization.
 
 ### What Is ddmprod?
 
@@ -64,13 +64,13 @@ Here's the thing about TLS certificates — they have to list every domain they 
 | `mapi-dun` | **Mobile API** — the actual app backend. This is the primary CN on the cert. `ulink` is just riding along. |
 | `ulink` | **Universal Links** — the thing I clicked. Routes you to the app or the web depending on your device. |
 | `ode` | **Order Delivery Engine** — exactly what it sounds like |
-| `swi` | Nobody knows. Wayback shows 404s since 2024. Rest in peace, swi. |
+| `swi` | Nobody knows. LIVE in prod AND all dev environments. Actively maintained. Prod returns 404 — no default route, not dead. |
 | `dun-assets` | Static asset CDN. Serves `dunkin_logo@2x.png` to the app. |
 | `cloud` | Only seen in preprod via Wayback. Mysterious. |
 
 All of these exist in both `prod` and `preprod` environments. The whole thing runs on **Akamai CDN** with **DigiCert ECC certificates** issued to **Dunkin' Brands, Inc., Canton, Massachusetts.**
 
-I mapped 22 entities from one drink ad. I know more about Dunkin's mobile backend than most of their employees.
+I mapped 56 entities from one drink ad. I know more about Dunkin's mobile backend than most of their employees.
 
 ### The Three-Way Split
 
@@ -119,7 +119,7 @@ Conversion tracking uses Reddit Click IDs (`rdt_cid` parameters) — unique iden
 
 ### Bonus Round: The www Certificate
 
-I checked the TLS cert on `www.dunkindonuts.com` for good measure. It lists **44 Subject Alternative Names.** Forty-four. Including:
+I checked the TLS cert on `www.dunkindonuts.com` for good measure. It lists **47 Subject Alternative Names.** Forty-seven. Including:
 
 - `dev2.dunkindonuts.com`, `qa.dunkindonuts.com`, `qa2.dunkindonuts.com`, `staging.dunkindonuts.com`, `staging3.dunkindonuts.com`, `uat.dunkindonuts.com` — their entire development lifecycle is in this cert
 - `ssoprd.dunkindonuts.com`, `social-ssoprd.dunkindonuts.com` — SSO infrastructure
@@ -129,7 +129,7 @@ I checked the TLS cert on `www.dunkindonuts.com` for good measure. It lists **44
 
 Nothing is exposed or exploitable. But the fact that you can learn the names of all their internal environments from a single `openssl s_client` command is... very Dunkin'.
 
-But wait. I said 44 SANs. I lied. It's actually **47.** I miscounted the first time because I was too busy being amazed. Let me resolve every single one of them.
+But wait. 47 SANs means 47 live services on one certificate. Let me resolve every single one of them.
 
 ### I Resolved All 47 SANs and Most of Them Are Live
 
@@ -217,7 +217,7 @@ I just looked at what was already there. Dunkin' made it easy.
 ---
 
 ## Investigation Files
-- **[GRAPH.md](investigations/dunkin/GRAPH.md)** — The serious version. 39 entities, 33 edges, 8 clusters. Structured for machines.
+- **[GRAPH.md](investigations/dunkin/GRAPH.md)** — The serious version. 56 entities, 12 clusters, 21 anomalies. Structured for machines.
 - **[Investigation directory](investigations/dunkin/)** — Evidence, artifacts, reproducible scripts.
 - **[GRAPH.md (index)](GRAPH.md)** — Investigation index.
 

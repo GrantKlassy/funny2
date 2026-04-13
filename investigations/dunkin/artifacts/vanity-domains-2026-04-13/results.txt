@@ -1,0 +1,420 @@
+=== VANITY DOMAIN MAPPING ===
+Date: 2026-04-13T20:59:18Z
+
+--- DNS Resolution ---
+dunkinrewards.com
+  A: 35.173.143.243,35.153.79.184  CNAME: none
+  NS: ns-1797.awsdns-32.co.uk.,ns-351.awsdns-43.com.  MX: none
+www.dunkinrewards.com
+  A: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.,23.203.213.158  CNAME: san.dunkinbrands.com.edgekey.net.
+  NS: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.  MX: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.
+dunkinemail.com
+  A: 35.173.143.243,35.153.79.184  CNAME: none
+  NS: ns-922.awsdns-51.net.,ns-1027.awsdns-00.org.  MX: 10 custmx.cscdns.net.
+www.dunkinemail.com
+  A: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.,23.203.213.158  CNAME: san.dunkinbrands.com.edgekey.net.
+  NS: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.  MX: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.
+ddperks.com
+  A: 35.173.143.243,35.153.79.184  CNAME: none
+  NS: ns-1733.awsdns-24.co.uk.,ns-1008.awsdns-62.net.  MX: none
+www.ddperks.com
+  A: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.,23.203.213.158  CNAME: san.dunkinbrands.com.edgekey.net.
+  NS: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.  MX: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.
+dunkinperks.com
+  A: 35.173.143.243,35.153.79.184  CNAME: none
+  NS: ns-485.awsdns-60.com.,ns-599.awsdns-10.net.  MX: none
+www.dunkinperks.com
+  A: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.,23.203.213.158  CNAME: san.dunkinbrands.com.edgekey.net.
+  NS: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.  MX: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.
+ddglobalfranchising.com
+  A: 35.169.92.22,52.0.33.13  CNAME: none
+  NS: ns-572.awsdns-07.net.,ns-1057.awsdns-04.org.  MX: none
+www.ddglobalfranchising.com
+  A: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.,23.203.213.158  CNAME: san.dunkinbrands.com.edgekey.net.
+  NS: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.  MX: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.
+dunkinnation.com
+  A: 35.171.76.215,44.218.38.45  CNAME: none
+  NS: ns-351.awsdns-43.com.,ns-924.awsdns-51.net.  MX: none
+www.dunkinnation.com
+  A: 35.153.79.184,35.173.143.243  CNAME: none
+  NS: none  MX: none
+dunkinrun.com
+  A: 35.173.143.243,35.153.79.184  CNAME: none
+  NS: ns-302.awsdns-37.com.,ns-702.awsdns-23.net.  MX: none
+www.dunkinrun.com
+  A: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.,23.203.213.158  CNAME: san.dunkinbrands.com.edgekey.net.
+  NS: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.  MX: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.
+dunkinfranchising.com
+  A: 104.18.38.158,172.64.149.98  CNAME: none
+  NS: ruth.ns.cloudflare.com.,howard.ns.cloudflare.com.  MX: none
+www.dunkinfranchising.com
+  A: 172.64.149.98,104.18.38.158  CNAME: none
+  NS: none  MX: none
+baskinrobbinsfranchising.com
+  A: 172.64.151.202,104.18.36.54  CNAME: none
+  NS: ruth.ns.cloudflare.com.,howard.ns.cloudflare.com.  MX: none
+www.baskinrobbinsfranchising.com
+  A: 172.64.151.202,104.18.36.54  CNAME: none
+  NS: none  MX: none
+brglobalfranchising.com
+  A: 44.218.38.45,35.171.76.215  CNAME: none
+  NS: ns-485.awsdns-60.com.,ns-851.awsdns-42.net.  MX: none
+www.brglobalfranchising.com
+  A: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.,23.203.213.158  CNAME: san.dunkinbrands.com.edgekey.net.
+  NS: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.  MX: san.dunkinbrands.com.edgekey.net.,e5079.b.akamaiedge.net.
+
+--- Redirect Chains ---
+
+>> https://dunkinrewards.com/
+HTTP/2 301 
+location: https://www.dunkinrewards.com:443/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkindonuts.com/en/dunkinrewards
+HTTP/2 200 
+>> http://dunkinrewards.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://dunkinrewards.com:443/
+HTTP/2 301 
+location: https://www.dunkinrewards.com:443/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkindonuts.com/en/dunkinrewards
+HTTP/2 200 
+
+>> https://www.dunkinrewards.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkindonuts.com/en/dunkinrewards
+HTTP/2 200 
+>> http://www.dunkinrewards.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkinrewards.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkindonuts.com/en/dunkinrewards
+HTTP/2 200 
+
+>> https://dunkinemail.com/
+HTTP/2 301 
+location: https://www.dunkinemail.com:443/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/dunkin_email.html?origref=www.dunkinemail.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dd-perks/registration?origref=www.dunkinemail.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards/registration?origref=www.dunkinemail.com/
+HTTP/2 403 
+>> http://dunkinemail.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://dunkinemail.com:443/
+HTTP/2 301 
+location: https://www.dunkinemail.com:443/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/dunkin_email.html?origref=www.dunkinemail.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dd-perks/registration?origref=www.dunkinemail.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards/registration?origref=www.dunkinemail.com/
+HTTP/2 403 
+
+>> https://www.dunkinemail.com/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/dunkin_email.html?origref=www.dunkinemail.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dd-perks/registration?origref=www.dunkinemail.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards/registration?origref=www.dunkinemail.com/
+HTTP/2 403 
+>> http://www.dunkinemail.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkinemail.com/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/dunkin_email.html?origref=www.dunkinemail.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dd-perks/registration?origref=www.dunkinemail.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards/registration?origref=www.dunkinemail.com/
+HTTP/2 403 
+
+>> https://ddperks.com/
+HTTP/2 301 
+location: https://www.ddperks.com:443/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkindonuts.com/en/dd-perks?origref=www.ddperks.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards?origref=www.ddperks.com/
+HTTP/2 200 
+>> http://ddperks.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://ddperks.com:443/
+HTTP/2 301 
+location: https://www.ddperks.com:443/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkindonuts.com/en/dd-perks?origref=www.ddperks.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards?origref=www.ddperks.com/
+HTTP/2 200 
+
+>> https://www.ddperks.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkindonuts.com/en/dd-perks?origref=www.ddperks.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards?origref=www.ddperks.com/
+HTTP/2 200 
+>> http://www.ddperks.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.ddperks.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkindonuts.com/en/dd-perks?origref=www.ddperks.com/
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards?origref=www.ddperks.com/
+HTTP/2 200 
+
+>> https://dunkinperks.com/
+HTTP/2 301 
+location: https://www.dunkinperks.com:443/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/ddperks/splashpage.html
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dd-perks
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards
+HTTP/2 200 
+>> http://dunkinperks.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://dunkinperks.com:443/
+HTTP/2 301 
+location: https://www.dunkinperks.com:443/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/ddperks/splashpage.html
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dd-perks
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards
+HTTP/2 200 
+
+>> https://www.dunkinperks.com/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/ddperks/splashpage.html
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dd-perks
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards
+HTTP/2 200 
+>> http://www.dunkinperks.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkinperks.com/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/ddperks/splashpage.html
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dd-perks
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en/dunkinrewards
+HTTP/2 200 
+
+>> https://ddglobalfranchising.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.ddglobalfranchising.com/
+HTTP/1.1 302 Moved Temporarily
+Location: https://global.dunkinfranchising.com/
+HTTP/2 302 
+location: https://global.dunkinfranchising.com/en
+HTTP/2 200 
+>> http://ddglobalfranchising.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.ddglobalfranchising.com/
+HTTP/1.1 302 Moved Temporarily
+Location: https://global.dunkinfranchising.com/
+HTTP/2 302 
+location: https://global.dunkinfranchising.com/en
+HTTP/2 200 
+
+>> https://www.ddglobalfranchising.com/
+HTTP/1.1 302 Moved Temporarily
+Location: https://global.dunkinfranchising.com/
+HTTP/2 302 
+location: https://global.dunkinfranchising.com/en
+HTTP/2 200 
+>> http://www.ddglobalfranchising.com/
+HTTP/1.1 302 Moved Temporarily
+Location: http://global.dunkinfranchising.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://global.dunkinfranchising.com/
+HTTP/2 302 
+location: https://global.dunkinfranchising.com/en
+HTTP/2 200 
+
+>> https://dunkinnation.com/
+>> http://dunkinnation.com/
+
+>> https://www.dunkinnation.com/
+>> http://www.dunkinnation.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkinnation.com:443/
+
+>> https://dunkinrun.com/
+HTTP/2 301 
+location: https://www.dunkinrun.com:443/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en.html
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en
+HTTP/2 200 
+>> http://dunkinrun.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://dunkinrun.com:443/
+HTTP/2 301 
+location: https://www.dunkinrun.com:443/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en.html
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en
+HTTP/2 200 
+
+>> https://www.dunkinrun.com/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en.html
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en
+HTTP/2 200 
+>> http://www.dunkinrun.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkinrun.com/
+HTTP/1.1 302 Moved Temporarily
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en.html
+HTTP/2 301 
+location: https://www.dunkindonuts.com/en
+HTTP/2 200 
+
+>> https://dunkinfranchising.com/
+HTTP/2 301 
+location: https://franchising.inspirebrands.com/dunkin
+HTTP/2 301 
+location: https://www.franchising.inspirebrands.com/dunkin
+HTTP/2 200 
+>> http://dunkinfranchising.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://franchising.inspirebrands.com/dunkin
+HTTP/2 301 
+location: https://www.franchising.inspirebrands.com/dunkin
+HTTP/2 200 
+
+>> https://www.dunkinfranchising.com/
+HTTP/2 301 
+location: https://franchising.inspirebrands.com/dunkin
+HTTP/2 301 
+location: https://www.franchising.inspirebrands.com/dunkin
+HTTP/2 200 
+>> http://www.dunkinfranchising.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://franchising.inspirebrands.com/dunkin
+HTTP/2 301 
+location: https://www.franchising.inspirebrands.com/dunkin
+HTTP/2 200 
+
+>> https://baskinrobbinsfranchising.com/
+HTTP/2 301 
+location: https://franchising.inspirebrands.com/baskin-robbins
+HTTP/2 301 
+location: https://www.franchising.inspirebrands.com/baskin-robbins
+HTTP/2 200 
+>> http://baskinrobbinsfranchising.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://franchising.inspirebrands.com/baskin-robbins
+HTTP/2 301 
+location: https://www.franchising.inspirebrands.com/baskin-robbins
+HTTP/2 200 
+
+>> https://www.baskinrobbinsfranchising.com/
+HTTP/2 301 
+location: https://franchising.inspirebrands.com/baskin-robbins
+HTTP/2 301 
+location: https://www.franchising.inspirebrands.com/baskin-robbins
+HTTP/2 200 
+>> http://www.baskinrobbinsfranchising.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://franchising.inspirebrands.com/baskin-robbins
+HTTP/2 301 
+location: https://www.franchising.inspirebrands.com/baskin-robbins
+HTTP/2 200 
+
+>> https://brglobalfranchising.com/
+>> http://brglobalfranchising.com/
+
+>> https://www.brglobalfranchising.com/
+HTTP/1.1 302 Moved Temporarily
+Location: https://global.dunkinfranchising.com/
+HTTP/2 302 
+location: https://global.dunkinfranchising.com/en
+HTTP/2 200 
+>> http://www.brglobalfranchising.com/
+HTTP/1.1 302 Moved Temporarily
+Location: http://global.dunkinfranchising.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://global.dunkinfranchising.com/
+HTTP/2 302 
+location: https://global.dunkinfranchising.com/en
+HTTP/2 200 
+
+--- TLS Certificates ---
+
+>> dunkinrewards.com
+subject=CN=dunkinrewards.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M04
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrewards.com
+
+>> dunkinemail.com
+subject=CN=dunkinrun.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrun.com, DNS:clubdunkin.com, DNS:dunkinemail.com, DNS:*.dunkinbrands.com, DNS:*.dunkindonuts.co.uk, DNS:ddperks.com, DNS:dunkinperks.com
+
+>> ddperks.com
+subject=CN=dunkinrun.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrun.com, DNS:clubdunkin.com, DNS:dunkinemail.com, DNS:*.dunkinbrands.com, DNS:*.dunkindonuts.co.uk, DNS:ddperks.com, DNS:dunkinperks.com
+
+>> dunkinperks.com
+subject=CN=dunkinrun.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrun.com, DNS:clubdunkin.com, DNS:dunkinemail.com, DNS:*.dunkinbrands.com, DNS:*.dunkindonuts.co.uk, DNS:ddperks.com, DNS:dunkinperks.com
+
+>> ddglobalfranchising.com
+subject=CN=dunkindonuts.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M02
+X509v3 Subject Alternative Name: 
+    DNS:dunkindonuts.com, DNS:dunkinrun.com, DNS:dunkinemail.com, DNS:dunkinfranchising.com, DNS:ddglobalfranchising.com, DNS:ddperks.com, DNS:baskinrobbinsfranchising.com, DNS:baskinrobbins.com, DNS:dunkinperks.com
+
+>> dunkinnation.com
+subject=CN=brglobalfranchising.com
+issuer=C=US, O=Amazon, OU=Server CA 1B, CN=Amazon
+X509v3 Subject Alternative Name: 
+    DNS:brglobalfranchising.com, DNS:*.dnkn.com, DNS:catering.dunkindonuts.com, DNS:*.lsmnow.com, DNS:lsmnow.com, DNS:dunkinnation.com, DNS:dnkn.com, DNS:staging.dunkinfranchising.com
+
+>> dunkinrun.com
+subject=CN=dunkinrun.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrun.com, DNS:clubdunkin.com, DNS:dunkinemail.com, DNS:*.dunkinbrands.com, DNS:*.dunkindonuts.co.uk, DNS:ddperks.com, DNS:dunkinperks.com
+
+>> dunkinfranchising.com
+subject=CN=dunkinfranchising.com
+issuer=C=US, O=Google Trust Services, CN=WE1
+X509v3 Subject Alternative Name: 
+    DNS:dunkinfranchising.com, DNS:*.dunkinfranchising.com
+
+>> baskinrobbinsfranchising.com
+subject=CN=baskinrobbinsfranchising.com
+issuer=C=US, O=Google Trust Services, CN=WE1
+X509v3 Subject Alternative Name: 
+    DNS:baskinrobbinsfranchising.com, DNS:*.baskinrobbinsfranchising.com
+
+>> brglobalfranchising.com
+subject=CN=brglobalfranchising.com
+issuer=C=US, O=Amazon, OU=Server CA 1B, CN=Amazon
+X509v3 Subject Alternative Name: 
+    DNS:brglobalfranchising.com, DNS:*.dnkn.com, DNS:catering.dunkindonuts.com, DNS:*.lsmnow.com, DNS:lsmnow.com, DNS:dunkinnation.com, DNS:dnkn.com, DNS:staging.dunkinfranchising.com
+
+--- Content Check (non-redirect responses) ---
+
+=== DONE ===

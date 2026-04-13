@@ -1,0 +1,197 @@
+=== LEGACY / UNKNOWN SERVICE PROBING ===
+Date: 2026-04-13T20:57:36Z
+
+--- DNS Resolution ---
+LIVE  star.dunkinbrands.com → CNAME star.dunkinbrands.com.edgekey.net. → A: star.dunkinbrands.com.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+LIVE  fps.dunkinbrands.com → CNAME caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com. → A: caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com.
+LIVE  rbos.dunkinbrands.com → CNAME caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com. → A: caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com.
+DEAD  genesisproduction.dunkinbrands.com
+DEAD  genesissandbox.dunkinbrands.com
+LIVE  franchiseecentral.dunkinbrands.com → CNAME franchiseecentral.dunkinbrands.com.cdn.cloudflare.net. → A: franchiseecentral.dunkinbrands.com.cdn.cloudflare.net.,104.18.43.211,172.64.144.45
+LIVE  thecenter.dunkinbrands.com → CNAME d1zthqe9odn0bu.cloudfront.net. → A: d1zthqe9odn0bu.cloudfront.net.,99.84.41.41,99.84.41.53
+DEAD  thecenteruat.dunkinbrands.com
+LIVE  citrix.dunkinbrands.com → A: 164.109.80.73
+LIVE  sslvpn.dunkinbrands.com → A: 12.170.52.152
+DEAD  vdi.dunkinbrands.com
+LIVE  smartsolve.dunkinbrands.com → A: 74.199.217.32
+LIVE  plmsupplier.dunkinbrands.com → CNAME d2a5ic6e5dkdrc.cloudfront.net. → A: d2a5ic6e5dkdrc.cloudfront.net.,18.154.144.81,18.154.144.122
+LIVE  recognition.dunkinbrands.com → CNAME dunkin-brands.werecognize.com. → A: dunkin-brands.werecognize.com.,70.33.230.77
+DEAD  poshc.dunkinbrands.com
+LIVE  bam.dunkinbrands.com → A: 3.221.205.138,54.159.12.89
+LIVE  sts.dunkinbrands.com → CNAME stsprod.itdns.dunkinbrands.com. → A: stsprod.itdns.dunkinbrands.com.,12.170.52.233
+LIVE  wsapi.dunkinbrands.com → A: 54.172.180.235
+LIVE  flq-prod-idp.dunkinbrands.com → A: 74.199.217.23
+LIVE  afm.dunkinbrands.com → A: 164.109.97.13
+DEAD  afm.dunkindonuts.com
+
+--- HTTP Method Sweep (live targets) ---
+
+>> star.dunkinbrands.com
+  GET / → 200
+  POST / → 411
+  HEAD / → 405
+  OPTIONS / → 501
+  PUT / → 501
+
+>> fps.dunkinbrands.com
+  GET / → 000FAIL
+  POST / → 000FAIL
+  HEAD / → 000FAIL
+  OPTIONS / → 000FAIL
+  PUT / → 000FAIL
+
+>> rbos.dunkinbrands.com
+  GET / → 000FAIL
+  POST / → 000FAIL
+  HEAD / → 000FAIL
+  OPTIONS / → 000FAIL
+  PUT / → 000FAIL
+
+>> franchiseecentral.dunkinbrands.com
+  GET / → 200
+  POST / → 411
+  HEAD / → 200
+  OPTIONS / → 200
+  PUT / → 411
+
+>> thecenter.dunkinbrands.com
+  GET / → 200
+  POST / → 200
+  HEAD / → 200FAIL
+  OPTIONS / → 403
+  PUT / → 200
+
+>> citrix.dunkinbrands.com
+  GET / → 000FAIL
+  POST / → 000FAIL
+  HEAD / → 000FAIL
+  OPTIONS / → 000FAIL
+  PUT / → 000FAIL
+
+>> sslvpn.dunkinbrands.com
+  GET / → 000FAIL
+  POST / → 000FAIL
+  HEAD / → 000FAIL
+  OPTIONS / → 000FAIL
+  PUT / → 000FAIL
+
+>> smartsolve.dunkinbrands.com
+  GET / → 000FAIL
+  POST / → 000FAIL
+  HEAD / → 000FAIL
+  OPTIONS / → 200
+  PUT / → 200
+
+>> plmsupplier.dunkinbrands.com
+  GET / → 403
+  POST / → 403
+  HEAD / → 403FAIL
+  OPTIONS / → 403
+  PUT / → 403
+
+>> recognition.dunkinbrands.com
+  GET / → 302
+  POST / → 302
+  HEAD / → 405FAIL
+  OPTIONS / → 302
+  PUT / → 302
+
+>> bam.dunkinbrands.com
+  GET / → 302
+  POST / → 411
+  HEAD / → 302FAIL
+  OPTIONS / → 200
+  PUT / → 411
+
+>> sts.dunkinbrands.com
+  GET / → 000FAIL
+  POST / → 000FAIL
+  HEAD / → 000FAIL
+  OPTIONS / → 000FAIL
+  PUT / → 000FAIL
+
+>> wsapi.dunkinbrands.com
+  GET / → 000FAIL
+  POST / → 000FAIL
+  HEAD / → 000FAIL
+  OPTIONS / → 000FAIL
+  PUT / → 000FAIL
+
+>> flq-prod-idp.dunkinbrands.com
+  GET / → 302
+  POST / → 302
+  HEAD / → 404
+  OPTIONS / → 404
+  PUT / → 404
+
+>> afm.dunkinbrands.com
+  GET / → 000FAIL
+  POST / → 000FAIL
+  HEAD / → 000FAIL
+  OPTIONS / → 000FAIL
+  PUT / → 000FAIL
+
+--- DEEP PROBE: star.dunkinbrands.com ---
+  GET / → 200
+  POST / → 411
+  GET /api → 404
+  POST /api → 411
+  GET /api/v1 → 404
+  POST /api/v1 → 411
+  GET /api/v2 → 404
+  POST /api/v2 → 411
+  GET /health → 404
+  POST /health → 411
+  GET /healthcheck → 404
+  POST /healthcheck → 411
+  GET /status → 404
+  POST /status → 411
+  GET /v1 → 404
+  POST /v1 → 411
+  GET /v2 → 404
+  POST /v2 → 411
+  GET /swagger-ui → 404
+  POST /swagger-ui → 411
+  GET /swagger-ui.html → 404
+  POST /swagger-ui.html → 411
+  GET /api-docs → 404
+  POST /api-docs → 411
+  GET /star → 404
+  POST /star → 411
+  GET /Star → 404
+  POST /Star → 411
+  GET /STAR → 404
+  POST /STAR → 411
+
+>> star.dunkinbrands.com full headers (GET /):
+HTTP/2 405 
+content-length: 0
+allow: GET
+strict-transport-security: max-age=2592000
+expires: Mon, 13 Apr 2026 21:00:43 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Mon, 13 Apr 2026 21:00:43 GMT
+server-timing: ak_p; desc="1776114043908_389950892_1501333539_8349_949_3_6_15";dur=1
+
+>> star.dunkinbrands.com full headers (POST /):
+HTTP/2 411 
+mime-version: 1.0
+content-type: text/html
+content-length: 326
+expires: Mon, 13 Apr 2026 21:00:44 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Mon, 13 Apr 2026 21:00:44 GMT
+server-timing: cdn-cache; desc=HIT
+server-timing: edge; dur=1
+server-timing: ak_p; desc="1776114044018_389950892_1501333666_15_1312_4_6_15";dur=1
+
+>> star.dunkinbrands.com POST with JSON content-type:
+
+
+--- DEEP PROBE: fps.dunkinbrands.com (CAAS) ---
+>> DNS:
+caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com.
+caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com.
+>> Reverse DNS for caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com.:

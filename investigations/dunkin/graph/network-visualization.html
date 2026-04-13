@@ -81,7 +81,7 @@ svg .cluster-hull { stroke-width: 1.5; stroke-dasharray: 4 2; }
 <body>
 <div id="title">
   <h1>DUNKIN' AD INFRASTRUCTURE</h1>
-  <h2>39 entities &middot; 33 connections &middot; 8 clusters &middot; scroll to zoom &middot; drag to pan &middot; hover to explore</h2>
+  <h2>56 entities &middot; 57 connections &middot; 12 clusters &middot; scroll to zoom &middot; drag to pan &middot; hover to explore</h2>
 </div>
 <div id="search"><input type="text" placeholder="Search nodes... (type to filter)"></div>
 <div id="legend"></div>
@@ -111,17 +111,22 @@ const typeColors = {
   org:            '#fcc419',
   'ct-exposure':  '#ff6b6b',
   portal:         '#845ef7',
+  sso:            '#38d9a9',
 };
 
 const clusterColors = {
   'CL1': '#4dabf733', 'CL2': '#e6498033', 'CL3': '#cc5de833',
   'CL4': '#4dabf722', 'CL5': '#ffd93d33', 'CL6': '#51cf6633',
   'CL7': '#ff6b6b33', 'CL8': '#ff663322',
+  'CL9': '#38d9a933', 'CL10': '#20c99733', 'CL11': '#fab00533',
+  'CL12': '#be4bdb33',
 };
 const clusterStrokes = {
   'CL1': '#4dabf755', 'CL2': '#e6498055', 'CL3': '#cc5de855',
   'CL4': '#4dabf744', 'CL5': '#ffd93d55', 'CL6': '#51cf6655',
   'CL7': '#ff6b6b55', 'CL8': '#ff663344',
+  'CL9': '#38d9a955', 'CL10': '#20c99755', 'CL11': '#fab00555',
+  'CL12': '#be4bdb55',
 };
 
 // ========== GRAPH DATA ==========
@@ -133,7 +138,7 @@ const graphData = {
     { id: 'E3', type: 'service', label: 'k.prod.ddmprod', cluster: 'CL1', meta: 'App kickout service\nDoes not resolve externally\nBehind Akamai edge only\nSeen in dunkin3.jpg browser bar' },
     { id: 'E17', type: 'service', label: 'mapi-dun.prod.ddmprod', cluster: 'CL1', meta: 'Mobile API \u2014 PRIMARY CN on cert\nBackbone of the Dunkin\' app\nPreprod: edgekey-staging.net\n(separate Akamai staging config!)' },
     { id: 'E18', type: 'service', label: 'ode.prod.ddmprod', cluster: 'CL1', meta: 'Order Delivery Engine\nProd only \u2014 preprod does NOT resolve\nPossibly decommissioned in preprod' },
-    { id: 'E19', type: 'service', label: 'swi.prod.ddmprod', cluster: 'CL1', meta: 'Unknown service "SWI"\nWayback: 404 since 2024\nPreprod still resolves\nWhat was this?' },
+    { id: 'E19', type: 'service', label: 'swi.prod.ddmprod', cluster: 'CL1', meta: 'Unknown service "SWI"\nLIVE in prod + all ddmdev envs\nNot deprecated \u2014 actively maintained\nProd 404 = no default route, not dead' },
     { id: 'E20', type: 'service', label: 'dun-assets.prod.ddmprod', cluster: 'CL1', meta: 'Static asset CDN\nServes dunkin_logo@2x.png\nPreprod on CloudFront (not Akamai!)' },
     { id: 'E23', type: 'service', label: 'cloud-preprod.ddmprod', cluster: 'CL1', meta: 'Cloud infrastructure (preprod)\nCNAME \u2192 d25cpty3ekbo1l.cloudfront.net\nNOT Akamai \u2014 different CDN strategy\nWayback: 403 in 2023' },
 
@@ -158,9 +163,9 @@ const graphData = {
 
     // ===== CL4: www Infrastructure =====
     { id: 'E1', type: 'domain', label: 'dunkindonuts.com', cluster: 'CL4', meta: 'Root domain, registered 1995-07-13\nAWS Route 53 NS\nA: 35.169.92.22, 52.0.33.13\nShares infra with baskinrobbins.com' },
-    { id: 'E30', type: 'service', label: 'ssoprd.dunkindonuts.com', cluster: 'CL4', meta: 'SSO production \u2014 LIVE (HTTP 200)\n149 bytes, behind Akamai\nX-Frame-Options: DENY\nLast-modified: 2025-07-31' },
+    { id: 'E30', type: 'service', label: 'ssoprd.dunkindonuts.com', cluster: 'CL9', meta: 'Legacy DD Perks sweepstakes login\n149B "Application is running" + mPulse\n/login: email/password form\nNOT modern SSO \u2014 naming is misleading' },
     { id: 'E31', type: 'service', label: 'menu-pricing-prd', cluster: 'CL4', meta: 'Menu pricing REST API\nReturns JSON 404\nSpring Boot security headers\nHSTS, X-Content-Type-Options, X-Frame-Options' },
-    { id: 'E33', type: 'service', label: 'star.dunkinbrands.com', cluster: 'CL4', meta: 'Unknown API "STAR"\nHTTP 405 (Method Not Allowed)\nBehind Akamai\nWhat is this?' },
+    { id: 'E33', type: 'service', label: 'star.dunkinbrands.com', cluster: 'CL11', meta: 'Unknown service "STAR"\nGET \u2192 200, HEAD \u2192 405, Allow: GET\nBehind Akamai e5079\nHas staging variant star-stg' },
 
     // ===== CL5: Inspire Brands Corporate =====
     { id: 'E8', type: 'parent-company', label: 'Inspire Brands', cluster: 'CL5', meta: 'Acquired Dunkin\' Brands 2020\nParent of: Dunkin\', Baskin-Robbins,\nArby\'s, BWW, Sonic, Jimmy John\'s\nEach brand: completely different infra' },
@@ -175,7 +180,7 @@ const graphData = {
     { id: 'E26', type: 'service', label: 'www.dunkinbrands.com', cluster: 'CL7', meta: 'Investor relations\nCNAME \u2192 dunkinbrands.com.iprsoftware.com\nHosted on GCP (35.190.35.217)' },
     { id: 'E29', type: 'service', label: 'franchiseecentral', cluster: 'CL7', meta: 'Franchisee portal\nCloudflare \u2192 ASP.NET + AWSALB\nLast-modified: 2016-07-12\nTEN YEARS OLD and still serving' },
     { id: 'E38', type: 'ct-exposure', label: 'CT Log Exposure (931)', cluster: 'CL7', meta: '931 cert entries from crt.sh\nExposes: Citrix, VPN (SSL/web/password),\nVDI, Xen, IBM collab, Genesis,\nSmartSolve, PLM, RBOS, POSHC, STS\nEmail leak: terry.ursino@dunkinbrands.com' },
-    { id: 'E37', type: 'service', label: 'fps.dunkinbrands.com', cluster: 'CL7', meta: 'Unknown "FPS" service\nAWS ELB: caas-prod-dunkinbrands-com\nCAAS = Content As A Service?\nConnection refused' },
+    { id: 'E37', type: 'service', label: 'fps.dunkinbrands.com', cluster: 'CL11', meta: 'DEAD \u2014 CAAS platform decommissioned\nShares ELB with rbos.dunkinbrands.com\ncaas-prod-dunkinbrands-com-261297133\nAll ports closed' },
     { id: 'E32', type: 'service', label: 'qrmenu.dunkinbrands.com', cluster: 'CL7', meta: 'QR menu service\nKestrel server (ASP.NET Core)\nHTTP 404\nAWS hosted' },
 
     // ===== CL8: Vanity Domains =====
@@ -186,6 +191,33 @@ const graphData = {
     // ===== Mobile Apps =====
     { id: 'E16', type: 'mobile-app', label: 'Dunkin\' iOS App', cluster: 'CL1', meta: 'Bundle: com.dunkinbrands.otgo\nOTGO = Order To Go\nTeam ID: 7UARB5Z69S\nApp Store ID: 1056813463\nApp Clips: com.dunkinbrands.otgo.Clip' },
     { id: 'E34', type: 'mobile-app', label: 'Dunkin\' Android App', cluster: 'CL1', meta: 'Package: com.cardfree.android.dunkindonuts\nBuilt by CardFree\nEnvironments: DEV, UAT, prod\nSingle signing key across all envs' },
+
+    // ===== CL9: Identity & Auth =====
+    { id: 'E43', type: 'sso', label: 'Spring Authorization Server', cluster: 'CL9', meta: 'Modern OAuth2/OIDC SSO\nOIDC discovery exposed on social-sso\nSupports: auth code, client creds, device auth,\ntoken exchange, PKCE, DPoP, mTLS, PAR' },
+    { id: 'E42', type: 'service', label: 'auth0-stg.dunkindonuts.com', cluster: 'CL9', meta: 'Auth0 staging instance\nCNAME \u2192 AWS API Gateway\nSomeone proposed Auth0 at a meeting\nThe DNS record lives on' },
+    { id: 'E53', type: 'service', label: 'flq-prod-idp.dunkinbrands.com', cluster: 'CL9', meta: 'Identity Provider\nA: 74.199.217.23\nGET \u2192 302 (redirect to login)\nSame /24 subnet as smartsolve' },
+    { id: 'E54', type: 'service', label: 'login.dunkindonuts.com', cluster: 'CL9', meta: 'Login portal\nA: 104.18.32.124 (Cloudflare)\nModern auth entry point' },
+    { id: 'E55', type: 'service', label: 'api-idp.dunkindonuts.com', cluster: 'CL9', meta: 'Identity Provider API\nA: 104.18.32.226 (Cloudflare)\nBackend for login portal' },
+
+    // ===== CL10: ddmdev Platform =====
+    { id: 'E40', type: 'platform', label: 'ddmdev', cluster: 'CL10', meta: 'Dunkin\' Donuts Mobile Development\nSibling of ddmprod\nSub-envs: dev, dlt-dev, dlt-qa, qa\nMirrors prod services: ulink, mapi-dun, ode, swi' },
+    { id: 'E41', type: 'service', label: 'swagger.ddmdev', cluster: 'CL10', meta: 'Swagger API documentation\nBare AWS IP: 34.237.71.65\nNO CDN protection \u2014 exposed directly\nHighest-value unprobed target' },
+
+    // ===== CL11: Legacy Managed Services =====
+    { id: 'E50', type: 'service', label: 'thecenter.dunkinbrands.com', cluster: 'CL11', meta: 'Internal portal\nCloudFront: d1zthqe9odn0bu\nAccepts GET/POST/PUT (permissive)\nUnknown purpose' },
+    { id: 'E51', type: 'service', label: 'recognition.dunkinbrands.com', cluster: 'CL11', meta: 'Employee recognition\nCNAME \u2192 dunkin-brands.werecognize.com\n302 redirect on access\nThird-party: WeRecognize' },
+    { id: 'E52', type: 'service', label: 'rbos.dunkinbrands.com', cluster: 'CL11', meta: 'DEAD \u2014 Restaurant Business Operating System\nSame CAAS ELB as fps\nDecommissioned together\nCAAS platform fully offline' },
+
+    // ===== CL12: SaaS Vendor Services =====
+    { id: 'E44', type: 'vendor', label: 'ServiceNow', cluster: 'CL12', meta: 'Customer chat platform\nchat.dunkindonuts.com \u2192 inspirecustomer.service-now.com\nDev + test instances exist\nInspire Brands level, not Dunkin\' specific' },
+    { id: 'E45', type: 'vendor', label: 'Paradox AI', cluster: 'CL12', meta: 'AI-powered recruiting\ncareers.dunkindonuts.com \u2192 paradox.ai\nChatbot-first hiring platform' },
+    { id: 'E46', type: 'vendor', label: 'Adobe Analytics', cluster: 'CL12', meta: 'Web analytics (Omniture)\nsmetrics.dunkindonuts.com\n\u2192 dunkindonuts.com.102.122.2o7.net\nLegacy Adobe tracking domain' },
+    { id: 'E47', type: 'vendor', label: 'Salesforce Marketing Cloud', cluster: 'CL12', meta: 'Email marketing (SFMC)\nemailinfo.dunkindonuts.com subdomains:\nclick, cloud, image, view\n\u2192 sfmc-content.com' },
+
+    // ===== Standalone entities =====
+    { id: 'E48', type: 'service', label: 'POS API cluster', cluster: 'CL4', meta: 'Point of Sale APIs on AWS API Gateway\npos-api, pos-ws, opc-api, dbapi-ws\nAll CNAME \u2192 execute-api.us-east-1\nDirect API Gateway, no CDN' },
+    { id: 'E49', type: 'service', label: 'international.dunkindonuts.com', cluster: 'CL4', meta: 'International Dunkin\' site\nA: 20.74.242.116 \u2014 Microsoft Azure\nCompletely different cloud\nfrom all other Dunkin\' infrastructure' },
+    { id: 'E56', type: 'vendor', label: 'IBM Cloud (ICMAS)', cluster: 'CL4', meta: 'Hosts UAT environment\n216.255.76.18 \u2014 Verizon/DIGEX/IBM\nCompletely unresponsive\nPre-AWS migration fossil' },
   ],
 
   edges: [
@@ -244,6 +276,33 @@ const graphData = {
     { source: 'vanity:ddperks', target: 'E1', type: 'REDIRECTS_TO', label: 'ALB redirect' },
     { source: 'vanity:dunkinrewards', target: 'E1', type: 'REDIRECTS_TO', label: 'ALB redirect' },
     { source: 'vanity:dunkinemail', target: 'E1', type: 'REDIRECTS_TO', label: 'ALB redirect' },
+
+    // Wave 2: ddmdev platform
+    { source: 'E40', target: 'E4', type: 'SIBLING_OF', label: 'dev \u2194 prod platforms' },
+    { source: 'E41', target: 'E40', type: 'PART_OF', label: 'API docs' },
+    { source: 'E41', target: 'E15', type: 'HOSTED_ON', label: 'bare AWS (no CDN!)' },
+    { source: 'E40', target: 'E12', type: 'HOSTED_ON', label: 'Akamai edgekey' },
+
+    // Wave 2: Identity & Auth
+    { source: 'E43', target: 'E30', type: 'REPLACES', label: 'modern SSO vs legacy' },
+    { source: 'E43', target: 'E1', type: 'AUTH_FOR', label: 'social-sso OIDC' },
+    { source: 'E42', target: 'E15', type: 'HOSTED_ON', label: 'API Gateway' },
+    { source: 'E54', target: 'E39', type: 'HOSTED_ON', label: 'Cloudflare' },
+    { source: 'E55', target: 'E39', type: 'HOSTED_ON', label: 'Cloudflare' },
+
+    // Wave 2: Legacy managed services
+    { source: 'E52', target: 'E37', type: 'SHARES_ELB', label: 'caas-prod (both dead)' },
+    { source: 'E50', target: 'E15', type: 'HOSTED_ON', label: 'CloudFront' },
+
+    // Wave 2: SaaS vendors
+    { source: 'E44', target: 'E1', type: 'SERVES', label: 'customer chat' },
+    { source: 'E45', target: 'E1', type: 'SERVES', label: 'recruiting' },
+    { source: 'E46', target: 'E1', type: 'TRACKS', label: 'web analytics' },
+    { source: 'E47', target: 'E1', type: 'EMAILS_FOR', label: 'marketing email' },
+
+    // Wave 2: Other connections
+    { source: 'E48', target: 'E15', type: 'HOSTED_ON', label: 'API Gateway' },
+    { source: 'E56', target: 'E1', type: 'HOSTS_UAT', label: 'dead UAT (216.255.76.18)' },
   ]
 };
 

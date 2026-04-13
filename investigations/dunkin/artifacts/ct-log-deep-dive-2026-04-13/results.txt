@@ -1,0 +1,379 @@
+=== CT LOG DEEP DIVE ===
+Date: 2026-04-13T20:52:48Z
+
+--- crt.sh: %.dunkinbrands.com ---
+  crt.sh query FAILED or timed out
+
+--- crt.sh: %.dunkindonuts.com ---
+Total cert entries: 1091
+Unique subdomains: 136
+
+>> All unique dunkindonuts.com subdomains:
+akam-mapi-dun.dev.ddmdev.dunkindonuts.com
+akam-mapi-dun.dlt-dev.ddmdev.dunkindonuts.com
+akam-mapi-dun.dlt-qa.ddmdev.dunkindonuts.com
+akam-mapi-dun.qa.ddmdev.dunkindonuts.com
+amp.news.dunkindonuts.com
+api-idp.dunkindonuts.com
+auth0-stg.dunkindonuts.com
+awsdev.dunkindonuts.com
+awsprd.dunkindonuts.com
+awspt.dunkindonuts.com
+awssnd.dunkindonuts.com
+awsstg.dunkindonuts.com
+careers.dunkindonuts.com
+catering.dunkindonuts.com
+cfdev.dunkindonuts.com
+chat.dunkindonuts.com
+chatdev.dunkindonuts.com
+chattest.dunkindonuts.com
+click.emailinfo.dunkindonuts.com
+cloud-preprod.ddmprod.dunkindonuts.com
+cloud.emailinfo.dunkindonuts.com
+ctsdev.dunkindonuts.com
+dbapi-ws.dunkindonuts.com
+dbapi.dunkindonuts.com
+ddapi.dunkindonuts.com
+ddapi.staging.dunkindonuts.com
+dddev.dunkindonuts.com
+ddmdev.dunkindonuts.com
+ddmprod.dunkindonuts.com
+ddwlapi.staging.dunkindonuts.com
+dev.cfdev.dunkindonuts.com
+dev.ctsdev.dunkindonuts.com
+dev.dbiddmobileprod.dunkindonuts.com
+dev.dddev.dunkindonuts.com
+dev.ddmdev.dunkindonuts.com
+dev.ddmprod.dunkindonuts.com
+dev2.dunkindonuts.com
+dlt-dev.ddmdev.dunkindonuts.com
+dlt-qa.ddmdev.dunkindonuts.com
+dunkindonuts.com
+ecs.dunkindonuts.com
+ecselb.sandbox.dunkindonuts.com
+emails.dunkindonuts.com
+giftcards.dunkindonuts.com
+image.emailinfo.dunkindonuts.com
+international.dunkindonuts.com
+locations.dunkindonuts.com
+login.dunkindonuts.com
+loyalty-api.sandbox.dunkindonuts.com
+loyalty-mock-api.sandbox.dunkindonuts.com
+loyalty.dunkindonuts.com
+mapi-dun.preprod.ddmprod.dunkindonuts.com
+mapi-dun.prod.ddmprod.dunkindonuts.com
+mapi-dun.stage.ddmprod.dunkindonuts.com
+menu-pricing-prd.dunkindonuts.com
+menu-pricing-prd1.dunkindonuts.com
+menu-pricing-stg.dunkindonuts.com
+menu-pricing-stg1.dunkindonuts.com
+mi.dunkindonuts.com
+news.dunkindonuts.com
+oats-api.sandbox.dunkindonuts.com
+oats-ws.sandbox.dunkindonuts.com
+ode.dev.ddmdev.dunkindonuts.com
+ode.dlt-dev.ddmdev.dunkindonuts.com
+ode.dlt-qa.ddmdev.dunkindonuts.com
+ode.preprod.ddmprod.dunkindonuts.com
+ode.prod.ddmprod.dunkindonuts.com
+ode.qa.ddmdev.dunkindonuts.com
+ode.stage.ddmprod.dunkindonuts.com
+opc-api.dunkindonuts.com
+pos-api.dunkindonuts.com
+pos-ws.dunkindonuts.com
+preprod.ddmprod.dunkindonuts.com
+prod.ddmprod.dunkindonuts.com
+pt.ddmdev.dunkindonuts.com
+qa.cfdev.dunkindonuts.com
+qa.ddmdev.dunkindonuts.com
+qa.dunkindonuts.com
+qa2.dunkindonuts.com
+rewards-api.sandbox.dunkindonuts.com
+search.dunkindonuts.com
+secureshop.dunkindonuts.com
+semi.giftcards.dunkindonuts.com
+shop.dunkindonuts.com
+smetrics.dunkindonuts.com
+social-ssoprd.dunkindonuts.com
+social-ssopreprod.dunkindonuts.com
+social-ssostg.dunkindonuts.com
+splunkelb.sandbox.dunkindonuts.com
+ssoprd.dunkindonuts.com
+ssostg.dunkindonuts.com
+stage.ddmprod.dunkindonuts.com
+staging.dunkindonuts.com
+staging.shop.dunkindonuts.com
+staging3.dunkindonuts.com
+swagger.ddmdev.dunkindonuts.com
+swagger.sandbox.dunkindonuts.com
+swi.dev.ddmdev.dunkindonuts.com
+swi.dlt-dev.ddmdev.dunkindonuts.com
+swi.dlt-qa.ddmdev.dunkindonuts.com
+swi.preprod.ddmprod.dunkindonuts.com
+swi.prod.ddmprod.dunkindonuts.com
+swi.qa.ddmdev.dunkindonuts.com
+swi.stage.ddmprod.dunkindonuts.com
+testcatering.dunkindonuts.com
+uat.dunkindonuts.com
+ulink.dev.ddmdev.dunkindonuts.com
+ulink.dlt-dev.ddmdev.dunkindonuts.com
+ulink.dlt-qa.ddmdev.dunkindonuts.com
+ulink.preprod.ddmprod.dunkindonuts.com
+ulink.prod.ddmprod.dunkindonuts.com
+ulink.qa.ddmdev.dunkindonuts.com
+ulink.stage.ddmprod.dunkindonuts.com
+us-east-1.dev.cfdev.dunkindonuts.com
+us-east-1.dev.ctsdev.dunkindonuts.com
+us-east-1.dev.dddev.dunkindonuts.com
+us-east-1.qa.cfdev.dunkindonuts.com
+us-east-1.util.cfdev.dunkindonuts.com
+us-east-1.util.ctsdev.dunkindonuts.com
+util.cfdev.dunkindonuts.com
+util.ctsdev.dunkindonuts.com
+util.dbiddmobileprod.dunkindonuts.com
+util.dddev.dunkindonuts.com
+util.ddmdev.dunkindonuts.com
+util.ddmprod.dunkindonuts.com
+view.emailinfo.dunkindonuts.com
+www.careers.dunkindonuts.com
+www.catering.dunkindonuts.com
+www.ddapi.dunkindonuts.com
+www.ddapi.staging.dunkindonuts.com
+www.ddwlapi.staging.dunkindonuts.com
+www.dunkindonuts.com
+www.news.dunkindonuts.com
+www.shop.dunkindonuts.com
+www.smetrics.dunkindonuts.com
+www.testcatering.dunkindonuts.com
+
+>> Unique Common Names (CN):
+*.api-idp.dunkindonuts.com
+*.api.giftcards.com
+*.awsdev.dunkindonuts.com
+*.awspt.dunkindonuts.com
+*.awssnd.dunkindonuts.com
+*.cashstar.com
+*.cfdev.dunkindonuts.com
+*.ctsdev.dunkindonuts.com
+*.dddev.dunkindonuts.com
+*.ddmdev.dunkindonuts.com
+*.ddmprod.dunkindonuts.com
+*.dev.cfdev.dunkindonuts.com
+*.dev.ctsdev.dunkindonuts.com
+*.dev.dbiddmobileprod.dunkindonuts.com
+*.dev.dddev.dunkindonuts.com
+*.dev.ddmdev.dunkindonuts.com
+*.dev.ddmprod.dunkindonuts.com
+*.dlt-dev.ddmdev.dunkindonuts.com
+*.dlt-qa.ddmdev.dunkindonuts.com
+*.dunkindonuts.com
+*.ecs.dunkindonuts.com
+*.international.dunkindonuts.com
+*.preprod.ddmprod.dunkindonuts.com
+*.prod.ddmprod.dunkindonuts.com
+*.pt.ddmdev.dunkindonuts.com
+*.qa.cfdev.dunkindonuts.com
+*.qa.ddmdev.dunkindonuts.com
+*.stage.ddmprod.dunkindonuts.com
+*.util.cfdev.dunkindonuts.com
+*.util.ctsdev.dunkindonuts.com
+*.util.dbiddmobileprod.dunkindonuts.com
+*.util.dddev.dunkindonuts.com
+*.util.ddmdev.dunkindonuts.com
+*.util.ddmprod.dunkindonuts.com
+3512286.supportembed.com.pagescdn.com
+amp.news.dunkindonuts.com
+api-idp.dunkindonuts.com
+auth0-stg.dunkindonuts.com
+brglobalfranchising.com
+careers.dunkindonuts.com
+catering.dunkindonuts.com
+chat.dunkindonuts.com
+chatdev.dunkindonuts.com
+chattest.dunkindonuts.com
+click.emailinfo.dunkindonuts.com
+cloud-preprod.ddmprod.dunkindonuts.com
+cloud.emailinfo.dunkindonuts.com
+dbapi-ws.dunkindonuts.com
+dbapi.dunkindonuts.com
+ddapi.dunkindonuts.com
+ddapi.staging.dunkindonuts.com
+ddmdev.dunkindonuts.com
+ddwlapi.staging.dunkindonuts.com
+dns-vetting1f.map.fastly.net
+dunkindonuts.com
+ecselb.sandbox.dunkindonuts.com
+emails.dunkindonuts.com
+image.emailinfo.dunkindonuts.com
+image.international.qbe.com
+international.dunkindonuts.com
+locations.dunkindonuts.com
+login.dunkindonuts.com
+loyalty-api.sandbox.dunkindonuts.com
+loyalty-mock-api.sandbox.dunkindonuts.com
+mapi-dun.prod.ddmprod.dunkindonuts.com
+mi.dunkindonuts.com
+news.dunkindonuts.com
+oats-api.sandbox.dunkindonuts.com
+oats-ws.sandbox.dunkindonuts.com
+opc-api.dunkindonuts.com
+pos-api.dunkindonuts.com
+pos-ws.dunkindonuts.com
+restaurants.swisschalet.com.pagescdn.com
+rewards-api.sandbox.dunkindonuts.com
+san-3-s10.tlsprovisioning.exacttarget.com
+search.dunkindonuts.com
+secureshop.dunkindonuts.com
+shop.dunkindonuts.com
+smetrics.dunkindonuts.com
+splunkelb.sandbox.dunkindonuts.com
+swagger.ddmdev.dunkindonuts.com
+swagger.sandbox.dunkindonuts.com
+telldunkin.com
+testcatering.dunkindonuts.com
+view.emailinfo.dunkindonuts.com
+www.dunkindonuts.com
+
+--- crt.sh: %.ddmprod.dunkindonuts.com (RETRY) ---
+  crt.sh query FAILED or timed out
+
+--- Live Resolution Check (dunkinbrands.com subdomains) ---
+
+--- Live Resolution Check (dunkindonuts.com subdomains) ---
+LIVE  akam-mapi-dun.dev.ddmdev.dunkindonuts.com → CNAME akam-mapi-dun.dev.ddmdev.dunkindonuts.com.edgekey.net. (A: akam-mapi-dun.dev.ddmdev.dunkindonuts.com.edgekey.net.)
+LIVE  akam-mapi-dun.dlt-dev.ddmdev.dunkindonuts.com → CNAME akam-mapi-dun.dlt-dev.ddmdev.dunkindonuts.com.edgekey.net. (A: akam-mapi-dun.dlt-dev.ddmdev.dunkindonuts.com.edgekey.net.)
+LIVE  akam-mapi-dun.dlt-qa.ddmdev.dunkindonuts.com → CNAME akam-mapi-dun.dlt-qa.ddmdev.dunkindonuts.com.edgekey.net. (A: akam-mapi-dun.dlt-qa.ddmdev.dunkindonuts.com.edgekey.net.)
+LIVE  akam-mapi-dun.qa.ddmdev.dunkindonuts.com → CNAME akam-mapi-dun.qa.ddmdev.dunkindonuts.com.edgekey.net. (A: akam-mapi-dun.qa.ddmdev.dunkindonuts.com.edgekey.net.)
+LIVE  amp.news.dunkindonuts.com → CNAME amp.dunkin.iprsoftware.com. (A: amp.dunkin.iprsoftware.com.)
+LIVE  api-idp.dunkindonuts.com → A 104.18.32.226
+LIVE  auth0-stg.dunkindonuts.com → CNAME d-7p5rilj85g.execute-api.us-east-1.amazonaws.com. (A: d-7p5rilj85g.execute-api.us-east-1.amazonaws.com.)
+DEAD  awsdev.dunkindonuts.com
+DEAD  awsprd.dunkindonuts.com
+DEAD  awspt.dunkindonuts.com
+DEAD  awssnd.dunkindonuts.com
+DEAD  awsstg.dunkindonuts.com
+LIVE  careers.dunkindonuts.com → CNAME careers-dunkindonuts-com.sites.paradox.ai. (A: careers-dunkindonuts-com.sites.paradox.ai.)
+LIVE  catering.dunkindonuts.com → A 44.218.38.45
+DEAD  cfdev.dunkindonuts.com
+LIVE  chat.dunkindonuts.com → CNAME inspirecustomer.service-now.com. (A: inspirecustomer.service-now.com.)
+LIVE  chatdev.dunkindonuts.com → CNAME inspirecustomerdev.service-now.com. (A: inspirecustomerdev.service-now.com.)
+LIVE  chattest.dunkindonuts.com → CNAME inspirecustomertest.service-now.com. (A: inspirecustomertest.service-now.com.)
+LIVE  click.emailinfo.dunkindonuts.com → A 128.245.32.164
+LIVE  cloud-preprod.ddmprod.dunkindonuts.com → CNAME d25cpty3ekbo1l.cloudfront.net. (A: d25cpty3ekbo1l.cloudfront.net.)
+LIVE  cloud.emailinfo.dunkindonuts.com → A 128.245.17.9
+DEAD  ctsdev.dunkindonuts.com
+LIVE  dbapi-ws.dunkindonuts.com → CNAME d-jd10dqc4l6.execute-api.us-east-1.amazonaws.com. (A: d-jd10dqc4l6.execute-api.us-east-1.amazonaws.com.)
+LIVE  dbapi.dunkindonuts.com → A 3.163.125.80
+LIVE  ddapi.dunkindonuts.com → A 164.109.105.49
+LIVE  ddapi.staging.dunkindonuts.com → A 164.109.104.165
+DEAD  dddev.dunkindonuts.com
+DEAD  ddmdev.dunkindonuts.com
+DEAD  ddmprod.dunkindonuts.com
+LIVE  ddwlapi.staging.dunkindonuts.com → A 164.109.104.21
+DEAD  dev.cfdev.dunkindonuts.com
+DEAD  dev.ctsdev.dunkindonuts.com
+DEAD  dev.dbiddmobileprod.dunkindonuts.com
+DEAD  dev.dddev.dunkindonuts.com
+DEAD  dev.ddmdev.dunkindonuts.com
+DEAD  dev.ddmprod.dunkindonuts.com
+LIVE  dev2.dunkindonuts.com → CNAME dev2.dunkindonuts.com.edgekey.net. (A: dev2.dunkindonuts.com.edgekey.net.)
+DEAD  dlt-dev.ddmdev.dunkindonuts.com
+DEAD  dlt-qa.ddmdev.dunkindonuts.com
+DEAD  ecs.dunkindonuts.com
+DEAD  ecselb.sandbox.dunkindonuts.com
+LIVE  emails.dunkindonuts.com → A 159.127.198.247
+DEAD  giftcards.dunkindonuts.com
+LIVE  image.emailinfo.dunkindonuts.com → CNAME tlslqbwkv8v13zjsh56c1pgb1tn0.image-sap.sfmc-content.com. (A: tlslqbwkv8v13zjsh56c1pgb1tn0.image-sap.sfmc-content.com.)
+LIVE  international.dunkindonuts.com → A 20.74.242.116
+LIVE  locations.dunkindonuts.com → CNAME locations.dunkindonuts.com.pagescdn.com. (A: locations.dunkindonuts.com.pagescdn.com.)
+LIVE  login.dunkindonuts.com → A 104.18.32.124
+DEAD  loyalty-api.sandbox.dunkindonuts.com
+DEAD  loyalty-mock-api.sandbox.dunkindonuts.com
+DEAD  loyalty.dunkindonuts.com
+LIVE  mapi-dun.preprod.ddmprod.dunkindonuts.com → CNAME mapi-dun.preprod.ddmprod.dunkindonuts.com.edgekey-staging.net. (A: mapi-dun.preprod.ddmprod.dunkindonuts.com.edgekey-staging.net.)
+LIVE  mapi-dun.prod.ddmprod.dunkindonuts.com → CNAME mapi-dun.prod.ddmprod.dunkindonuts.com.edgekey.net. (A: mapi-dun.prod.ddmprod.dunkindonuts.com.edgekey.net.)
+LIVE  mapi-dun.stage.ddmprod.dunkindonuts.com → CNAME mapi-dun.stage.ddmprod.dunkindonuts.com.edgekey.net. (A: mapi-dun.stage.ddmprod.dunkindonuts.com.edgekey.net.)
+LIVE  menu-pricing-prd.dunkindonuts.com → CNAME menu-pricing-prd.dunkindonuts.com.edgekey.net. (A: menu-pricing-prd.dunkindonuts.com.edgekey.net.)
+LIVE  menu-pricing-prd1.dunkindonuts.com → CNAME menu-pricing-prd1.dunkindonuts.com.edgekey.net. (A: menu-pricing-prd1.dunkindonuts.com.edgekey.net.)
+LIVE  menu-pricing-stg.dunkindonuts.com → CNAME menu-pricing-stg.dunkindonuts.com.edgekey.net. (A: menu-pricing-stg.dunkindonuts.com.edgekey.net.)
+DEAD  menu-pricing-stg1.dunkindonuts.com
+LIVE  mi.dunkindonuts.com → CNAME d187xgimezr5cv.cloudfront.net. (A: d187xgimezr5cv.cloudfront.net.)
+LIVE  news.dunkindonuts.com → CNAME news.dunkindonuts.com.iprsoftware.com. (A: news.dunkindonuts.com.iprsoftware.com.)
+DEAD  oats-api.sandbox.dunkindonuts.com
+DEAD  oats-ws.sandbox.dunkindonuts.com
+DEAD  ode.dev.ddmdev.dunkindonuts.com
+LIVE  ode.dlt-dev.ddmdev.dunkindonuts.com → CNAME ode.dlt-dev.ddmdev.dunkindonuts.com.edgekey.net. (A: ode.dlt-dev.ddmdev.dunkindonuts.com.edgekey.net.)
+LIVE  ode.dlt-qa.ddmdev.dunkindonuts.com → CNAME ode.dlt-qa.ddmdev.dunkindonuts.com.edgekey.net. (A: ode.dlt-qa.ddmdev.dunkindonuts.com.edgekey.net.)
+DEAD  ode.preprod.ddmprod.dunkindonuts.com
+LIVE  ode.prod.ddmprod.dunkindonuts.com → CNAME ode.prod.ddmprod.dunkindonuts.com.edgekey.net. (A: ode.prod.ddmprod.dunkindonuts.com.edgekey.net.)
+DEAD  ode.qa.ddmdev.dunkindonuts.com
+DEAD  ode.stage.ddmprod.dunkindonuts.com
+LIVE  opc-api.dunkindonuts.com → CNAME d-3478q4sxnd.execute-api.us-east-1.amazonaws.com. (A: d-3478q4sxnd.execute-api.us-east-1.amazonaws.com.)
+LIVE  pos-api.dunkindonuts.com → CNAME d-4lyjsnt947.execute-api.us-east-1.amazonaws.com. (A: d-4lyjsnt947.execute-api.us-east-1.amazonaws.com.)
+LIVE  pos-ws.dunkindonuts.com → CNAME d-9qf2wa4mt6.execute-api.us-east-1.amazonaws.com. (A: d-9qf2wa4mt6.execute-api.us-east-1.amazonaws.com.)
+DEAD  preprod.ddmprod.dunkindonuts.com
+DEAD  prod.ddmprod.dunkindonuts.com
+DEAD  pt.ddmdev.dunkindonuts.com
+DEAD  qa.cfdev.dunkindonuts.com
+DEAD  qa.ddmdev.dunkindonuts.com
+LIVE  qa.dunkindonuts.com → A 44.221.191.180
+LIVE  qa2.dunkindonuts.com → CNAME qa2.dunkindonuts.com.edgekey.net. (A: qa2.dunkindonuts.com.edgekey.net.)
+DEAD  rewards-api.sandbox.dunkindonuts.com
+LIVE  search.dunkindonuts.com → CNAME search.dunkindonuts.com.pagescdn.com. (A: search.dunkindonuts.com.pagescdn.com.)
+LIVE  secureshop.dunkindonuts.com → CNAME secureshop-dunkindonuts.st.deliveryagent.com. (A: secureshop-dunkindonuts.st.deliveryagent.com.)
+DEAD  semi.giftcards.dunkindonuts.com
+LIVE  shop.dunkindonuts.com → A 3.208.66.180
+LIVE  smetrics.dunkindonuts.com → CNAME dunkindonuts.com.102.122.2o7.net. (A: dunkindonuts.com.102.122.2o7.net.)
+LIVE  social-ssoprd.dunkindonuts.com → CNAME social-ssoprd.dunkindonuts.com.edgekey.net. (A: social-ssoprd.dunkindonuts.com.edgekey.net.)
+LIVE  social-ssopreprod.dunkindonuts.com → CNAME social-ssopreprod.dunkindonuts.com.edgekey.net. (A: social-ssopreprod.dunkindonuts.com.edgekey.net.)
+LIVE  social-ssostg.dunkindonuts.com → CNAME social-ssostg.dunkindonuts.com.edgekey.net. (A: social-ssostg.dunkindonuts.com.edgekey.net.)
+DEAD  splunkelb.sandbox.dunkindonuts.com
+LIVE  ssoprd.dunkindonuts.com → CNAME ssoprd.dunkindonuts.com.edgekey.net. (A: ssoprd.dunkindonuts.com.edgekey.net.)
+LIVE  ssostg.dunkindonuts.com → CNAME ssostg.dunkindonuts.com.edgekey.net. (A: ssostg.dunkindonuts.com.edgekey.net.)
+DEAD  stage.ddmprod.dunkindonuts.com
+LIVE  staging.dunkindonuts.com → CNAME www.dunkindonuts.com.edgekey.net. (A: www.dunkindonuts.com.edgekey.net.)
+DEAD  staging.shop.dunkindonuts.com
+LIVE  staging3.dunkindonuts.com → CNAME staging3.dunkindonuts.com-v1.edgekey.net. (A: staging3.dunkindonuts.com-v1.edgekey.net.)
+LIVE  swagger.ddmdev.dunkindonuts.com → A 34.237.71.65
+DEAD  swagger.sandbox.dunkindonuts.com
+LIVE  swi.dev.ddmdev.dunkindonuts.com → CNAME swi.dev.ddmdev.dunkindonuts.com.edgekey.net. (A: swi.dev.ddmdev.dunkindonuts.com.edgekey.net.)
+LIVE  swi.dlt-dev.ddmdev.dunkindonuts.com → CNAME swi.dlt-dev.ddmdev.dunkindonuts.com.edgekey.net. (A: swi.dlt-dev.ddmdev.dunkindonuts.com.edgekey.net.)
+LIVE  swi.dlt-qa.ddmdev.dunkindonuts.com → CNAME swi.dlt-qa.ddmdev.dunkindonuts.com.edgekey.net. (A: swi.dlt-qa.ddmdev.dunkindonuts.com.edgekey.net.)
+LIVE  swi.preprod.ddmprod.dunkindonuts.com → CNAME swi.preprod.ddmprod.dunkindonuts.com.edgekey.net. (A: swi.preprod.ddmprod.dunkindonuts.com.edgekey.net.)
+LIVE  swi.prod.ddmprod.dunkindonuts.com → CNAME swi.prod.ddmprod.dunkindonuts.com.edgekey.net. (A: swi.prod.ddmprod.dunkindonuts.com.edgekey.net.)
+LIVE  swi.qa.ddmdev.dunkindonuts.com → CNAME swi.qa.ddmdev.dunkindonuts.com.edgekey.net. (A: swi.qa.ddmdev.dunkindonuts.com.edgekey.net.)
+DEAD  swi.stage.ddmprod.dunkindonuts.com
+LIVE  testcatering.dunkindonuts.com → CNAME catering-dun.uat.cardfree.net. (A: catering-dun.uat.cardfree.net.)
+LIVE  uat.dunkindonuts.com → A 216.255.76.18
+LIVE  ulink.dev.ddmdev.dunkindonuts.com → CNAME ulink.dev.ddmdev.dunkindonuts.com.edgekey.net. (A: ulink.dev.ddmdev.dunkindonuts.com.edgekey.net.)
+LIVE  ulink.dlt-dev.ddmdev.dunkindonuts.com → CNAME ulink.dlt-dev.ddmdev.dunkindonuts.com.edgekey.net. (A: ulink.dlt-dev.ddmdev.dunkindonuts.com.edgekey.net.)
+LIVE  ulink.dlt-qa.ddmdev.dunkindonuts.com → CNAME ulink.dlt-qa.ddmdev.dunkindonuts.com.edgekey.net. (A: ulink.dlt-qa.ddmdev.dunkindonuts.com.edgekey.net.)
+LIVE  ulink.preprod.ddmprod.dunkindonuts.com → CNAME ulink.preprod.ddmprod.dunkindonuts.com.edgekey.net. (A: ulink.preprod.ddmprod.dunkindonuts.com.edgekey.net.)
+LIVE  ulink.prod.ddmprod.dunkindonuts.com → CNAME ulink.prod.ddmprod.dunkindonuts.com.edgekey.net. (A: ulink.prod.ddmprod.dunkindonuts.com.edgekey.net.)
+LIVE  ulink.qa.ddmdev.dunkindonuts.com → CNAME ulink.qa.ddmdev.dunkindonuts.com.edgekey.net. (A: ulink.qa.ddmdev.dunkindonuts.com.edgekey.net.)
+DEAD  ulink.stage.ddmprod.dunkindonuts.com
+DEAD  us-east-1.dev.cfdev.dunkindonuts.com
+DEAD  us-east-1.dev.ctsdev.dunkindonuts.com
+DEAD  us-east-1.dev.dddev.dunkindonuts.com
+DEAD  us-east-1.qa.cfdev.dunkindonuts.com
+DEAD  us-east-1.util.cfdev.dunkindonuts.com
+DEAD  us-east-1.util.ctsdev.dunkindonuts.com
+DEAD  util.cfdev.dunkindonuts.com
+DEAD  util.ctsdev.dunkindonuts.com
+DEAD  util.dbiddmobileprod.dunkindonuts.com
+DEAD  util.dddev.dunkindonuts.com
+DEAD  util.ddmdev.dunkindonuts.com
+DEAD  util.ddmprod.dunkindonuts.com
+LIVE  view.emailinfo.dunkindonuts.com → A 128.245.48.163
+DEAD  www.careers.dunkindonuts.com
+DEAD  www.catering.dunkindonuts.com
+DEAD  www.ddapi.dunkindonuts.com
+DEAD  www.ddapi.staging.dunkindonuts.com
+DEAD  www.ddwlapi.staging.dunkindonuts.com
+LIVE  www.dunkindonuts.com → CNAME www.dunkindonuts.com.edgekey.net. (A: www.dunkindonuts.com.edgekey.net.)
+DEAD  www.news.dunkindonuts.com
+DEAD  www.shop.dunkindonuts.com
+DEAD  www.smetrics.dunkindonuts.com
+DEAD  www.testcatering.dunkindonuts.com
+
+=== DONE ===

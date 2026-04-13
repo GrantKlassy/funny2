@@ -1,0 +1,258 @@
+=== MENU PRICING API DEEP DIVE ===
+Date: 2026-04-13T20:57:42Z
+
+--- DNS Resolution ---
+menu-pricing-prd.dunkindonuts.com → CNAME: menu-pricing-prd.dunkindonuts.com.edgekey.net. A: menu-pricing-prd.dunkindonuts.com.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+menu-pricing-stg.dunkindonuts.com → CNAME: menu-pricing-stg.dunkindonuts.com.edgekey.net. A: menu-pricing-stg.dunkindonuts.com.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+menu-pricing-prd1.dunkindonuts.com → CNAME: menu-pricing-prd1.dunkindonuts.com.edgekey.net. A: menu-pricing-prd1.dunkindonuts.com.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+
+--- Baseline Headers (GET /) ---
+
+>> menu-pricing-prd.dunkindonuts.com
+HTTP/2 404 
+content-type: application/json
+strict-transport-security: max-age=31536000 ; includeSubDomains
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+expires: Mon, 13 Apr 2026 20:57:43 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Mon, 13 Apr 2026 20:57:43 GMT
+content-length: 0
+server-timing: ak_p; desc="1776113862960_390287333_1414343227_25575_9323_4_14_15";dur=1
+
+
+>> menu-pricing-stg.dunkindonuts.com
+HTTP/2 404 
+content-type: application/json
+strict-transport-security: max-age=31536000 ; includeSubDomains
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+content-length: 0
+expires: Mon, 13 Apr 2026 20:57:43 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Mon, 13 Apr 2026 20:57:43 GMT
+server-timing: ak_p; desc="1776113863265_390287340_2012535241_27756_10306_7_43_15";dur=1
+
+
+>> menu-pricing-prd1.dunkindonuts.com
+HTTP/2 404 
+content-type: application/json
+strict-transport-security: max-age=31536000 ; includeSubDomains
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+expires: Mon, 13 Apr 2026 20:57:43 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Mon, 13 Apr 2026 20:57:43 GMT
+content-length: 0
+server-timing: ak_p; desc="1776113863620_390287333_1414344633_27711_9174_4_6_15";dur=1
+
+
+--- Spring Boot Actuator Sweep ---
+
+>> Actuator sweep: menu-pricing-prd.dunkindonuts.com
+  /actuator → 401
+  /actuator/health → 401
+  /actuator/health/liveness → 401
+  /actuator/health/readiness → 401
+  /actuator/info → 401
+  /actuator/env → 401
+  /actuator/beans → 401
+  /actuator/configprops → 401
+  /actuator/mappings → 401
+  /actuator/metrics → 401
+  /actuator/loggers → 401
+  /actuator/conditions → 401
+  /actuator/scheduledtasks → 401
+  /actuator/caches → 401
+  /actuator/flyway → 401
+  /actuator/liquibase → 401
+  /manage → 401
+  /manage/health → 401
+  /manage/info → 401
+  /admin → 401
+  /admin/health → 401
+
+>> Actuator sweep: menu-pricing-stg.dunkindonuts.com
+  /actuator → 401
+  /actuator/health → 401
+  /actuator/health/liveness → 401
+  /actuator/health/readiness → 401
+  /actuator/info → 401
+  /actuator/env → 401
+  /actuator/beans → 401
+  /actuator/configprops → 401
+  /actuator/mappings → 401
+  /actuator/metrics → 401
+  /actuator/loggers → 401
+  /actuator/conditions → 401
+  /actuator/scheduledtasks → 401
+  /actuator/caches → 401
+  /actuator/flyway → 401
+  /actuator/liquibase → 401
+  /manage → 401
+  /manage/health → 401
+  /manage/info → 401
+  /admin → 401
+  /admin/health → 401
+
+>> Actuator sweep: menu-pricing-prd1.dunkindonuts.com
+  /actuator → 401
+  /actuator/health → 401
+  /actuator/health/liveness → 401
+  /actuator/health/readiness → 401
+  /actuator/info → 401
+  /actuator/env → 401
+  /actuator/beans → 401
+  /actuator/configprops → 401
+  /actuator/mappings → 401
+  /actuator/metrics → 401
+  /actuator/loggers → 401
+  /actuator/conditions → 401
+  /actuator/scheduledtasks → 401
+  /actuator/caches → 401
+  /actuator/flyway → 401
+  /actuator/liquibase → 401
+  /manage → 401
+  /manage/health → 401
+  /manage/info → 401
+  /admin → 401
+  /admin/health → 401
+
+--- API Discovery / Swagger ---
+
+>> API discovery: menu-pricing-prd.dunkindonuts.com
+  /swagger-ui → 401
+  /swagger-ui.html → 401
+  /swagger-ui/index.html → 401
+  /swagger-resources → 401
+  /v2/api-docs → 401
+  /v3/api-docs → 401
+  /v3/api-docs/swagger-config → 401
+  /api → 401
+  /api/v1 → 401
+  /api/v2 → 401
+  /api/menu → 401
+  /api/pricing → 401
+  /api/stores → 401
+  /api/categories → 401
+  /api/products → 401
+  /menu → 401
+  /pricing → 401
+  /stores → 401
+  /categories → 401
+  /products → 401
+  /graphql → 401
+  /graphiql → 401
+
+>> API discovery: menu-pricing-stg.dunkindonuts.com
+  /swagger-ui → 401
+  /swagger-ui.html → 401
+  /swagger-ui/index.html → 401
+  /swagger-resources → 401
+  /v2/api-docs → 401
+  /v3/api-docs → 401
+  /v3/api-docs/swagger-config → 401
+  /api → 401
+  /api/v1 → 401
+  /api/v2 → 401
+  /api/menu → 401
+  /api/pricing → 401
+  /api/stores → 401
+  /api/categories → 401
+  /api/products → 401
+  /menu → 401
+  /pricing → 401
+  /stores → 401
+  /categories → 401
+  /products → 401
+  /graphql → 401
+  /graphiql → 401
+
+>> API discovery: menu-pricing-prd1.dunkindonuts.com
+  /swagger-ui → 401
+  /swagger-ui.html → 401
+  /swagger-ui/index.html → 401
+  /swagger-resources → 401
+  /v2/api-docs → 401
+  /v3/api-docs → 401
+  /v3/api-docs/swagger-config → 401
+  /api → 401
+  /api/v1 → 401
+  /api/v2 → 401
+  /api/menu → 401
+  /api/pricing → 401
+  /api/stores → 401
+  /api/categories → 401
+  /api/products → 401
+  /menu → 401
+  /pricing → 401
+  /stores → 401
+  /categories → 401
+  /products → 401
+  /graphql → 401
+  /graphiql → 401
+
+--- Content-Type Probing ---
+
+>> menu-pricing-prd.dunkindonuts.com
+  GET / Accept: application/json
+{"timestamp":"2026-04-13T20:57:59.543+00:00","status":401,"error":"Unauthorized","path":"/"}  GET / Accept: application/xml
+  POST / Content-Type: application/json (empty body)
+{"timestamp":"2026-04-13T20:57:59.758+00:00","status":401,"error":"Unauthorized","path":"/"}  POST /api Content-Type: application/json
+{"timestamp":"2026-04-13T20:58:00.064+00:00","status":401,"error":"Unauthorized","path":"/api"}
+>> menu-pricing-stg.dunkindonuts.com
+  GET / Accept: application/json
+{"timestamp":"2026-04-13T20:58:00.171+00:00","status":401,"error":"Unauthorized","path":"/"}  GET / Accept: application/xml
+  POST / Content-Type: application/json (empty body)
+{"timestamp":"2026-04-13T20:58:00.457+00:00","status":401,"error":"Unauthorized","path":"/"}  POST /api Content-Type: application/json
+{"timestamp":"2026-04-13T20:58:00.578+00:00","status":401,"error":"Unauthorized","path":"/api"}
+>> menu-pricing-prd1.dunkindonuts.com
+  GET / Accept: application/json
+{"timestamp":"2026-04-13T20:58:00.683+00:00","status":401,"error":"Unauthorized","path":"/"}  GET / Accept: application/xml
+  POST / Content-Type: application/json (empty body)
+{"timestamp":"2026-04-13T20:58:00.905+00:00","status":401,"error":"Unauthorized","path":"/"}  POST /api Content-Type: application/json
+{"timestamp":"2026-04-13T20:58:01.011+00:00","status":401,"error":"Unauthorized","path":"/api"}
+--- TLS Certificates ---
+
+>> menu-pricing-prd.dunkindonuts.com
+subject=C=US, ST=Massachusetts, L=Canton, O=Dunkin' Brands, Inc., CN=www.dunkindonuts.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=GeoTrust TLS RSA CA G1
+notBefore=Nov 20 00:00:00 2025 GMT
+notAfter=Nov 19 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.dunkindonuts.com, DNS:afm.dunkinbrands.com, DNS:dev2.dunkindonuts.com, DNS:dunkindonuts.com, DNS:dunkinnation.com, DNS:dunkinrewards.com, DNS:fps.dunkinbrands.com, DNS:franchiseecentral.dunkinbrands.com, DNS:global.dunkinfranchising.com, DNS:loyalty.dunkindonuts.com, DNS:menu-pricing-prd.dunkindonuts.com, DNS:menu-pricing-prd1.dunkindonuts.com, DNS:menu-pricing-stg.dunkindonuts.com, DNS:qa.baskinrobbins.com, DNS:qa.dunkindonuts.com, DNS:qa2.dunkindonuts.com, DNS:qrmenu-stg.dunkinbrands.com, DNS:qrmenu.dunkinbrands.com, DNS:social-ssoprd.dunkindonuts.com, DNS:social-ssopreprod.dunkindonuts.com, DNS:social-ssostg.dunkindonuts.com, DNS:ssoprd.dunkindonuts.com, DNS:ssostg.dunkindonuts.com, DNS:staging.baskinrobbins.com, DNS:staging.dunkindonuts.com, DNS:staging.dunkinfranchising.com, DNS:staging.dunkinnation.com, DNS:staging2.baskinrobbins.com, DNS:staging3.dunkindonuts.com, DNS:staging3.dunkinnation.com, DNS:star-stg.dunkinbrands.com, DNS:star.dunkinbrands.com, DNS:uat.dunkindonuts.com, DNS:wsvc.dunkinrun.com, DNS:www.baskinrobbins.com, DNS:www.baskinrobbinsfranchising.com, DNS:www.brglobalfranchising.com, DNS:www.ddglobalfranchising.com, DNS:www.ddperks.com, DNS:www.dunkinemail.com, DNS:www.dunkinfranchising.com, DNS:www.dunkinnation.com, DNS:www.dunkinperks.com, DNS:www.dunkinrewards.com, DNS:www.dunkinrun.com, DNS:www.franchiseecentral.dunkinbrands.com, DNS:www2.baskinrobbins.com
+
+>> menu-pricing-stg.dunkindonuts.com
+subject=C=US, ST=Massachusetts, L=Canton, O=Dunkin' Brands, Inc., CN=www.dunkindonuts.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=GeoTrust TLS RSA CA G1
+notBefore=Nov 20 00:00:00 2025 GMT
+notAfter=Nov 19 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.dunkindonuts.com, DNS:afm.dunkinbrands.com, DNS:dev2.dunkindonuts.com, DNS:dunkindonuts.com, DNS:dunkinnation.com, DNS:dunkinrewards.com, DNS:fps.dunkinbrands.com, DNS:franchiseecentral.dunkinbrands.com, DNS:global.dunkinfranchising.com, DNS:loyalty.dunkindonuts.com, DNS:menu-pricing-prd.dunkindonuts.com, DNS:menu-pricing-prd1.dunkindonuts.com, DNS:menu-pricing-stg.dunkindonuts.com, DNS:qa.baskinrobbins.com, DNS:qa.dunkindonuts.com, DNS:qa2.dunkindonuts.com, DNS:qrmenu-stg.dunkinbrands.com, DNS:qrmenu.dunkinbrands.com, DNS:social-ssoprd.dunkindonuts.com, DNS:social-ssopreprod.dunkindonuts.com, DNS:social-ssostg.dunkindonuts.com, DNS:ssoprd.dunkindonuts.com, DNS:ssostg.dunkindonuts.com, DNS:staging.baskinrobbins.com, DNS:staging.dunkindonuts.com, DNS:staging.dunkinfranchising.com, DNS:staging.dunkinnation.com, DNS:staging2.baskinrobbins.com, DNS:staging3.dunkindonuts.com, DNS:staging3.dunkinnation.com, DNS:star-stg.dunkinbrands.com, DNS:star.dunkinbrands.com, DNS:uat.dunkindonuts.com, DNS:wsvc.dunkinrun.com, DNS:www.baskinrobbins.com, DNS:www.baskinrobbinsfranchising.com, DNS:www.brglobalfranchising.com, DNS:www.ddglobalfranchising.com, DNS:www.ddperks.com, DNS:www.dunkinemail.com, DNS:www.dunkinfranchising.com, DNS:www.dunkinnation.com, DNS:www.dunkinperks.com, DNS:www.dunkinrewards.com, DNS:www.dunkinrun.com, DNS:www.franchiseecentral.dunkinbrands.com, DNS:www2.baskinrobbins.com
+
+>> menu-pricing-prd1.dunkindonuts.com
+subject=C=US, ST=Massachusetts, L=Canton, O=Dunkin' Brands, Inc., CN=www.dunkindonuts.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=GeoTrust TLS RSA CA G1
+notBefore=Nov 20 00:00:00 2025 GMT
+notAfter=Nov 19 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.dunkindonuts.com, DNS:afm.dunkinbrands.com, DNS:dev2.dunkindonuts.com, DNS:dunkindonuts.com, DNS:dunkinnation.com, DNS:dunkinrewards.com, DNS:fps.dunkinbrands.com, DNS:franchiseecentral.dunkinbrands.com, DNS:global.dunkinfranchising.com, DNS:loyalty.dunkindonuts.com, DNS:menu-pricing-prd.dunkindonuts.com, DNS:menu-pricing-prd1.dunkindonuts.com, DNS:menu-pricing-stg.dunkindonuts.com, DNS:qa.baskinrobbins.com, DNS:qa.dunkindonuts.com, DNS:qa2.dunkindonuts.com, DNS:qrmenu-stg.dunkinbrands.com, DNS:qrmenu.dunkinbrands.com, DNS:social-ssoprd.dunkindonuts.com, DNS:social-ssopreprod.dunkindonuts.com, DNS:social-ssostg.dunkindonuts.com, DNS:ssoprd.dunkindonuts.com, DNS:ssostg.dunkindonuts.com, DNS:staging.baskinrobbins.com, DNS:staging.dunkindonuts.com, DNS:staging.dunkinfranchising.com, DNS:staging.dunkinnation.com, DNS:staging2.baskinrobbins.com, DNS:staging3.dunkindonuts.com, DNS:staging3.dunkinnation.com, DNS:star-stg.dunkinbrands.com, DNS:star.dunkinbrands.com, DNS:uat.dunkindonuts.com, DNS:wsvc.dunkinrun.com, DNS:www.baskinrobbins.com, DNS:www.baskinrobbinsfranchising.com, DNS:www.brglobalfranchising.com, DNS:www.ddglobalfranchising.com, DNS:www.ddperks.com, DNS:www.dunkinemail.com, DNS:www.dunkinfranchising.com, DNS:www.dunkinnation.com, DNS:www.dunkinperks.com, DNS:www.dunkinrewards.com, DNS:www.dunkinrun.com, DNS:www.franchiseecentral.dunkinbrands.com, DNS:www2.baskinrobbins.com
+
+--- Error Message Analysis ---
+
+>> menu-pricing-prd.dunkindonuts.com 404 response body:
+{"timestamp":"2026-04-13T20:58:01.302+00:00","status":401,"error":"Unauthorized","path":"/nonexistent-probe-test"}
+>> menu-pricing-stg.dunkindonuts.com 404 response body:
+{"timestamp":"2026-04-13T20:58:01.413+00:00","status":401,"error":"Unauthorized","path":"/nonexistent-probe-test"}
+>> menu-pricing-prd1.dunkindonuts.com 404 response body:
+{"timestamp":"2026-04-13T20:58:01.728+00:00","status":401,"error":"Unauthorized","path":"/nonexistent-probe-test"}
+=== DONE ===

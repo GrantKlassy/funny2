@@ -1,0 +1,425 @@
+=== QA/DEV ENVIRONMENT ANALYSIS ===
+Date: 2026-04-13T20:57:35Z
+
+--- DNS Resolution (Akamai vs Direct) ---
+AKAMAI  www.dunkindonuts.com → www.dunkindonuts.com.edgekey.net. → www.dunkindonuts.com.edgekey.net.,e5079.a.akamaiedge.net.,23.203.213.158
+AKAMAI  dev2.dunkindonuts.com → dev2.dunkindonuts.com.edgekey.net. → dev2.dunkindonuts.com.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+DIRECT  qa.dunkindonuts.com → 52.71.129.172,44.221.191.180
+AKAMAI  qa2.dunkindonuts.com → qa2.dunkindonuts.com.edgekey.net. → qa2.dunkindonuts.com.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+AKAMAI  staging.dunkindonuts.com → www.dunkindonuts.com.edgekey.net. → www.dunkindonuts.com.edgekey.net.,e5079.a.akamaiedge.net.,23.203.213.158
+AKAMAI  staging3.dunkindonuts.com → staging3.dunkindonuts.com-v1.edgekey.net. → staging3.dunkindonuts.com-v1.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+DIRECT  uat.dunkindonuts.com → 216.255.76.18
+
+--- Full Response Headers (GET /) ---
+
+>> www.dunkindonuts.com
+HTTP/2 301 
+content-type: text/html; charset=iso-8859-1
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains
+location: https://www.dunkindonuts.com/en
+cache-control: max-age=0
+expires: Mon, 13 Apr 2026 20:57:35 GMT
+content-length: 0
+date: Mon, 13 Apr 2026 20:57:35 GMT
+set-cookie: AWSALB=Qs7NSq2V8oE+xWddMEPpeDnxujjpXb9sbhTy61I/ZOs+330D2cpZCVUzmE7CP1rQFV1rRvD4uw7iNJ6uO2W3WUNvagxYPi/bDVBuH/Ysk0y9RXgshqdsNLmQFzqI; Expires=Mon, 20 Apr 2026 20:57:35 GMT; Path=/
+set-cookie: AWSALBCORS=Qs7NSq2V8oE+xWddMEPpeDnxujjpXb9sbhTy61I/ZOs+330D2cpZCVUzmE7CP1rQFV1rRvD4uw7iNJ6uO2W3WUNvagxYPi/bDVBuH/Ysk0y9RXgshqdsNLmQFzqI; Expires=Mon, 20 Apr 2026 20:57:35 GMT; Path=/; SameSite=None; Secure
+server-timing: ak_p; desc="1776113855494_399924815_950373815_7794_6720_4_6_15";dur=1
+
+  [Server] server: Apache
+  [X-Powered-By] MISSING
+  [Debug headers] NONE
+  [Akamai headers] NONE
+  [Security headers] strict-transport-security: max-age=31536000; includeSubDomains
+  [Cookies] set-cookie: AWSALB=Qs7NSq2V8oE+xWddMEPpeDnxujjpXb9sbhTy61I/ZOs+330D2cpZCVUzmE7CP1rQFV1rRvD4uw7iNJ6uO2W3WUNvagxYPi/bDVBuH/Ysk0y9RXgshqdsNLmQFzqI; Expires=Mon, 20 Apr 2026 20:57:35 GMT; Path=/
+set-cookie: AWSALBCORS=Qs7NSq2V8oE+xWddMEPpeDnxujjpXb9sbhTy61I/ZOs+330D2cpZCVUzmE7CP1rQFV1rRvD4uw7iNJ6uO2W3WUNvagxYPi/bDVBuH/Ysk0y9RXgshqdsNLmQFzqI; Expires=Mon, 20 Apr 2026 20:57:35 GMT; Path=/; SameSite=None; Secure
+
+>> dev2.dunkindonuts.com
+HTTP/2 301 
+content-type: text/html; charset=iso-8859-1
+server: Apache
+strict-transport-security: max-age=16070400; includeSubDomains
+location: https://dev2.dunkindonuts.com/en
+cache-control: max-age=0
+expires: Mon, 13 Apr 2026 20:57:35 GMT
+content-length: 0
+date: Mon, 13 Apr 2026 20:57:35 GMT
+
+  [Server] server: Apache
+  [X-Powered-By] MISSING
+  [Debug headers] NONE
+  [Akamai headers] NONE
+  [Security headers] strict-transport-security: max-age=16070400; includeSubDomains
+  [Cookies] NONE
+
+>> qa.dunkindonuts.com
+HTTP/1.1 302 Found
+Cache-Control: max-age=0
+Content-Type: text/html; charset=iso-8859-1
+Date: Mon, 13 Apr 2026 20:57:36 GMT
+Expires: Mon, 13 Apr 2026 20:57:36 GMT
+Location: https://qa.dunkindonuts.com/en
+Server: Apache
+Connection: keep-alive
+
+  [Server] Server: Apache
+  [X-Powered-By] MISSING
+  [Debug headers] NONE
+  [Akamai headers] NONE
+  [Security headers] NONE
+  [Cookies] NONE
+
+>> qa2.dunkindonuts.com
+HTTP/1.1 301 Moved Permanently
+Content-Type: text/html; charset=iso-8859-1
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Location: https://qa2.dunkindonuts.com/en
+Cache-Control: max-age=0
+Expires: Mon, 13 Apr 2026 20:57:36 GMT
+Content-Length: 0
+Date: Mon, 13 Apr 2026 20:57:36 GMT
+Connection: keep-alive
+
+  [Server] Server: Apache
+  [X-Powered-By] MISSING
+  [Debug headers] NONE
+  [Akamai headers] NONE
+  [Security headers] Strict-Transport-Security: max-age=31536000; includeSubDomains
+  [Cookies] NONE
+
+>> staging.dunkindonuts.com
+HTTP/2 403 
+server: AkamaiGHost
+mime-version: 1.0
+content-type: text/html
+content-length: 378
+expires: Mon, 13 Apr 2026 20:57:36 GMT
+date: Mon, 13 Apr 2026 20:57:36 GMT
+
+  [Server] server: AkamaiGHost
+  [X-Powered-By] MISSING
+  [Debug headers] NONE
+  [Akamai headers] NONE
+  [Security headers] NONE
+  [Cookies] NONE
+
+>> staging3.dunkindonuts.com
+HTTP/1.1 301 Moved Permanently
+Content-Type: text/html; charset=iso-8859-1
+Server: Apache
+Strict-Transport-Security: max-age=16070400; includeSubDomains
+Location: https://staging3.dunkindonuts.com/en
+Cache-Control: max-age=0
+Expires: Mon, 13 Apr 2026 20:57:36 GMT
+Content-Length: 0
+Date: Mon, 13 Apr 2026 20:57:36 GMT
+Connection: keep-alive
+Set-Cookie: AWSALB=LFRVtsXteybk/16gzcQ91ADZcJM7c98ojkhV6XOi85JK1GpWiNMavOhaQ51mJF/kg43SdtftlGTsxqSzsWSJUPbuXKdlJYHaHv1V+Esbi1hGrKh6pqd9/SEogIgu; Expires=Mon, 20 Apr 2026 20:57:36 GMT; Path=/
+Set-Cookie: AWSALBCORS=LFRVtsXteybk/16gzcQ91ADZcJM7c98ojkhV6XOi85JK1GpWiNMavOhaQ51mJF/kg43SdtftlGTsxqSzsWSJUPbuXKdlJYHaHv1V+Esbi1hGrKh6pqd9/SEogIgu; Expires=Mon, 20 Apr 2026 20:57:36 GMT; Path=/; SameSite=None; Secure
+
+  [Server] Server: Apache
+  [X-Powered-By] MISSING
+  [Debug headers] NONE
+  [Akamai headers] NONE
+  [Security headers] Strict-Transport-Security: max-age=16070400; includeSubDomains
+  [Cookies] Set-Cookie: AWSALB=LFRVtsXteybk/16gzcQ91ADZcJM7c98ojkhV6XOi85JK1GpWiNMavOhaQ51mJF/kg43SdtftlGTsxqSzsWSJUPbuXKdlJYHaHv1V+Esbi1hGrKh6pqd9/SEogIgu; Expires=Mon, 20 Apr 2026 20:57:36 GMT; Path=/
+Set-Cookie: AWSALBCORS=LFRVtsXteybk/16gzcQ91ADZcJM7c98ojkhV6XOi85JK1GpWiNMavOhaQ51mJF/kg43SdtftlGTsxqSzsWSJUPbuXKdlJYHaHv1V+Esbi1hGrKh6pqd9/SEogIgu; Expires=Mon, 20 Apr 2026 20:57:36 GMT; Path=/; SameSite=None; Secure
+
+>> uat.dunkindonuts.com
+CONNECTION FAILED
+  [Server] MISSING
+  [X-Powered-By] MISSING
+  [Debug headers] NONE
+  [Akamai headers] NONE
+  [Security headers] NONE
+  [Cookies] NONE
+
+--- Error Page Comparison (404) ---
+
+>> www.dunkindonuts.com/nonexistent-probe-test
+				CA Transparency in Supply Chains Act
+			</a>
+		</li>
+		
+	
+		<li class="footer__legal-item">
+			<a class="footer__legal-link" href="/en/web-accessibility">
+				Web Accessibility
+			</a>
+		</li>
+		
+	</ul>
+	<div>
+</div>
+	<p class="footer__legal-copy">©2024 DD IP Holder LLC</p>
+</section>
+
+
+    </div>
+</footer>
+</div>
+<div class="aem-wrap--back-to-top section">
+
+<div class="back-to-top js-back-to-top ">
+    <a href="#top" class="back-to-top__anchor" data-action="backToTop"> BACK TO TOP </a>
+</div>
+</div>
+</div>
+</div>
+
+    <div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="gtm-footer iparsys parsys"></div>
+</div>
+
+</div>
+	
+    
+    
+<script type="text/javascript" src="/etc/designs/dd/scripts/all.min.b034a7b7bff2594f9f44686ddb37eff4.js"></script>
+
+
+
+    
+
+
+</body>
+
+</html>
+
+---HTTP_CODE:404---
+
+>> dev2.dunkindonuts.com/nonexistent-probe-test
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>401 Unauthorized</title>
+</head><body>
+<h1>Unauthorized</h1>
+<p>This server could not verify that you
+are authorized to access the document
+requested.  Either you supplied the wrong
+credentials (e.g., bad password), or your
+browser doesn't understand how to supply
+the credentials required.</p>
+<hr>
+<address>Apache Server at dev2.dunkindonuts.com Port 443</address>
+</body></html>
+
+---HTTP_CODE:401---
+
+>> qa.dunkindonuts.com/nonexistent-probe-test
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>401 Unauthorized</title>
+</head><body>
+<h1>Unauthorized</h1>
+<p>This server could not verify that you
+are authorized to access the document
+requested.  Either you supplied the wrong
+credentials (e.g., bad password), or your
+browser doesn't understand how to supply
+the credentials required.</p>
+<hr>
+<address>Apache Server at qa.dunkindonuts.com Port 80</address>
+</body></html>
+
+---HTTP_CODE:401---
+
+>> qa2.dunkindonuts.com/nonexistent-probe-test
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>401 Unauthorized</title>
+</head><body>
+<h1>Unauthorized</h1>
+<p>This server could not verify that you
+are authorized to access the document
+requested.  Either you supplied the wrong
+credentials (e.g., bad password), or your
+browser doesn't understand how to supply
+the credentials required.</p>
+<hr>
+<address>Apache Server at qa2.dunkindonuts.com Port 443</address>
+</body></html>
+
+---HTTP_CODE:401---
+
+>> staging.dunkindonuts.com/nonexistent-probe-test
+<HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;staging&#46;dunkindonuts&#46;com&#47;nonexistent&#45;probe&#45;test" on this server.<P>
+Reference&#32;&#35;18&#46;4f5ed617&#46;1776113867&#46;38a5b442
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;4f5ed617&#46;1776113867&#46;38a5b442</P>
+</BODY>
+</HTML>
+
+---HTTP_CODE:403---
+
+>> staging3.dunkindonuts.com/nonexistent-probe-test
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>401 Unauthorized</title>
+</head><body>
+<h1>Unauthorized</h1>
+<p>This server could not verify that you
+are authorized to access the document
+requested.  Either you supplied the wrong
+credentials (e.g., bad password), or your
+browser doesn't understand how to supply
+the credentials required.</p>
+<hr>
+<address>Apache Server at staging3.dunkindonuts.com Port 443</address>
+</body></html>
+
+---HTTP_CODE:401---
+
+>> uat.dunkindonuts.com/nonexistent-probe-test
+
+---HTTP_CODE:000---
+
+--- Whois: UAT IP 216.255.76.18 ---
+NetRange:       216.255.64.0 - 216.255.95.255
+CIDR:           216.255.64.0/19
+NetName:        DIGEX-BLK-2
+Organization:   Verizon Business (MCICS)
+OrgName:        Verizon Business
+Address:        22001 Loudoun County Pkwy
+Country:        US
+NetRange:       216.255.64.0 - 216.255.95.255
+CIDR:           216.255.64.0/19
+NetName:        TM
+Organization:   IBM Cloud Managed Application Services (ICMAS)
+OrgName:        IBM Cloud Managed Application Services
+Address:        3039 Cornwallis Road
+Country:        US
+
+>> Reverse DNS:
+
+--- Whois: QA IP 52.71.129.172 ---
+NetRange:       52.0.0.0 - 52.79.255.255
+CIDR:           52.0.0.0/10, 52.64.0.0/12
+NetName:        AT-88-Z
+Organization:   Amazon Technologies Inc. (AT-88-Z)
+OrgName:        Amazon Technologies Inc.
+Country:        US
+
+--- Well-Known Endpoints: QA vs WWW ---
+
+>> PATH: /.well-known/openid-configuration
+  www.dunkindonuts.com → 404 (66104B)
+  qa.dunkindonuts.com → 401 (450B)
+
+>> PATH: /.well-known/apple-app-site-association
+  www.dunkindonuts.com → 200 (828B)
+  qa.dunkindonuts.com → 401 (450B)
+
+>> PATH: /.well-known/assetlinks.json
+  www.dunkindonuts.com → 200 (1405B)
+  qa.dunkindonuts.com → 401 (450B)
+
+>> PATH: /.well-known/security.txt
+  www.dunkindonuts.com → 404 (267B)
+  qa.dunkindonuts.com → 401 (450B)
+
+>> PATH: /robots.txt
+  www.dunkindonuts.com → 200 (404B)
+  qa.dunkindonuts.com → 401 (450B)
+
+>> PATH: /sitemap.xml
+  www.dunkindonuts.com → 200 (26386B)
+  qa.dunkindonuts.com → 401 (450B)
+
+>> PATH: /favicon.ico
+  www.dunkindonuts.com → 404 (66113B)
+  qa.dunkindonuts.com → 401 (450B)
+
+>> PATH: /health
+  www.dunkindonuts.com → 404 (66119B)
+  qa.dunkindonuts.com → 401 (450B)
+
+>> PATH: /status
+  www.dunkindonuts.com → 404 (66104B)
+  qa.dunkindonuts.com → 401 (450B)
+
+>> PATH: /version
+  www.dunkindonuts.com → 404 (66104B)
+  qa.dunkindonuts.com → 401 (450B)
+
+--- TLS Certificate Comparison ---
+
+>> www.dunkindonuts.com
+subject=C=US, ST=Massachusetts, L=Canton, O=Dunkin' Brands, Inc., CN=www.dunkindonuts.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=GeoTrust TLS RSA CA G1
+notBefore=Nov 20 00:00:00 2025 GMT
+notAfter=Nov 19 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.dunkindonuts.com, DNS:afm.dunkinbrands.com, DNS:dev2.dunkindonuts.com, DNS:dunkindonuts.com, DNS:dunkinnation.com, DNS:dunkinrewards.com, DNS:fps.dunkinbrands.com, DNS:franchiseecentral.dunkinbrands.com, DNS:global.dunkinfranchising.com, DNS:loyalty.dunkindonuts.com, DNS:menu-pricing-prd.dunkindonuts.com, DNS:menu-pricing-prd1.dunkindonuts.com, DNS:menu-pricing-stg.dunkindonuts.com, DNS:qa.baskinrobbins.com, DNS:qa.dunkindonuts.com, DNS:qa2.dunkindonuts.com, DNS:qrmenu-stg.dunkinbrands.com, DNS:qrmenu.dunkinbrands.com, DNS:social-ssoprd.dunkindonuts.com, DNS:social-ssopreprod.dunkindonuts.com, DNS:social-ssostg.dunkindonuts.com, DNS:ssoprd.dunkindonuts.com, DNS:ssostg.dunkindonuts.com, DNS:staging.baskinrobbins.com, DNS:staging.dunkindonuts.com, DNS:staging.dunkinfranchising.com, DNS:staging.dunkinnation.com, DNS:staging2.baskinrobbins.com, DNS:staging3.dunkindonuts.com, DNS:staging3.dunkinnation.com, DNS:star-stg.dunkinbrands.com, DNS:star.dunkinbrands.com, DNS:uat.dunkindonuts.com, DNS:wsvc.dunkinrun.com, DNS:www.baskinrobbins.com, DNS:www.baskinrobbinsfranchising.com, DNS:www.brglobalfranchising.com, DNS:www.ddglobalfranchising.com, DNS:www.ddperks.com, DNS:www.dunkinemail.com, DNS:www.dunkinfranchising.com, DNS:www.dunkinnation.com, DNS:www.dunkinperks.com, DNS:www.dunkinrewards.com, DNS:www.dunkinrun.com, DNS:www.franchiseecentral.dunkinbrands.com, DNS:www2.baskinrobbins.com
+
+>> dev2.dunkindonuts.com
+subject=C=US, ST=Massachusetts, L=Canton, O=Dunkin' Brands, Inc., CN=www.dunkindonuts.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=GeoTrust TLS RSA CA G1
+notBefore=Nov 20 00:00:00 2025 GMT
+notAfter=Nov 19 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.dunkindonuts.com, DNS:afm.dunkinbrands.com, DNS:dev2.dunkindonuts.com, DNS:dunkindonuts.com, DNS:dunkinnation.com, DNS:dunkinrewards.com, DNS:fps.dunkinbrands.com, DNS:franchiseecentral.dunkinbrands.com, DNS:global.dunkinfranchising.com, DNS:loyalty.dunkindonuts.com, DNS:menu-pricing-prd.dunkindonuts.com, DNS:menu-pricing-prd1.dunkindonuts.com, DNS:menu-pricing-stg.dunkindonuts.com, DNS:qa.baskinrobbins.com, DNS:qa.dunkindonuts.com, DNS:qa2.dunkindonuts.com, DNS:qrmenu-stg.dunkinbrands.com, DNS:qrmenu.dunkinbrands.com, DNS:social-ssoprd.dunkindonuts.com, DNS:social-ssopreprod.dunkindonuts.com, DNS:social-ssostg.dunkindonuts.com, DNS:ssoprd.dunkindonuts.com, DNS:ssostg.dunkindonuts.com, DNS:staging.baskinrobbins.com, DNS:staging.dunkindonuts.com, DNS:staging.dunkinfranchising.com, DNS:staging.dunkinnation.com, DNS:staging2.baskinrobbins.com, DNS:staging3.dunkindonuts.com, DNS:staging3.dunkinnation.com, DNS:star-stg.dunkinbrands.com, DNS:star.dunkinbrands.com, DNS:uat.dunkindonuts.com, DNS:wsvc.dunkinrun.com, DNS:www.baskinrobbins.com, DNS:www.baskinrobbinsfranchising.com, DNS:www.brglobalfranchising.com, DNS:www.ddglobalfranchising.com, DNS:www.ddperks.com, DNS:www.dunkinemail.com, DNS:www.dunkinfranchising.com, DNS:www.dunkinnation.com, DNS:www.dunkinperks.com, DNS:www.dunkinrewards.com, DNS:www.dunkinrun.com, DNS:www.franchiseecentral.dunkinbrands.com, DNS:www2.baskinrobbins.com
+
+>> qa.dunkindonuts.com
+subject=CN=*.dunkindonuts.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M04
+notBefore=Feb 22 00:00:00 2026 GMT
+notAfter=Sep  7 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:*.dunkindonuts.com, DNS:*.awsprd.dunkindonuts.com, DNS:*.dunkinnation.com, DNS:*.awsstg.dunkindonuts.com, DNS:*.awspt.dunkindonuts.com
+
+>> qa2.dunkindonuts.com
+subject=C=US, ST=Massachusetts, L=Canton, O=Dunkin' Brands, Inc., CN=www.dunkindonuts.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=GeoTrust TLS RSA CA G1
+notBefore=Nov 20 00:00:00 2025 GMT
+notAfter=Nov 19 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.dunkindonuts.com, DNS:afm.dunkinbrands.com, DNS:dev2.dunkindonuts.com, DNS:dunkindonuts.com, DNS:dunkinnation.com, DNS:dunkinrewards.com, DNS:fps.dunkinbrands.com, DNS:franchiseecentral.dunkinbrands.com, DNS:global.dunkinfranchising.com, DNS:loyalty.dunkindonuts.com, DNS:menu-pricing-prd.dunkindonuts.com, DNS:menu-pricing-prd1.dunkindonuts.com, DNS:menu-pricing-stg.dunkindonuts.com, DNS:qa.baskinrobbins.com, DNS:qa.dunkindonuts.com, DNS:qa2.dunkindonuts.com, DNS:qrmenu-stg.dunkinbrands.com, DNS:qrmenu.dunkinbrands.com, DNS:social-ssoprd.dunkindonuts.com, DNS:social-ssopreprod.dunkindonuts.com, DNS:social-ssostg.dunkindonuts.com, DNS:ssoprd.dunkindonuts.com, DNS:ssostg.dunkindonuts.com, DNS:staging.baskinrobbins.com, DNS:staging.dunkindonuts.com, DNS:staging.dunkinfranchising.com, DNS:staging.dunkinnation.com, DNS:staging2.baskinrobbins.com, DNS:staging3.dunkindonuts.com, DNS:staging3.dunkinnation.com, DNS:star-stg.dunkinbrands.com, DNS:star.dunkinbrands.com, DNS:uat.dunkindonuts.com, DNS:wsvc.dunkinrun.com, DNS:www.baskinrobbins.com, DNS:www.baskinrobbinsfranchising.com, DNS:www.brglobalfranchising.com, DNS:www.ddglobalfranchising.com, DNS:www.ddperks.com, DNS:www.dunkinemail.com, DNS:www.dunkinfranchising.com, DNS:www.dunkinnation.com, DNS:www.dunkinperks.com, DNS:www.dunkinrewards.com, DNS:www.dunkinrun.com, DNS:www.franchiseecentral.dunkinbrands.com, DNS:www2.baskinrobbins.com
+
+>> staging.dunkindonuts.com
+subject=C=US, ST=Massachusetts, L=Canton, O=Dunkin' Brands, Inc., CN=www.dunkindonuts.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=GeoTrust TLS RSA CA G1
+notBefore=Nov 20 00:00:00 2025 GMT
+notAfter=Nov 19 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.dunkindonuts.com, DNS:afm.dunkinbrands.com, DNS:dev2.dunkindonuts.com, DNS:dunkindonuts.com, DNS:dunkinnation.com, DNS:dunkinrewards.com, DNS:fps.dunkinbrands.com, DNS:franchiseecentral.dunkinbrands.com, DNS:global.dunkinfranchising.com, DNS:loyalty.dunkindonuts.com, DNS:menu-pricing-prd.dunkindonuts.com, DNS:menu-pricing-prd1.dunkindonuts.com, DNS:menu-pricing-stg.dunkindonuts.com, DNS:qa.baskinrobbins.com, DNS:qa.dunkindonuts.com, DNS:qa2.dunkindonuts.com, DNS:qrmenu-stg.dunkinbrands.com, DNS:qrmenu.dunkinbrands.com, DNS:social-ssoprd.dunkindonuts.com, DNS:social-ssopreprod.dunkindonuts.com, DNS:social-ssostg.dunkindonuts.com, DNS:ssoprd.dunkindonuts.com, DNS:ssostg.dunkindonuts.com, DNS:staging.baskinrobbins.com, DNS:staging.dunkindonuts.com, DNS:staging.dunkinfranchising.com, DNS:staging.dunkinnation.com, DNS:staging2.baskinrobbins.com, DNS:staging3.dunkindonuts.com, DNS:staging3.dunkinnation.com, DNS:star-stg.dunkinbrands.com, DNS:star.dunkinbrands.com, DNS:uat.dunkindonuts.com, DNS:wsvc.dunkinrun.com, DNS:www.baskinrobbins.com, DNS:www.baskinrobbinsfranchising.com, DNS:www.brglobalfranchising.com, DNS:www.ddglobalfranchising.com, DNS:www.ddperks.com, DNS:www.dunkinemail.com, DNS:www.dunkinfranchising.com, DNS:www.dunkinnation.com, DNS:www.dunkinperks.com, DNS:www.dunkinrewards.com, DNS:www.dunkinrun.com, DNS:www.franchiseecentral.dunkinbrands.com, DNS:www2.baskinrobbins.com
+
+>> staging3.dunkindonuts.com
+subject=C=US, ST=Massachusetts, L=Canton, O=Dunkin' Brands, Inc., CN=www.dunkindonuts.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=GeoTrust TLS RSA CA G1
+notBefore=Nov 20 00:00:00 2025 GMT
+notAfter=Nov 19 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.dunkindonuts.com, DNS:afm.dunkinbrands.com, DNS:dev2.dunkindonuts.com, DNS:dunkindonuts.com, DNS:dunkinnation.com, DNS:dunkinrewards.com, DNS:fps.dunkinbrands.com, DNS:franchiseecentral.dunkinbrands.com, DNS:global.dunkinfranchising.com, DNS:loyalty.dunkindonuts.com, DNS:menu-pricing-prd.dunkindonuts.com, DNS:menu-pricing-prd1.dunkindonuts.com, DNS:menu-pricing-stg.dunkindonuts.com, DNS:qa.baskinrobbins.com, DNS:qa.dunkindonuts.com, DNS:qa2.dunkindonuts.com, DNS:qrmenu-stg.dunkinbrands.com, DNS:qrmenu.dunkinbrands.com, DNS:social-ssoprd.dunkindonuts.com, DNS:social-ssopreprod.dunkindonuts.com, DNS:social-ssostg.dunkindonuts.com, DNS:ssoprd.dunkindonuts.com, DNS:ssostg.dunkindonuts.com, DNS:staging.baskinrobbins.com, DNS:staging.dunkindonuts.com, DNS:staging.dunkinfranchising.com, DNS:staging.dunkinnation.com, DNS:staging2.baskinrobbins.com, DNS:staging3.dunkindonuts.com, DNS:staging3.dunkinnation.com, DNS:star-stg.dunkinbrands.com, DNS:star.dunkinbrands.com, DNS:uat.dunkindonuts.com, DNS:wsvc.dunkinrun.com, DNS:www.baskinrobbins.com, DNS:www.baskinrobbinsfranchising.com, DNS:www.brglobalfranchising.com, DNS:www.ddglobalfranchising.com, DNS:www.ddperks.com, DNS:www.dunkinemail.com, DNS:www.dunkinfranchising.com, DNS:www.dunkinnation.com, DNS:www.dunkinperks.com, DNS:www.dunkinrewards.com, DNS:www.dunkinrun.com, DNS:www.franchiseecentral.dunkinbrands.com, DNS:www2.baskinrobbins.com
+
+>> uat.dunkindonuts.com
+  CERT UNAVAILABLE (connection failed or no cert)
+
+--- Server Fingerprinting (OPTIONS method) ---
+>> OPTIONS www.dunkindonuts.com
+HTTP/2 301 
+server: Apache
+server-timing: ak_p; desc="1776113899084_399924815_950410241_6975_6811_4_6_15";dur=1
+>> OPTIONS dev2.dunkindonuts.com
+HTTP/2 301 
+server: Apache
+>> OPTIONS qa.dunkindonuts.com
+HTTP/1.1 302 Found
+Server: Apache
+>> OPTIONS qa2.dunkindonuts.com
+HTTP/1.1 301 Moved Permanently
+Server: Apache
+>> OPTIONS staging.dunkindonuts.com
+HTTP/2 403 
+server: AkamaiGHost
+>> OPTIONS staging3.dunkindonuts.com
+HTTP/1.1 301 Moved Permanently
+Server: Apache
+>> OPTIONS uat.dunkindonuts.com
+
+=== DONE ===

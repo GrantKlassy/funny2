@@ -1,0 +1,282 @@
+=== LOYALTY & SSO PROBING ===
+Date: 2026-04-13T20:59:16Z
+
+--- DNS Resolution ---
+ssoprd.dunkindonuts.com → CNAME: ssoprd.dunkindonuts.com.edgekey.net. A: ssoprd.dunkindonuts.com.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+ssostg.dunkindonuts.com → CNAME: ssostg.dunkindonuts.com.edgekey.net. A: ssostg.dunkindonuts.com.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+social-ssoprd.dunkindonuts.com → CNAME: social-ssoprd.dunkindonuts.com.edgekey.net. A: social-ssoprd.dunkindonuts.com.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+social-ssopreprod.dunkindonuts.com → CNAME: social-ssopreprod.dunkindonuts.com.edgekey.net. A: social-ssopreprod.dunkindonuts.com.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+social-ssostg.dunkindonuts.com → CNAME: social-ssostg.dunkindonuts.com.edgekey.net. A: social-ssostg.dunkindonuts.com.edgekey.net.,e5079.dsca.akamaiedge.net.,23.203.213.158
+loyalty.dunkindonuts.com → CNAME: none A: unresolved
+
+--- SSO Baseline Headers ---
+
+>> ssoprd.dunkindonuts.com (GET /)
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+content-length: 149
+accept-ranges: bytes
+etag: W/"149-1753920778000"
+last-modified: Thu, 31 Jul 2025 00:12:58 GMT
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+strict-transport-security: max-age=31536000 ; includeSubDomains
+x-frame-options: DENY
+expires: Mon, 13 Apr 2026 20:59:16 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Mon, 13 Apr 2026 20:59:16 GMT
+server-timing: ak_p; desc="1776113956659_390287333_1414492645_8297_8366_4_13_15";dur=1
+
+>> Body:
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch","rua.ceh":"false","rua.ueh":"false","rua.ieh.st":"0"}]);</script>
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="PQRRH-3YQU4-TTE6T-9RWPF-RVWZY",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"PQRRH-3YQU4-TTE6T-9RWPF-RVWZY";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="eaaqlkcanpqaajqacqdc4aaevbu52wje-f-5c200acef-clienttons-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"39","ak.cp":"1397398","ak.ai":parseInt("846542",10),"ak.ol":"0","ak.cr":4,"ak.ipv":6,"ak.proto":"h2","ak.rid":"77f8afda","ak.r":44794,"ak.a2":n,"ak.m":"dsca","ak.n":"essl","ak.bpcip":"2001:5a8:406b:e000::","ak.cport":34908,"ak.gh":"23.67.79.236","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1776113956","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==4OHytVZceIhpR0B/JrMGUfwNBsTQjGcBQOGrBR3LDOJUgM+/Zpnfp7HxbRNRXQrmV61JvZlIy5Y1ad3FeGev5658Zd3upGD9MDZXCJpfdUhVg9bf5SYLl3rhWh6C9+2jMhcIwX0xPneEjqikcYmv06oVp3wXCi4B+TDgNwwzxETfXYE4OAWemLA+J4OErlIneQPmYTctC1ZKaTN4APnH0FNoINuLGYItRWTllO5zYJIC7X+q2BUFnm2JInrN/VnoHSjDX4uk9PcqBiDahtJWkoXCATcpsvX28RCeOY2NJZ9MRQuZCNFAHoacJrpz8ietEqUsRQ8TnW8lTP6PfylKjGdPBM2KxhewpjZb4lx+Dwm0P6IEPHLkqzA9GYndtmegopPvgEnr8IEC7pDa9ioJDN1rFzIjuxsMxtZantli1to=","ak.pv":"6","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+    <h3>Application is running</h3>
+</body>
+</html>
+>> ssostg.dunkindonuts.com (GET /)
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+content-length: 149
+accept-ranges: bytes
+etag: W/"149-1758639562000"
+last-modified: Tue, 23 Sep 2025 14:59:22 GMT
+expires: Mon, 13 Apr 2026 20:59:17 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Mon, 13 Apr 2026 20:59:17 GMT
+server-timing: ak_p; desc="1776113956911_390287340_2012786966_41125_9313_4_11_15";dur=1
+
+>> Body:
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch","rua.ceh":"false","rua.ueh":"false","rua.ieh.st":"0"}]);</script>
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="S3A4P-JRZ2Z-KQC6P-XBPBV-9Z2ED",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"S3A4P-JRZ2Z-KQC6P-XBPBV-9Z2ED";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="eaaqlkcanpqaajqacqdc4aaevbu52wjf-f-f476933be-clienttons-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"39","ak.cp":"1394821","ak.ai":parseInt("844470",10),"ak.ol":"0","ak.cr":4,"ak.ipv":6,"ak.proto":"h2","ak.rid":"77f8b58e","ak.r":44794,"ak.a2":n,"ak.m":"dsca","ak.n":"essl","ak.bpcip":"2001:5a8:406b:e000::","ak.cport":34954,"ak.gh":"23.67.79.236","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1776113957","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==yVUwMDt61zOabIBG6LihZb+OKQoUWlDtojeRlDx3JgBARuEROHDnFeMniUppeK/K9FTNvO/6VtfCOt+uJNuuj1ahjp6yalX628StdZXzpJkxt7Ww7hGlkhM3Xe0RM1uJj4d9NjntEXRY9PUyK4CBA5h2OIkz2ANsnx/SwZI/gD3dfC2jzYzjn/H/2rACTYQVJlKynAlSQHMZHhd0Pe7SYnbkWeEENi9eh8VJ9YcA3+grwBKuBQAu5ia2QNATuYYZBHZL3TFTqWoRcToKVwlWb85VpMocesXuDFcpV8kWOhw3N6/GWyd72rVzvfm8RId6RB9Ow9bZFN/QYRifvUpNx4nI34YfCNAMlzPaKBzd7aVMH3/qlolyobhLaHBFHc9eLMs3qos7HOuCFWR9RDaF6R15iiNErKrZOwkUIoaWHUI=","ak.pv":"5","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+    <h3>Application is running</h3>
+</body>
+</html>
+>> social-ssoprd.dunkindonuts.com (GET /)
+HTTP/2 403 
+content-type: text/html;charset=utf-8
+content-length: 431
+x-content-type-options: nosniff
+x-xss-protection: 0
+strict-transport-security: max-age=31536000 ; includeSubDomains
+x-frame-options: DENY
+content-language: en
+expires: Mon, 13 Apr 2026 20:59:17 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Mon, 13 Apr 2026 20:59:17 GMT
+set-cookie: JSESSIONID=7AA529DE17448C58A56B89CE292A8D7B; Path=/; Secure; HttpOnly
+server-timing: ak_p; desc="1776113957494_390287333_1414494095_28460_10118_4_6_15";dur=1
+
+>> Body:
+<!doctype html><html lang="en"><head><title>HTTP Status 403 – Forbidden</title><style type="text/css">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 403 – Forbidden</h1></body></html>
+>> social-ssopreprod.dunkindonuts.com (GET /)
+HTTP/2 403 
+content-type: text/html;charset=utf-8
+content-length: 431
+x-content-type-options: nosniff
+x-xss-protection: 0
+strict-transport-security: max-age=31536000 ; includeSubDomains
+x-frame-options: DENY
+content-language: en
+expires: Mon, 13 Apr 2026 20:59:18 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Mon, 13 Apr 2026 20:59:18 GMT
+set-cookie: JSESSIONID=DE546E5240627BACDFFF9B2B2350E4EB; Path=/; Secure; HttpOnly
+server-timing: ak_p; desc="1776113958126_390287340_2012789715_27636_8095_5_6_15";dur=1
+
+>> Body:
+<!doctype html><html lang="en"><head><title>HTTP Status 403 – Forbidden</title><style type="text/css">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 403 – Forbidden</h1></body></html>
+>> social-ssostg.dunkindonuts.com (GET /)
+HTTP/2 403 
+content-type: text/html;charset=utf-8
+content-length: 431
+x-content-type-options: nosniff
+x-xss-protection: 0
+strict-transport-security: max-age=31536000 ; includeSubDomains
+x-frame-options: DENY
+content-language: en
+expires: Mon, 13 Apr 2026 20:59:18 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Mon, 13 Apr 2026 20:59:18 GMT
+set-cookie: JSESSIONID=CAF90F0DEF158F3DE673ED8BD584F57F; Path=/; Secure; HttpOnly
+server-timing: ak_p; desc="1776113958750_390287333_1414495986_20700_7017_5_10_15";dur=1
+
+>> Body:
+<!doctype html><html lang="en"><head><title>HTTP Status 403 – Forbidden</title><style type="text/css">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 403 – Forbidden</h1></body></html>
+--- SSO Discovery Endpoints ---
+
+>> Discovery sweep: ssoprd.dunkindonuts.com
+  /.well-known/openid-configuration → 302
+  /.well-known/oauth-authorization-server → 302
+  /saml/metadata → 302
+  /FederationMetadata/2007-06/FederationMetadata.xml → 302
+  /adfs/ls → 302
+  /adfs/.well-known/openid-configuration → 302
+  /oauth2/authorize → 302
+  /oauth2/token → 302
+  /oauth2/.well-known/openid-configuration → 302
+  /auth/realms/master/.well-known/openid-configuration → 302
+  /.well-known/webfinger → 302
+  /login → 200
+  [BODY]:
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    /" />
+    <title>Sign Up/Login Box</title>
+    <!-- Meta Tags added  -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <!-- Stylesheet added -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" />
+    <!-- Java Script added -->
+    
+<body>
+	
+	<div id="wrap-userbox">
+		<div id="userbox">
+			<h1 id="signup" style="background-color: white; background-position: initial initial; background-repeat: initial initial;">
+				
+				<img id="dd-logo" src="images/SPW_Login_Lockup.png" alt="logo"/>
+			</h1>
+			<p style="text-align: justify; padding: 10px;">
+				To sign into your DD Perks account via the Sip. Peel. Win Sweepstakes website, enter the required information associated with your DD Perks account.
+			</p>
+
+			<div id="messages">
+				
+				
+				
+			</div>
+			<form name="f" action="/login" method="post">
+				<input id="name" type="email" name="username"
+					placeholder="Email Address"
+					style="opacity: 1; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial;" />
+				<input id="pass" type="password" name="password"
+  [/BODY]
+  /Login → 302
+  /Account/Login → 302
+
+>> Discovery sweep: ssostg.dunkindonuts.com
+  /.well-known/openid-configuration → 200
+  [BODY]:
+{"issuer":"https://ssostg.dunkindonuts.com","authorization_endpoint":"https://ssostg.dunkindonuts.com/oauth2/authorize","pushed_authorization_request_endpoint":"https://ssostg.dunkindonuts.com/oauth2/par","device_authorization_endpoint":"https://ssostg.dunkindonuts.com/oauth2/device_authorization","token_endpoint":"https://ssostg.dunkindonuts.com/oauth/token","token_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"jwks_uri":"https://ssostg.dunkindonuts.com/oauth2/jwks","userinfo_endpoint":"https://ssostg.dunkindonuts.com/userinfo","end_session_endpoint":"https://ssostg.dunkindonuts.com/connect/logout","response_types_supported":["code"],"grant_types_supported":["authorization_code","client_credentials","refresh_token","urn:ietf:params:oauth:grant-type:device_code","urn:ietf:params:oauth:grant-type:token-exchange"],"revocation_endpoint":"https://ssostg.dunkindonuts.com/oauth2/revoke","revocation_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"introspection_endpoint":"https://ssostg.dunkindonuts.com/oauth2/introspect","introspection_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"code_challenge_methods_supported":["S256"],"tls_client_certificate_bound_access_tokens":true,"dpop_signing_alg_values_supported":["RS256","RS384","RS512","PS256","PS384","PS512","ES256","ES384","ES512"],"subject_types_supported":["public"],"id_token_signing_alg_values_supported":["RS256"],"scopes_supported":["openid"]}  [/BODY]
+  /.well-known/oauth-authorization-server → 200
+  [BODY]:
+{"issuer":"https://ssostg.dunkindonuts.com","authorization_endpoint":"https://ssostg.dunkindonuts.com/oauth2/authorize","pushed_authorization_request_endpoint":"https://ssostg.dunkindonuts.com/oauth2/par","device_authorization_endpoint":"https://ssostg.dunkindonuts.com/oauth2/device_authorization","token_endpoint":"https://ssostg.dunkindonuts.com/oauth/token","token_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"jwks_uri":"https://ssostg.dunkindonuts.com/oauth2/jwks","response_types_supported":["code"],"grant_types_supported":["authorization_code","client_credentials","refresh_token","urn:ietf:params:oauth:grant-type:device_code","urn:ietf:params:oauth:grant-type:token-exchange"],"revocation_endpoint":"https://ssostg.dunkindonuts.com/oauth2/revoke","revocation_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"introspection_endpoint":"https://ssostg.dunkindonuts.com/oauth2/introspect","introspection_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"code_challenge_methods_supported":["S256"],"tls_client_certificate_bound_access_tokens":true,"dpop_signing_alg_values_supported":["RS256","RS384","RS512","PS256","PS384","PS512","ES256","ES384","ES512"]}  [/BODY]
+  /saml/metadata → 302
+  /FederationMetadata/2007-06/FederationMetadata.xml → 302
+  /adfs/ls → 302
+  /adfs/.well-known/openid-configuration → 302
+  /oauth2/authorize → 400
+  /oauth2/token → 302
+  /oauth2/.well-known/openid-configuration → 302
+  /auth/realms/master/.well-known/openid-configuration → 302
+  /.well-known/webfinger → 302
+  /login → 500
+  /Login → 302
+  /Account/Login → 302
+
+>> Discovery sweep: social-ssoprd.dunkindonuts.com
+  /.well-known/openid-configuration → 200
+  [BODY]:
+{"issuer":"https://social-ssoprd.dunkindonuts.com","authorization_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth2/authorize","pushed_authorization_request_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth2/par","device_authorization_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth2/device_authorization","token_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth/token","token_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"jwks_uri":"https://social-ssoprd.dunkindonuts.com/oauth2/jwks","userinfo_endpoint":"https://social-ssoprd.dunkindonuts.com/userinfo","end_session_endpoint":"https://social-ssoprd.dunkindonuts.com/connect/logout","response_types_supported":["code"],"grant_types_supported":["authorization_code","client_credentials","refresh_token","urn:ietf:params:oauth:grant-type:device_code","urn:ietf:params:oauth:grant-type:token-exchange"],"revocation_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth2/revoke","revocation_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"introspection_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth2/introspect","introspection_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"code_challenge_methods_supported":["S256"],"tls_client_certificate_bound_access_tokens":true,"dpop_signing_alg_values_supported":["RS256","RS384","RS512","PS256","PS384","PS512","ES256","ES384","ES512"],"subject_types_supported":["public"],"id_token_signing_alg_values_supported":["RS256"],"scopes_supported":["openid"]}  [/BODY]
+  /.well-known/oauth-authorization-server → 200
+  [BODY]:
+{"issuer":"https://social-ssoprd.dunkindonuts.com","authorization_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth2/authorize","pushed_authorization_request_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth2/par","device_authorization_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth2/device_authorization","token_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth/token","token_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"jwks_uri":"https://social-ssoprd.dunkindonuts.com/oauth2/jwks","response_types_supported":["code"],"grant_types_supported":["authorization_code","client_credentials","refresh_token","urn:ietf:params:oauth:grant-type:device_code","urn:ietf:params:oauth:grant-type:token-exchange"],"revocation_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth2/revoke","revocation_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"introspection_endpoint":"https://social-ssoprd.dunkindonuts.com/oauth2/introspect","introspection_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"code_challenge_methods_supported":["S256"],"tls_client_certificate_bound_access_tokens":true,"dpop_signing_alg_values_supported":["RS256","RS384","RS512","PS256","PS384","PS512","ES256","ES384","ES512"]}  [/BODY]
+  /saml/metadata → 403
+  /FederationMetadata/2007-06/FederationMetadata.xml → 403
+  /adfs/ls → 403
+  /adfs/.well-known/openid-configuration → 403
+  /oauth2/authorize → 403
+  /oauth2/token → 403
+  /oauth2/.well-known/openid-configuration → 403
+  /auth/realms/master/.well-known/openid-configuration → 403
+  /.well-known/webfinger → 403
+  /login → 403
+  /Login → 403
+  /Account/Login → 403
+
+>> Discovery sweep: social-ssopreprod.dunkindonuts.com
+  /.well-known/openid-configuration → 200
+  [BODY]:
+{"issuer":"https://social-ssopreprod.dunkindonuts.com","authorization_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth2/authorize","pushed_authorization_request_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth2/par","device_authorization_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth2/device_authorization","token_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth/token","token_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"jwks_uri":"https://social-ssopreprod.dunkindonuts.com/oauth2/jwks","userinfo_endpoint":"https://social-ssopreprod.dunkindonuts.com/userinfo","end_session_endpoint":"https://social-ssopreprod.dunkindonuts.com/connect/logout","response_types_supported":["code"],"grant_types_supported":["authorization_code","client_credentials","refresh_token","urn:ietf:params:oauth:grant-type:device_code","urn:ietf:params:oauth:grant-type:token-exchange"],"revocation_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth2/revoke","revocation_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"introspection_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth2/introspect","introspection_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"code_challenge_methods_supported":["S256"],"tls_client_certificate_bound_access_tokens":true,"dpop_signing_alg_values_supported":["RS256","RS384","RS512","PS256","PS384","PS512","ES256","ES384","ES512"],"subject_types_supported":["public"],"id_token_signing_alg_values_supported":["RS256"],"scopes_supported":["openid"]}  [/BODY]
+  /.well-known/oauth-authorization-server → 200
+  [BODY]:
+{"issuer":"https://social-ssopreprod.dunkindonuts.com","authorization_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth2/authorize","pushed_authorization_request_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth2/par","device_authorization_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth2/device_authorization","token_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth/token","token_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"jwks_uri":"https://social-ssopreprod.dunkindonuts.com/oauth2/jwks","response_types_supported":["code"],"grant_types_supported":["authorization_code","client_credentials","refresh_token","urn:ietf:params:oauth:grant-type:device_code","urn:ietf:params:oauth:grant-type:token-exchange"],"revocation_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth2/revoke","revocation_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"introspection_endpoint":"https://social-ssopreprod.dunkindonuts.com/oauth2/introspect","introspection_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"code_challenge_methods_supported":["S256"],"tls_client_certificate_bound_access_tokens":true,"dpop_signing_alg_values_supported":["RS256","RS384","RS512","PS256","PS384","PS512","ES256","ES384","ES512"]}  [/BODY]
+  /saml/metadata → 403
+  /FederationMetadata/2007-06/FederationMetadata.xml → 403
+  /adfs/ls → 403
+  /adfs/.well-known/openid-configuration → 403
+  /oauth2/authorize → 403
+  /oauth2/token → 403
+  /oauth2/.well-known/openid-configuration → 403
+  /auth/realms/master/.well-known/openid-configuration → 403
+  /.well-known/webfinger → 403
+  /login → 403
+  /Login → 403
+  /Account/Login → 403
+
+>> Discovery sweep: social-ssostg.dunkindonuts.com
+  /.well-known/openid-configuration → 200
+  [BODY]:
+{"issuer":"https://social-ssostg.dunkindonuts.com","authorization_endpoint":"https://social-ssostg.dunkindonuts.com/oauth2/authorize","pushed_authorization_request_endpoint":"https://social-ssostg.dunkindonuts.com/oauth2/par","device_authorization_endpoint":"https://social-ssostg.dunkindonuts.com/oauth2/device_authorization","token_endpoint":"https://social-ssostg.dunkindonuts.com/oauth/token","token_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"jwks_uri":"https://social-ssostg.dunkindonuts.com/oauth2/jwks","userinfo_endpoint":"https://social-ssostg.dunkindonuts.com/userinfo","end_session_endpoint":"https://social-ssostg.dunkindonuts.com/connect/logout","response_types_supported":["code"],"grant_types_supported":["authorization_code","client_credentials","refresh_token","urn:ietf:params:oauth:grant-type:device_code","urn:ietf:params:oauth:grant-type:token-exchange"],"revocation_endpoint":"https://social-ssostg.dunkindonuts.com/oauth2/revoke","revocation_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"introspection_endpoint":"https://social-ssostg.dunkindonuts.com/oauth2/introspect","introspection_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"code_challenge_methods_supported":["S256"],"tls_client_certificate_bound_access_tokens":true,"dpop_signing_alg_values_supported":["RS256","RS384","RS512","PS256","PS384","PS512","ES256","ES384","ES512"],"subject_types_supported":["public"],"id_token_signing_alg_values_supported":["RS256"],"scopes_supported":["openid"]}  [/BODY]
+  /.well-known/oauth-authorization-server → 200
+  [BODY]:
+{"issuer":"https://social-ssostg.dunkindonuts.com","authorization_endpoint":"https://social-ssostg.dunkindonuts.com/oauth2/authorize","pushed_authorization_request_endpoint":"https://social-ssostg.dunkindonuts.com/oauth2/par","device_authorization_endpoint":"https://social-ssostg.dunkindonuts.com/oauth2/device_authorization","token_endpoint":"https://social-ssostg.dunkindonuts.com/oauth/token","token_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"jwks_uri":"https://social-ssostg.dunkindonuts.com/oauth2/jwks","response_types_supported":["code"],"grant_types_supported":["authorization_code","client_credentials","refresh_token","urn:ietf:params:oauth:grant-type:device_code","urn:ietf:params:oauth:grant-type:token-exchange"],"revocation_endpoint":"https://social-ssostg.dunkindonuts.com/oauth2/revoke","revocation_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"introspection_endpoint":"https://social-ssostg.dunkindonuts.com/oauth2/introspect","introspection_endpoint_auth_methods_supported":["client_secret_basic","client_secret_post","client_secret_jwt","private_key_jwt","tls_client_auth","self_signed_tls_client_auth"],"code_challenge_methods_supported":["S256"],"tls_client_certificate_bound_access_tokens":true,"dpop_signing_alg_values_supported":["RS256","RS384","RS512","PS256","PS384","PS512","ES256","ES384","ES512"]}  [/BODY]
+  /saml/metadata → 403
+  /FederationMetadata/2007-06/FederationMetadata.xml → 403
+  /adfs/ls → 403
+  /adfs/.well-known/openid-configuration → 403
+  /oauth2/authorize → 403
+  /oauth2/token → 403
+  /oauth2/.well-known/openid-configuration → 403
+  /auth/realms/master/.well-known/openid-configuration → 403
+  /.well-known/webfinger → 403
+  /login → 403
+  /Login → 403
+  /Account/Login → 403
+
+--- Social-SSO: User-Agent Comparison ---
+
+>> social-ssoprd.dunkindonuts.com
+  UA=mobile → 403
+  UA=desktop → 403
+  UA=curl → 403
+
+>> social-ssopreprod.dunkindonuts.com
+  UA=mobile → 403
+  UA=desktop → 403
+  UA=curl → 403
+
+>> social-ssostg.dunkindonuts.com
+  UA=mobile → 403
+  UA=desktop → 403
+  UA=curl → 403
+
+--- Loyalty Service: loyalty.dunkindonuts.com ---
+>> Headers (GET /):

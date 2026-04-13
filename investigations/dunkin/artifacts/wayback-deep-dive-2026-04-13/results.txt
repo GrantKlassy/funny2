@@ -1,0 +1,187 @@
+=== WAYBACK MACHINE DEEP DIVE ===
+Date: 2026-04-13T20:59:17Z
+
+--- Legacy dunkinbrands.com Services ---
+
+>> Wayback: Franchisee Central (franchiseecentral.dunkinbrands.com)
+  TIMEOUT
+
+>> Wayback: Star (405 mystery) (star.dunkinbrands.com)
+  TIMEOUT
+
+>> Wayback: FPS (CAAS) (fps.dunkinbrands.com)
+  TIMEOUT
+
+>> Wayback: RBOS (rbos.dunkinbrands.com)
+  TIMEOUT
+
+>> Wayback: Genesis Production (genesisproduction.dunkinbrands.com)
+  TIMEOUT
+
+>> Wayback: Genesis Sandbox (genesissandbox.dunkinbrands.com)
+  NO RESULTS
+
+>> Wayback: The Center (thecenter.dunkinbrands.com)
+  10 archived URLs
+20230226164313 - warc/revisit http://thecenter.dunkinbrands.com/
+20240321002451 200 text/html https://thecenter.dunkinbrands.com/content/combo/us/en/header/learning-path-combo.html
+20240320234319 200 text/html https://thecenter.dunkinbrands.com/content/combo/us/en/header/learning-path-combo/dunkin-learning-path-11-27.html
+20240320234355 200 text/html https://thecenter.dunkinbrands.com/content/combo/us/en/header/readiness/spring-readiness-february-21-april-30.html
+20240320234233 200 text/html https://thecenter.dunkinbrands.com/content/combo/us/en/home.html
+20240320234426 200 text/html https://thecenter.dunkinbrands.com/content/combo/us/en/home/dunkin-equipment/bakery-equipment.html
+20240320234215 200 image/png https://thecenter.dunkinbrands.com/content/dam/public-facing-documents/Background_Login.png
+20240320234215 200 text/css https://thecenter.dunkinbrands.com/content/dam/public-facing-documents/okta-login-screen.css
+20240320234216 200 image/png https://thecenter.dunkinbrands.com/content/dam/public-facing-documents/TheCenter_Logo_090622.png
+20240322010600 302 text/html https://thecenter.dunkinbrands.com/system/sling/logout.html
+
+>> Wayback: Citrix (citrix.dunkinbrands.com)
+  2 archived URLs
+20130703100708 302 unk http://citrix.dunkinbrands.com
+20130713220625 404 text/html https://citrix.dunkinbrands.com/robots.txt
+
+>> Wayback: SmartSolve (smartsolve.dunkinbrands.com)
+  4 archived URLs
+20210311155601 200 text/html https://smartsolve.dunkinbrands.com/
+20220401034342 404 text/html https://smartsolve.dunkinbrands.com/favicon.ico
+20180215105911 404 text/html https://smartsolve.dunkinbrands.com/robots.txt
+20220331054538 200 text/html https://smartsolve.dunkinbrands.com/SmartProd/login.aspx?ReturnUrl=%2Fsmartprod%2FTTD_NEEDS_SIGNOFF_REQUIREMENTS_MAIN.aspx%3FItmID%3D%26ParID%3D%26HdrID%3D%26NavAction%3D%26Path%3D&ItmID=&ParID=&HdrID=&NavAction=&Path=
+
+>> Wayback: POSHC (poshc.dunkinbrands.com)
+  NO RESULTS
+
+>> Wayback: BAM (bam.dunkinbrands.com)
+  1 archived URLs
+20240912200224 301 text/html http://bam.dunkinbrands.com/
+
+>> Wayback: Recognition (recognition.dunkinbrands.com)
+  5 archived URLs
+20130509080044 302 text/html http://recognition.dunkinbrands.com
+20130509080045 302 text/html http://recognition.dunkinbrands.com/Home.aspx?d
+20130509080047 200 text/html http://recognition.dunkinbrands.com/OEM/Login.aspx?d&ReturnUrl=%2fHome.aspx%3fd
+20130622213614 404 text/html http://recognition.dunkinbrands.com/robots.txt
+20190627062310 200 text/html https://recognition.dunkinbrands.com/signin
+
+>> Wayback: WSAPI (wsapi.dunkinbrands.com)
+  NO RESULTS
+
+>> Wayback: PLM Supplier (plmsupplier.dunkinbrands.com)
+  TIMEOUT
+
+--- Vanity Domains ---
+
+>> Wayback: Dunkin Rewards (dunkinrewards.com)
+  12 archived URLs
+20110207110939 200 text/html http://dunkinrewards.com/
+20221102133849 301 unk http://www.dunkinrewards.com/&esheet=52958430&newsitemid=20221102005417&lan=en-US&anchor=dunkinrewards.com&index=1&md5=0a877e03727ebc16472dca4420980869
+20221221160949 301 unk http://www.dunkinrewards.com/&esheet=53117043&newsitemid=20221221005381&lan=en-US&anchor=dunkinrewards.com&index=1&md5=63adf21b9adfeb1693f5f6f317d4455d
+20240828112643 301 text/html https://dunkinrewards.com/&esheet=54114286&newsitemid=20240828384101&lan=en-US&anchor=dunkinrewards.com&index=1&md5=97513c4166cc2da7b63d34389a50f849
+20241230233537 301 text/html https://dunkinrewards.com/&esheet=54171230&newsitemid=20241230980447&lan=en-US&anchor=dunkinrewards.com&index=4&md5=1c9cc5c548ea64d6b17eedbddcc2153e&_gl=1*1plb0te*_gcl_au*MTc5MDkwODgzMC4xNzMxNDEyMzg1*_ga*MTUyMjcyNjQ3My4xNzIzNTgwMTkz*_ga_ZQWF70T3FK*MTczNTU3NDU5MC41NC4xLjE3MzU1NzY2ODYuNjAuMC4w
+20110207110943 200 text/html http://dunkinrewards.com/favicon.ico
+20221004043759 301 text/html https://dunkinrewards.com/layout/bluesky/favicon.ico
+20221004043808 301 text/html https://dunkinrewards.com/layout/bluesky/icon.png
+20221004043658 301 text/html https://dunkinrewards.com/layout/bluesky/style.css
+20221004043704 301 text/html https://dunkinrewards.com/layout/c.js
+20120421105227 200 text/plain http://dunkinrewards.com/robots.txt
+20221004134917 301 unk https://www.dunkinrewards.com/sitemap.xml
+
+>> Wayback: Dunkin Email (dunkinemail.com)
+  TIMEOUT
+
+>> Wayback: DD Perks (ddperks.com)
+  50 archived URLs
+20091124094155 302 unk http://ddperks.com:80/
+20210105115607 301 unk http://www.ddperks.com/%22,%22icon%22:null,%22html%22:null,%22picture
+20200510115336 301 unk http://www.ddperks.com/&a=DDPerks.com
+20190415175638 301 unk http://www.ddperks.com/&a=www.DDPerks.com
+20210331160057 301 text/html https://ddperks.com/?sf141144644=1
+20150324204851 301 text/html http://www.ddperks.com:80/card
+20131221101909 301 text/html http://ddperks.com/content/campaigns/dunkindonuts/footer/national/jcr:content/par/partnerslogo.img.jpg/dunkindonuts
+20131221100417 301 text/html http://ddperks.com/content/campaigns/dunkindonuts/footer/national/jcr:content/par/partnerslogo_0.img.jpg/dunkindonuts
+20131221095901 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/coffee-leadership/Shop%20Online%20Nav%20promo.jpg
+20131221101303 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/Dunkin%20UpDDate/DD-Buy-a-Card-Promo-Tile_Dunkin-UpDDate.jpg
+20131221094841 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/Dunkin%20UpDDate/DD-Homepage-Hover.jpg
+20131221095912 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/icons/favicon.ico
+20131221100349 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/icons/touch-icon-ipad.png
+20131221095029 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/icons/touch-icon-iphone.png
+20131221101453 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/icons/touch-icon-iphone4.png
+20131221101826 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/mainnav/FunPaced.jpg
+20131221095538 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/mainnav/NavThumb-DDCard.jpg
+20131221095613 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/promotiles/W1%202013/DD_w01_featurePromoImg_IcedLatteLite.jpg
+20131221100024 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/promotiles/W3%202013/DD_w03_vertPromoImg_mobile.jpg
+20131221101247 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/promotiles/W3/Promotiles_Feature.jpg
+20131221101946 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/promotiles/W4%202013/DD_w04_featurePromoImg_Sameness.jpg
+20131221101737 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/promotiles/W5%202012/DD_W5_Promo_Tile_StainlessTumbler.png
+20131221101814 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/promotiles/W5%202013/DD_w05_featurePromoImg_ClassicMug.jpg
+20131221100748 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/promotiles/W6%202013/Shop%20Online%20Nav%20promo.jpg
+20131221095409 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/promotiles/W7%202013/something-fresh.jpg
+20131221095444 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/promotiles/W8%202013/DD_W08_featurePromoImg_eGift.jpg
+20131221101557 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/promotiles/W9%202013/DD_w09_featurePromoImg_Coolatta.jpg
+20131221095334 301 text/html http://ddperks.com/content/dam/Dunkin_Donuts/promotiles/W9%202013/DD_w09_featurePromoImg_Retro.jpg
+20121104013119 200 text/html http://www.ddperks.com:80/content/DDBlog.html
+20121104124659 200 text/html http://www.ddperks.com:80/content/dunkindonuts/en.html
+
+>> Wayback: Dunkin Perks (dunkinperks.com)
+  48 archived URLs
+20110207110939 302 unk http://dunkinperks.com/
+20131219133626 301 text/html http://dunkinperks.com/content/campaigns/dunkindonuts/footer/national/jcr:content/par/partnerslogo.img.jpg/dunkindonuts
+20131219134635 301 text/html http://dunkinperks.com/content/campaigns/dunkindonuts/footer/national/jcr:content/par/partnerslogo_0.img.jpg/dunkindonuts
+20131219134213 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/coffee-leadership/Shop%20Online%20Nav%20promo.jpg
+20131219134422 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/Dunkin%20UpDDate/DD-Buy-a-Card-Promo-Tile_Dunkin-UpDDate.jpg
+20131219133659 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/Dunkin%20UpDDate/DD-Homepage-Hover.jpg
+20131219135045 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/icons/favicon.ico
+20131219134208 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/icons/touch-icon-ipad.png
+20131219134119 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/icons/touch-icon-iphone.png
+20131219134816 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/icons/touch-icon-iphone4.png
+20131219133624 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/mainnav/FunPaced.jpg
+20131219133906 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/mainnav/NavThumb-DDCard.jpg
+20131219133814 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/promotiles/W1%202013/DD_w01_featurePromoImg_IcedLatteLite.jpg
+20131219134853 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/promotiles/W3%202013/DD_w03_vertPromoImg_mobile.jpg
+20131219133943 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/promotiles/W3/Promotiles_Feature.jpg
+20131219134948 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/promotiles/W4%202013/DD_w04_featurePromoImg_Sameness.jpg
+20131219134850 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/promotiles/W5%202012/DD_W5_Promo_Tile_StainlessTumbler.png
+20131219134826 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/promotiles/W5%202013/DD_w05_featurePromoImg_ClassicMug.jpg
+20131219133238 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/promotiles/W6%202013/Shop%20Online%20Nav%20promo.jpg
+20131219133726 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/promotiles/W7%202013/something-fresh.jpg
+20131219133522 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/promotiles/W8%202013/DD_W08_featurePromoImg_eGift.jpg
+20131219135157 301 text/html http://dunkinperks.com/content/dam/Dunkin_Donuts/promotiles/W8%202013/DD_W08_featurePromoImg_Retro.jpg
+20130828033251 200 text/html http://dunkinperks.com/dunkindonuts/en.html
+20131219140817 301 text/html http://dunkinperks.com/etc/clientlibs/foundation/jquery.js
+20131219133836 301 text/html http://dunkinperks.com/etc/clientlibs/foundation/librarymanager.js
+20131219134818 301 text/html http://dunkinperks.com/etc/clientlibs/foundation/shared.js
+20131219134639 301 text/html http://dunkinperks.com/etc/designs/dunkindonuts/clientlib.css
+20131219134406 301 text/html http://dunkinperks.com/etc/designs/dunkindonuts/clientlib.js
+20131219134956 301 text/html http://dunkinperks.com/etc/designs/dunkindonuts/componentlibs/closeststore.js
+20131219134512 301 text/html http://dunkinperks.com/etc/designs/dunkindonuts/css/components/atomblog.css
+
+>> Wayback: Dunkin Nation (dunkinnation.com)
+  50 archived URLs
+20110207110938 200 unk http://dunkinnation.com/
+20201031032525 200 image/svg+xml https://www.dunkinnation.com/content/dam/dd/img/brand/dd/dd-logo.svg
+20201031032521 200 image/svg+xml https://www.dunkinnation.com/content/dam/dd/img/dunkin-nation/dd-logo.svg
+20201031032521 200 image/svg+xml https://www.dunkinnation.com/content/dam/dd/img/dunkin-nation/Dunkin-Logo-DUNKINNATION-2.19.svg
+20201031032526 200 image/png https://www.dunkinnation.com/content/dam/dd/img/dunkin-nation/rebranding/coffeeanddonutv3.png
+20201031032522 200 image/png https://www.dunkinnation.com/content/dam/dd/img/dunkin-nation/rebranding/DD%20Perks%20Banner%20Desktop%20960x244.png
+20201031032523 200 image/png https://www.dunkinnation.com/content/dam/dd/img/dunkin-nation/rebranding/dunkinathome_desktopv3.png
+20201031032525 200 image/png https://www.dunkinnation.com/content/dam/dd/img/dunkin-nation/rebranding/DunkinNationDDTopHeader.png
+20201031032523 200 image/png https://www.dunkinnation.com/content/dam/dd/img/dunkin-nation/rebranding/mobilebrewv2.png
+20201031032522 200 image/png https://www.dunkinnation.com/content/dam/dd/img/dunkin-nation/rebranding/mobiledddonutsv2.png
+20201031032524 200 image/png https://www.dunkinnation.com/content/dam/dd/img/dunkin-nation/rebranding/mobileddperksv2.png
+20201031033458 404 text/html https://www.dunkinnation.com/content/jcr:content/stores.init.js
+20201031033459 404 text/html https://www.dunkinnation.com/contextstores/profiledata/resources/birthday_cake.png
+20191213220431 200 text/html https://www.dunkinnation.com/en
+20191213220500 200 text/html https://www.dunkinnation.com/en/dunkin-nation-program-details
+20201031032526 404 text/html https://www.dunkinnation.com/en/gtm.js
+20201031030857 200 text/html https://www.dunkinnation.com/en/sign-in
+20201031033458 404 image/png https://www.dunkinnation.com/etc.clientlibs/settings/wcm/designs/default/resources/social/avatar.png
+20201031032521 200 text/javascript https://www.dunkinnation.com/etc/clientcontext/legacy/config.init.js?path=/content/dunkin-nation/en/sign-in
+20201031033459 500 text/html https://www.dunkinnation.com/etc/clientcontext/shared/thumbnail/content.png
+20201031032525 404 text/html https://www.dunkinnation.com/etc/designs/dd-nation/images/favicon/favicon.png
+20201031032524 200 application/javascript https://www.dunkinnation.com/etc/designs/dd-nation/scripts/all.min.5934f2b37fa31c9fccc3dfa0ec23a3b9.js
+20201031032526 200 text/css https://www.dunkinnation.com/etc/designs/dd-nation/styles/all.min.8c1002c3d9f007c6a608ea1465452fde.css
+20201031032525 200 text/css https://www.dunkinnation.com/etc/designs/dd/fonts/coffee-service/DDcom_Coffee_Service.css
+20201031033519 200 application/vnd.ms-fontobject https://www.dunkinnation.com/etc/designs/dd/fonts/coffee-service/webfonts/31413D_0_0.eot
+20201031033520 200 application/x-font-ttf https://www.dunkinnation.com/etc/designs/dd/fonts/coffee-service/webfonts/31413D_0_0.ttf
+20201031033519 200 application/font-woff https://www.dunkinnation.com/etc/designs/dd/fonts/coffee-service/webfonts/31413D_0_0.woff
+20201031033519 200 application/font-woff2 https://www.dunkinnation.com/etc/designs/dd/fonts/coffee-service/webfonts/31413D_0_0.woff2
+20201031033512 200 application/font-woff https://www.dunkinnation.com/etc/designs/dd/fonts/dunkinsans/Web/DunkinSans-Book.woff
+20201031033503 200 application/font-woff https://www.dunkinnation.com/etc/designs/dd/fonts/dunkinsans/Web/DunkinSans-Display.woff
