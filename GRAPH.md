@@ -6,7 +6,7 @@
 
 | ID | Name | Status | Graph | Entities | Start Date |
 |----|------|--------|-------|----------|------------|
-| — | — | — | — | — | — |
+| 1 | Dunkin' Ad Infrastructure | Active | [GRAPH.md](investigations/dunkin/GRAPH.md) | 22 | 2026-04-13 |
 
 ## How to Add an Investigation
 

@@ -1,0 +1,68 @@
+# OSINT Results — 2026-04-13
+# Container: podman run --rm --dns 8.8.8.8 investigator
+
+=== WHOIS ===
+Domain: DUNKINDONUTS.COM
+Created: 1995-07-13
+Registrar: CSC Corporate Domains, Inc.
+Status: clientTransferProhibited, serverDeleteProhibited, serverTransferProhibited, serverUpdateProhibited
+NS: AWS Route 53
+DNSSEC: unsigned
+
+=== WAYBACK MACHINE — ddmprod subdomain history ===
+Earliest: 2020-07-15 (ulink.prod.ddmprod)
+Latest: 2026-02-07
+
+Discovered subdomains via Wayback:
+  cloud-preprod.ddmprod.dunkindonuts.com    (2023, 403)
+  dun-assets.prod.ddmprod.dunkindonuts.com  (2024, 200 — serves dunkin_logo@2x.png)
+  mapi-dun.preprod.ddmprod.dunkindonuts.com (2025, -)
+  mapi-dun.prod.ddmprod.dunkindonuts.com    (2025, 301)
+  ode.prod.ddmprod.dunkindonuts.com         (2025, 301)
+  swi.preprod.ddmprod.dunkindonuts.com      (2024, 404)
+  swi.prod.ddmprod.dunkindonuts.com         (2024, 404)
+  ulink.preprod.ddmprod.dunkindonuts.com    (2023, 301)
+  ulink.prod.ddmprod.dunkindonuts.com       (2020-present, 301/302)
+
+CRITICAL — Reddit ad tracking parameters captured in Wayback:
+  utm_source=reddit
+  utm_medium=paidsocial
+  utm_campaign=dunkinrun
+  utm_content=interests            ← INTEREST-BASED TARGETING CONFIRMED
+  rdt_cid=4034697513847065031      ← Reddit Click ID (conversion tracking)
+  rdt_cid=4408837806286242444
+  rdt_cid=4662522130989166087
+  rdt_cid=4943392801055748889
+  rdt_cid=4005759016360846616
+  rdt_cid=4006185773421411490
+  rdt_cid=4006511807677185186
+  rdt_cid=4006511815528922274
+
+Also seen:
+  utm_source=Pinterest, utm_medium=organic
+
+Previous campaign categories: 28, 53, 70 (current: 119)
+
+=== ITUNES APP STORE ===
+App: Dunkin'
+Bundle ID: com.dunkinbrands.otgo (OTGO = Order To Go)
+App Store ID: 1056813463
+Seller: Dunkin' Donuts
+Latest release: 2026-02-17
+
+=== REDDIT u/dunkin PROFILE ===
+Account created: 2018-10-18 (epoch 1539885446 — Dunkin' rebrand era)
+ID: 2foml7ot
+Verified: true
+Verified email: true
+Is moderator: true
+Link karma: 62
+Comment karma: 67
+Not Reddit employee, not Reddit Gold
+Posts: Not visible via public API (promoted posts served via ad system only)
+
+=== PORT SCAN (nmap) ===
+Target: 23.212.62.198 (a23-212-62-198.deploy.static.akamaitechnologies.com)
+Open: 53/tcp (domain), 80/tcp (http), 443/tcp (https)
+All other ports filtered — clean Akamai CDN edge node
+IPv6 enabled: 2600:1406:2e00:20::*

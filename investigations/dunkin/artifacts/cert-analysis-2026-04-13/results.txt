@@ -1,0 +1,58 @@
+# Certificate Analysis Results — 2026-04-13
+# Container: podman run --rm --dns 8.8.8.8 investigator
+
+=== ulink.prod.ddmprod.dunkindonuts.com ===
+CN: mapi-dun.prod.ddmprod.dunkindonuts.com (NOT ulink — shared cert with Mobile API!)
+O:  Dunkin' Brands, Inc.
+L:  Canton, MA
+Issuer: DigiCert Global G3 TLS ECC SHA384 2020 CA1
+Valid: 2025-12-31 to 2027-01-05
+Key: EC prime256v1
+
+SANs (the ddmprod service inventory):
+  mapi-dun.prod.ddmprod.dunkindonuts.com     ← Mobile API (Dunkin') - Production
+  mapi-dun.preprod.ddmprod.dunkindonuts.com   ← Mobile API - Pre-production
+  ode.prod.ddmprod.dunkindonuts.com           ← Order Delivery Engine - Production
+  ode.preprod.ddmprod.dunkindonuts.com        ← Order Delivery Engine - Pre-production
+  swi.prod.ddmprod.dunkindonuts.com           ← SWI (unknown) - Production
+  swi.preprod.ddmprod.dunkindonuts.com        ← SWI - Pre-production
+  ulink.prod.ddmprod.dunkindonuts.com         ← Universal Links - Production
+  ulink.preprod.ddmprod.dunkindonuts.com      ← Universal Links - Pre-production
+
+=== k.prod.ddmprod.dunkindonuts.com ===
+FAILED — does not resolve, no cert. Accessed only via Akamai edge/redirect.
+
+=== dunkindonuts.com ===
+CN: dunkindonuts.com
+Issuer: Amazon RSA 2048 M02 (AWS ACM)
+SANs: dunkindonuts.com, dunkinrun.com, dunkinemail.com, dunkinfranchising.com,
+      ddglobalfranchising.com, ddperks.com, baskinrobbinsfranchising.com,
+      baskinrobbins.com, dunkinperks.com
+
+=== www.dunkindonuts.com ===
+CN: www.dunkindonuts.com
+O:  Dunkin' Brands, Inc.
+Issuer: GeoTrust TLS RSA CA G1 (DigiCert subsidiary)
+SANs (44 domains — full infrastructure map):
+  Production: www.dunkindonuts.com, dunkindonuts.com, dunkinnation.com, dunkinrewards.com
+  Staging: staging.dunkindonuts.com, staging3.dunkindonuts.com, staging.baskinrobbins.com, staging2.baskinrobbins.com
+  QA: qa.dunkindonuts.com, qa2.dunkindonuts.com, qa.baskinrobbins.com
+  Dev: dev2.dunkindonuts.com
+  UAT: uat.dunkindonuts.com
+  SSO: ssoprd.dunkindonuts.com, ssostg.dunkindonuts.com, social-ssoprd/preprod/stg
+  Menu: menu-pricing-prd/prd1/stg.dunkindonuts.com
+  QR: qrmenu.dunkinbrands.com, qrmenu-stg.dunkinbrands.com
+  Franchisee: franchiseecentral.dunkinbrands.com
+  Internal: afm.dunkinbrands.com, fps.dunkinbrands.com, star.dunkinbrands.com
+  Cross-brand: www.baskinrobbins.com, www2.baskinrobbins.com, www.brglobalfranchising.com
+  Loyalty: loyalty.dunkindonuts.com
+  Other: wsvc.dunkinrun.com, www.ddperks.com, www.dunkinemail.com
+
+=== CERT CHAIN ===
+Level 0: Dunkin' Brands (EC/prime256v1) → DigiCert G3 TLS ECC
+Level 1: DigiCert G3 TLS ECC (EC/secp384r1) → DigiCert Global Root G3
+Level 2: DigiCert Global Root G3 (self-signed)
+
+=== CT LOGS (crt.sh) ===
+ddmprod-specific query returned empty (possible rate limit)
+Cert SANs provide comprehensive subdomain inventory directly

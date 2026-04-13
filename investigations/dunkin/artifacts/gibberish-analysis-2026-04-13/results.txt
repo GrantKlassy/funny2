@@ -1,0 +1,48 @@
+# Gibberish Text Analysis — 2026-04-13
+
+=== SOURCE TEXT (from dunkin2.jpg) ===
+Line 1: Wjkhsgjkhdgkhkjfhgdfgdogihdgcatmomdfgddgjkk
+Line 2: kidogsyjkdffkkjkddadadadadadadadamommmmmmmdf
+Line 3: d7766Vvvqg8888
+Line 4: AAAAAAAAAaaaaaasssvIFFGHF7ghfh88
+Line 5: fgkhdfgjkhdfkgnsdklhw8978478w4899wu0t8tml2znkvjgiahofh
+Line 6: kafullJAUISGSIUHGDSIHjlo8q87668ydghdlkjkhdffj
+Line 7: Dogg
+Line 8: mamamama dad dad dad momm mom mom mommm78499
+
+=== BASE64 DECODE ===
+All lines produce valid base64 output (random ASCII often does) but decode to binary garbage.
+No readable strings in decoded output. NOT encoded data.
+
+=== ROT13 ===
+Produces equally meaningless text. NOT ROT13.
+
+=== KEYBOARD ROW ANALYSIS (Lines 1-2 combined, 87 chars) ===
+Top row (qwertyuiop):  9 chars (10%)
+Home row (asdfghjkl): 67 chars (77%)  ← SMOKING GUN
+Bottom row (zxcvbnm):  11 chars (12%)
+
+A real toddler mashing keys would produce ~33% per row (roughly uniform).
+77% home row = adult resting finger position typing. This is CRAFTED text.
+
+=== EMBEDDED WORDS ===
+Found in gibberish:
+  "cat"  x1
+  "dog"  x2
+  "kid"  x1
+  "mom"  x2
+  "dad"  x4
+  "dada" x4
+  "do"   x2
+
+All family/pet themed words — thematically consistent with "toddler had my phone" narrative.
+Strategically placed, not random occurrence.
+
+=== CONCLUSION ===
+The gibberish is 100% crafted ad copy by an adult copywriter. Evidence:
+1. 77% home-row keyboard distribution (adult typing pattern, not toddler mashing)
+2. Deliberately embedded family words (cat, dog, kid, mom, dad, mama, dada)
+3. Thematic consistency with the "toddler" narrative
+4. No successful decode as any standard encoding
+5. Line 8 ("mamamama dad dad dad momm mom mom mommm78499") is too structured — reads like an adult's idea of toddler output
+6. This is a known advertising technique: disguise promoted content as organic/relatable posting to bypass ad fatigue

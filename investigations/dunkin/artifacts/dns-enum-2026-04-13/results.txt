@@ -1,0 +1,25 @@
+# DNS Enumeration Results — 2026-04-13
+# Container: podman run --rm --dns 8.8.8.8 investigator
+
+=== ROOT DOMAIN RECORDS ===
+dunkindonuts.com A    → 35.169.92.22, 52.0.33.13 (AWS)
+dunkindonuts.com MX   → psmtp.com (Proofpoint)
+dunkindonuts.com NS   → awsdns (AWS Route 53)
+dunkindonuts.com TXT  → SPF via pphosted.com (Proofpoint), facebook-domain-verification, google-site-verification x3, apple-domain-verification
+dunkindonuts.com DMARC → p=reject, Proofpoint rua/ruf
+
+=== SUBDOMAIN RESOLUTION ===
+HIT  ulink.prod.ddmprod.dunkindonuts.com → CNAME ulink.prod.ddmprod.dunkindonuts.com.edgekey.net → e36726.dsca.akamaiedge.net → 23.212.62.198/202 (AKAMAI)
+MISS k.prod.ddmprod.dunkindonuts.com (does not resolve externally)
+MISS prod.ddmprod.dunkindonuts.com
+MISS ddmprod.dunkindonuts.com
+MISS staging.ddmprod.dunkindonuts.com
+MISS dev.ddmprod.dunkindonuts.com
+HIT  www.dunkindonuts.com → CNAME www.dunkindonuts.com.edgekey.net → e5079.a.akamaiedge.net (AKAMAI)
+HIT  order.dunkindonuts.com → CNAME whitelabel.olo.com → cloudflare (OLO ORDERING PLATFORM)
+
+=== MULTI-RESOLVER CONSISTENT ===
+All resolvers (8.8.8.8, 1.1.1.1, 9.9.9.9) return same CNAME chain for ulink.prod.ddmprod
+
+=== DKIM SELECTORS ===
+No hits on standard selectors (google, braze, sailthru, sendgrid, etc.)

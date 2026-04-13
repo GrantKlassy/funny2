@@ -1,0 +1,55 @@
+# HTTP Probe Results — 2026-04-13
+# Container: podman run --rm --dns 8.8.8.8 investigator
+
+=== USER-AGENT DETECTION ===
+iPhone UA  → 200 OK (serves interstitial HTML page directly)
+Desktop UA → 302 → https://www.dunkindonuts.com/en/mobile-app
+Redditbot  → 302 → https://www.dunkindonuts.com/en/mobile-app
+
+=== SERVER FINGERPRINT ===
+Server: nginx
+X-Powered-By: Express (Node.js)
+TLS: TLSv1.3 / TLS_AES_256_GCM_SHA384 / x25519 / id-ecPublicKey
+
+=== LANDING PAGE (iPhone UA) — THE SMOKING GUN ===
+Title: "Dunkin' Rewards | Dunkin'"
+Meta: app-id=1056813463, app-clip-bundle-id=com.dunkinbrands.otgo.Clip, app-argument=dunkin://
+
+"Continue on App" button links to:
+  https://dunkin.smart.link/f6iexb4x5?destination=dunkin://orders/category/119
+  ^^^^^^^^^^^^^^^^^^^^^^^^
+  BRANCH.IO SMART LINK — This is the deep linking vendor!
+
+  f6iexb4x5 = Branch.io link ID
+  destination=dunkin://orders/category/119 = app deep link URI
+
+"No thanks" link → https://www.dunkindonuts.com/en/mobile-app
+
+404 page title: "Universal Links" (confirms platform purpose)
+Assets: /dist/styles-1.2.0.css, /dist/scripts-1.2.0.js (v1.2.0)
+
+=== APPLE APP SITE ASSOCIATION (AASA) ===
+{
+  "activitycontinuation": {
+    "apps": [
+      "7UARB5Z69S.com.dunkinbrands.otgo",        ← Primary Dunkin' app (Team ID: 7UARB5Z69S)
+      "382855Q4EZ.com.cardfree.ddnationalprd"     ← CardFree payment vendor (Team ID: 382855Q4EZ)
+    ]
+  },
+  "appclips": {
+    "apps": ["7UARB5Z69S.com.dunkinbrands.otgo.Clip"]   ← App Clips enabled
+  },
+  "applinks": {
+    "details": [
+      { "appID": "7UARB5Z69S.com.dunkinbrands.otgo", "paths": ["/dunkin/*"] },
+      { "appID": "382855Q4EZ.com.cardfree.ddnationalprd", "paths": ["/dunkin/*"] }
+    ]
+  }
+}
+
+=== CATEGORY SWEEP ===
+All categories 100-130 return 302 (wildcard routing — any category ID accepted and passed through)
+
+=== COOKIES ===
+ulink.prod.ddmprod: No cookies set
+www.dunkindonuts.com: AWSALB/AWSALBCORS (AWS Application Load Balancer)
