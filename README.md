@@ -1,20 +1,12 @@
-# funny2
+# I Reverse-Engineered Dunkin's Entire Mobile Infrastructure Because Their Reddit Ad Annoyed Me
 
-Structured OSINT investigation workspace. Successor to [funny](https://github.com/GrantKlassy/funny).
+I'm scrolling Reddit. It's late. I see a Dunkin' ad. Fine. But then I see the *other* one. And then I click it.
 
----
+| The ad | The "toddler" | The landing page |
+|:---:|:---:|:---:|
+| <img src="investigations/dunkin/intake-2026-04-13/dunkin1.jpg" height="350"> | <img src="investigations/dunkin/intake-2026-04-13/dunkin2.jpg" height="350"> | <img src="investigations/dunkin/intake-2026-04-13/dunkin3.jpg" height="350"> |
 
-## I Reverse-Engineered Dunkin's Entire Mobile Infrastructure Because Their Reddit Ad Annoyed Me
-
-I'm scrolling Reddit. It's late. I see this:
-
-![dunkin ad 1](investigations/dunkin/intake-2026-04-13/dunkin1.jpg)
-
-Fine. A Dunkin' ad. I can ignore a Dunkin' ad. But then I see the *other* one:
-
-![dunkin ad 2](investigations/dunkin/intake-2026-04-13/dunkin2.jpg)
-
-Read that text. Read it again. A corporate account — verified, promoted, paid money to put this in my feed — posted this:
+Read the middle one. Read it again. A corporate account — verified, promoted, paid money to put this in my feed — posted this:
 
 ```
 Wjkhsgjkhdgkhkjfhgdfgdogihdgcatmomdfgddgjkk
@@ -54,10 +46,6 @@ Against my better judgment, I tapped the ad. The URL was:
 ```
 https://ulink.prod.ddmprod.dunkindonuts.com/dunkin/orders/category/119
 ```
-
-And I landed here:
-
-![landing page](investigations/dunkin/intake-2026-04-13/dunkin3.jpg)
 
 Wait. `ulink.prod.ddmprod.dunkindonuts.com`? That's not a normal marketing URL. That's a subdomain four levels deep with what looks like internal environment naming. `prod.ddmprod`? Production inside... another production? What is `ddmprod`?
 
