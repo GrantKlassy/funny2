@@ -1,0 +1,23 @@
+FROM fedora:latest
+
+RUN dnf install -y \
+    bind-utils \
+    curl \
+    exiftool \
+    file \
+    jq \
+    nmap \
+    nmap-ncat \
+    nodejs \
+    openssl \
+    redis \
+    vim-common \
+    wget \
+    whois \
+    xxd \
+    && dnf clean all
+
+# js-beautify for bundle analysis
+RUN npm install -g js-beautify
+
+WORKDIR /work
