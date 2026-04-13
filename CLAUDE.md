@@ -133,6 +133,16 @@ Build: `podman build -t investigator -f Containerfile.investigator .`
 - Zendesk/support portal API crawling
 - `sha256sum` (content change detection between sessions)
 
+## The README Is the Show
+
+The per-investigation `README.md` is the public-facing output of this repo. It's supposed to be **funny**. This repo is called `funny2` for a reason. The README should:
+
+- Make people laugh. Be entertaining. Have personality.
+- Embed screenshots from `intake-*/` as inline images so readers see the evidence.
+- Present real findings in an absurd, comedic framing — the humor comes from the contrast between the overkill investigation methodology and the mundane target, or from the sheer audacity of what we uncover.
+- GRAPH.md stays structured and serious. README.md is where we perform.
+- Think of it like a blog post or comedy writeup, not a security report.
+
 ## For Claude
 
 When working in this repo:
