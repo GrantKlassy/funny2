@@ -2,6 +2,8 @@ FROM fedora:latest
 
 RUN dnf install -y \
     bind-utils \
+    binutils \
+    ca-certificates \
     curl \
     exiftool \
     file \
