@@ -51,6 +51,8 @@ Wait. `ulink.prod.ddmprod.dunkindonuts.com`? That's not a normal marketing URL. 
 
 So I did what any reasonable person would do. I opened a container and started running dig.
 
+> **[EXPLORE THE INTERACTIVE NETWORK GRAPH](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)** — 39 entities, 33 edges, 8 clusters. Every vendor, every subdomain, every cert SAN — connected. Drag it. Zoom it. Search it. One Reddit ad, fully deconstructed in a force-directed D3.js visualization.
+
 ### What Is ddmprod?
 
 **ddmprod** stands for **Dunkin' Donuts Mobile Production.** It's their entire internal mobile app platform. The name predates their 2018 rebrand from "Dunkin' Donuts" to just "Dunkin'" — the infrastructure team apparently didn't get the memo. Or didn't care. Either way, the ghost of "Donuts" lives on in their DNS.
@@ -214,17 +216,7 @@ I just looked at what was already there. Dunkin' made it easy.
 
 ---
 
-## [Explore the Interactive Network Graph](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)
-
-39 entities. 8 clusters. Every vendor, every subdomain, every cert SAN — connected. Hover to explore, search to filter, drag to rearrange. This is what one Reddit ad looks like when you pull the thread.
-
-Also see the [Moxxi Digital CPA Scam Network](https://grantklassy.github.io/funny/investigations/epicfunnels/graph/network-visualization.html) from the original [funny](https://github.com/GrantKlassy/funny) investigation — ~200 entities, ~280 connections, 10 clusters.
-
----
-
 ## Investigation Files
-
-- **[Interactive Network Graph](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)** — 39 entities, 8 clusters. Hover to explore, search to filter, drag to rearrange. The pretty version.
 - **[GRAPH.md](investigations/dunkin/GRAPH.md)** — The serious version. 39 entities, 33 edges, 8 clusters. Structured for machines.
 - **[Investigation directory](investigations/dunkin/)** — Evidence, artifacts, reproducible scripts.
 - **[GRAPH.md (index)](GRAPH.md)** — Investigation index.
