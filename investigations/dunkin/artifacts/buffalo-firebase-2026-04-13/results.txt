@@ -1,0 +1,102 @@
+=== BUFFALO WILD WINGS FIREBASE PROBE ===
+Date: 2026-04-14T04:13:55Z
+
+--- Firebase Realtime Database ---
+
+[buffalo-united] Firebase RTDB:
+  /.json → 401
+  Database exists but requires auth (401)
+{
+  "error" : "Permission denied"
+}
+  /.json?shallow=true → 401
+
+[buffalo-united-dev] Firebase RTDB:
+  /.json → 404
+  Project not found (404)
+  /.json?shallow=true → 404
+
+[buffalo-united-staging] Firebase RTDB:
+  /.json → 404
+  Project not found (404)
+  /.json?shallow=true → 404
+
+[buffalo-united-prod] Firebase RTDB:
+  /.json → 404
+  Project not found (404)
+  /.json?shallow=true → 404
+
+[buffalo-united-qa] Firebase RTDB:
+  /.json → 404
+  Project not found (404)
+  /.json?shallow=true → 404
+
+[bww-prod] Firebase RTDB:
+  /.json → 404
+  Project not found (404)
+  /.json?shallow=true → 404
+
+[bww-dev] Firebase RTDB:
+  /.json → 404
+  Project not found (404)
+  /.json?shallow=true → 404
+
+[bww-staging] Firebase RTDB:
+  /.json → 404
+  Project not found (404)
+  /.json?shallow=true → 404
+
+[buffalowildwings] Firebase RTDB:
+  /.json → 404
+  Project not found (404)
+  /.json?shallow=true → 404
+
+[buffalowildwings-prod] Firebase RTDB:
+  /.json → 404
+  Project not found (404)
+  /.json?shallow=true → 404
+
+[buffalowildwings-dev] Firebase RTDB:
+  /.json → 404
+  Project not found (404)
+  /.json?shallow=true → 404
+
+--- Firebase Hosting ---
+  buffalo-united.web.app → 200
+    Body: 4978 bytes
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+  buffalo-united.firebaseapp.com → 200
+    Body: 4978 bytes
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+  buffalo-united-dev.web.app → 404
+  buffalo-united-dev.firebaseapp.com → 404
+  buffalo-united-staging.web.app → 404
+  bww-prod.web.app → 404
+  bww-prod.firebaseapp.com → 404
+  bww-dev.web.app → 404
+  buffalowildwings.web.app → 404
+  buffalowildwings.firebaseapp.com → 404
+
+--- App Engine ---
+  buffalo-united.appspot.com → 404
+  bww-prod.appspot.com → 404
+  buffalowildwings.appspot.com → 404
+
+--- BWW Website Firebase Config Search ---
+Fetching buffalowildwings.com for Firebase SDK references...
+  Homepage: 142841 bytes
+
+--- CT Log Search ---
+Searching crt.sh for buffalo-united Firebase certs...
+  buffalo-united certs: 0
+
+=== PROBE COMPLETE ===
+Date: 2026-04-14T04:14:17Z

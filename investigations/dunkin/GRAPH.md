@@ -1,8 +1,8 @@
 # Dunkin' Ad Infrastructure Investigation
 
 > Started: 2026-04-13
-> Status: Active — Wave 3-5 probing complete (16 scripts, 30 artifacts)
-> Last probed: 2026-04-14T02:30Z
+> Status: Active — Wave 4 complete (41 scripts, 39 artifacts)
+> Last probed: 2026-04-14T04:22Z
 
 ## Trigger
 
@@ -86,9 +86,20 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 | E72 | domain | `lsmnow.com` | Local Store Marketing portal. Redirects to `lsm-prod-idp.dunkinbrands.com/my.policy` (F5 BIG-IP access policy). MX: mail.flairpromo.com (promotional marketing vendor). Created 2004-02-05. Same expired cert as dnkn.com. |
 | E73 | domain | `dunkinnation.com` | Redirect loop. Root → 301 → `https://www.dunkinnation.com/` → 000 (dead). The www subdomain is dead but root keeps redirecting to it forever. On www cert SANs (staging.dunkinnation.com, staging3.dunkinnation.com also listed). |
 | E74 | service | `news.dunkindonuts.com` | Brand newsroom. CNAME → `news.dunkindonuts.com.iprsoftware.com` (IPR Software). AMP version at `amp.news.dunkindonuts.com` → `amp.dunkin.iprsoftware.com` (GCP). |
-| E75 | service | `mi.dunkindonuts.com` | Marketing Intelligence (?). CNAME → `d187xgimezr5cv.cloudfront.net` (CloudFront). Returns 200. |
+| E75 | vendor | Movable Ink (`mi.dunkindonuts.com`) | **IDENTIFIED**: Email personalization/tracking platform, NOT "Marketing Intelligence." CNAME → `d187xgimezr5cv.cloudfront.net` (CloudFront). Serves 79-byte HTML: `<title>Movable Ink Domain</title>` with empty body. Own Amazon RSA cert (CN: mi.dunkindonuts.com). All paths except `/` return 404. Wayback: active since 2021. |
 | E76 | vendor | SendGrid | Transactional email for Arby's (u34483924), BWW (u30126554), Sonic (u29175196), Jimmy John's (u57117). Different account per brand. DKIM selectors s1/s2. |
 | E77 | vendor | KnowBe4 | Security awareness/phishing training. Domain verification present on arbys.com, buffalowildwings.com, sonicdrivein.com. Same verification token across all three brands. |
+| E78 | vendor | Delivery Agent (dead) | E-commerce/merchandise fulfillment. `secureshop.dunkindonuts.com` → CNAME → `secureshop-dunkindonuts.st.deliveryagent.com` (connection refused). deliveryagent.com still registered (Namecheap, SiteGround hosting, created 2000). Wayback shows live Dunkin' shop with cart.php, account.php until 2019 (then 503s). |
+| E79 | domain | `dunkindonuts.co.uk` | UK domain. Registered 15 March 2004, expires 15 March 2027. **Last updated 11 March 2026** (still actively maintained). Redirects → `https://dunkin.co.uk:443/` (rebranded UK domain). Same AWS ALB pool (35.153.79.184, 35.173.143.243). SPF still configured with Proofpoint. Google site verification present. On vanity cert (CN: dunkinrun.com). All subdomains NXDOMAIN. Wayback: served real content 2004-2015. |
+| E80 | domain | `dunkinemail.com` | Email signup domain. **5-hop redirect chain through 3 loyalty program eras**: dunkinemail.com → www.dunkinemail.com (ELB) → `/content/dunkindonuts/en/responsive/dunkin_email.html` (Akamai, legacy CMS path) → `/en/dd-perks/registration` (DD Perks era) → `/en/dunkinrewards/registration` (Dunkin' Rewards era) → **403 Forbidden**. You cannot sign up for email via the email domain. |
+| E81 | domain | `ddperks.com` | Legacy loyalty domain. Redirect chain: ddperks.com → www.ddperks.com (ELB) → `/en/dd-perks` → `/en/dunkinrewards` → 200. Works, unlike dunkinemail. Wayback: redirecting since 2009. |
+| E82 | domain | `dunkinperks.com` | Transitional loyalty domain. **4 brand layers**: dunkinperks.com → www (Akamai) → `/content/dunkindonuts/en/responsive/ddperks/splashpage.html` (oldest CMS path) → `/en/dd-perks` → `/en/dunkinrewards` → 200. The deepest archaeological dig. |
+| E83 | domain | `dunkinrewards.com` | Current loyalty domain. Shortest chain: dunkinrewards.com → www (Akamai) → `/en/dunkinrewards` → 200. Own cert (CN: dunkinrewards.com, issued Mar 2026). |
+| E84 | firebase | BWW Firebase `buffalo-united` | **Firebase project exists but never built.** Hosting serves the DEFAULT "Welcome to Firebase Hosting Setup Complete" page (SDK 7.22.0, circa 2020). Database returns 401 (auth required — exists but locked). `/__/firebase/init.js` exposes full config: apiKey `AIzaSyCmtykcZ6UTfD0vvJ05IpUVe94uIaUQdZ4`, projectId `buffalo-united`, measurementId `G-VNQ194T6TN`, storageBucket `buffalo-united.appspot.com`. The page literally says "Now it's time to go build something extraordinary!" — they never did. |
+| E85 | service | `franchisee.dunkinbrands.com` | **LIVE franchisee portal**. Root redirects 301 → `/DunkinPortal/` (ASP.NET path). Cloudflare CDN + AWSALB backend. Test env: `test.franchisee.dunkinbrands.com` (3 AWS IPs). Prod env: `prod.franchisee.dunkinbrands.com` (2 AWS IPs). Distinct from `franchiseecentral.dunkinbrands.com` (E29, last-modified 2016). Wayback: active since 2015. |
+| E86 | service | WebSocket POS (`pos-ws`, `dbapi-ws`) | WebSocket endpoints on AWS API Gateway. GET → 426 Upgrade Required (`sec-websocket-version: 13`). WebSocket upgrade → 403 Forbidden (`{"message":"Forbidden"}`). All subprotocols, paths, and Origin headers return 403. Each has dedicated cert. Different API Gateway IDs: `d-9qf2wa4mt6` (pos-ws), `d-jd10dqc4l6` (dbapi-ws). Properly secured. |
+| E87 | brand-infra | Jimmy John's DevOps (CT log exposure) | CT logs reveal internal DevOps infrastructure: `dev-portainer` and `docker` (NXDOMAIN — cleaned up), `bitbucket` (resolves but 000), `jira` → `jimmyjohns.atlassian.net` (migrated to cloud), `hipchat` (NXDOMAIN), `tableau` (NXDOMAIN), `intranet` → `services.jimmyjohns.com/pages/aspx/dashboard/`. Also: `WSUS` (104.129.153.139, LIVE), `rodc` (Read-Only Domain Controller, 104.129.153.144, LIVE), `vpn` (LIVE), `jj-fortiems` (FortiEMS, LIVE), `remotesupport` → `jjf.bomgarcloud.com` (BeyondTrust). **`guest.jimmyjohns.com` → 192.168.7.250** (RFC 1918 private IP in public DNS!). |
+| E88 | brand-infra | Sonic Drive-In subdomain archaeology | **228 live subdomains** out of 271 CT-logged (84% alive). Infrastructure fossils: `fydibohf25spdlt` (Exchange Server legacyExchangeDN system attribute — Microsoft's internal identifier for `/o=First Organization`, should NEVER appear in public DNS), `callpilot7` (Nortel CallPilot voicemail — Nortel bankrupt 2009), `nokia` (Nokia network equipment), `vdr-2016`/`vdr-2018`/`vdr-2019` (Virtual Data Rooms — M&A due diligence from the Inspire Brands acquisition, year-stamped), `badweather` (weather tracking for a drive-in chain), `totzone`, `sonicfacebook`, `matchmaker`/`matchmaker-new`, `drawings`. Five VPN endpoints on `.digital` TLD domains (`sonicdrivein.digital`, `sonicdrivein-nonprod.digital`, `sonicdrivein-sandbox.digital`). Four firewall subdomains in public DNS (firewall, firewall1, firewall2, firewall95). `checkmarx` (Checkmarx code security). `b2bftp` (HTTP 200). Most hosts on 12.41.206.0/24 on-prem range. HTTP sweep timed out mid-alphabet — deep probes pending. |
 
 ## Edges
 
@@ -168,6 +179,22 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 | E69 | dkim-via | E76 | SendGrid DKIM (s1/s2, account u57117) |
 | E50 | auth-via | E59 | The Center uses Okta login (CSS reference) |
 | E72 | auth-via | — | lsmnow.com → lsm-prod-idp.dunkinbrands.com (F5 BIG-IP access policy) |
+| E75 | tracks-for | E1 | mi.dunkindonuts.com serves Movable Ink email tracking pixel for Dunkin' campaigns |
+| E78 | hosted-merch-for | E1 | secureshop.dunkindonuts.com → deliveryagent.com (dead PHP e-commerce, 2016-2019) |
+| E79 | redirects-to | — | dunkindonuts.co.uk → dunkin.co.uk (post-rebrand UK domain) |
+| E80 | rebrand-chain | E81, E82, E83 | dunkinemail.com → dd-perks/registration → dunkinrewards/registration → 403 |
+| E82 | rebrand-chain | E81, E83 | dunkinperks.com → ddperks/splashpage → dd-perks → dunkinrewards → 200 |
+| E84 | owned-by | E67 | BWW Firebase project (buffalo-united) |
+| E85 | replaces | E29 | franchisee.dunkinbrands.com (/DunkinPortal/) likely successor to franchiseecentral (last-modified 2016) |
+| E60 | infra-is | E61 | wsapi.dunkinbrands.com serves Theorem's Envoy proxy with x-theorem-auth/x-theorem-platform headers. Entire service IS Theorem's, not just the cert. |
+| E61 | cert-expires | — | api-test.theoremlp.com cert expires 2026-04-21 (7 days from probe date). Same cert serving on wsapi.dunkinbrands.com. |
+| E69 | devops-exposed | E87 | Jimmy John's CT logs: Portainer, Docker, Bitbucket, Jira, HipChat, Tableau, WSUS, RODC, FortiEMS, BeyondTrust |
+| E69 | chat-via | E44 | chat.jimmyjohns.com → inspirecustomer.service-now.com (same ServiceNow instance as Dunkin') |
+| E69 | careers-via | E45 | careers.jimmyjohns.com → careers-jimmyjohns-com.sites.paradox.ai (same Paradox AI as Dunkin') |
+| E69 | ordering-via | E10 | online.jimmyjohns.com → whitelabel.olo.com (same OLO as Dunkin') |
+| E88 | subsidiary-of | E8 | Sonic Drive-In acquired by Inspire Brands 2018. 228 live subdomains mapped. |
+| E88 | subdomain-fossil | — | `fydibohf25spdlt` — Exchange legacyExchangeDN system attribute exported to public DNS |
+| E88 | acquisition-artifact | — | `vdr-2016`, `vdr-2018`, `vdr-2019` — M&A Virtual Data Rooms still in DNS after 2018 acquisition |
 
 ## Clusters
 
@@ -375,7 +402,20 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 | A30 | dunkinnation.com is stuck in an infinite redirect loop: HTTP root → 301 → HTTPS root → 301 → https://www.dunkinnation.com/ → connection refused. The www A record is dead but the root A record keeps trying to send people there. | **New** — broken redirect loop in production |
 | A31 | All 8 sandbox endpoints (loyalty-api, loyalty-mock-api, rewards-api, oats-api, oats-ws, splunkelb, swagger, ecselb) return NXDOMAIN. Entire sandbox.dunkindonuts.com environment decommissioned. Wayback shows they were alive in 2022-2023. | **Confirmed** — sandbox fully decommissioned |
 | A32 | SWI service: 35 paths probed across 6 live environments, ALL return 404 (or 503 on dlt-dev/dlt-qa). Rails backend (X-Runtime, X-Request-Id). Shares TLS cert with mapi-dun, ode, ulink. Actively maintained but purpose STILL completely unknown after exhaustive probing. | **Deepened** — remains the investigation's biggest mystery |
-| A33 | bam.dunkinbrands.com cert reveals two undiscovered wildcard scopes: `*.corporateportal.dunkinbrands.com` and `*.franchisee.dunkinbrands.com` — suggesting tiered portal infrastructure. | **New** — cert SANs reveal undiscovered domains |
+| A33 | bam.dunkinbrands.com cert reveals two undiscovered wildcard scopes: `*.corporateportal.dunkinbrands.com` and `*.franchisee.dunkinbrands.com` — suggesting tiered portal infrastructure. | **Probed** — corporateportal fully NXDOMAIN (12 certs but decommed), franchisee is LIVE with /DunkinPortal/ |
+| A34 | mi.dunkindonuts.com is NOT "Marketing Intelligence" — it's **Movable Ink**, an email personalization vendor. Serves 79-byte HTML (`<title>Movable Ink Domain</title>`) with empty body on CloudFront. Own dedicated Amazon RSA cert. Vendor #30. | **Resolved** — Movable Ink tracking pixel domain |
+| A35 | secureshop.dunkindonuts.com CNAME → `secureshop-dunkindonuts.st.deliveryagent.com`. Was a real e-commerce shop (cart.php, account.php) for Dunkin' merchandise until 2019. Delivery Agent (deliveryagent.com) still registered since 2000, still resolves (SiteGround hosting, 301 redirect), but the Dunkin shop is dead. DNS still points to the dead vendor. | **New** — fossilized vendor relationship |
+| A36 | dunkindonuts.co.uk registered 2004, expires 2027, **last updated 11 March 2026**. Dunkin' exited the UK market but still actively maintains and renews this domain. Redirects to `dunkin.co.uk` (rebranded). SPF record still configured with Proofpoint. They're paying to maintain a domain for a market they left. | **New** — zombie domain maintenance |
+| A37 | dunkinemail.com has a 5-hop redirect chain through 3 loyalty program eras: dunkinemail.com (ELB) → www.dunkinemail.com (Akamai) → `/content/.../responsive/dunkin_email.html` (legacy CMS) → `/en/dd-perks/registration` (DD Perks era) → `/en/dunkinrewards/registration` (Dunkin' Rewards era) → **403 Forbidden** "Access Denied." You cannot sign up for email via the email domain. | **New** — rebrand fossil chain ending on 403 |
+| A38 | dunkinperks.com has the DEEPEST redirect chain: 4 brand layers. dunkinperks.com → Akamai → `/content/.../responsive/ddperks/splashpage.html` (oldest CMS path with "splashpage") → `/en/dd-perks` → `/en/dunkinrewards` → 200. The word "splashpage" in a URL path is a fossil from early-2010s web design. | **New** — 4-layer brand archaeology |
+| A39 | BWW Firebase project "buffalo-united" has the DEFAULT "Welcome to Firebase Hosting Setup Complete" page still serving (SDK v7.22.0, circa 2020). Database exists (401 auth required). `/__/firebase/init.js` publicly exposes full Firebase config (API key, project ID, GA measurement ID, storage bucket). The page says "Now it's time to go build something extraordinary!" — they never did. A billion-dollar wing chain's abandoned Firebase project. | **New** — Firebase skeleton from 2020 |
+| A40 | `franchisee.dunkinbrands.com` is LIVE with `/DunkinPortal/` path (ASP.NET). Has both `test.` and `prod.` subdomains on separate AWS IPs. Meanwhile `corporateportal.dunkinbrands.com` is fully NXDOMAIN despite 12 certs issued — the corporate portal was decommissioned but the franchisee portal survived. Feudal hierarchy in DNS. | **New** — franchisee portal alive, corporate dead |
+| A41 | Theorem LP investigation: wsapi.dunkinbrands.com is NOT just serving Theorem's cert — the ENTIRE SERVICE is Theorem's Envoy proxy. `api-test.theoremlp.com` returns identical `x-theorem-auth: nil`, `x-theorem-platform: nil`, `server: envoy` headers. Dunkin's CNAME/A record points directly to Theorem LP's infrastructure. The api-test cert expires **2026-04-21** (7 days from probe date). | **Deepened** — entire service is Theorem's, not just cert |
+| A42 | Jimmy John's CT logs reveal full DevOps stack: Docker/Portainer (cleaned up, NXDOMAIN), Bitbucket (dead but DNS remains), Jira → jimmyjohns.atlassian.net (migrated to cloud), HipChat/Tableau (NXDOMAIN), WSUS (LIVE at 104.129.153.139), RODC/Read-Only Domain Controller (LIVE). Most notable: **`guest.jimmyjohns.com` → 192.168.7.250** — a private RFC 1918 IP address in public DNS. Someone put their guest WiFi captive portal IP into the public DNS zone. | **New** — private IP in public DNS |
+| A43 | WebSocket POS endpoints properly secured: pos-ws and dbapi-ws return 426 Upgrade Required on GET, but all WebSocket upgrade attempts (all subprotocols, all paths, all Origin headers) return 403 Forbidden via API Gateway. Each has dedicated cert and separate API Gateway ID. | **Resolved** — properly secured, no access |
+| A44 | `fydibohf25spdlt.sonicdrivein.com` is a Microsoft Exchange Server `legacyExchangeDN` system attribute — the string is Exchange's internal identifier for `/o=First Organization`, famously garbled. It should NEVER be a public DNS subdomain. Someone exported Exchange's internal address book namespace directly into the public DNS zone. Resolves to 12.41.206.211 (same IP as their mail/OA server). | **New** — Exchange internals leaked to public DNS |
+| A45 | Three Virtual Data Room subdomains year-stamped in DNS: `vdr-2016`, `vdr-2018`, `vdr-2019`. Sonic was acquired by Inspire Brands in late 2018 for $2.3B. These are the M&A due diligence data rooms from the acquisition timeline, with 2016 suggesting either an earlier approach or pre-deal prep. All still resolving on the 12.41.206.0/24 on-prem range, 7+ years later. | **New** — acquisition archaeology in DNS |
+| A46 | Sonic has 228 live subdomains (84% of 271 CT-logged) including: Nortel CallPilot voicemail (`callpilot7`, Nortel bankrupt 2009), Nokia network equipment (`nokia`), weather tracking (`badweather` — existential threat for a drive-in chain), four publicly named firewalls (`firewall`, `firewall1`, `firewall2`, `firewall95` — why 95?), five VPN endpoints on separate `.digital` TLD domains, `drawings`, `totzone`, `sonicfacebook`, `matchmaker`/`matchmaker-new`. Enterprise archaeology spanning 20+ years of infrastructure on one /24 subnet. HTTP sweep timed out mid-alphabet. | **New** — 228-subdomain archaeology museum |
 
 ## Resolved Questions
 
@@ -395,15 +435,17 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 - [x] **What is RBOS?** → DEAD. Same CAAS ELB as fps. Both decommissioned.
 - [x] **What is the Genesis platform?** → DEAD. NXDOMAIN. Fully decommissioned.
 - [x] **What is `star.dunkinbrands.com`?** → **Restaurant Administration Portal (RAP)**. Full CrunchTime login page captured. Username + Password + 4-digit EntityID. ASP.NET Core. OTP email flow. Success → `/dashboard`.
-- [ ] Who is Terry Ursino? (Email leaked in CT logs — crt.sh returned 502 on all retry attempts)
+- [ ] Who is Terry Ursino? (Email leaked in CT logs — crt.sh still unreliable)
 - [x] **What is swagger.ddmdev serving?** → Swagger Editor (not API docs). Nginx. Last-modified 2019-12-23. 3540 bytes. Only `/` works. A developer tool forgotten for 6+ years.
 - [x] **What are `dnkn.com` and `lsmnow.com`?** → dnkn.com is short redirect domain with EXPIRED cert (3.5 years). lsmnow.com is Local Store Marketing portal behind F5 BIG-IP IDP with Flair Promo MX.
 - [x] **What is `clubdunkin.com`?** → Defunct loyalty program redirect → dunkindonuts.com/en/clubdunkin. Created 2020.
 - [ ] Why does QA use a completely different TLS cert (Amazon RSA wildcard) with `*.awsprd`/`*.awsstg`/`*.awspt` SANs?
 - [x] **What is the star service GET response body?** → 18447-byte RAP login page with CrunchTime integration.
 - [ ] What is BAM? (`bam.dunkinbrands.com` → Okta SSO, IIS 10.0, ASP.NET 4.0)
-- [ ] What does Theorem LP do for Dunkin'? Their test cert is on wsapi.dunkinbrands.com.
-- [ ] What are `*.corporateportal.dunkinbrands.com` and `*.franchisee.dunkinbrands.com`? (SANs on BAM cert)
+- [x] **What does Theorem LP do for Dunkin'?** → Theorem LP is a digital product consultancy (theoremlp.com, Netlify). wsapi.dunkinbrands.com is NOT just serving their cert — the entire service IS Theorem's Envoy proxy infrastructure. Both api-test.theoremlp.com and wsapi.dunkinbrands.com return identical `x-theorem-auth: nil`, `x-theorem-platform: nil` headers. The Let's Encrypt cert expires 2026-04-21.
+- [x] **What are `*.corporateportal.dunkinbrands.com` and `*.franchisee.dunkinbrands.com`?** → corporateportal is fully NXDOMAIN (decommissioned, despite 12 certs issued). franchisee is LIVE: root → 301 → `/DunkinPortal/` (ASP.NET, Cloudflare + AWSALB). Has test and prod subdomains on AWS.
+- [x] **What is `mi.dunkindonuts.com`?** → Movable Ink email personalization/tracking vendor. NOT "Marketing Intelligence." Serves 79-byte HTML placeholder on CloudFront.
+- [ ] Who is Terry Ursino? (crt.sh still returning errors — 150-byte responses, parse failures on all queries)
 
 ## Evidence Index
 
@@ -443,3 +485,11 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 | results.txt | `artifacts/email-infrastructure-2026-04-13/` | Email: cross-brand comparison, Salesforce MC, Proofpoint (probe 30) |
 | results.txt | `artifacts/caas-archaeology-2026-04-13/` | CAAS: fps/rbos ELB, all variants dead, Wayback login (probe 32) |
 | results.txt | `artifacts/thecenter-deep-2026-04-13/` | The Center: AEM paths, login page, Wayback learning content (probe 33) |
+| results.txt | `artifacts/jimmy-portainer-2026-04-13/` | Jimmy John's DevOps: Portainer/Docker NXDOMAIN, Jira→Atlassian, guest→private IP, WSUS/RODC live (probe 34) |
+| results.txt | `artifacts/rebrand-archaeology-2026-04-13/` | Loyalty rebrand chains: dunkinemail 5-hop→403, dunkinperks 4-layer, ddperks, dunkinrewards (probe 35) |
+| results.txt | `artifacts/buffalo-firebase-2026-04-13/` | BWW Firebase: buffalo-united default page, RTDB 401, full config exposed (probe 36) |
+| results.txt | `artifacts/portal-enumeration-2026-04-13/` | Portal wildcards: corporateportal NXDOMAIN, franchisee LIVE /DunkinPortal/, BAM paths (probe 37) |
+| results.txt | `artifacts/marketing-intel-2026-04-13/` | Movable Ink identified, secureshop→deliveryagent dead, UK domain redirect (probe 38) |
+| results.txt | `artifacts/websocket-handshake-2026-04-13/` | WebSocket POS: 426 confirmed, all upgrade attempts 403, properly secured (probe 39) |
+| results.txt | `artifacts/sonic-sweep-2026-04-13/` | Sonic CT subdomain sweep: 228 live/43 dead DNS resolved, HTTP sweep partial (timed out mid-alphabet). Arby's section not reached. Key finds: fydibohf25spdlt (Exchange DN), VDR M&A rooms, 228 live subdomains (probe 40, partial) |
+| results.txt | `artifacts/terry-theorem-2026-04-13/` | Terry retry (crt.sh still failing), Theorem LP: Envoy proxy, Netlify site, cert expires 4/21 (probe 41) |

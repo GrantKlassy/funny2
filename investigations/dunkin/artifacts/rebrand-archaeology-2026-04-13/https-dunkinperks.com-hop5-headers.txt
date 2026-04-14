@@ -1,0 +1,21 @@
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains
+last-modified: Tue, 07 Apr 2026 11:43:52 GMT
+cache-control: no-cache, no-store, must-revalidate
+expires: Tue, 14 Apr 2026 04:16:01 GMT
+x-ua-compatible: IE=edge
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+x-platform: P-4
+x-akamai-transformed: 9 23804 0 pmb=mRUM,2
+date: Tue, 14 Apr 2026 04:16:01 GMT
+set-cookie: AWSALB=nbiOtrHS6O+U5YiqwkOsN8B5fe2aAOmPUXCE+ZuFk6HDngTS9QoKXYCxsZtRO0bSKRldZMyJzNklvpoV5q5ouOVB56984EzVQhfKsxdmYesIE6YnXvw+D8ykoWAv; Expires=Tue, 21 Apr 2026 04:16:01 GMT; Path=/
+set-cookie: AWSALBCORS=nbiOtrHS6O+U5YiqwkOsN8B5fe2aAOmPUXCE+ZuFk6HDngTS9QoKXYCxsZtRO0bSKRldZMyJzNklvpoV5q5ouOVB56984EzVQhfKsxdmYesIE6YnXvw+D8ykoWAv; Expires=Tue, 21 Apr 2026 04:16:01 GMT; Path=/; SameSite=None; Secure
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=74
+server-timing: origin; dur=10
+server-timing: ak_p; desc="1776140161462_399924815_970355960_8446_8383_5_19_15";dur=1
+

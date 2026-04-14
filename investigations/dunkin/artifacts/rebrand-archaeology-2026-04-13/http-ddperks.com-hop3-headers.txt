@@ -1,0 +1,13 @@
+HTTP/1.1 301 Moved Permanently
+Content-Type: text/html; charset=iso-8859-1
+Content-Length: 339
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Location: https://www.dunkindonuts.com/en/dd-perks?origref=www.ddperks.com/
+Cache-Control: max-age=0
+Expires: Tue, 14 Apr 2026 04:15:58 GMT
+Date: Tue, 14 Apr 2026 04:15:58 GMT
+Connection: keep-alive
+Set-Cookie: AWSALB=HRv246KbjUNRh0BkNT0i9HLgZpfRs/mXmyhnaLD44x2so4D98XLQ5PnXsuvpFwZPm76UUnihLMTTliHRIv+uCKusd8VLmmS668C2z4qwpF7s1uOJA5JhY53iTQxr; Expires=Tue, 21 Apr 2026 04:15:58 GMT; Path=/
+Set-Cookie: AWSALBCORS=HRv246KbjUNRh0BkNT0i9HLgZpfRs/mXmyhnaLD44x2so4D98XLQ5PnXsuvpFwZPm76UUnihLMTTliHRIv+uCKusd8VLmmS668C2z4qwpF7s1uOJA5JhY53iTQxr; Expires=Tue, 21 Apr 2026 04:15:58 GMT; Path=/; SameSite=None; Secure
+

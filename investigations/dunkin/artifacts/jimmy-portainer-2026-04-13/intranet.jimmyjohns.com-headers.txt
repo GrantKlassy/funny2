@@ -1,0 +1,11 @@
+HTTP/2 301 
+date: Tue, 14 Apr 2026 04:14:23 GMT
+content-type: text/html
+content-length: 167
+location: https://services.jimmyjohns.com/pages/aspx/dashboard/
+cache-control: max-age=3600
+expires: Tue, 14 Apr 2026 05:14:23 GMT
+set-cookie: __cf_bm=UXldmZF_aOWRiOYzU83VCYuVVRPSy30R3HbXjNLW7Hg-1776140063-1.0.1.1-m3Q8sBQvYet1xYJyh4RDtJeXkF.AbHMmZ9LLCtfkuWNuU22z4ML.Uax8NRewODkyvN6K5y0y1OBZ.8W37pEJN4iNY1sd9ypuHcsV40Ewkqw; path=/; expires=Tue, 14-Apr-26 04:44:23 GMT; domain=.jimmyjohns.com; HttpOnly; Secure; SameSite=None
+server: cloudflare
+cf-ray: 9ebfe2265e6616a0-SJC
+

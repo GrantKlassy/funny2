@@ -1,0 +1,131 @@
+=== WEBSOCKET POS HANDSHAKE PROBE ===
+Date: 2026-04-14T04:19:37Z
+
+========================================
+TARGET: pos-ws.dunkindonuts.com
+========================================
+A: d-9qf2wa4mt6.execute-api.us-east-1.amazonaws.com.,54.209.217.73,34.195.159.121  CNAME: d-9qf2wa4mt6.execute-api.us-east-1.amazonaws.com.
+
+--- Confirm 426 ---
+GET / → 426
+HTTP/2 426 
+date: Tue, 14 Apr 2026 04:19:38 GMT
+content-length: 0
+sec-websocket-version: 13
+
+
+--- TLS Certificate ---
+subject=CN=pos-ws.dunkindonuts.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M02
+notBefore=Aug  6 00:00:00 2025 GMT
+notAfter=Sep  3 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:pos-ws.dunkindonuts.com
+
+--- WebSocket Upgrade (curl) ---
+WebSocket upgrade response: HTTP/2 403 
+HTTP/2 403 
+date: Tue, 14 Apr 2026 04:19:38 GMT
+content-type: application/json; charset=UTF-8
+content-length: 23
+x-amz-apigw-id: byr-RH5kIAMEesg=
+
+
+--- WebSocket with Origin ---
+With Origin: HTTP/2 403 
+
+--- WebSocket Subprotocol Probe ---
+  Protocol: graphql-ws → 403
+  Protocol: graphql-transport-ws → 403
+  Protocol: mqtt → 403
+  Protocol: stomp → 403
+  Protocol: wamp.2.json → 403
+  Protocol: soap → 403
+  Protocol: v10.stomp → 403
+  Protocol: v11.stomp → 403
+
+--- Raw WebSocket via openssl ---
+HTTP/1.1 403 Forbidden
+Date: Tue, 14 Apr 2026 04:19:41 GMT
+Content-Type: application/json; charset=UTF-8
+Content-Length: 23
+Connection: keep-alive
+x-amz-apigw-id: byr-pES0oAMEtMg=
+
+{"message":"Forbidden"}
+--- Path Variants ---
+  / → 403
+  /ws → 403
+  /websocket → 403
+  /socket → 403
+  /connect → 403
+  /pos → 403
+  /api → 403
+  /v1 → 403
+  /v2 → 403
+
+========================================
+TARGET: dbapi-ws.dunkindonuts.com
+========================================
+A: d-jd10dqc4l6.execute-api.us-east-1.amazonaws.com.,44.207.57.114,100.27.144.237  CNAME: d-jd10dqc4l6.execute-api.us-east-1.amazonaws.com.
+
+--- Confirm 426 ---
+GET / → 426
+HTTP/2 426 
+date: Tue, 14 Apr 2026 04:19:53 GMT
+content-length: 0
+sec-websocket-version: 13
+
+
+--- TLS Certificate ---
+subject=CN=dbapi-ws.dunkindonuts.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Dec  6 00:00:00 2025 GMT
+notAfter=Jan  3 23:59:59 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:dbapi-ws.dunkindonuts.com
+
+--- WebSocket Upgrade (curl) ---
+WebSocket upgrade response: HTTP/2 403 
+HTTP/2 403 
+date: Tue, 14 Apr 2026 04:19:54 GMT
+content-type: application/json; charset=UTF-8
+content-length: 23
+x-amz-apigw-id: bysArENuIAMED7A=
+
+
+--- WebSocket with Origin ---
+With Origin: HTTP/2 403 
+
+--- WebSocket Subprotocol Probe ---
+  Protocol: graphql-ws → 403
+  Protocol: graphql-transport-ws → 403
+  Protocol: mqtt → 403
+  Protocol: stomp → 403
+  Protocol: wamp.2.json → 403
+  Protocol: soap → 403
+  Protocol: v10.stomp → 403
+  Protocol: v11.stomp → 403
+
+--- Raw WebSocket via openssl ---
+HTTP/1.1 403 Forbidden
+Date: Tue, 14 Apr 2026 04:19:56 GMT
+Content-Type: application/json; charset=UTF-8
+Content-Length: 23
+Connection: keep-alive
+x-amz-apigw-id: bysBDHv6oAMELzA=
+
+{"message":"Forbidden"}
+--- Path Variants ---
+  / → 403
+  /ws → 403
+  /websocket → 403
+  /socket → 403
+  /connect → 403
+  /pos → 403
+  /api → 403
+  /v1 → 403
+  /v2 → 403
+
+=== PROBE COMPLETE ===
+Date: 2026-04-14T04:20:08Z

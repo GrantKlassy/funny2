@@ -1,0 +1,8 @@
+HTTP/1.1 302 Moved Temporarily
+Server: AkamaiGHost
+Content-Length: 0
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/dunkin_email.html?origref=www.dunkinemail.com/
+Date: Tue, 14 Apr 2026 04:15:53 GMT
+Connection: keep-alive
+X-N: S
+

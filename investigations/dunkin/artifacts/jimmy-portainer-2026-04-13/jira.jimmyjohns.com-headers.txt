@@ -1,0 +1,11 @@
+HTTP/2 301 
+date: Tue, 14 Apr 2026 04:14:23 GMT
+content-type: text/html
+content-length: 167
+location: https://jimmyjohns.atlassian.net/
+cache-control: max-age=3600
+expires: Tue, 14 Apr 2026 05:14:23 GMT
+set-cookie: __cf_bm=dtadbWntIAcsLuvgn4rJYFW9QhmcJLOIZ__z_qAlO2U-1776140063-1.0.1.1-LRzznSikZFtZQLTgFNdJaqd3IIxHVLylhaAQvobKO4f3jyE1sea8MiPGzk30uCKLVgoZxWuMKfdIMm7rRnoBZCcer.X.AOCusrPmb0OCvU0; path=/; expires=Tue, 14-Apr-26 04:44:23 GMT; domain=.jimmyjohns.com; HttpOnly; Secure; SameSite=None
+server: cloudflare
+cf-ray: 9ebfe224ec43c65e-SJC
+

@@ -1,0 +1,201 @@
+=== JIMMY JOHN'S DOCKER/PORTAINER & DEVOPS EXPOSURE PROBE ===
+Date: 2026-04-14T04:13:54Z
+
+--- HIGH-VALUE DevOps DNS Resolution ---
+dev-portainer.jimmyjohns.com  A: NXDOMAIN  CNAME: none
+docker.jimmyjohns.com  A: NXDOMAIN  CNAME: none
+bitbucket.jimmyjohns.com  A: 104.129.153.143  CNAME: none
+jira.jimmyjohns.com  A: 104.18.220.87,104.18.221.87,104.18.217.87  CNAME: none
+hipchat.jimmyjohns.com  A: NXDOMAIN  CNAME: none
+tableau.jimmyjohns.com  A: NXDOMAIN  CNAME: none
+intranet.jimmyjohns.com  A: 104.18.219.87,104.18.217.87,104.18.220.87  CNAME: none
+
+--- OTHER INTERESTING DNS Resolution ---
+vpn.jimmyjohns.com  A: 104.129.153.190  CNAME: none
+drvpn.jimmyjohns.com  A: 69.7.100.66  CNAME: none
+remotesupport.jimmyjohns.com  A: jjf.bomgarcloud.com.  CNAME: jjf.bomgarcloud.com.
+WSUS.JIMMYJOHNS.COM  A: 104.129.153.139  CNAME: none
+jj-fortiems.jimmyjohns.com  A: 104.129.153.189  CNAME: none
+duodag.jimmyjohns.com  A: NXDOMAIN  CNAME: none
+ektron.jimmyjohns.com  A: 104.18.220.87,104.18.219.87,104.18.217.87  CNAME: none
+jimmystore.jimmyjohns.com  A: NXDOMAIN  CNAME: none
+securelogin.jimmyjohns.com  A: NXDOMAIN  CNAME: none
+jj-dropbox.jimmyjohns.com  A: NXDOMAIN  CNAME: none
+rodc.jimmyjohns.com  A: 104.129.153.144  CNAME: none
+
+--- FULL SUBDOMAIN DNS SWEEP ---
+DEAD: api-idp.jimmyjohns.com
+LIVE: api-rap.jimmyjohns.com  A: 104.18.217.87,104.18.221.87,104.18.220.87  CNAME: none
+LIVE: api.jimmyjohns.com  A: 104.18.217.87,104.18.221.87,104.18.220.87  CNAME: none
+DEAD: api.locations.jimmyjohns.com
+LIVE: api2.jimmyjohns.com  A: d-t0fqk9arw9.execute-api.us-east-2.amazonaws.com.,16.58.185.247,3.142.108.167  CNAME: d-t0fqk9arw9.execute-api.us-east-2.amazonaws.com.
+DEAD: apps.jimmyjohns.com
+DEAD: apps01.jimmyjohns.com
+LIVE: assets.locations.jimmyjohns.com  A: assets.jimmyjohnsrls.rioseo.com.  CNAME: assets.jimmyjohnsrls.rioseo.com.
+LIVE: auth.jimmyjohns.com  A: 104.18.220.87,104.18.218.87,104.18.217.87  CNAME: none
+LIVE: aw-cg.jimmyjohns.com  A: 104.18.219.87,104.18.217.87,104.18.221.87  CNAME: none
+LIVE: careers.jimmyjohns.com  A: careers-jimmyjohns-com.sites.paradox.ai.,44.196.236.46,52.70.21.157  CNAME: careers-jimmyjohns-com.sites.paradox.ai.
+LIVE: catalog.jimmyjohns.com  A: 104.18.218.87,104.18.217.87,104.18.220.87  CNAME: none
+LIVE: chat.jimmyjohns.com  A: inspirecustomer.service-now.com.,148.139.177.75  CNAME: inspirecustomer.service-now.com.
+LIVE: chatdev.jimmyjohns.com  A: inspirecustomerdev.service-now.com.,148.139.161.75  CNAME: inspirecustomerdev.service-now.com.
+LIVE: chattest.jimmyjohns.com  A: inspirecustomertest.service-now.com.,148.139.177.75  CNAME: inspirecustomertest.service-now.com.
+LIVE: core.jimmyjohns.com  A: 104.18.217.87,104.18.219.87,104.18.220.87  CNAME: none
+DEAD: core01.jimmyjohns.com
+DEAD: dev01.jimmyjohns.com
+DEAD: dropbox.jimmyjohns.com
+DEAD: e.jimmyjohns.com
+DEAD: echo.jimmyjohns.com
+LIVE: enterprise.jimmyjohns.com  A: 104.18.217.87,104.18.218.87,104.18.219.87  CNAME: none
+DEAD: feedback.jimmyjohns.com
+DEAD: gear.jimmyjohns.com
+LIVE: guest.jimmyjohns.com  A: 192.168.7.250  CNAME: none
+DEAD: IC3.jimmyjohns.com
+DEAD: jj-ccentral.jimmyjohns.com
+LIVE: jjsfw.jimmyjohns.com  A: 104.129.153.190  CNAME: none
+LIVE: link.jimmyjohns.com  A: 151.101.65.195,151.101.1.195  CNAME: none
+LIVE: locations.jimmyjohns.com  A: rnqfecbs5g.yext.pgscdncf.com.,cloudflare.pgscdncf.com.,cloudflare.pgscdncf.com.cdn.cloudflare.net.  CNAME: rnqfecbs5g.yext.pgscdncf.com.
+LIVE: mail.jimmyjohns.com  A: 104.129.153.145  CNAME: none
+LIVE: maps.locations.jimmyjohns.com  A: maps.jimmyjohnsrls.rioseo.com.  CNAME: maps.jimmyjohnsrls.rioseo.com.
+DEAD: mgr.jimmyjohns.com
+LIVE: mi.jimmyjohns.com  A: dkp4dx1sbuwsr.cloudfront.net.,3.169.231.98,3.169.231.50  CNAME: dkp4dx1sbuwsr.cloudfront.net.
+DEAD: mx1.jimmyjohns.com
+LIVE: online.jimmyjohns.com  A: whitelabel.olo.com.,whitelabel.olo.com.cdn.cloudflare.net.,104.17.46.81  CNAME: whitelabel.olo.com.
+DEAD: order.jimmyjohns.com
+DEAD: ot1.jimmyjohns.com
+LIVE: owners.jimmyjohns.com  A: 104.18.218.87,104.18.220.87,104.18.221.87  CNAME: none
+DEAD: preview.jimmyjohns.com
+DEAD: preview3.jimmyjohns.com
+DEAD: print.jimmyjohns.com
+LIVE: printingcatalog.jimmyjohns.com  A: 104.18.218.87,104.18.219.87,104.18.221.87  CNAME: none
+DEAD: pullzone.jimmyjohns.com
+LIVE: qr.jimmyjohns.com  A: whitelabel.qrbridge.me.,172.66.159.201,104.20.40.40  CNAME: whitelabel.qrbridge.me.
+LIVE: rstatic.locations.jimmyjohns.com  A: rstatic.jimmyjohnsrls.rioseo.com.  CNAME: rstatic.jimmyjohnsrls.rioseo.com.
+DEAD: seg.jimmyjohns.com
+LIVE: services.jimmyjohns.com  A: 104.18.218.87,104.18.221.87,104.18.219.87  CNAME: none
+DEAD: services01.jimmyjohns.com
+DEAD: sidevouchers.jimmyjohns.com
+LIVE: sites.jimmyjohns.com  A: 104.18.219.87,104.18.221.87,104.18.217.87  CNAME: none
+DEAD: staging.jimmyjohns.com
+LIVE: store.jimmyjohns.com  A: 3.218.148.157  CNAME: none
+DEAD: support.jimmyjohns.com
+DEAD: CDN.jimmyjohns.com
+LIVE: www.jimmyjohns.com  A: 34.120.102.21  CNAME: none
+LIVE: www.careers.jimmyjohns.com  A: 104.18.219.87,104.18.221.87,104.18.217.87  CNAME: none
+DEAD: www.sidevouchers.jimmyjohns.com
+
+--- HTTP PROBE: DevOps Targets ---
+[dev-portainer.jimmyjohns.com] SKIP — no DNS
+[docker.jimmyjohns.com] SKIP — no DNS
+
+[bitbucket.jimmyjohns.com] HTTPS probe:
+  Status: 000
+  HTTP status: 000
+
+[jira.jimmyjohns.com] HTTPS probe:
+  Status: 301
+HTTP/2 301 
+date: Tue, 14 Apr 2026 04:14:23 GMT
+content-type: text/html
+content-length: 167
+location: https://jimmyjohns.atlassian.net/
+cache-control: max-age=3600
+expires: Tue, 14 Apr 2026 05:14:23 GMT
+set-cookie: __cf_bm=dtadbWntIAcsLuvgn4rJYFW9QhmcJLOIZ__z_qAlO2U-1776140063-1.0.1.1-LRzznSikZFtZQLTgFNdJaqd3IIxHVLylhaAQvobKO4f3jyE1sea8MiPGzk30uCKLVgoZxWuMKfdIMm7rRnoBZCcer.X.AOCusrPmb0OCvU0; path=/; expires=Tue, 14-Apr-26 04:44:23 GMT; domain=.jimmyjohns.com; HttpOnly; Secure; SameSite=None
+server: cloudflare
+cf-ray: 9ebfe224ec43c65e-SJC
+
+  Body size: 167 bytes
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>cloudflare</center>
+  HTTP status: 301
+[hipchat.jimmyjohns.com] SKIP — no DNS
+[tableau.jimmyjohns.com] SKIP — no DNS
+
+[intranet.jimmyjohns.com] HTTPS probe:
+  Status: 301
+HTTP/2 301 
+date: Tue, 14 Apr 2026 04:14:23 GMT
+content-type: text/html
+content-length: 167
+location: https://services.jimmyjohns.com/pages/aspx/dashboard/
+cache-control: max-age=3600
+expires: Tue, 14 Apr 2026 05:14:23 GMT
+set-cookie: __cf_bm=UXldmZF_aOWRiOYzU83VCYuVVRPSy30R3HbXjNLW7Hg-1776140063-1.0.1.1-m3Q8sBQvYet1xYJyh4RDtJeXkF.AbHMmZ9LLCtfkuWNuU22z4ML.Uax8NRewODkyvN6K5y0y1OBZ.8W37pEJN4iNY1sd9ypuHcsV40Ewkqw; path=/; expires=Tue, 14-Apr-26 04:44:23 GMT; domain=.jimmyjohns.com; HttpOnly; Secure; SameSite=None
+server: cloudflare
+cf-ray: 9ebfe2265e6616a0-SJC
+
+  Body size: 167 bytes
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>cloudflare</center>
+  HTTP status: 301
+
+--- PORTAINER-SPECIFIC PATH SWEEP ---
+[dev-portainer.jimmyjohns.com] SKIP — no DNS
+[docker.jimmyjohns.com] SKIP — no DNS
+
+--- DOCKER REGISTRY PATH SWEEP ---
+
+--- TLS CERTIFICATES ---
+
+[bitbucket.jimmyjohns.com] TLS cert:
+
+[jira.jimmyjohns.com] TLS cert:
+subject=CN=jimmyjohns.com
+issuer=C=US, O=Google Trust Services, CN=WE1
+notBefore=Mar  7 21:53:32 2026 GMT
+notAfter=Jun  5 22:53:30 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:jimmyjohns.com, DNS:*.jimmyjohns.com
+
+[intranet.jimmyjohns.com] TLS cert:
+subject=CN=jimmyjohns.com
+issuer=C=US, O=Google Trust Services, CN=WE1
+notBefore=Mar  7 21:53:32 2026 GMT
+notAfter=Jun  5 22:53:30 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:jimmyjohns.com, DNS:*.jimmyjohns.com
+
+--- NMAP SERVICE DETECTION ---
+[dev-portainer.jimmyjohns.com] SKIP — no DNS
+[docker.jimmyjohns.com] SKIP — no DNS
+
+--- HTTP STATUS SWEEP: All Live Subdomains ---
+  api-rap.jimmyjohns.com → 302
+  api.jimmyjohns.com → 302
+  api2.jimmyjohns.com → 403
+  assets.locations.jimmyjohns.com → 000
+  auth.jimmyjohns.com → 302
+  aw-cg.jimmyjohns.com → 523
+  careers.jimmyjohns.com → 200
+  catalog.jimmyjohns.com → 302
+  chat.jimmyjohns.com → 200
+  chatdev.jimmyjohns.com → 200
+  chattest.jimmyjohns.com → 200
+  core.jimmyjohns.com → 302
+  enterprise.jimmyjohns.com → 301
+  guest.jimmyjohns.com → 000
+  jjsfw.jimmyjohns.com → 000
+  link.jimmyjohns.com → 400
+  locations.jimmyjohns.com → 200
+  mail.jimmyjohns.com → 000
+  maps.locations.jimmyjohns.com → 000
+  mi.jimmyjohns.com → 200
+  online.jimmyjohns.com → 403
+  owners.jimmyjohns.com → 301
+  printingcatalog.jimmyjohns.com → 302
+  qr.jimmyjohns.com → 200
+  rstatic.locations.jimmyjohns.com → 000
+  services.jimmyjohns.com → 302
+  sites.jimmyjohns.com → 301
+  store.jimmyjohns.com → 200
+  www.jimmyjohns.com → 200
+  www.careers.jimmyjohns.com → 403
+
+=== PROBE COMPLETE ===
+Date: 2026-04-14T04:17:15Z

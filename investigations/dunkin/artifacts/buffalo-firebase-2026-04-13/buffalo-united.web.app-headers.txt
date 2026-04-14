@@ -1,0 +1,16 @@
+HTTP/2 200 
+cache-control: max-age=3600
+content-type: text/html; charset=utf-8
+etag: "a17a72529a56b6c8e0ee91283082a70f479d08adee507586d243590b9be1ebac"
+last-modified: Thu, 29 Apr 2021 17:49:15 GMT
+strict-transport-security: max-age=31556926; includeSubDomains; preload
+accept-ranges: bytes
+date: Tue, 14 Apr 2026 04:14:12 GMT
+x-served-by: cache-sjc1000117-SJC
+x-cache: HIT
+x-cache-hits: 1
+x-timer: S1776140053.639385,VS0,VE1
+vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 4978
+

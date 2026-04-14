@@ -1,0 +1,7 @@
+HTTP/1.1 302 Moved Temporarily
+Server: AkamaiGHost
+Content-Length: 0
+Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/ddperks/splashpage.html
+Date: Tue, 14 Apr 2026 04:16:02 GMT
+Connection: keep-alive
+

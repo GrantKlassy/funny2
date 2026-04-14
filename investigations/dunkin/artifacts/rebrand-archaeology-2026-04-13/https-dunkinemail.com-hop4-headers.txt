@@ -1,0 +1,16 @@
+HTTP/2 301 
+content-type: text/html; charset=iso-8859-1
+content-length: 366
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains
+location: https://www.dunkindonuts.com/en/dunkinrewards/registration?origref=www.dunkinemail.com/
+cache-control: max-age=0
+expires: Tue, 14 Apr 2026 04:15:54 GMT
+date: Tue, 14 Apr 2026 04:15:54 GMT
+set-cookie: AWSALB=MDO3AHVDpS5ArdCPTE/VqtRL6rgo1Krm2K5BCFMG/q8SuwuiFaLvMoRnQgaVuuaiaNuXq8oEU9yH21pOspOzSPtsk2jhVbtHR5vLk+sHtnvVOzJCGTuvog8zu+NQ; Expires=Tue, 21 Apr 2026 04:15:54 GMT; Path=/
+set-cookie: AWSALBCORS=MDO3AHVDpS5ArdCPTE/VqtRL6rgo1Krm2K5BCFMG/q8SuwuiFaLvMoRnQgaVuuaiaNuXq8oEU9yH21pOspOzSPtsk2jhVbtHR5vLk+sHtnvVOzJCGTuvog8zu+NQ; Expires=Tue, 21 Apr 2026 04:15:54 GMT; Path=/; SameSite=None; Secure
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=94
+server-timing: origin; dur=6
+server-timing: ak_p; desc="1776140154142_399924815_970351179_9942_8441_4_24_15";dur=1
+

@@ -1,0 +1,482 @@
+=== LOYALTY PROGRAM REBRAND ARCHAEOLOGY ===
+Date: 2026-04-14T04:15:53Z
+
+
+========================================
+DOMAIN: dunkinemail.com
+========================================
+  A: 35.153.79.184,35.173.143.243  CNAME: none  NS: ns-922.awsdns-51.net.,ns-1027.awsdns-00.org.
+
+[https-dunkinemail.com] Redirect chain:
+  START: https://dunkinemail.com/
+  HOP 1: https://dunkinemail.com/
+    Status: 301 | Body: 134B | server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkinemail.com:443/
+  HOP 2: https://www.dunkinemail.com:443/
+    Status: 302 | Body: 0B | Server: AkamaiGHost
+    X-headers: X-N: S 
+    → Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/dunkin_email.html?origref=www.dunkinemail.com/
+  HOP 3: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/dunkin_email.html?origref=www.dunkinemail.com/
+    Status: 301 | Body: 361B | server: Apache
+    set-cookie: AWSALB=BEeqMEoMMSAbrKNdo7+DSG2W/Vwhk0ls08PD+uFSTubqhvqiufP0XhMcXIfrPZwobHTm+PmPbr5+6Z/pOjYTFi9rcvjKUq5Xb57xBZWPc3eQdWD7g8EVXXhNBNEN; Expires=Tue, 21 Apr 2026 04:15:54 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dd-perks/registration?origref=www.dunkinemail.com/
+  HOP 4: https://www.dunkindonuts.com/en/dd-perks/registration?origref=www.dunkinemail.com/
+    Status: 301 | Body: 366B | server: Apache
+    set-cookie: AWSALB=MDO3AHVDpS5ArdCPTE/VqtRL6rgo1Krm2K5BCFMG/q8SuwuiFaLvMoRnQgaVuuaiaNuXq8oEU9yH21pOspOzSPtsk2jhVbtHR5vLk+sHtnvVOzJCGTuvog8zu+NQ; Expires=Tue, 21 Apr 2026 04:15:54 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards/registration?origref=www.dunkinemail.com/
+  HOP 5: https://www.dunkindonuts.com/en/dunkinrewards/registration?origref=www.dunkinemail.com/
+    Status: 403 | Body: 1146B | no server
+    Title: <title>Access to this page has been denied</title>
+    TERMINAL (403)
+
+[http-dunkinemail.com] Redirect chain:
+  START: http://dunkinemail.com/
+  HOP 1: http://dunkinemail.com/
+    Status: 301 | Body: 134B | Server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://dunkinemail.com:443/
+  HOP 2: https://dunkinemail.com:443/
+    Status: 301 | Body: 134B | server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkinemail.com:443/
+  HOP 3: https://www.dunkinemail.com:443/
+    Status: 302 | Body: 0B | Server: AkamaiGHost
+    X-headers: X-N: S 
+    → Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/dunkin_email.html?origref=www.dunkinemail.com/
+  HOP 4: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/dunkin_email.html?origref=www.dunkinemail.com/
+    Status: 301 | Body: 361B | server: Apache
+    set-cookie: AWSALB=Vr5C4RTv67py/kXuefxfTycLQXm30DMGCadElVSYv+seHK0RcWLZ/KR/3mwtQq+FCHS53KQGP1baM3StKS4p4p3mIitMEYORl9Rsk6KtafoxS0UxyKhJT5LaT5vz; Expires=Tue, 21 Apr 2026 04:15:54 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dd-perks/registration?origref=www.dunkinemail.com/
+  HOP 5: https://www.dunkindonuts.com/en/dd-perks/registration?origref=www.dunkinemail.com/
+    Status: 301 | Body: 366B | server: Apache
+    set-cookie: AWSALB=cgHMxP/jAsVRkkn2rg/N9Agw8qVd/2VBFj1MjE3G96D5DJ5vq4ynWCtWA3ciE/WBXVze4SloVFKRM3nY+IGquMTkWoIJvycgSGGNezsq9Sxw85gmDICs8UW3jZ4B; Expires=Tue, 21 Apr 2026 04:15:55 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards/registration?origref=www.dunkinemail.com/
+  HOP 6: https://www.dunkindonuts.com/en/dunkinrewards/registration?origref=www.dunkinemail.com/
+    Status: 403 | Body: 1146B | no server
+    Title: <title>Access to this page has been denied</title>
+    TERMINAL (403)
+
+[https-www-dunkinemail.com] Redirect chain:
+  START: https://www.dunkinemail.com/
+  HOP 1: https://www.dunkinemail.com/
+    Status: 302 | Body: 0B | Server: AkamaiGHost
+    X-headers: X-N: S 
+    → Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/dunkin_email.html?origref=www.dunkinemail.com/
+  HOP 2: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/dunkin_email.html?origref=www.dunkinemail.com/
+    Status: 301 | Body: 361B | server: Apache
+    set-cookie: AWSALB=ZEINjv+X6+hKjRyt1JKKOWoma8pnZ/2hSC5gtEqG0JQuKqpi8lmv9AmoF0XYqXNAvLvO1buET6m1MBwAPP3B5eQlXBWI7474nymvkJ+EIfALKM2OfXggUeN09u+p; Expires=Tue, 21 Apr 2026 04:15:55 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dd-perks/registration?origref=www.dunkinemail.com/
+  HOP 3: https://www.dunkindonuts.com/en/dd-perks/registration?origref=www.dunkinemail.com/
+    Status: 301 | Body: 366B | server: Apache
+    set-cookie: AWSALB=BWNnKrWRcesARxD9en3hFqSKqfTi8GG3eE0mIf38k+RqKhAwg2iOhfFsDb/ZIIqO9TMhOKW59iwZG0wb/35AiPVWt/DExlzk9FNDyq866GDjvqa/BikyyQL0ugwj; Expires=Tue, 21 Apr 2026 04:15:55 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards/registration?origref=www.dunkinemail.com/
+  HOP 4: https://www.dunkindonuts.com/en/dunkinrewards/registration?origref=www.dunkinemail.com/
+    Status: 403 | Body: 1146B | no server
+    Title: <title>Access to this page has been denied</title>
+    TERMINAL (403)
+
+========================================
+DOMAIN: ddperks.com
+========================================
+  A: 35.173.143.243,35.153.79.184  CNAME: none  NS: ns-1203.awsdns-22.org.,ns-1733.awsdns-24.co.uk.
+
+[https-ddperks.com] Redirect chain:
+  START: https://ddperks.com/
+  HOP 1: https://ddperks.com/
+    Status: 301 | Body: 134B | server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.ddperks.com:443/
+  HOP 2: https://www.ddperks.com:443/
+    Status: 301 | Body: 339B | Server: Apache
+    Set-Cookie: AWSALB=ITh9tyL6NcdgGUBeMUIZ/ta7vBCt/PGL1U7x9Ijy3JQPDXi0aD/zL4YTuO4LOnELZfy1WCnNZWXrZp4ZQeadUm1TW2vLYuO3z2ELBDky5CO0LUzTzyvKzMJhv92F; Expires=Tue, 21 Apr 2026 04:15:57 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dd-perks?origref=www.ddperks.com/
+  HOP 3: https://www.dunkindonuts.com/en/dd-perks?origref=www.ddperks.com/
+    Status: 301 | Body: 349B | server: Apache
+    set-cookie: AWSALB=O6WrwsyVmChwj61AqukVCSpAHZdvV3dKMlc9gxkl8zeeb0AflL4pDb9YHdwo7dx441XBtKD6Ryy/hv4Q21iSRCQYJJNdcleqV5QPJT4o5DCIwpnMED3nrNYNFZo/; Expires=Tue, 21 Apr 2026 04:15:57 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards?origref=www.ddperks.com/
+  HOP 4: https://www.dunkindonuts.com/en/dunkinrewards?origref=www.ddperks.com/
+    Status: 200 | Body: 275153B | server: Apache
+    set-cookie: AWSALB=i7LlKDRgjqVB3a5WCkDwQgL6Pg82pOOryeeavhrWpZJd1mvsT+mTXz/wntZHW2+vCVpOt6pyXowfh58aC5wWpRbsOy8iqPr2vBwu+GgTP0kn7qKhAac+OHVehWii; Expires=Tue, 21 Apr 2026 04:15:57 GMT; Path=/
+    X-headers: x-content-type-options: nosniff x-frame-options: DENY x-ua-compatible: IE=edge x-xss-protection: 1; mode=block x-platform: P-1 
+    Title: <title>Dunkin&#39; Rewards | Dunkin&#39;®  </title>
+    TERMINAL (200)
+
+[http-ddperks.com] Redirect chain:
+  START: http://ddperks.com/
+  HOP 1: http://ddperks.com/
+    Status: 301 | Body: 134B | Server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://ddperks.com:443/
+  HOP 2: https://ddperks.com:443/
+    Status: 301 | Body: 134B | server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.ddperks.com:443/
+  HOP 3: https://www.ddperks.com:443/
+    Status: 301 | Body: 339B | Server: Apache
+    Set-Cookie: AWSALB=HRv246KbjUNRh0BkNT0i9HLgZpfRs/mXmyhnaLD44x2so4D98XLQ5PnXsuvpFwZPm76UUnihLMTTliHRIv+uCKusd8VLmmS668C2z4qwpF7s1uOJA5JhY53iTQxr; Expires=Tue, 21 Apr 2026 04:15:58 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dd-perks?origref=www.ddperks.com/
+  HOP 4: https://www.dunkindonuts.com/en/dd-perks?origref=www.ddperks.com/
+    Status: 301 | Body: 349B | server: Apache
+    set-cookie: AWSALB=EPXZe4b/qkf/D46abV4MbBwUv9/Cjam4qoTAwfriTHurL/k84XORIhgG9O8JF9Cx1NpJ7RGTrH7wk8FZ3O3tIaoRXBFCcA2BlMZL+2s5ehUwkrL4YW3fLc0BzTyB; Expires=Tue, 21 Apr 2026 04:15:58 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards?origref=www.ddperks.com/
+  HOP 5: https://www.dunkindonuts.com/en/dunkinrewards?origref=www.ddperks.com/
+    Status: 200 | Body: 275166B | server: Apache
+    set-cookie: AWSALB=PsM7nuwkcgJNO/MieJkUHDWOyZJAd0u/lcLGVSuNpq5wt8FKzUhhk9wXy+zYIQ7gYD6/XjJFPKKisbSxzk5KSJFkPLWD+so4Du7806ATYVvFuv+ZUEgbIBvXOx6C; Expires=Tue, 21 Apr 2026 04:15:58 GMT; Path=/
+    X-headers: x-content-type-options: nosniff x-frame-options: DENY x-ua-compatible: IE=edge x-xss-protection: 1; mode=block x-platform: P-2 
+    Title: <title>Dunkin&#39; Rewards | Dunkin&#39;®  </title>
+    TERMINAL (200)
+
+[https-www-ddperks.com] Redirect chain:
+  START: https://www.ddperks.com/
+  HOP 1: https://www.ddperks.com/
+    Status: 301 | Body: 339B | Server: Apache
+    Set-Cookie: AWSALB=csHt5llpIf/u7Im+KTLsOmMM0lrSgszmZzurXbs0JiVXUUoiI6z2oBkvlNOM1gYCs7iVbQCG3yCty6iHgjOTZREsqoJJMMH5nd5yUq+/Xbsek8FfY2YtyHEHqwvN; Expires=Tue, 21 Apr 2026 04:15:59 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dd-perks?origref=www.ddperks.com/
+  HOP 2: https://www.dunkindonuts.com/en/dd-perks?origref=www.ddperks.com/
+    Status: 301 | Body: 349B | server: Apache
+    set-cookie: AWSALB=7sCr7kteV/nbY2cFDvbDe8jaP+N4dB0R0A7XidfpXYV+CQmhN1ARc+xMPICpbQ8n7lzgWDTHZDCxgG8Lot5UX6xL9+yGzYQmLu+i8YVPigiOMrryVsEeh9prQZrm; Expires=Tue, 21 Apr 2026 04:15:59 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards?origref=www.ddperks.com/
+  HOP 3: https://www.dunkindonuts.com/en/dunkinrewards?origref=www.ddperks.com/
+    Status: 200 | Body: 275027B | server: Apache
+    set-cookie: AWSALB=wH+rA3pjQt7UYJM2expzne+blvSXtqQJmRVPgO+sBBTQa9I9Lj0MLPbYlbjA5WT1BZTJDiXUImgvjQQbuPB6TYycF4uHpo3Ow0LfvsujrUrD1hI0Lc5IWTzUS98T; Expires=Tue, 21 Apr 2026 04:15:59 GMT; Path=/
+    X-headers: x-content-type-options: nosniff x-frame-options: DENY x-ua-compatible: IE=edge x-xss-protection: 1; mode=block x-platform: P-4 
+    Title: <title>Dunkin&#39; Rewards | Dunkin&#39;®  </title>
+    TERMINAL (200)
+
+========================================
+DOMAIN: dunkinperks.com
+========================================
+  A: 35.173.143.243,35.153.79.184  CNAME: none  NS: ns-1996.awsdns-57.co.uk.,ns-485.awsdns-60.com.
+
+[https-dunkinperks.com] Redirect chain:
+  START: https://dunkinperks.com/
+  HOP 1: https://dunkinperks.com/
+    Status: 301 | Body: 134B | server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkinperks.com:443/
+  HOP 2: https://www.dunkinperks.com:443/
+    Status: 302 | Body: 0B | Server: AkamaiGHost
+    → Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/ddperks/splashpage.html
+  HOP 3: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/ddperks/splashpage.html
+    Status: 301 | Body: 319B | server: Apache
+    set-cookie: AWSALB=Sqc/3o1D41eerTe9iZqwzy/iOsNzeUccpXg8gd72MzrzFqO1ZezdCgmOh72/MqNaaDbwX7McpCYuo4SyjmVNTkPYxlftkJF2OYbeeohQp0hzhxNH8QWEplZycY0z; Expires=Tue, 21 Apr 2026 04:16:01 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dd-perks
+  HOP 4: https://www.dunkindonuts.com/en/dd-perks
+    Status: 301 | Body: 324B | server: Apache
+    set-cookie: AWSALB=h+fS26IUwGFX2WRDMR+DV2vmitAEmXb2vnJtslmTeQsY6ymaY7+jNHGzU4fMDVkv9kqZ5FyaqwopiWaCyKyNQXZ6giCCIdXC9/qPIdJaHMip9cQpc44tcMSOlZAY; Expires=Tue, 21 Apr 2026 04:16:01 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards
+  HOP 5: https://www.dunkindonuts.com/en/dunkinrewards
+    Status: 200 | Body: 275017B | server: Apache
+    set-cookie: AWSALB=nbiOtrHS6O+U5YiqwkOsN8B5fe2aAOmPUXCE+ZuFk6HDngTS9QoKXYCxsZtRO0bSKRldZMyJzNklvpoV5q5ouOVB56984EzVQhfKsxdmYesIE6YnXvw+D8ykoWAv; Expires=Tue, 21 Apr 2026 04:16:01 GMT; Path=/
+    X-headers: x-ua-compatible: IE=edge x-frame-options: DENY x-content-type-options: nosniff x-xss-protection: 1; mode=block x-platform: P-4 
+    Title: <title>Dunkin&#39; Rewards | Dunkin&#39;®  </title>
+    TERMINAL (200)
+
+[http-dunkinperks.com] Redirect chain:
+  START: http://dunkinperks.com/
+  HOP 1: http://dunkinperks.com/
+    Status: 301 | Body: 134B | Server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://dunkinperks.com:443/
+  HOP 2: https://dunkinperks.com:443/
+    Status: 301 | Body: 134B | server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkinperks.com:443/
+  HOP 3: https://www.dunkinperks.com:443/
+    Status: 302 | Body: 0B | Server: AkamaiGHost
+    → Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/ddperks/splashpage.html
+  HOP 4: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/ddperks/splashpage.html
+    Status: 301 | Body: 319B | server: Apache
+    set-cookie: AWSALB=z9in7NtBAezkKDA/mbmDrHT8zkUyVlyc7TTx2GtzLx3/Ag1jCtlK0XLydBcgD2uOO4QKV7yV0VH7dzcIS8CHqoq2kSfyhTO2qw5odFVmoJU7XzWlDHzh1ZGyZ+4E; Expires=Tue, 21 Apr 2026 04:16:02 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dd-perks
+  HOP 5: https://www.dunkindonuts.com/en/dd-perks
+    Status: 301 | Body: 324B | server: Apache
+    set-cookie: AWSALB=PtSoR3o5oRjBXnDWyaxIdWymHRmdXFVRm2s9eSKF55NhMqG0y/Lmz84d72W/XfIOO8yTgHsiz29Yf7Fe5akZRmJ/uy1PYgarGY2oseeVJoFR4kkJtwbuslEeIqpf; Expires=Tue, 21 Apr 2026 04:16:02 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards
+  HOP 6: https://www.dunkindonuts.com/en/dunkinrewards
+    Status: 200 | Body: 275017B | server: Apache
+    set-cookie: AWSALB=XkY+DCWZplbjvcI9NZk+zMgCQz3nNOSe+O/6wLZtpRPq/9V8EEulGRl5N1K0OElB7WME6Nqig6pNDV/sqXDCDOwJ//lbEEIm8HtklcFfFOi3RxEd7p1FJ007bjtd; Expires=Tue, 21 Apr 2026 04:16:02 GMT; Path=/
+    X-headers: x-ua-compatible: IE=edge x-frame-options: DENY x-content-type-options: nosniff x-xss-protection: 1; mode=block x-platform: P-4 
+    Title: <title>Dunkin&#39; Rewards | Dunkin&#39;®  </title>
+    TERMINAL (200)
+
+[https-www-dunkinperks.com] Redirect chain:
+  START: https://www.dunkinperks.com/
+  HOP 1: https://www.dunkinperks.com/
+    Status: 302 | Body: 0B | Server: AkamaiGHost
+    → Location: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/ddperks/splashpage.html
+  HOP 2: https://www.dunkindonuts.com/content/dunkindonuts/en/responsive/ddperks/splashpage.html
+    Status: 301 | Body: 319B | server: Apache
+    set-cookie: AWSALB=bJt4HCEKO8iiXxTjC3asJOZbbM6PDEhWDE7BHpJp9SCdAqL3EnIe6wJODoG377flMR18fozKyuq0z+tMY2Lzw07Do3ZI/KpBR3dX8wdkGL4qSSdz6PRKge6Dx9XJ; Expires=Tue, 21 Apr 2026 04:16:02 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dd-perks
+  HOP 3: https://www.dunkindonuts.com/en/dd-perks
+    Status: 301 | Body: 324B | server: Apache
+    set-cookie: AWSALB=FPF2eWedSmz4kTu/OC1SRV062A+WxaiPWYEnvLbiZqgyt4x+MeGCv5JBTHklWMB7PggbsjPNzEyQ6yslksL5IIbEqSnM9Brv91PWE8IrAW1MkCoAJ8ejxJVKCqXE; Expires=Tue, 21 Apr 2026 04:16:02 GMT; Path=/
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards
+  HOP 4: https://www.dunkindonuts.com/en/dunkinrewards
+    Status: 200 | Body: 275017B | server: Apache
+    set-cookie: AWSALB=SB5Ta2pewC4hqqnSSjl+t86LwC6GSMXLB5gNjp1oThMAea2ywQseroNkj4i2vknhxoq2tsoAUlRYmazh57ZOSy1yYVhdPnejWzHzH3WWe/DiSZA2ENHWOfQBMmDL; Expires=Tue, 21 Apr 2026 04:16:02 GMT; Path=/
+    X-headers: x-ua-compatible: IE=edge x-frame-options: DENY x-content-type-options: nosniff x-xss-protection: 1; mode=block x-platform: P-4 
+    Title: <title>Dunkin&#39; Rewards | Dunkin&#39;®  </title>
+    TERMINAL (200)
+
+========================================
+DOMAIN: dunkinrewards.com
+========================================
+  A: 35.173.143.243,35.153.79.184  CNAME: none  NS: ns-1797.awsdns-32.co.uk.,ns-351.awsdns-43.com.
+
+[https-dunkinrewards.com] Redirect chain:
+  START: https://dunkinrewards.com/
+  HOP 1: https://dunkinrewards.com/
+    Status: 301 | Body: 134B | server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkinrewards.com:443/
+  HOP 2: https://www.dunkinrewards.com:443/
+    Status: 301 | Body: 0B | Server: AkamaiGHost
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards
+  HOP 3: https://www.dunkindonuts.com/en/dunkinrewards
+    Status: 200 | Body: 275094B | server: Apache
+    set-cookie: AWSALB=G9oDN4TdP7u0F6hOzpMzkSQSQMwAcetxFl42odF+t0GREDg/JTsh9jMbbPIYuxlOG5vfZDi0cAtGY6W7YghdOGDBSYcJbCckLQ8KjDk3v0XdJ7EIDLHMbAwolxbM; Expires=Tue, 21 Apr 2026 04:16:04 GMT; Path=/
+    X-headers: x-ua-compatible: IE=edge x-frame-options: DENY x-content-type-options: nosniff x-xss-protection: 1; mode=block x-platform: P-2 
+    Title: <title>Dunkin&#39; Rewards | Dunkin&#39;®  </title>
+    TERMINAL (200)
+
+[http-dunkinrewards.com] Redirect chain:
+  START: http://dunkinrewards.com/
+  HOP 1: http://dunkinrewards.com/
+    Status: 301 | Body: 134B | Server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://dunkinrewards.com:443/
+  HOP 2: https://dunkinrewards.com:443/
+    Status: 301 | Body: 134B | server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkinrewards.com:443/
+  HOP 3: https://www.dunkinrewards.com:443/
+    Status: 301 | Body: 0B | Server: AkamaiGHost
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards
+  HOP 4: https://www.dunkindonuts.com/en/dunkinrewards
+    Status: 200 | Body: 275094B | server: Apache
+    set-cookie: AWSALB=PePrXtsapw3Ts5VwgwZxMW02cUz9n+BUNJ6N+2idxJ9Ih432WlGqQEAdcU0xmYgEvKViPH0bFu3b2XeDxzcxk48swE8PeF9g3oNC9We0UhVBcjK9gSw9aGhRwqaA; Expires=Tue, 21 Apr 2026 04:16:05 GMT; Path=/
+    X-headers: x-ua-compatible: IE=edge x-frame-options: DENY x-content-type-options: nosniff x-xss-protection: 1; mode=block x-platform: P-2 
+    Title: <title>Dunkin&#39; Rewards | Dunkin&#39;®  </title>
+    TERMINAL (200)
+
+[https-www-dunkinrewards.com] Redirect chain:
+  START: https://www.dunkinrewards.com/
+  HOP 1: https://www.dunkinrewards.com/
+    Status: 301 | Body: 0B | Server: AkamaiGHost
+    → Location: https://www.dunkindonuts.com/en/dunkinrewards
+  HOP 2: https://www.dunkindonuts.com/en/dunkinrewards
+    Status: 200 | Body: 274809B | server: Apache
+    set-cookie: AWSALB=h9S2m5pCd9BouEVyiONBxslNO9dXkySAqFo6NAUsCK5yXsf72/7occS4cErh2UXPg/iAD9faHivFX5MJejDZn/uOOgwMqvu44ew/yFGyCW/Pwug+B1l8JSSz9p+r; Expires=Tue, 21 Apr 2026 04:16:05 GMT; Path=/
+    X-headers: x-ua-compatible: IE=edge x-frame-options: DENY x-content-type-options: nosniff x-xss-protection: 1; mode=block x-platform: P-3 
+    Title: <title>Dunkin&#39; Rewards | Dunkin&#39;®  </title>
+    TERMINAL (200)
+
+========================================
+DOMAIN: clubdunkin.com
+========================================
+  A: 35.173.143.243,35.153.79.184  CNAME: none  NS: ns-632.awsdns-15.net.,ns-1379.awsdns-44.org.
+
+[https-clubdunkin.com] Redirect chain:
+  START: https://clubdunkin.com/
+  HOP 1: https://clubdunkin.com/
+    Status: 301 | Body: 134B | server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com:443/en/clubdunkin
+  HOP 2: https://www.dunkindonuts.com:443/en/clubdunkin
+    Status: 200 | Body: 212825B | server: Apache
+    set-cookie: AWSALB=eIUDgYTqarEDlm+bqriiQHmKK0NY9n6G8QPQQFqZyCXpLDgnp1eUvpi0sHalZkcKZryW+64juel6d1JZFgNeGrSbBWrEiOT9LXO4jd6xWUKNH29dkgq6fyXaqUfX; Expires=Tue, 21 Apr 2026 04:16:07 GMT; Path=/
+    X-headers: x-ua-compatible: IE=edge x-frame-options: DENY x-content-type-options: nosniff x-xss-protection: 1; mode=block x-platform: P-2 
+    Title: <title>Club Dunkin | Dunkin&#39;®  </title>
+    TERMINAL (200)
+
+[http-clubdunkin.com] Redirect chain:
+  START: http://clubdunkin.com/
+  HOP 1: http://clubdunkin.com/
+    Status: 301 | Body: 134B | Server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://clubdunkin.com:443/
+  HOP 2: https://clubdunkin.com:443/
+    Status: 301 | Body: 134B | server: awselb/2.0
+    Title: <title>301 Moved Permanently</title>
+    → Location: https://www.dunkindonuts.com:443/en/clubdunkin
+  HOP 3: https://www.dunkindonuts.com:443/en/clubdunkin
+    Status: 200 | Body: 212964B | server: Apache
+    set-cookie: AWSALB=NmruEURh2qKT0TDYcxY8ZKZI2QsE1u+5KpeYbMaYZqzRP06Mh/DOWet9MoJn9l0rlJY/GJuDfmJqAguuy4hxbd97425GVXKExt1AHw54QV/p2qn4wDR1SJOS2Zsr; Expires=Tue, 21 Apr 2026 04:16:07 GMT; Path=/
+    X-headers: x-ua-compatible: IE=edge x-frame-options: DENY x-content-type-options: nosniff x-xss-protection: 1; mode=block x-platform: P-1 
+    Title: <title>Club Dunkin | Dunkin&#39;®  </title>
+    TERMINAL (200)
+
+[https-www-clubdunkin.com] Redirect chain:
+  START: https://www.clubdunkin.com/
+  HOP 1: https://www.clubdunkin.com/
+    Status: 000 | Body: B | no server
+    TERMINAL (000)
+
+--- dunkinemail.com Path Sweep ---
+  dunkinemail.com/unsubscribe → 301
+  dunkinemail.com/preferences → 301
+  dunkinemail.com/track → 301
+  dunkinemail.com/rewards → 301
+  dunkinemail.com/signup → 301
+  dunkinemail.com/manage → 301
+  dunkinemail.com/optout → 301
+  dunkinemail.com/login → 301
+  dunkinemail.com/register → 301
+
+--- TLS Certificates ---
+
+[dunkinemail.com]:
+subject=CN=dunkinrun.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Oct  7 00:00:00 2025 GMT
+notAfter=Nov  4 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrun.com, DNS:clubdunkin.com, DNS:dunkinemail.com, DNS:*.dunkinbrands.com, DNS:*.dunkindonuts.co.uk, DNS:ddperks.com, DNS:dunkinperks.com
+
+[ddperks.com]:
+subject=CN=dunkinrun.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Oct  7 00:00:00 2025 GMT
+notAfter=Nov  4 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrun.com, DNS:clubdunkin.com, DNS:dunkinemail.com, DNS:*.dunkinbrands.com, DNS:*.dunkindonuts.co.uk, DNS:ddperks.com, DNS:dunkinperks.com
+
+[dunkinperks.com]:
+subject=CN=dunkinrun.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Oct  7 00:00:00 2025 GMT
+notAfter=Nov  4 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrun.com, DNS:clubdunkin.com, DNS:dunkinemail.com, DNS:*.dunkinbrands.com, DNS:*.dunkindonuts.co.uk, DNS:ddperks.com, DNS:dunkinperks.com
+
+[dunkinrewards.com]:
+subject=CN=dunkinrewards.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M04
+notBefore=Mar 22 00:00:00 2026 GMT
+notAfter=Oct  5 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrewards.com
+
+[clubdunkin.com]:
+subject=CN=dunkinrun.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Oct  7 00:00:00 2025 GMT
+notAfter=Nov  4 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrun.com, DNS:clubdunkin.com, DNS:dunkinemail.com, DNS:*.dunkinbrands.com, DNS:*.dunkindonuts.co.uk, DNS:ddperks.com, DNS:dunkinperks.com
+
+--- Wayback Machine CDX ---
+
+[dunkinemail.com] Wayback snapshots:
+20180805144244 http://dunkinemail.com/ 301 unk
+20180822172029 http://www.dunkinemail.com/ - warc/revisit
+20211202131152 http://dunkinemail.com/ 301 text/html
+20220105013938 https://dunkinemail.com/ - warc/revisit
+20220325055321 https://www.dunkinemail.com/ 302 unk
+20230213221458 http://www.dunkinemail.com/ - warc/revisit
+20230215192615 http://www.dunkinemail.com/ - warc/revisit
+20230305013753 http://dunkinemail.com/ - warc/revisit
+20230405085553 http://dunkinemail.com/ 301 text/html
+20231030235154 http://www.dunkinemail.com/ 301 unk
+20240130175931 http://www.dunkinemail.com/ 301 unk
+20240509155355 https://dunkinemail.com/ 301 text/html
+20240509155358 http://dunkinemail.com/ 301 text/html
+20241213100806 http://dunkinemail.com/ 301 text/html
+20241213100808 https://www.dunkinemail.com:443/ 302 unk
+20241213171912 https://dunkinemail.com/ 301 text/html
+20241218151630 http://www.dunkinemail.com/ 301 unk
+20241219090834 https://www.dunkinemail.com/ 302 unk
+20241224083327 http://www.dunkinemail.com/ 301 unk
+20241224083338 https://www.dunkinemail.com/ 302 unk
+
+[ddperks.com] Wayback snapshots:
+20091124094155 http://ddperks.com:80/ 302 unk
+20091227221252 http://ddperks.com:80/ 302 unk
+20091227221252 http://ddperks.com:80/ 302 unk
+20100129064839 http://ddperks.com:80/ 302 unk
+20110109010848 http://ddperks.com:80/ 302 unk
+20120111111452 http://ddperks.com:80/ 302 unk
+20120114204345 http://www.ddperks.com/ 302 unk
+20130531133551 http://ddperks.com/ 302 text/html
+20140102170241 http://ddperks.com/ 301 text/html
+20140513004341 http://www.ddperks.com:80/ 301 text/html
+20140517042656 http://ddperks.com/ 301 text/html
+20140712134548 http://www.ddperks.com:80/ 301 text/html
+20140911030856 http://www.ddperks.com:80/ 301 text/html
+20141007161132 http://www.ddperks.com/ 301 text/html
+20141009230100 http://www.ddperks.com:80/ 301 text/html
+20141104051900 http://ddperks.com/ 301 text/html
+20141216230223 http://ddperks.com/ 301 text/html
+20150214182200 http://www.ddperks.com/ 301 text/html
+20150215070505 http://www.ddperks.com:80/ 301 text/html
+20150318091232 http://www.ddperks.com:80/ 301 text/html
+
+[dunkinperks.com] Wayback snapshots:
+20110207110939 http://dunkinperks.com/ 302 unk
+20110207110942 https://dunkinperks.com/ 200 text/html
+20130529103816 http://dunkinperks.com/ 302 text/html
+20140118035810 http://dunkinperks.com/ 301 text/html
+20140517055823 http://dunkinperks.com/ 301 text/html
+20141217082946 http://dunkinperks.com/ 301 text/html
+20150801095020 http://dunkinperks.com/ 301 text/html
+20150926164420 http://dunkinperks.com/ 301 text/html
+20160111125438 http://dunkinperks.com/ 301 text/html
+20160305183210 http://dunkinperks.com/ - warc/revisit
+20161002152013 http://dunkinperks.com/ 301 unk
+20161020025747 http://www.dunkinperks.com/ 301 text/html
+20170610015241 http://dunkinperks.com/ 301 unk
+20170723103634 http://www.dunkinperks.com/ 302 unk
+20170921120624 http://dunkinperks.com/ 301 unk
+20171014093339 http://www.dunkinperks.com/ 302 unk
+20180807015756 http://dunkinperks.com/ - warc/revisit
+20180825191925 http://www.dunkinperks.com/ - warc/revisit
+20190711205516 http://dunkinperks.com/ - warc/revisit
+20211202072553 http://dunkinperks.com/ 301 text/html
+
+[dunkinrewards.com] Wayback snapshots:
+20110207110939 http://dunkinrewards.com/ 200 text/html
+20190727161411 http://dunkinrewards.com/ 200 text/html
+20211202091930 http://dunkinrewards.com/ 200 unk
+20221004053146 https://dunkinrewards.com/ 301 text/html
+20221004113203 https://dunkinrewards.com/ 301 text/html
+20221004150553 https://www.dunkinrewards.com/ 301 unk
+20221013215316 http://dunkinrewards.com/ 301 text/html
+20221013233624 http://dunkinrewards.com/ 301 text/html
+20221022185458 http://dunkinrewards.com/ - warc/revisit
+20221102082115 https://dunkinrewards.com/ - warc/revisit
+20221103223829 http://www.dunkinrewards.com/ 301 unk
+20221104224915 http://www.dunkinrewards.com/ - warc/revisit
+20221108095809 http://www.dunkinrewards.com/ 301 unk
+20221113113331 https://www.dunkinrewards.com/ - warc/revisit
+20221119202424 http://dunkinrewards.com/ 301 text/html
+20221125062952 https://dunkinrewards.com/ - warc/revisit
+20221214183849 http://dunkinrewards.com/ - warc/revisit
+20221214212034 http://dunkinrewards.com/ - warc/revisit
+20221214212605 http://dunkinrewards.com/ - warc/revisit
+20221216205017 http://dunkinrewards.com/ - warc/revisit
+
+[clubdunkin.com] Wayback snapshots:
+
+=== PROBE COMPLETE ===
+Date: 2026-04-14T04:17:01Z

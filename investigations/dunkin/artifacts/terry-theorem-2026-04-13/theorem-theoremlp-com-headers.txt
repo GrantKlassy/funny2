@@ -1,0 +1,9 @@
+HTTP/2 301 
+content-type: text/plain; charset=utf-8
+date: Tue, 14 Apr 2026 04:21:35 GMT
+location: https://www.theoremlp.com/
+server: Netlify
+strict-transport-security: max-age=31536000
+x-nf-request-id: 01KP53JA5HC1T9T68XM2XTKXYH
+content-length: 41
+

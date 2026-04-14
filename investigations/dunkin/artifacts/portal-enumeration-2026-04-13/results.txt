@@ -1,0 +1,84 @@
+=== PORTAL WILDCARD ENUMERATION ===
+Date: 2026-04-14T04:19:36Z
+
+--- CT Log Search ---
+[corporateportal.dunkinbrands.com]
+  Certs found: 12
+*.corporateportal.dunkinbrands.com
+*.dunkinbrands.com
+*.corporateportal.dunkinbrands.com
+
+[franchisee.dunkinbrands.com]
+  Certs found: 0
+
+--- DNS Subdomain Sweep ---
+
+[corporateportal.dunkinbrands.com] DNS sweep:
+  ROOT: A: NXDOMAIN  CNAME: none
+
+[franchisee.dunkinbrands.com] DNS sweep:
+  ROOT: A: 104.18.21.246  CNAME: none
+  LIVE: test.franchisee.dunkinbrands.com  A: 54.146.87.221,54.225.228.214,34.192.187.154  CNAME: none
+  LIVE: prod.franchisee.dunkinbrands.com  A: 52.202.228.117,100.52.132.200  CNAME: none
+
+--- HTTP Probe of Discovered Subdomains ---
+[franchisee.dunkinbrands.com] HTTPS probe:
+  Status: 301
+  Body: 296 bytes
+HTTP/2 301 
+date: Tue, 14 Apr 2026 04:20:25 GMT
+content-type: text/html; charset=iso-8859-1
+location: https://franchisee.dunkinbrands.com/DunkinPortal/
+cf-ray: 9ebfeaf73fab2510-SJC
+set-cookie: AWSALB=Amvj3NzXbs5/Y4EeSKCfFG+IdQBif4ykB3XS7dBwKQY5/YVp7xDc3l4lhAdJlCo2hs/ZVEzjBidxn2ajnmYP57QE+Pe0AFhpmd6wik5pwDs7WPSekj6uL4EgvUp4; Expires=Tue, 21 Apr 2026 04:20:25 GMT; Path=/
+set-cookie: AWSALBCORS=Amvj3NzXbs5/Y4EeSKCfFG+IdQBif4ykB3XS7dBwKQY5/YVp7xDc3l4lhAdJlCo2hs/ZVEzjBidxn2ajnmYP57QE+Pe0AFhpmd6wik5pwDs7WPSekj6uL4EgvUp4; Expires=Tue, 21 Apr 2026 04:20:25 GMT; Path=/; SameSite=None; Secure
+cf-cache-status: DYNAMIC
+server: cloudflare
+
+
+--- BAM Path Sweep ---
+  bam.dunkinbrands.com/ → 302
+  bam.dunkinbrands.com/api → 404
+  bam.dunkinbrands.com/portal → 404
+  bam.dunkinbrands.com/franchisee → 404
+  bam.dunkinbrands.com/corporate → 404
+  bam.dunkinbrands.com/dashboard → 404
+  bam.dunkinbrands.com/admin → 404
+  bam.dunkinbrands.com/login → 404
+  bam.dunkinbrands.com/health → 404
+  bam.dunkinbrands.com/status → 404
+  bam.dunkinbrands.com/favicon.ico → 404
+  bam.dunkinbrands.com/robots.txt → 404
+  bam.dunkinbrands.com/.well-known/security.txt → 404
+
+--- Wayback CDX ---
+[corporateportal.dunkinbrands.com]:
+[franchisee.dunkinbrands.com]:
+timestamp original statuscode mimetype
+20150811170748 https://franchisee.dunkinbrands.com/ 200 text/html
+20150822230906 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20150923060514 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20151112165953 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20151215063855 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20160115201624 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20160206235049 https://franchisee.dunkinbrands.com/ 200 text/html
+20160215133638 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20160317160006 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20160419033330 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20160521142058 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20160621190841 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20160723003635 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20160823072453 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20160924042155 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20160925072737 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20161024045500 https://franchisee.dunkinbrands.com/ - warc/revisit
+20161026191216 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20170310050156 http://franchisee.dunkinbrands.com:80/ 200 text/html
+20170505111537 http://franchisee.dunkinbrands.com:80/ 200 text/html
+[bam.dunkinbrands.com]:
+timestamp original statuscode mimetype
+20240912200224 http://bam.dunkinbrands.com/ 301 text/html
+20240912200225 https://bam.dunkinbrands.com:443/ 302 text/html
+
+=== PROBE COMPLETE ===
+Date: 2026-04-14T04:20:57Z

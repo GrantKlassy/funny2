@@ -1,0 +1,10 @@
+HTTP/2 301 
+date: Tue, 14 Apr 2026 04:20:25 GMT
+content-type: text/html; charset=iso-8859-1
+location: https://franchisee.dunkinbrands.com/DunkinPortal/
+cf-ray: 9ebfeaf73fab2510-SJC
+set-cookie: AWSALB=Amvj3NzXbs5/Y4EeSKCfFG+IdQBif4ykB3XS7dBwKQY5/YVp7xDc3l4lhAdJlCo2hs/ZVEzjBidxn2ajnmYP57QE+Pe0AFhpmd6wik5pwDs7WPSekj6uL4EgvUp4; Expires=Tue, 21 Apr 2026 04:20:25 GMT; Path=/
+set-cookie: AWSALBCORS=Amvj3NzXbs5/Y4EeSKCfFG+IdQBif4ykB3XS7dBwKQY5/YVp7xDc3l4lhAdJlCo2hs/ZVEzjBidxn2ajnmYP57QE+Pe0AFhpmd6wik5pwDs7WPSekj6uL4EgvUp4; Expires=Tue, 21 Apr 2026 04:20:25 GMT; Path=/; SameSite=None; Secure
+cf-cache-status: DYNAMIC
+server: cloudflare
+

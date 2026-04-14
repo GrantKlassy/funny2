@@ -2,7 +2,7 @@
 
 # :doughnut: I Reverse-Engineered Dunkin's Entire Digital Infrastructure Because Their Reddit Ad Annoyed Me :doughnut:
 
-**33 probe scripts. 77 entities. 29 vendors. 19 dead services. 1 load-bearing typo.**
+**41 probe scripts. 88 entities. 32 vendors. 19 dead services. 1 load-bearing typo.**
 
 **All because a fake toddler tried to sell me a mango drink.**
 
@@ -42,7 +42,7 @@ No. Your toddler did not have your phone. Your **copywriter** had your phone. I 
 
 I clicked the ad. The URL was `ulink.prod.ddmprod.dunkindonuts.com` — a subdomain four levels deep leaking internal environment naming. I opened a container and started digging.
 
-I didn't stop for three waves.
+I didn't stop for four waves.
 
 ---
 
@@ -141,6 +141,119 @@ Meanwhile `auth0-stg.dunkindonuts.com` exists because someone proposed Auth0 at 
 
 ---
 
+### :email: You Can't Sign Up for Email Via the Email Domain
+
+`dunkinemail.com` — the domain you'd use to sign up for Dunkin' emails — hits you with a **five-hop redirect chain through three loyalty program eras** before landing on 403 Forbidden.
+
+```
+dunkinemail.com
+  → www.dunkinemail.com                              (AWS ELB)
+    → /content/dunkindonuts/en/responsive/dunkin_email.html  (Akamai, legacy CMS)
+      → /en/dd-perks/registration                    (DD Perks era)
+        → /en/dunkinrewards/registration              (Dunkin' Rewards era)
+          → 403 Forbidden ❌
+```
+
+> [!WARNING]
+> Each redirect is a fossilized layer of corporate rebranding. The "responsive" in the URL path is from when "responsive design" was a selling point. "DD Perks" was the loyalty program before they dropped "Donuts" from the name. And the final destination — the Dunkin' Rewards registration page — returns **"Access to this page has been denied."**
+
+`dunkinperks.com` is even deeper — **four brand layers**: dunkinperks → `ddperks/splashpage.html` (the word "splashpage" in a URL path is a fossil from the Obama administration) → `dd-perks` → `dunkinrewards`. That one actually works though. Only the email domain is broken. The domain whose *one job* is email signup is the one that's broken.
+
+---
+
+### :chicken: Buffalo Wild Wings Built Nothing Extraordinary
+
+Inspire Brands' Buffalo Wild Wings has a Firebase project called **`buffalo-united`** — which sounds less like a wing restaurant and more like a mid-table English football club that gets knocked out of the FA Cup by a team of plumbers.
+
+The Firebase Hosting site is live at `buffalo-united.web.app`. It serves the **default "Welcome to Firebase Hosting" page:**
+
+> **Firebase Hosting Setup Complete**
+>
+> You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!
+
+They never built anything extraordinary. The page has been there since ~2020 (Firebase SDK v7.22.0). The database exists behind it (returns 401 — auth required, so *something* is in there), and the full Firebase config is publicly exposed in `/__/firebase/init.js` — API key, project ID, Google Analytics ID, storage bucket. All right there. In the JavaScript. On the open internet.
+
+Somewhere in 2020, a Buffalo Wild Wings developer ran `firebase init`, deployed the default page, went to a meeting, and never came back. The scaffold outlived the project, the team, and probably the developer's tenure at the company. Google's placeholder page will be there when the sun burns out, cheerfully telling the void to go build something extraordinary.
+
+---
+
+### :house: Jimmy John's Guest WiFi Is in Public DNS
+
+While probing Jimmy John's CT log subdomains, I found:
+
+```
+guest.jimmyjohns.com  →  192.168.7.250
+```
+
+> [!CAUTION]
+> That is a **private RFC 1918 IP address** in a public DNS record. Someone configured the guest WiFi captive portal's internal IP as a public DNS A record. Every DNS resolver on earth knows the layout of Jimmy John's corporate network. The portal is at 192.168.7.250, subnet 192.168.7.0/24. Thank you, DNS.
+
+Their CT logs also reveal the full DevOps archaeology: `dev-portainer` and `docker` (cleaned up — NXDOMAIN now, but certificate transparency is forever, and the certs are *in* it), `jira.jimmyjohns.com` → `jimmyjohns.atlassian.net` (cloud migration complete, redirect still active out of pure inertia), `WSUS` (Windows Server Update Services, still live), `rodc` (Read-Only Domain Controller, still live). An entire sandwich chain's IT infrastructure mapped by certificates they thought no one would look at.
+
+---
+
+### :hotdog: Sonic Has 228 Subdomains and One That Proves God Has a Sense of Humor
+
+Remember how this whole investigation started? A Dunkin' ad that *looked* like keyboard mashing but was actually crafted gibberish?
+
+I enumerated Sonic Drive-In's CT log subdomains. **228 out of 271 are still alive.** And among them:
+
+```
+fydibohf25spdlt.sonicdrivein.com  →  12.41.206.211
+```
+
+That looks like keyboard mashing. It is not keyboard mashing. **`FYDIBOHF25SPDLT`** is a Microsoft Exchange Server internal system attribute — the `legacyExchangeDN` identifier, which is Exchange's internal encoding of `/o=First Organization`. It lives deep in the guts of Exchange's address book. It is supposed to stay there.
+
+Someone exported Exchange's internal directory **directly into the public DNS zone.** Every DNS resolver on the planet can now see the organizational structure of a drive-in restaurant's mail server. This investigation started with fake gibberish and led me to *real* gibberish, and somehow the real gibberish is worse.
+
+> [!NOTE]
+> Sonic was acquired by Inspire Brands in late 2018 for **$2.3 billion.** Their DNS still contains three Virtual Data Room subdomains — `vdr-2016`, `vdr-2018`, `vdr-2019` — the M&A due diligence rooms from the deal. Year-stamped. Still resolving. **Seven years later.** You can trace the acquisition timeline through DNS the way an archaeologist reads tree rings.
+
+But wait. Sonic is a **drive-in.** You eat in your car. In a stall. Outside. Their mortal enemy is weather. And sure enough:
+
+```
+badweather.sonicdrivein.com  →  139.146.161.235
+```
+
+They gave their existential threat a subdomain. This is the restaurant equivalent of the Pentagon having a subdomain called `aliens.mil`.
+
+The rest of the 228 subdomains read like an IT department's archaeological dig site: `callpilot7` (Nortel voicemail — Nortel went bankrupt in **2009**), `nokia` (Nokia network equipment, from the era when Nokia made things other than regret), `drawings` (architectural plans? a Pictionary server? unclear), `totzone` (a zone. for tots.), `sonicfacebook` (an entire subdomain dedicated to Facebook), `matchmaker` and `matchmaker-new` (are they... matching people with burgers?), and four firewall subdomains lovingly named in public DNS — `firewall`, `firewall1`, `firewall2`, and `firewall95`.
+
+What happened to firewalls 3 through 94.
+
+---
+
+### :closed_lock_with_key: Schrodinger's TLS Certificate
+
+Remember `wsapi.dunkinbrands.com` — the endpoint serving another company's certificate? We investigated **Theorem LP** and it's worse than we thought.
+
+It's not just the cert. The **entire service** is Theorem's. `api-test.theoremlp.com` (Theorem's own domain) returns the exact same custom headers:
+
+```
+server: envoy
+x-theorem-auth: nil
+x-theorem-platform: nil
+```
+
+Dunkin's DNS is pointing directly at Theorem LP's infrastructure. Nobody at either company has noticed. This is a fully operational Envoy proxy squatting on Dunkin's production domain, serving Theorem's custom headers, responding to nobody, accomplishing nothing. It's the infrastructure equivalent of finding out your house key also opens a stranger's garage.
+
+The Let's Encrypt cert expires **April 21, 2026.** This creates a beautiful paradox: if nobody renews it, `wsapi.dunkinbrands.com` starts throwing TLS errors on Dunkin's production domain. If someone *does* renew it, that confirms Theorem is still actively babysitting a cert on a domain that isn't theirs, for a service that returns 404 on every path, for a client that doesn't know they're doing it.
+
+> [!IMPORTANT]
+> Schrodinger's TLS cert. It is both maintained and abandoned until someone checks.
+
+---
+
+### :uk: The Ghost of British Dunkin'
+
+`dunkindonuts.co.uk` — registered March 15, 2004. Dunkin' pulled out of the UK. The domain is still active.
+
+It was **last updated March 11, 2026** — one month ago. Someone, somewhere in the Inspire Brands corporate structure, is actively maintaining and renewing a domain for a market they *left.* Every year they pay the renewal fee. Every year they ensure the redirect works. It dutifully forwards visitors to `dunkin.co.uk` — the *rebranded* version of a thing that doesn't exist in that country anymore. It expires in 2027. They will renew it.
+
+The SPF record still points to Proofpoint. The email infrastructure is configured and ready. Nobody is sending emails from this domain. Nobody has ever sent emails from this domain. Nobody will ever send emails from this domain. The emails are ready. There are no emails.
+
+---
+
 ### :iphone: CardFree Runs Everything
 
 The Dunkin' app's Android package is `com.cardfree.android.dunkindonuts`. CardFree doesn't handle payments. **CardFree IS the app.** Every time you tap "Order Ahead" you're using a company you've never heard of. Dunkin' is a CardFree customer wearing a costume.
@@ -191,10 +304,13 @@ There is a corporate learning management system, running on **Adobe Experience M
 | 23 | Adobe AEM | Bakery equipment courses |
 | 24 | Okta | SSO |
 | 25 | KnowBe4 | Phishing training |
-| 26 | **Theorem LP** | **??? (their cert is on Dunkin's domain)** |
+| 26 | **Theorem LP** | **Their ENTIRE SERVICE runs on Dunkin's domain** |
 | 27 | WeRecognize | Employee recognition |
 | 28 | F5 Networks | Load balancing (legacy) |
 | 29 | Flair Promo | Local Store Marketing (legacy) |
+| 30 | Movable Ink | Email tracking pixels (`mi.dunkindonuts.com`) |
+| 31 | **Delivery Agent** | **Donut merchandise store (dead since 2019, DNS still pointing)** |
+| 32 | Google Firebase | BWW's "buffalo-united" project (never built) |
 
 More vendors than menu items.
 
@@ -208,17 +324,23 @@ More vendors than menu items.
 
 | | |
 |---|---|
-| :bar_chart: **Probe scripts** | 33 |
-| :globe_with_meridians: **Entities mapped** | 77 |
-| :warning: **Anomalies** | 33 |
-| :briefcase: **Vendors** | 29 |
+| :bar_chart: **Probe scripts** | 41 |
+| :globe_with_meridians: **Entities mapped** | 88 |
+| :warning: **Anomalies** | 46 |
+| :briefcase: **Vendors** | 32 |
 | :headstone: **Dead services** | 19 |
 | :arrows_counterclockwise: **Redirect loops** | 2 |
+| :fossil: **Fossilized redirect chains** | 5 *(up to 4 brand eras deep)* |
 | :lock: **Expired certs in production** | 1 *(3.5 years)* |
 | :speech_balloon: **Slack messages in DNS** | 1 |
 | :abc: **Typos in production endpoints** | 1 |
 | :ghost: **Forgotten EC2 instances** | 1 *(since 2019)* |
-| :name_badge: **Wrong company's cert** | 1 |
+| :name_badge: **Wrong company's service** | 1 *(entire Envoy proxy)* |
+| :house: **Private IPs in public DNS** | 1 *(192.168.7.250)* |
+| :chicken: **Abandoned Firebase projects** | 1 *(default page since 2020)* |
+| :keyboard: **Exchange internal gibberish in public DNS** | 1 *(fydibohf25spdlt — not a typo, Microsoft just talks like that)* |
+| :briefcase: **M&A data rooms still in DNS** | 3 *(year-stamped, a $2.3B acquisition you can read like tree rings)* |
+| :hotdog: **Sonic live subdomains** | 228 *(including one for bad weather, their existential nemesis)* |
 | :email: **Brands sharing one email pipe** | 7 |
 
 **This started because a Dunkin' ad pretended a toddler typed on a phone.**
@@ -237,6 +359,6 @@ More vendors than menu items.
 
 All probes ran in containers. Zero exploitation. Zero auth bypass. I just looked at what was already there.
 
-[![Graph](https://img.shields.io/badge/GRAPH.md-77_entities,_33_anomalies-orange?style=flat-square)](investigations/dunkin/GRAPH.md) [![Scripts](https://img.shields.io/badge/Scripts-33_probe_scripts-green?style=flat-square)](investigations/dunkin/scripts/)
+[![Graph](https://img.shields.io/badge/GRAPH.md-88_entities,_46_anomalies-orange?style=flat-square)](investigations/dunkin/GRAPH.md) [![Scripts](https://img.shields.io/badge/Scripts-41_probe_scripts-green?style=flat-square)](investigations/dunkin/scripts/)
 
 </div>

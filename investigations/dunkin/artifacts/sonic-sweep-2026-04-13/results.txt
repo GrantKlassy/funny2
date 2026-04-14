@@ -1,0 +1,433 @@
+=== SONIC & ARBY'S SUBDOMAIN DEEP SWEEP ===
+Date: 2026-04-14T04:22:45Z
+
+--- SONIC DNS SWEEP ---
+Reading from probe 24 artifacts...
+LIVE: 12-41-206-1.sonicdrivein.com  A: 12.41.206.1  CNAME: none
+LIVE: 443jr8e8btg9htcf9hzb.foundation.sonicdrivein.com  A: verify.squarespace.com.,198.49.23.177,198.185.159.177  CNAME: verify.squarespace.com.
+LIVE: 443jr8e8btg9htcf9hzb.sonicdrivein.com  A: verify.squarespace.com.sonicdrivein.com.  CNAME: verify.squarespace.com.sonicdrivein.com.
+LIVE: EXPe.sonicdrivein.com  A: 12.41.206.20  CNAME: none
+LIVE: Hybrid01.sonicdrivein.com  A: 12.41.206.234  CNAME: none
+LIVE: Hybrid02.sonicdrivein.com  A: 12.41.206.235  CNAME: none
+LIVE: JPDCLDW28S.sonicdrivein.com  A: 12.41.206.47  CNAME: none
+LIVE: Lyncdiscover.sonicdrivein.com  A: 12.41.206.66  CNAME: none
+LIVE: a.api-idp.sonicdrivein.com  A: a.api-idp.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: a.api-idp.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: abs.sonicdrivein.com  A: 12.41.206.68  CNAME: none
+LIVE: account-dev.sonicdrivein.com  A: account-dev.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.93,104.18.43.163  CNAME: account-dev.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: account-preprod.sonicdrivein.com  A: account-preprod.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.93,104.18.43.163  CNAME: account-preprod.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: account-qa.sonicdrivein.com  A: account-qa.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.93,104.18.43.163  CNAME: account-qa.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: account-sandbox.sonicdrivein.com  A: sonic-sandbox-cd-1r21ymfdysylsgph.edge.tenants.auth0.com.  CNAME: sonic-sandbox-cd-1r21ymfdysylsgph.edge.tenants.auth0.com.
+LIVE: account.sonicdrivein.com  A: account.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.93,104.18.43.163  CNAME: account.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: accounts.sonicdrivein.com  A: 104.197.222.77  CNAME: none
+LIVE: accruent.sonicdrivein.com  A: 12.41.206.232  CNAME: none
+LIVE: adfs.sonicdrivein.com  A: 12.41.206.220  CNAME: none
+LIVE: aldon.sonicdrivein.com  A: hvyh6ux.x.incapdns.net.  CNAME: hvyh6ux.x.incapdns.net.
+LIVE: anysiteweb.sonicdrivein.com  A: 12.41.206.23  CNAME: none
+LIVE: api-1.sonicdrivein.com  A: 139.146.161.225  CNAME: none
+LIVE: api-2.sonicdrivein.com  A: 139.146.161.225  CNAME: none
+LIVE: api-idp.sonicdrivein.com  A: api-idp.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.93,104.18.43.163  CNAME: api-idp.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: api-rap.sonicdrivein.com  A: api-rap.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.93,104.18.43.163  CNAME: api-rap.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: api.locations.sonicdrivein.com  A: api.locations.sonicdrivein.com.prod.rioseo.com.  CNAME: api.locations.sonicdrivein.com.prod.rioseo.com.
+LIVE: assets.locations.sonicdrivein.com  A: assets.locations.sonicdrivein.com.prod.rioseo.com.  CNAME: assets.locations.sonicdrivein.com.prod.rioseo.com.
+LIVE: autodiscover.service.sonicdrivein.com  A: autodiscover.outlook.com.,autodiscover.outlook.cloud.microsoft.,acdcatm.autodiscover.mira.tm.svc.cloud.microsoft.  CNAME: autodiscover.outlook.com.
+LIVE: autodiscover.sonicdrivein.com  A: 12.41.206.211  CNAME: none
+LIVE: aw-pd-csa.sonicdrivein.com  A: 35.165.213.24  CNAME: none
+LIVE: aw-pd-csa2.sonicdrivein.com  A: 35.162.200.102  CNAME: none
+LIVE: aws-vpn-dev.sonicdrivein.com  A: vpn-dev.sonicdrivein-nonprod.digital.  CNAME: vpn-dev.sonicdrivein-nonprod.digital.
+LIVE: aws-vpn-preprod.sonicdrivein.com  A: vpn-preprod.sonicdrivein-nonprod.digital.  CNAME: vpn-preprod.sonicdrivein-nonprod.digital.
+LIVE: aws-vpn-prod.sonicdrivein.com  A: vpn-prod.sonicdrivein.digital.  CNAME: vpn-prod.sonicdrivein.digital.
+LIVE: aws-vpn-qa.sonicdrivein.com  A: vpn-qa.sonicdrivein-nonprod.digital.  CNAME: vpn-qa.sonicdrivein-nonprod.digital.
+LIVE: aws-vpn-sandbox.sonicdrivein.com  A: vpn-sandbox.sonicdrivein-sandbox.digital.  CNAME: vpn-sandbox.sonicdrivein-sandbox.digital.
+LIVE: b2bftp-qa.sonicdrivein.com  A: 20.39.58.178  CNAME: none
+LIVE: b2bftp.sonicdrivein.com  A: 20.157.19.18  CNAME: none
+LIVE: badweather.sonicdrivein.com  A: 139.146.161.235  CNAME: none
+LIVE: bi-qa.sonicdrivein.com  A: 12.41.206.221  CNAME: none
+LIVE: bi.sonicdrivein.com  A: 12.41.206.220  CNAME: none
+LIVE: callmanager.sonicdrivein.com  A: 12.41.206.110  CNAME: none
+LIVE: callpilot7.sonicdrivein.com  A: 12.41.206.9  CNAME: none
+LIVE: cap.sonicdrivein.com  A: capserver.sonicdrivein.com.,12.41.206.104  CNAME: capserver.sonicdrivein.com.
+LIVE: capi-1.sonicdrivein.com  A: 139.146.161.225  CNAME: none
+LIVE: capi-2.sonicdrivein.com  A: 139.146.161.225  CNAME: none
+LIVE: capserver.sonicdrivein.com  A: 12.41.206.104  CNAME: none
+LIVE: careers.sonicdrivein.com  A: careers-sonicdrivein-com.sites.paradox.ai.,52.70.21.157,44.196.236.46  CNAME: careers-sonicdrivein-com.sites.paradox.ai.
+LIVE: ccpa-dev.sonicdrivein.com  A: ccpa-dev.sonicdrivein-nonprod.digital.  CNAME: ccpa-dev.sonicdrivein-nonprod.digital.
+LIVE: centrify.sonicdrivein.com  A: sonicdrivein.my.centrify.com.,aap0643.my.centrify.com.,aap0643.my.idaptive.app.  CNAME: sonicdrivein.my.centrify.com.
+LIVE: chat.sonicdrivein.com  A: inspirecustomer.service-now.com.,148.139.177.75  CNAME: inspirecustomer.service-now.com.
+LIVE: chatdev.sonicdrivein.com  A: inspirecustomerdev.service-now.com.,148.139.161.75  CNAME: inspirecustomerdev.service-now.com.
+LIVE: chattest.sonicdrivein.com  A: inspirecustomertest.service-now.com.,148.139.177.75  CNAME: inspirecustomertest.service-now.com.
+LIVE: checkmarx.sonicdrivein.com  A: 52.43.111.119  CNAME: none
+LIVE: click.email.sonicdrivein.com  A: tl48qlkgmnnm5pzq6pmbwx1s5tny.click-sap.sfmc-marketing.com.,128.245.36.14  CNAME: tl48qlkgmnnm5pzq6pmbwx1s5tny.click-sap.sfmc-marketing.com.
+LIVE: cloud.email.sonicdrivein.com  A: tlvtt2wz94h0vczp-lvj6byfw38y.cp-sap.sfmc-content.com.,128.245.20.232  CNAME: tlvtt2wz94h0vczp-lvj6byfw38y.cp-sap.sfmc-content.com.
+LIVE: coast.sonicdrivein.com  A: coast.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: coast.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: config.sonicdrivein.com  A: 12.41.206.220  CNAME: none
+LIVE: content.sonicdrivein.com  A: content.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.93,104.18.43.163  CNAME: content.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: corporate.sonicdrivein.com  A: soniccorp.wpengine.com.,130.211.29.77  CNAME: soniccorp.wpengine.com.
+LIVE: customeradmin.sonicdrivein.com  A: 139.146.161.212  CNAME: none
+LIVE: cvs.sonicdrivein.com  A: 12.41.206.46  CNAME: none
+LIVE: cw-ftp.sonicdrivein.com  A: 12.41.206.243  CNAME: none
+LIVE: dashboard.sonicdrivein.com  A: 139.146.161.234  CNAME: none
+LIVE: devsocial.sonicdrivein.com  A: 139.146.161.210  CNAME: none
+LIVE: dmb.sonicdrivein.com  A: ibsvcdmbp.azurewebsites.net.,waws-prod-blu-425.sip.azurewebsites.windows.net.,waws-prod-blu-425-1b94.eastus.cloudapp.azure.com.  CNAME: ibsvcdmbp.azurewebsites.net.
+LIVE: dmbt.sonicdrivein.com  A: ibsvcdmbp-test.azurewebsites.net.,waws-prod-blu-425.sip.azurewebsites.windows.net.,waws-prod-blu-425-1b94.eastus.cloudapp.azure.com.  CNAME: ibsvcdmbp-test.azurewebsites.net.
+LIVE: drawings.sonicdrivein.com  A: 12.41.206.244  CNAME: none
+LIVE: duoag.sonicdrivein.com  A: 12.41.206.30  CNAME: none
+LIVE: duoregistration.sonicdrivein.com  A: ood5btg.x.incapdns.net.  CNAME: ood5btg.x.incapdns.net.
+LIVE: email.sonicdrivein.com  A: 12.41.206.211,13.111.18.27  CNAME: none
+LIVE: enterpriseenrollment.sonicdrivein.com  A: enterpriseenrollment-s.manage.microsoft.com.,manage-pe.trafficmanager.net.,pexsucpna02.eastus.cloudapp.azure.com.  CNAME: enterpriseenrollment-s.manage.microsoft.com.
+LIVE: error.sonicdrivein.com  A: error.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: error.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: espanol.sonicdrivein.com  A: 139.146.161.225  CNAME: none
+LIVE: exchangehub01.sonicdrivein.com  A: 12.41.206.95  CNAME: none
+LIVE: expe.sonicdrivein.com  A: 12.41.206.20  CNAME: none
+LIVE: ff.sonicdrivein.com  A: ff.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: ff.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: filetransfer.sonicdrivein.com  A: 52.186.88.144  CNAME: none
+LIVE: filter.sonicdrivein.com  A: 12.41.206.10  CNAME: none
+LIVE: filter1.sonicdrivein.com  A: 12.41.206.11  CNAME: none
+LIVE: firewall.sonicdrivein.com  A: 12.41.206.100  CNAME: none
+LIVE: firewall1.sonicdrivein.com  A: 12.41.206.98  CNAME: none
+LIVE: firewall2.sonicdrivein.com  A: 12.41.206.99  CNAME: none
+LIVE: firewall95.sonicdrivein.com  A: 12.41.206.95  CNAME: none
+LIVE: foundation.sonicdrivein.com  A: ext-cust.squarespace.com.,198.49.23.144,198.49.23.145  CNAME: ext-cust.squarespace.com.
+LIVE: franchise.sonicdrivein.com  A: 165.160.15.20,165.160.13.20  CNAME: none
+LIVE: ftp.sonicdrivein.com  A: 12.41.206.245  CNAME: none
+LIVE: fydibohf25spdlt.sonicdrivein.com  A: 12.41.206.211  CNAME: none
+LIVE: gifts.sonicdrivein.com  A: 104.21.71.203,172.67.149.41  CNAME: none
+LIVE: gis.sonicdrivein.com  A: 12.41.206.34  CNAME: none
+LIVE: http.sonicdrivein.com  A: 12.41.206.15  CNAME: none
+LIVE: hybrid01.sonicdrivein.com  A: 12.41.206.234  CNAME: none
+LIVE: hybrid02.sonicdrivein.com  A: 12.41.206.235  CNAME: none
+LIVE: ifcweekly.sonicdrivein.com  A: 12.41.206.224  CNAME: none
+LIVE: im.sonicdrivein.com  A: 12.41.206.69  CNAME: none
+LIVE: image.email.sonicdrivein.com  A: tld-65-5fgkgxd0mmm9rw4s7m028.image-sap.sfmc-content.com.,d33rfzh3b1oeyz.cloudfront.net.,99.84.215.39  CNAME: tld-65-5fgkgxd0mmm9rw4s7m028.image-sap.sfmc-content.com.
+LIVE: insight.sonicdrivein.com  A: 139.146.161.234  CNAME: none
+LIVE: invoices.sonicdrivein.com  A: 12.41.206.186  CNAME: none
+LIVE: ir.sonicdrivein.com  A: soniccorp.gcs-web.com.,leapfrog-ssl-15399.edgekey.net.,e15399.dsca.akamaiedge.net.  CNAME: soniccorp.gcs-web.com.
+LIVE: jobs.sonicdrivein.com  A: 165.160.15.20,165.160.13.20  CNAME: none
+LIVE: jpdcldw28s.sonicdrivein.com  A: 12.41.206.47  CNAME: none
+LIVE: lcd.sonicdrivein.com  A: 12.41.206.245  CNAME: none
+LIVE: legacy.sonicdrivein.com  A: legacy.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: legacy.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: locations.sonicdrivein.com  A: locations.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: locations.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: logrhythm.sonicdrivein.com  A: 12.41.206.78  CNAME: none
+LIVE: lync.sonicdrivein.com  A: 12.41.206.46  CNAME: none
+LIVE: lyncdiscover.sonicdrivein.com  A: 12.41.206.66  CNAME: none
+LIVE: lyncedge.sonicdrivein.com  A: 12.41.206.46  CNAME: none
+LIVE: m.sonicdrivein.com  A: 104.154.46.86  CNAME: none
+LIVE: maps.locations.sonicdrivein.com  A: maps.locations.sonicdrivein.com.prod.rioseo.com.  CNAME: maps.locations.sonicdrivein.com.prod.rioseo.com.
+LIVE: marketingcentral.sonicdrivein.com  A: 64.215.16.135  CNAME: none
+LIVE: matchmaker-new.sonicdrivein.com  A: 139.146.161.225  CNAME: none
+LIVE: matchmaker.sonicdrivein.com  A: 139.146.161.225  CNAME: none
+LIVE: mbdp.sonicdrivein.com  A: mbdp.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: mbdp.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: mdev.sonicdrivein.com  A: 12.41.206.175  CNAME: none
+LIVE: mdmgate.sonicdrivein.com  A: 12.41.206.159  CNAME: none
+LIVE: media.sonicdrivein.com  A: sonic.vo.llnwd.net.  CNAME: sonic.vo.llnwd.net.
+LIVE: media01.sonicdrivein.com  A: 12.41.206.158  CNAME: none
+LIVE: menu.sonicdrivein.com  A: menu.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: menu.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: messaging-s.sonicdrivein.com  A: 12.41.206.116  CNAME: none
+LIVE: messaging.sonicdrivein.com  A: 12.41.206.115  CNAME: none
+LIVE: mhq.sonicdrivein.com  A: 12.41.206.236  CNAME: none
+LIVE: mi.sonicdrivein.com  A: d36p1hgb1yt2zq.cloudfront.net.,99.84.215.73,99.84.215.67  CNAME: d36p1hgb1yt2zq.cloudfront.net.
+LIVE: mobile.sonicdrivein.com  A: 12.41.206.150  CNAME: none
+LIVE: mobile07.sonicdrivein.com  A: 12.41.206.210  CNAME: none
+LIVE: mobilegate.sonicdrivein.com  A: 12.41.206.159  CNAME: none
+LIVE: mproda.sonicdrivein.com  A: 169.46.14.11  CNAME: none
+LIVE: mqa.sonicdrivein.com  A: 12.41.206.176  CNAME: none
+LIVE: mtx-ftp.sonicdrivein.com  A: 12.41.206.201  CNAME: none
+LIVE: my.sonicdrivein.com  A: 104.154.46.86  CNAME: none
+LIVE: nokia.sonicdrivein.com  A: 12.41.206.242  CNAME: none
+LIVE: o1.ptr5601.sonicdrivein.com  A: 149.72.70.33  CNAME: none
+LIVE: o1054.abmail.email.sonicdrivein.com  A: 167.89.60.105  CNAME: none
+LIVE: o1286.abmail.email.sonicdrivein.com  A: 167.89.60.113  CNAME: none
+LIVE: o471.ptr514.jobalerts.sonicdrivein.com  A: 168.245.19.92  CNAME: none
+LIVE: o472.ptr6706.careeralerts.sonicdrivein.com  A: 168.245.22.40  CNAME: none
+LIVE: oa.sonicdrivein.com  A: 12.41.206.211  CNAME: none
+LIVE: oc.sonicdrivein.com  A: 12.41.206.70  CNAME: none
+LIVE: ocav.sonicdrivein.com  A: 12.41.206.72  CNAME: none
+LIVE: ocwc.sonicdrivein.com  A: 12.41.206.71  CNAME: none
+LIVE: offers.sonicdrivein.com  A: 104.197.222.77  CNAME: none
+LIVE: oma.sonicdrivein.com  A: 12.41.206.150  CNAME: none
+LIVE: oms.sonicdrivein.com  A: oms.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: oms.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: online.sonicdrivein.com  A: online.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: online.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: order.sonicdrivein.com  A: order.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.93,104.18.43.163  CNAME: order.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: pay-api.dev.sonicdrivein.com  A: pay-api.dev.sonicdrivein.com.cdn.cloudflare.net.,20.190.238.11  CNAME: pay-api.dev.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: pay-api.sonicdrivein.com  A: 52.151.206.106  CNAME: none
+LIVE: pay-asb.dev.sonicdrivein.com  A: pay-asb.dev.sonicdrivein.com.cdn.cloudflare.net.,20.190.238.11  CNAME: pay-asb.dev.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: pay-asb.sonicdrivein.com  A: 52.151.206.106  CNAME: none
+LIVE: pay.dev.sonicdrivein.com  A: pay.dev.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.93,104.18.43.163  CNAME: pay.dev.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: pay.sonicdrivein.com  A: 52.151.206.106  CNAME: none
+LIVE: polycom.sonicdrivein.com  A: 12.41.206.228  CNAME: none
+LIVE: popsdcp.sonicdrivein.com  A: 12.41.206.45  CNAME: none
+LIVE: popshub02qa.sonicdrivein.com  A: 12.41.206.79  CNAME: none
+LIVE: popshubqa.sonicdrivein.com  A: 12.41.206.219  CNAME: none
+LIVE: press.sonicdrivein.com  A: 35.203.134.245  CNAME: none
+LIVE: radius.sonicdrivein.com  A: 12.41.206.125  CNAME: none
+LIVE: rap.sonicdrivein.com  A: rap.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: rap.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: remote.sonicdrivein.com  A: 12.41.206.4  CNAME: none
+LIVE: rsa-master.sonicdrivein.com  A: 12.41.206.152  CNAME: none
+LIVE: rstatic.locations.sonicdrivein.com  A: rstatic.locations.sonicdrivein.com.prod.rioseo.com.  CNAME: rstatic.locations.sonicdrivein.com.prod.rioseo.com.
+LIVE: sandbox.sonicdrivein.com  A: 139.146.161.234  CNAME: none
+LIVE: secureemail.sonicdrivein.com  A: pe-0000f801.gslb.pphosted.com.  CNAME: pe-0000f801.gslb.pphosted.com.
+LIVE: securemail.sonicdrivein.com  A: pe-0000f801.gslb.pphosted.com.  CNAME: pe-0000f801.gslb.pphosted.com.
+LIVE: services-preprod.sonicdrivein.com  A: 12.41.206.221  CNAME: none
+LIVE: services-s.sonicdrivein.com  A: 12.41.206.223  CNAME: none
+LIVE: services.sonicdrivein.com  A: 20.102.41.23  CNAME: none
+LIVE: sip.sonicdrivein.com  A: 12.41.206.70  CNAME: none
+LIVE: smartfox.sonicdrivein.com  A: 139.146.161.226  CNAME: none
+LIVE: smtp.sonicdrivein.com  A: 12.41.206.210  CNAME: none
+LIVE: snc.sonicdrivein.com  A: snc.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: snc.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: snclg-api.sonicdrivein.com  A: snclg-api.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.93,104.18.43.163  CNAME: snclg-api.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: social.sonicdrivein.com  A: 139.146.161.211  CNAME: none
+LIVE: sonic-ftp.sonicdrivein.com  A: 139.146.161.229  CNAME: none
+LIVE: soniccms.sonicdrivein.com  A: 20.102.41.23  CNAME: none
+LIVE: sonicdrivein.com  A: 104.18.14.52  CNAME: none
+LIVE: sonicfacebook.sonicdrivein.com  A: 139.146.161.225  CNAME: none
+LIVE: sonichub.sonicdrivein.com  A: 12.41.206.37  CNAME: none
+LIVE: sonichub2.sonicdrivein.com  A: 20.39.58.199  CNAME: none
+LIVE: sonicview.sonicdrivein.com  A: 12.41.206.103  CNAME: none
+LIVE: sonicviewtest.sonicdrivein.com  A: 12.41.206.102  CNAME: none
+LIVE: sp-logs.sonicdrivein.com  A: 12.41.206.120  CNAME: none
+LIVE: sp-qa-logs.sonicdrivein.com  A: 12.41.206.119  CNAME: none
+LIVE: staging.sonicdrivein.com  A: ghs.googlehosted.com.,142.251.214.51  CNAME: ghs.googlehosted.com.
+LIVE: suf.gateway.sonicdrivein.com  A: sonic-suf.eastus.cloudapp.azure.com.,57.152.103.255  CNAME: sonic-suf.eastus.cloudapp.azure.com.
+LIVE: suf.sonicdrivein.com  A: 51.8.71.250  CNAME: none
+LIVE: supplierportal.sonicdrivein.com  A: supplierportal.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.93,104.18.43.163  CNAME: supplierportal.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: supplierportalqa.sonicdrivein.com  A: qlo2gr5.x.incapdns.net.  CNAME: qlo2gr5.x.incapdns.net.
+LIVE: support.sonicdrivein.com  A: support.sonicdrivein.com.cdn.cloudflare.net.,104.18.43.163,172.64.144.93  CNAME: support.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: syslog.sonicdrivein.com  A: 12.41.206.134  CNAME: none
+LIVE: team.sonicdrivein.com  A: 12.41.206.26  CNAME: none
+LIVE: test-sandbox.sonicdrivein.com  A: sonic-sandbox-cd-ntqzgtuqfplgo2dn.edge.tenants.auth0.com.,104.18.37.18,172.64.150.238  CNAME: sonic-sandbox-cd-ntqzgtuqfplgo2dn.edge.tenants.auth0.com.
+LIVE: test.sonicdrivein.com  A: 12.41.206.44  CNAME: none
+LIVE: time.sonicdrivein.com  A: 12.41.206.101  CNAME: none
+LIVE: totzone.sonicdrivein.com  A: 165.160.15.20,165.160.13.20  CNAME: none
+LIVE: training.sonicdrivein.com  A: 12.41.206.206  CNAME: none
+LIVE: tsg.sonicdrivein.com  A: 12.41.206.218  CNAME: none
+LIVE: unity.sonicdrivein.com  A: 12.41.206.12  CNAME: none
+LIVE: vdr-2016.sonicdrivein.com  A: 12.41.206.167  CNAME: none
+LIVE: vdr-2018.sonicdrivein.com  A: 12.41.206.168  CNAME: none
+LIVE: vdr-2019.sonicdrivein.com  A: 12.41.206.167,12.41.206.169  CNAME: none
+LIVE: videoredirect.sonicdrivein.com  A: 20.81.26.2  CNAME: none
+LIVE: view.email.sonicdrivein.com  A: tltbhzz2351nwd4fn77-x1nbxm-m.view-sap.sfmc-marketing.com.,128.245.51.243  CNAME: tltbhzz2351nwd4fn77-x1nbxm-m.view-sap.sfmc-marketing.com.
+LIVE: view.sonicdrivein.com  A: 12.41.206.124  CNAME: none
+LIVE: view7.sonicdrivein.com  A: 12.41.206.55  CNAME: none
+LIVE: viewtemp.sonicdrivein.com  A: 12.41.206.56  CNAME: none
+LIVE: vma.sonicdrivein.com  A: 206.230.235.17  CNAME: none
+LIVE: vpn.sonicdrivein.com  A: 12.41.206.204  CNAME: none
+LIVE: vsat.sonicdrivein.com  A: 12.41.206.250  CNAME: none
+LIVE: web-dev.sonicdrivein.com  A: 2h8x5yo.x.incapdns.net.  CNAME: 2h8x5yo.x.incapdns.net.
+LIVE: web.sonicdrivein.com  A: 12.41.206.15  CNAME: none
+LIVE: webapi.sonicdrivein.com  A: 139.146.161.212  CNAME: none
+LIVE: webapp-preprod.sonicdrivein.com  A: 20.102.41.23  CNAME: none
+LIVE: webapp.sonicdrivein.com  A: 20.102.41.23  CNAME: none
+LIVE: webtrends.sonicdrivein.com  A: 12.41.206.81  CNAME: none
+LIVE: wiki.sonicdrivein.com  A: 12.41.206.46  CNAME: none
+LIVE: www-d.sonicdrivein.com  A: 216.81.196.127  CNAME: none
+LIVE: www-new.sonicdrivein.com  A: 139.146.161.225  CNAME: none
+LIVE: www-new1.sonicdrivein.com  A: 139.146.161.226  CNAME: none
+LIVE: www-new2.sonicdrivein.com  A: 139.146.161.227  CNAME: none
+LIVE: www-new3.sonicdrivein.com  A: 139.146.161.228  CNAME: none
+LIVE: www-s.sonicdrivein.com  A: 206.230.235.71  CNAME: none
+LIVE: www-test.sonicdrivein.com  A: 12.41.206.44  CNAME: none
+LIVE: www.foundation.sonicdrivein.com  A: ext-cust.squarespace.com.,198.185.159.145,198.185.159.144  CNAME: ext-cust.squarespace.com.
+LIVE: www.jobs.sonicdrivein.com  A: redirect.talentbrew.com.,63.131.135.125  CNAME: redirect.talentbrew.com.
+LIVE: www.mobile.sonicdrivein.com  A: mobile.sonicdrivein.com.,12.41.206.150  CNAME: mobile.sonicdrivein.com.
+LIVE: www.sonicdrivein.com  A: www.sonicdrivein.com.cdn.cloudflare.net.,172.64.144.177,104.18.43.79  CNAME: www.sonicdrivein.com.cdn.cloudflare.net.
+LIVE: www2.sonicdrivein.com  A: 206.230.235.10  CNAME: none
+LIVE: xmpp.sonicdrivein.com  A: 12.41.206.20  CNAME: none
+
+Sonic: 228 live, 43 dead
+
+--- SONIC HTTP STATUS SWEEP ---
+  12-41-206-1.sonicdrivein.com → 000
+  443jr8e8btg9htcf9hzb.foundation.sonicdrivein.com → 301
+  443jr8e8btg9htcf9hzb.sonicdrivein.com → 000
+  EXPe.sonicdrivein.com → 000
+  Hybrid01.sonicdrivein.com → 000
+  Hybrid02.sonicdrivein.com → 000
+  JPDCLDW28S.sonicdrivein.com → 000
+  Lyncdiscover.sonicdrivein.com → 000
+  a.api-idp.sonicdrivein.com → 404
+  abs.sonicdrivein.com → 000
+  account-dev.sonicdrivein.com → 302
+  account-preprod.sonicdrivein.com → 302
+  account-qa.sonicdrivein.com → 302
+  account-sandbox.sonicdrivein.com → 000
+  account.sonicdrivein.com → 302
+  accounts.sonicdrivein.com → 200
+  accruent.sonicdrivein.com → 000
+  adfs.sonicdrivein.com → 000
+  aldon.sonicdrivein.com → 000
+  anysiteweb.sonicdrivein.com → 000
+  api-1.sonicdrivein.com → 000
+  api-2.sonicdrivein.com → 000
+  api-idp.sonicdrivein.com → 404
+  api-rap.sonicdrivein.com → 302
+  api.locations.sonicdrivein.com → 000
+  assets.locations.sonicdrivein.com → 000
+  autodiscover.service.sonicdrivein.com → 000
+  autodiscover.sonicdrivein.com → 000
+  aw-pd-csa.sonicdrivein.com → 000
+  aw-pd-csa2.sonicdrivein.com → 000
+  aws-vpn-dev.sonicdrivein.com → 000
+  aws-vpn-preprod.sonicdrivein.com → 000
+  aws-vpn-prod.sonicdrivein.com → 000
+  aws-vpn-qa.sonicdrivein.com → 000
+  aws-vpn-sandbox.sonicdrivein.com → 000
+  b2bftp-qa.sonicdrivein.com → 000
+  b2bftp.sonicdrivein.com → 200
+  badweather.sonicdrivein.com → 000
+  bi-qa.sonicdrivein.com → 000
+  bi.sonicdrivein.com → 000
+  callmanager.sonicdrivein.com → 000
+  callpilot7.sonicdrivein.com → 000
+  cap.sonicdrivein.com → 000
+  capi-1.sonicdrivein.com → 000
+  capi-2.sonicdrivein.com → 000
+  capserver.sonicdrivein.com → 000
+  careers.sonicdrivein.com → 200
+  ccpa-dev.sonicdrivein.com → 000
+  centrify.sonicdrivein.com → 000
+  chat.sonicdrivein.com → 200
+  chatdev.sonicdrivein.com → 200
+  chattest.sonicdrivein.com → 200
+  checkmarx.sonicdrivein.com → 000
+  click.email.sonicdrivein.com → 403
+  cloud.email.sonicdrivein.com → 500
+  coast.sonicdrivein.com → 403
+  config.sonicdrivein.com → 000
+  content.sonicdrivein.com → 404
+  corporate.sonicdrivein.com → 404
+  customeradmin.sonicdrivein.com → 000
+  cvs.sonicdrivein.com → 000
+  cw-ftp.sonicdrivein.com → 000
+  dashboard.sonicdrivein.com → 000
+  devsocial.sonicdrivein.com → 000
+  dmb.sonicdrivein.com → 200
+  dmbt.sonicdrivein.com → 200
+  drawings.sonicdrivein.com → 000
+  duoag.sonicdrivein.com → 000
+  duoregistration.sonicdrivein.com → 000
+  email.sonicdrivein.com → 000
+  enterpriseenrollment.sonicdrivein.com → 302
+  error.sonicdrivein.com → 404
+  espanol.sonicdrivein.com → 000
+  exchangehub01.sonicdrivein.com → 000
+  expe.sonicdrivein.com → 000
+  ff.sonicdrivein.com → 200
+  filetransfer.sonicdrivein.com → 200
+  filter.sonicdrivein.com → 000
+  filter1.sonicdrivein.com → 000
+  firewall.sonicdrivein.com → 000
+  firewall1.sonicdrivein.com → 000
+  firewall2.sonicdrivein.com → 000
+  firewall95.sonicdrivein.com → 000
+  foundation.sonicdrivein.com → 301
+  franchise.sonicdrivein.com → 000
+  ftp.sonicdrivein.com → 000
+  fydibohf25spdlt.sonicdrivein.com → 000
+  gifts.sonicdrivein.com → 404
+  gis.sonicdrivein.com → 000
+  http.sonicdrivein.com → 000
+  hybrid01.sonicdrivein.com → 000
+  hybrid02.sonicdrivein.com → 000
+  ifcweekly.sonicdrivein.com → 000
+  im.sonicdrivein.com → 000
+  image.email.sonicdrivein.com → 403
+  insight.sonicdrivein.com → 000
+  invoices.sonicdrivein.com → 000
+  ir.sonicdrivein.com → 404
+  jobs.sonicdrivein.com → 000
+  jpdcldw28s.sonicdrivein.com → 000
+  lcd.sonicdrivein.com → 000
+  legacy.sonicdrivein.com → 200
+  locations.sonicdrivein.com → 301
+  logrhythm.sonicdrivein.com → 000
+  lync.sonicdrivein.com → 000
+  lyncdiscover.sonicdrivein.com → 000
+  lyncedge.sonicdrivein.com → 000
+  m.sonicdrivein.com → 000
+  maps.locations.sonicdrivein.com → 000
+  marketingcentral.sonicdrivein.com → 000
+  matchmaker-new.sonicdrivein.com → 000
+  matchmaker.sonicdrivein.com → 000
+  mbdp.sonicdrivein.com → 200
+  mdev.sonicdrivein.com → 000
+  mdmgate.sonicdrivein.com → 000
+  media.sonicdrivein.com → 000
+  media01.sonicdrivein.com → 000
+  menu.sonicdrivein.com → 404
+  messaging-s.sonicdrivein.com → 000
+  messaging.sonicdrivein.com → 000
+  mhq.sonicdrivein.com → 000
+  mi.sonicdrivein.com → 200
+  mobile.sonicdrivein.com → 000
+  mobile07.sonicdrivein.com → 000
+  mobilegate.sonicdrivein.com → 000
+  mproda.sonicdrivein.com → 000
+  mqa.sonicdrivein.com → 000
+  mtx-ftp.sonicdrivein.com → 000
+  my.sonicdrivein.com → 000
+  nokia.sonicdrivein.com → 000
+  o1.ptr5601.sonicdrivein.com → 000
+  o1054.abmail.email.sonicdrivein.com → 000
+  o1286.abmail.email.sonicdrivein.com → 000
+  o471.ptr514.jobalerts.sonicdrivein.com → 000
+  o472.ptr6706.careeralerts.sonicdrivein.com → 000
+  oa.sonicdrivein.com → 000
+  oc.sonicdrivein.com → 000
+  ocav.sonicdrivein.com → 000
+  ocwc.sonicdrivein.com → 000
+  offers.sonicdrivein.com → 200
+  oma.sonicdrivein.com → 000
+  oms.sonicdrivein.com → 403
+  online.sonicdrivein.com → 301
+  order.sonicdrivein.com → 302
+  pay-api.dev.sonicdrivein.com → 000
+  pay-api.sonicdrivein.com → 403
+  pay-asb.dev.sonicdrivein.com → 000
+  pay-asb.sonicdrivein.com → 403
+  pay.dev.sonicdrivein.com → 000
+  pay.sonicdrivein.com → 403
+  polycom.sonicdrivein.com → 000
+  popsdcp.sonicdrivein.com → 000
+  popshub02qa.sonicdrivein.com → 000
+  popshubqa.sonicdrivein.com → 000
+  press.sonicdrivein.com → 200
+  radius.sonicdrivein.com → 000
+  rap.sonicdrivein.com → 302
+  remote.sonicdrivein.com → 000
+  rsa-master.sonicdrivein.com → 000
+  rstatic.locations.sonicdrivein.com → 000
+  sandbox.sonicdrivein.com → 000
+  secureemail.sonicdrivein.com → 000
+  securemail.sonicdrivein.com → 000
+  services-preprod.sonicdrivein.com → 000
+  services-s.sonicdrivein.com → 000
+  services.sonicdrivein.com → 200
+  sip.sonicdrivein.com → 000
+  smartfox.sonicdrivein.com → 000
+  smtp.sonicdrivein.com → 000
+  snc.sonicdrivein.com → 301
+  snclg-api.sonicdrivein.com → 403
+  social.sonicdrivein.com → 000
+  sonic-ftp.sonicdrivein.com → 000
+  soniccms.sonicdrivein.com → 302
+  sonicdrivein.com → 301
+  sonicfacebook.sonicdrivein.com → 000
+  sonichub.sonicdrivein.com → 000
+  sonichub2.sonicdrivein.com → 000
+  sonicview.sonicdrivein.com → 000
+  sonicviewtest.sonicdrivein.com → 000
+  sp-logs.sonicdrivein.com → 000
+  sp-qa-logs.sonicdrivein.com → 000
+  staging.sonicdrivein.com → 200
+  suf.gateway.sonicdrivein.com → 303
+  suf.sonicdrivein.com → 000
+  supplierportal.sonicdrivein.com → 403
+  supplierportalqa.sonicdrivein.com → 000
+  support.sonicdrivein.com → 302
+  syslog.sonicdrivein.com → 000
+  team.sonicdrivein.com → 000
+  test-sandbox.sonicdrivein.com → 302
+  test.sonicdrivein.com → 000
+  time.sonicdrivein.com → 000
+  totzone.sonicdrivein.com → 000
+  training.sonicdrivein.com → 000
+  tsg.sonicdrivein.com → 000

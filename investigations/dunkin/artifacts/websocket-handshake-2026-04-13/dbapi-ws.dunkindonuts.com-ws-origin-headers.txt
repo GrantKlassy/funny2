@@ -1,0 +1,6 @@
+HTTP/2 403 
+date: Tue, 14 Apr 2026 04:19:54 GMT
+content-type: application/json; charset=UTF-8
+content-length: 23
+x-amz-apigw-id: bysAtGLNoAMEdaA=
+

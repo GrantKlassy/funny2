@@ -1,0 +1,18 @@
+HTTP/2 200 
+content-type: text/html;charset=utf-8
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-ua-compatible: IE=edge
+x-xss-protection: 1; mode=block
+x-platform: P-2
+x-akamai-transformed: 9 23811 0 pmb=mRUM,2
+date: Tue, 14 Apr 2026 04:15:59 GMT
+set-cookie: AWSALB=PsM7nuwkcgJNO/MieJkUHDWOyZJAd0u/lcLGVSuNpq5wt8FKzUhhk9wXy+zYIQ7gYD6/XjJFPKKisbSxzk5KSJFkPLWD+so4Du7806ATYVvFuv+ZUEgbIBvXOx6C; Expires=Tue, 21 Apr 2026 04:15:58 GMT; Path=/
+set-cookie: AWSALBCORS=PsM7nuwkcgJNO/MieJkUHDWOyZJAd0u/lcLGVSuNpq5wt8FKzUhhk9wXy+zYIQ7gYD6/XjJFPKKisbSxzk5KSJFkPLWD+so4Du7806ATYVvFuv+ZUEgbIBvXOx6C; Expires=Tue, 21 Apr 2026 04:15:58 GMT; Path=/; SameSite=None; Secure
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=83
+server-timing: origin; dur=182
+server-timing: ak_p; desc="1776140158810_399924815_970354148_26467_7898_4_20_15";dur=1
+

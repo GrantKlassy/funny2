@@ -1,0 +1,299 @@
+=== MARKETING INTELLIGENCE / SECURESHOP / UK DOMAIN PROBE ===
+Date: 2026-04-14T04:15:54Z
+
+========================================
+TARGET 1: mi.dunkindonuts.com
+========================================
+--- DNS ---
+d187xgimezr5cv.cloudfront.net.
+13.249.126.104
+13.249.126.116
+13.249.126.43
+13.249.126.98
+d187xgimezr5cv.cloudfront.net.
+
+--- TLS Certificate ---
+subject=CN=mi.dunkindonuts.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Oct  2 00:00:00 2025 GMT
+notAfter=Oct 30 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:mi.dunkindonuts.com
+
+--- HTTP Probe ---
+Status: 200
+HTTP/2 200 
+content-type: text/html
+content-length: 79
+x-uuid: 268d94a8-f301-42a7-b2f4-52d8fe380776
+date: Tue, 14 Apr 2026 04:15:55 GMT
+x-cache: Miss from cloudfront
+via: 1.1 723cf24234def4f3305d3839eea983ec.cloudfront.net (CloudFront)
+x-amz-cf-pop: LAX54-P6
+x-amz-cf-id: QxZ0rBfmwNiBUBjb3SsgiWPdbhuw2H_RuwT1mq3x74HE8OvPOBDtDg==
+
+Body: 79 bytes
+<html> <head> <title>Movable Ink Domain</title> </head> <body> </body> </html> 
+--- Body Analysis ---
+<title>Movable Ink Domain</title>
+
+--- Path Sweep ---
+  / → 200
+  /api → 404
+  /dashboard → 404
+  /data → 404
+  /reports → 404
+  /login → 404
+  /v1 → 404
+  /graphql → 404
+  /health → 404
+  /status → 404
+  /admin → 404
+  /analytics → 404
+  /pixel → 404
+  /track → 404
+  /collect → 404
+  /1x1.gif → 404
+  /mi → 404
+  /beacon → 404
+
+--- Wayback ---
+timestamp original statuscode mimetype
+20220804221905 https://mi.dunkindonuts.com/ 200 unk
+20220808042212 https://mi.dunkindonuts.com/ 200 unk
+20250221173057 https://mi.dunkindonuts.com/ 200 text/html
+20250221173205 https://mi.dunkindonuts.com/.well-known/ai-plugin.json 404 image/gif
+20250221173328 https://mi.dunkindonuts.com/.well-known/assetlinks.json 200 unk
+20250221173114 https://mi.dunkindonuts.com/.well-known/dnt-policy.txt 404 image/gif
+20250221173121 https://mi.dunkindonuts.com/.well-known/gpc.json 404 image/gif
+20250221173316 https://mi.dunkindonuts.com/.well-known/nodeinfo 404 image/gif
+20250221173121 https://mi.dunkindonuts.com/.well-known/openid-configuration 404 image/gif
+20250221173221 https://mi.dunkindonuts.com/.well-known/security.txt 404 image/gif
+20250221173236 https://mi.dunkindonuts.com/.well-known/trust.txt 404 image/gif
+20250221173140 https://mi.dunkindonuts.com/ads.txt 404 image/gif
+20250221173204 https://mi.dunkindonuts.com/app-ads.txt 404 image/gif
+20250221173209 https://mi.dunkindonuts.com/atom.xml 404 image/gif
+20211216124923 https://mi.dunkindonuts.com/favicon.ico 404 image/gif
+20220805133119 https://mi.dunkindonuts.com/favicon.ico 404 image/gif
+20250221173156 https://mi.dunkindonuts.com/favicon.ico 404 image/gif
+20250221173121 https://mi.dunkindonuts.com/feed/ 404 image/gif
+20250221173549 https://mi.dunkindonuts.com/feed.xml 404 image/gif
+20250221173115 https://mi.dunkindonuts.com/feeds/all.atom.xml 404 image/gif
+
+========================================
+TARGET 2: secureshop.dunkindonuts.com
+========================================
+--- DNS ---
+secureshop-dunkindonuts.st.deliveryagent.com.
+secureshop-dunkindonuts.st.deliveryagent.com.
+.			85828	IN	NS	g.root-servers.net.
+.			85828	IN	NS	a.root-servers.net.
+.			85828	IN	NS	f.root-servers.net.
+.			85828	IN	NS	h.root-servers.net.
+.			85828	IN	RRSIG	NS 8 0 518400 20260426170000 20260413160000 54393 . l1q/94l9bIGBqr535ADRGGMe1Ov+ibh8CGss4XPrmXGMG6y/8XYmf7qL ID4RuQtF/e4ngLRb4+PHSjJvCgurjlVbfBKlLT3xTKDeTxc6SPBHJlvI K4DOiasb+7BIDsFuz0SxUpcO213TYXzWx4sns7auMDSPUTb15svYaYBJ etHhN0psx3jXlCmkLXv+ykcYah0eni/KrU2lGhDtveSoeQAWvSjwSu0b TSJFt1HtNGP2LniMGhkbiLY51ZnxmJhmjMBWss2FAKBh1XA3G30sOd42 IqZQ1US3kMUZLW2mgeAbUIAL7fOrqDIX/rixzp0BN+Z0gSED6SgwPHbD kKG6tw==
+;; Received 1757 bytes from 8.8.8.8#53(8.8.8.8) in 7 ms
+
+secureshop.dunkindonuts.com. 300 IN	CNAME	secureshop-dunkindonuts.st.deliveryagent.com.
+;; Received 141 bytes from 192.36.148.17#53(i.root-servers.net) in 5 ms
+
+
+--- deliveryagent.com ---
+35.213.169.129
+ns2.siteground.net.
+ns1.siteground.net.
+30 mx30.mailspamprotection.com.
+20 mx20.mailspamprotection.com.
+10 mx10.mailspamprotection.com.
+deliveryagent.com HTTPS: 301
+deliveryagent.com HTTP: 301
+
+--- deliveryagent.com whois ---
+   Registry Domain ID: 22830457_DOMAIN_COM-VRSN
+   Registrar WHOIS Server: whois.namecheap.com
+   Registrar URL: http://www.namecheap.com
+   Updated Date: 2026-03-02T17:36:30Z
+   Creation Date: 2000-03-20T01:59:23Z
+   Registry Expiry Date: 2027-03-20T00:59:23Z
+   Registrar: NameCheap, Inc.
+   Registrar IANA ID: 1068
+   Registrar Abuse Contact Email: abuse@namecheap.com
+   Registrar Abuse Contact Phone: +1.6613102107
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: NS1.SITEGROUND.NET
+   Name Server: NS2.SITEGROUND.NET
+For more information on Whois status codes, please visit https://icann.org/epp
+NOTICE: The expiration date displayed in this record is the date the
+
+--- Wayback: secureshop ---
+timestamp original statuscode mimetype
+20180331060102 http://secureshop.dunkindonuts.com/ 301 text/html
+20180412015956 http://secureshop.dunkindonuts.com/ 503 text/html
+20180419042832 http://secureshop.dunkindonuts.com/ - warc/revisit
+20181221012436 http://secureshop.dunkindonuts.com/ 503 text/html
+20190626133622 http://secureshop.dunkindonuts.com/ 503 text/html
+20190628173205 http://secureshop.dunkindonuts.com/ 503 text/html
+20170705093318 https://secureshop.dunkindonuts.com/account.php 200 text/html
+20190114094722 https://secureshop.dunkindonuts.com/account.php 503 text/html
+20160413130532 https://secureshop.dunkindonuts.com/account.php?f=hint 200 text/html
+20170315042750 https://secureshop.dunkindonuts.com/account.php?f=hint 200 text/html
+20170921212617 https://secureshop.dunkindonuts.com/assets/) 404 text/html
+20170922020958 https://secureshop.dunkindonuts.com/assets/)%7D.pageDetail%20.pr-review-sort%7Bbackground:transparent%20url( 404 text/html
+20170909074035 https://secureshop.dunkindonuts.com/assets/dunkindonutsAccountFooterCombined_2_5a6219d29f401d3cb4e8189be31d9bbe.js?v=1487912843 200 text/javascript
+20170917103130 https://secureshop.dunkindonuts.com/assets/dunkindonutsRegisterFooterCombined_2_614fb68a70dd0569d1d3f8caec235067.js?v=1487221141 200 text/javascript
+20170917100602 https://secureshop.dunkindonuts.com/assets/dunkindonutsRegisterHeaderCombined_1_4af97526da1fa88efe3475af460eaa40.css?v=1497461792 200 text/css
+20170917110804 https://secureshop.dunkindonuts.com/assets/dunkindonutsRegisterHeaderCombined_1_78f86f62b8ae135d36e698063ef5cd2b.js?v=1487221131 200 text/javascript
+20160315195433 https://secureshop.dunkindonuts.com/cart.php 200 text/html
+20160419070222 https://secureshop.dunkindonuts.com/cart.php 200 text/html
+20170705153926 https://secureshop.dunkindonuts.com/cart.php 200 text/html
+20190114064105 https://secureshop.dunkindonuts.com/cart.php 503 text/html
+--- Wayback: deliveryagent.com ---
+timestamp original statuscode mimetype
+20010404054220 http://deliveryagent.com:80/ 200 text/html
+20010722193928 http://deliveryagent.com:80/ 200 text/html
+20010924131319 http://deliveryagent.com:80/ 200 text/html
+20011128163141 http://deliveryagent.com:80/ 200 text/html
+20020118184032 http://deliveryagent.com:80/ 200 text/html
+20020601070138 http://deliveryagent.com:80/ 301 text/html
+20020603093528 http://deliveryagent.com:80/ 301 text/html
+20020604212546 http://deliveryagent.com:80/ 301 text/html
+20020803081444 http://www.deliveryagent.com:80/ 200 text/html
+20020805195122 http://www.deliveryagent.com:80/ 200 text/html
+20020921205904 http://deliveryagent.com:80/ 301 text/html
+20020924134353 http://deliveryagent.com:80/ 301 text/html
+20020926091929 http://www.deliveryagent.com:80/ 200 text/html
+20020927003538 http://www.deliveryagent.com:80/ 200 text/html
+20021002224836 http://www.deliveryagent.com:80/ 200 text/html
+20021122182124 http://www.deliveryagent.com:80/ 200 text/html
+20021123162411 http://www.deliveryagent.com:80/ 200 text/html
+20021124010036 http://deliveryagent.com:80/ 301 text/html
+20021128035330 http://deliveryagent.com:80/ 301 text/html
+20030204220318 http://deliveryagent.com:80/ 301 text/html
+
+========================================
+TARGET 3: dunkindonuts.co.uk
+========================================
+--- DNS ---
+  A:
+    35.153.79.184
+    35.173.143.243
+  CNAME:
+  NS:
+    ns-1070.awsdns-05.org.
+    ns-1688.awsdns-19.co.uk.
+    ns-214.awsdns-26.com.
+    ns-959.awsdns-55.net.
+  MX:
+  TXT:
+    "google-site-verification=aeYsas1vOyfx4fMRw0IUHWSeptA7Ran9OIBHQ2pOHhI"
+    "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com -all"
+  SOA:
+    ns-1688.awsdns-19.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+
+--- www.dunkindonuts.co.uk DNS ---
+35.153.79.184
+35.173.143.243
+
+--- HTTP Probe ---
+  https://dunkindonuts.co.uk/ → 301 (location: https://dunkin.co.uk:443/)
+  http://dunkindonuts.co.uk/ → 301 (Location: https://dunkindonuts.co.uk:443/)
+  https://www.dunkindonuts.co.uk/ → 301 (location: https://www.dunkin.co.uk:443/)
+  http://www.dunkindonuts.co.uk/ → 301 (Location: https://www.dunkindonuts.co.uk:443/)
+
+--- TLS Certificate ---
+subject=CN=dunkinrun.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Oct  7 00:00:00 2025 GMT
+notAfter=Nov  4 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrun.com, DNS:clubdunkin.com, DNS:dunkinemail.com, DNS:*.dunkinbrands.com, DNS:*.dunkindonuts.co.uk, DNS:ddperks.com, DNS:dunkinperks.com
+
+--- Whois ---
+
+    Domain name:
+        dunkindonuts.co.uk
+
+    Data validation:
+        Nominet was able to match the registrant's name and address against a 3rd party data source on 05-Nov-2013
+
+    Registrar:
+        CSC Corporate Domains, Inc [Tag = CSC-CORP-DOMAINS]
+        URL: https://www.cscdbs.com
+
+    Relevant dates:
+        Registered on: 15-Mar-2004
+        Expiry date:  15-Mar-2027
+        Last updated:  11-Mar-2026
+
+    Registration status:
+        Registered until expiry date.
+
+    Name servers:
+        ns-1070.awsdns-05.org
+        ns-1688.awsdns-19.co.uk   205.251.198.152
+        ns-214.awsdns-26.com
+        ns-959.awsdns-55.net
+
+    WHOIS lookup made at 05:16:43 14-Apr-2026
+
+-- 
+This WHOIS information is provided for free by Nominet UK the central registry
+for .uk domain names. This information and the .uk WHOIS are:
+
+    Copyright Nominet UK 1996 - 2026.
+
+You may not access the .uk WHOIS or use any data from it except as permitted
+by the terms of use available in full at https://www.nominet.uk/whoisterms,
+which includes restrictions on: (A) use of the data for advertising, or its
+repackaging, recompilation, redistribution or reuse (B) obscuring, removing
+or hiding any or all of this notice and (C) exceeding query rate or volume
+limits. The data is provided on an 'as-is' basis and may lag behind the
+register. Access may be withdrawn or restricted at any time. 
+
+--- UK Subdomains ---
+  app.dunkindonuts.co.uk → NXDOMAIN
+  order.dunkindonuts.co.uk → NXDOMAIN
+  careers.dunkindonuts.co.uk → NXDOMAIN
+  login.dunkindonuts.co.uk → NXDOMAIN
+  api.dunkindonuts.co.uk → NXDOMAIN
+  staging.dunkindonuts.co.uk → NXDOMAIN
+  dev.dunkindonuts.co.uk → NXDOMAIN
+  m.dunkindonuts.co.uk → NXDOMAIN
+  mobile.dunkindonuts.co.uk → NXDOMAIN
+  shop.dunkindonuts.co.uk → NXDOMAIN
+  store.dunkindonuts.co.uk → NXDOMAIN
+
+--- Wayback ---
+timestamp original statuscode mimetype
+20040407004839 http://www.dunkindonuts.co.uk:80/ 200 text/html
+20040525013116 http://www.dunkindonuts.co.uk:80/ 302 text/html
+20040604202906 http://www.dunkindonuts.co.uk:80/ 302 text/html
+20040607101345 http://www.dunkindonuts.co.uk:80/ 302 text/html
+20040725090018 http://www.dunkindonuts.co.uk:80/ 200 text/html
+20040920103745 http://www.dunkindonuts.co.uk:80/ 302 text/html
+20041212034119 http://www.dunkindonuts.co.uk:80/ 200 text/html
+20050130025423 http://dunkindonuts.co.uk:80/ 200 text/html
+20050211013643 http://www.dunkindonuts.co.uk:80/ 200 text/html
+20051026011930 http://dunkindonuts.co.uk:80/ 200 text/html
+20051224123332 http://dunkindonuts.co.uk:80/ 200 text/html
+20060104075059 http://dunkindonuts.co.uk:80/ 200 text/html
+20060113142056 http://dunkindonuts.co.uk:80/ 200 text/html
+20140314160442 http://dunkindonuts.co.uk:80/ 200 text/html
+20140415045257 http://dunkindonuts.co.uk:80/ 200 text/html
+20140516111238 http://dunkindonuts.co.uk:80/ 200 text/html
+20140516191917 http://www.dunkindonuts.co.uk/ 200 text/html
+20140516195516 http://dunkindonuts.co.uk/ 200 text/html
+20140616113949 http://dunkindonuts.co.uk:80/ 200 text/html
+20140924061112 http://www.dunkindonuts.co.uk:80/ 200 text/html
+20141026112403 http://www.dunkindonuts.co.uk:80/ 200 text/html
+20141128165849 http://www.dunkindonuts.co.uk:80/ 200 text/html
+20141218133325 http://www.dunkindonuts.co.uk/ 200 text/html
+20141218172339 http://dunkindonuts.co.uk/ 200 text/html
+20141223044905 http://www.dunkindonuts.co.uk/ 200 text/html
+20141229065904 http://www.dunkindonuts.co.uk:80/ 200 text/html
+20150127082323 http://www.dunkindonuts.co.uk:80/ 200 text/html
+20150209114602 http://www.dunkindonuts.co.uk:80/ 200 text/html
+20150303175147 http://www.dunkindonuts.co.uk:80/ 200 text/html
+20150327045502 http://www.dunkindonuts.co.uk:80/ 200 text/html
+
+=== PROBE COMPLETE ===
+Date: 2026-04-14T04:17:00Z

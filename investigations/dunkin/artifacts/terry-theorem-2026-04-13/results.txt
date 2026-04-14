@@ -1,0 +1,164 @@
+=== TERRY URSINO + THEOREM LP INVESTIGATION ===
+Date: 2026-04-14T04:21:16Z
+
+--- crt.sh: Terry Ursino ---
+[terry.ursino@dunkinbrands.com]:
+  Response: 150 bytes (exit: 0)
+  Certs: parse error
+
+[%@dunkinbrands.com]:
+  Response: 150 bytes (exit: 0)
+  Certs: parse error
+
+[terry.ursino (name value)]:
+  Certs: parse error
+
+========================================
+THEOREM LP INVESTIGATION
+========================================
+--- DNS ---
+theoremlp.com  A: 75.2.60.5  CNAME: none
+www.theoremlp.com  A: theorem.netlify.app.,13.52.188.95,52.52.192.191  CNAME: theorem.netlify.app.
+api-test.theoremlp.com  A: 54.172.196.241,54.172.180.235  CNAME: none
+api.theoremlp.com  A: 52.204.184.43,3.211.38.208  CNAME: none
+app.theoremlp.com  A: 40.112.143.134  CNAME: none
+staging.theoremlp.com  A: 40.112.143.134  CNAME: none
+
+--- HTTP Probe ---
+[theoremlp.com] → 301
+HTTP/2 301 
+content-type: text/plain; charset=utf-8
+date: Tue, 14 Apr 2026 04:21:35 GMT
+location: https://www.theoremlp.com/
+server: Netlify
+strict-transport-security: max-age=31536000
+x-nf-request-id: 01KP53JA5HC1T9T68XM2XTKXYH
+content-length: 41
+
+  Body: 41 bytes
+[www.theoremlp.com] → 200
+HTTP/2 200 
+accept-ranges: bytes
+age: 0
+cache-control: public,max-age=0,must-revalidate
+cache-status: "Netlify Edge"; fwd=miss
+content-type: text/html; charset=UTF-8
+date: Tue, 14 Apr 2026 04:21:35 GMT
+etag: "e25141c74b2c0da064bb807a2695984c-ssl"
+netlify-vary: cookie=__next_preview_data:presence|__prerender_bypass:presence
+server: Netlify
+  Body: 36268 bytes
+  <title>Home – Theorem</title>
+[api-test.theoremlp.com] → 404
+HTTP/2 404 
+content-length: 9
+content-type: text/plain
+x-theorem-auth: nil
+x-theorem-platform: nil
+date: Tue, 14 Apr 2026 04:21:35 GMT
+server: envoy
+
+  Body: 9 bytes
+[api.theoremlp.com] → 404
+HTTP/2 404 
+content-length: 9
+content-type: text/plain
+x-theorem-auth: nil
+x-theorem-platform: nil
+date: Tue, 14 Apr 2026 04:21:35 GMT
+server: envoy
+
+  Body: 9 bytes
+[app.theoremlp.com] → 404
+HTTP/1.1 404 Site Not Found
+Content-Length: 2667
+Connection: close
+Content-Type: text/html
+Date: Tue, 14 Apr 2026 04:21:35 GMT
+
+  Body: 2667 bytes
+  <title>Microsoft Azure Web App - Error 404</title>
+[staging.theoremlp.com] → 404
+HTTP/1.1 404 Site Not Found
+Content-Length: 2667
+Connection: close
+Content-Type: text/html
+Date: Tue, 14 Apr 2026 04:21:35 GMT
+
+  Body: 2667 bytes
+  <title>Microsoft Azure Web App - Error 404</title>
+
+--- TLS Cert: api-test.theoremlp.com ---
+subject=CN=api-test.theoremlp.com
+issuer=C=US, O=Let's Encrypt, CN=R13
+notBefore=Jan 21 04:32:56 2026 GMT
+notAfter=Apr 21 04:32:55 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:api-test.theoremlp.com
+
+--- Theorem whois ---
+   Registry Domain ID: 1871102086_DOMAIN_COM-VRSN
+   Registrar WHOIS Server: whois.squarespace.domains
+   Registrar URL: http://domains2.squarespace.com
+   Updated Date: 2025-07-30T20:40:23Z
+   Creation Date: 2014-08-14T18:23:15Z
+   Registry Expiry Date: 2026-08-14T18:23:15Z
+   Registrar: Squarespace Domains II LLC
+   Registrar IANA ID: 895
+   Registrar Abuse Contact Email: abuse-complaints@squarespace.com
+   Registrar Abuse Contact Phone: +1.6466935324
+   Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: NS-CLOUD-A1.GOOGLEDOMAINS.COM
+   Name Server: NS-CLOUD-A2.GOOGLEDOMAINS.COM
+   Name Server: NS-CLOUD-A3.GOOGLEDOMAINS.COM
+   Name Server: NS-CLOUD-A4.GOOGLEDOMAINS.COM
+For more information on Whois status codes, please visit https://icann.org/epp
+NOTICE: The expiration date displayed in this record is the date the
+registrar's sponsorship of the domain name registration in the registry is
+currently set to expire. This date does not necessarily reflect the expiration
+
+--- crt.sh: Theorem LP ---
+  Certs: 0
+
+--- Wayback: theoremlp.com ---
+timestamp original statuscode mimetype
+20141015175036 http://www.theoremlp.com:80/ 200 text/html
+20141116174647 http://www.theoremlp.com:80/ 200 text/html
+20141217094242 http://www.theoremlp.com:80/ 200 text/html
+20150118011254 http://www.theoremlp.com:80/ 200 text/html
+20160108023600 http://www.theoremlp.com:80/ 200 text/html
+20160109144636 http://theoremlp.com/ 301 text/html
+20160109144637 http://www.theoremlp.com/ 200 text/html
+20160112112205 http://theoremlp.com/ 301 text/html
+20160119221544 http://theoremlp.com/ 301 text/html
+20160208200239 http://www.theoremlp.com/ 200 text/html
+20160209185342 http://www.theoremlp.com:80/ 200 text/html
+20160305104840 http://theoremlp.com/ 301 text/html
+20160305110346 http://www.theoremlp.com/ - warc/revisit
+20160312003045 http://www.theoremlp.com:80/ 200 text/html
+20160313075725 http://theoremlp.com/ 301 text/html
+20160320084221 http://theoremlp.com/ - warc/revisit
+20160320084227 http://www.theoremlp.com/ 200 text/html
+20160403233540 http://www.theoremlp.com/ - warc/revisit
+20160405231245 http://theoremlp.com/ - warc/revisit
+20160405231252 http://www.theoremlp.com/ - warc/revisit
+--- Wayback: wsapi.dunkinbrands.com ---
+
+========================================
+OPEN NAMING QUESTIONS (Wayback)
+========================================
+--- Wayback: bam.dunkinbrands.com ---
+timestamp original statuscode mimetype
+20240912200224 http://bam.dunkinbrands.com/ 301 text/html
+20240912200225 https://bam.dunkinbrands.com:443/ 302 text/html
+
+--- Wayback: flq-prod-idp.dunkinbrands.com ---
+timestamp original statuscode mimetype
+20220818015343 http://flq-prod-idp.dunkinbrands.com/ 302 unk
+20230927173913 http://flq-prod-idp.dunkinbrands.com/ 302 unk
+20240515070610 https://flq-prod-idp.dunkinbrands.com/ 302 unk
+20240515071005 http://flq-prod-idp.dunkinbrands.com/ 302 unk
+
+=== PROBE COMPLETE ===
+Date: 2026-04-14T04:22:30Z

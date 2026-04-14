@@ -1,0 +1,16 @@
+HTTP/2 301 
+content-type: text/html; charset=iso-8859-1
+content-length: 319
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains
+location: https://www.dunkindonuts.com/en/dd-perks
+cache-control: max-age=0
+expires: Tue, 14 Apr 2026 04:16:02 GMT
+date: Tue, 14 Apr 2026 04:16:02 GMT
+set-cookie: AWSALB=bJt4HCEKO8iiXxTjC3asJOZbbM6PDEhWDE7BHpJp9SCdAqL3EnIe6wJODoG377flMR18fozKyuq0z+tMY2Lzw07Do3ZI/KpBR3dX8wdkGL4qSSdz6PRKge6Dx9XJ; Expires=Tue, 21 Apr 2026 04:16:02 GMT; Path=/
+set-cookie: AWSALBCORS=bJt4HCEKO8iiXxTjC3asJOZbbM6PDEhWDE7BHpJp9SCdAqL3EnIe6wJODoG377flMR18fozKyuq0z+tMY2Lzw07Do3ZI/KpBR3dX8wdkGL4qSSdz6PRKge6Dx9XJ; Expires=Tue, 21 Apr 2026 04:16:02 GMT; Path=/; SameSite=None; Secure
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=65
+server-timing: origin; dur=2
+server-timing: ak_p; desc="1776140162630_399924815_970356884_6663_7357_4_7_15";dur=1
+
