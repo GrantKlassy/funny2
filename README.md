@@ -7,7 +7,6 @@
 **All because a fake toddler tried to sell me a mango drink.**
 
 [![Explore the Network Graph](https://img.shields.io/badge/EXPLORE_THE_NETWORK_GRAPH-ff6600?style=for-the-badge&logo=d3dotjs&logoColor=white)](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)
-[![Full Investigation](https://img.shields.io/badge/FULL_WRITEUP-333333?style=for-the-badge&logo=markdown&logoColor=white)](investigations/dunkin/README.md)
 [![Graph Data](https://img.shields.io/badge/GRAPH.md-222222?style=for-the-badge&logo=graphql&logoColor=white)](investigations/dunkin/GRAPH.md)
 
 </div>
@@ -238,6 +237,6 @@ More vendors than menu items.
 
 All probes ran in containers. Zero exploitation. Zero auth bypass. I just looked at what was already there.
 
-[![Full Writeup](https://img.shields.io/badge/Full_Investigation-investigations/dunkin/README.md-blue?style=flat-square)](investigations/dunkin/README.md) [![Graph](https://img.shields.io/badge/GRAPH.md-77_entities,_33_anomalies-orange?style=flat-square)](investigations/dunkin/GRAPH.md) [![Scripts](https://img.shields.io/badge/Scripts-33_probe_scripts-green?style=flat-square)](investigations/dunkin/scripts/)
+[![Graph](https://img.shields.io/badge/GRAPH.md-77_entities,_33_anomalies-orange?style=flat-square)](investigations/dunkin/GRAPH.md) [![Scripts](https://img.shields.io/badge/Scripts-33_probe_scripts-green?style=flat-square)](investigations/dunkin/scripts/)
 
 </div>
