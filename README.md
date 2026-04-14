@@ -1,8 +1,8 @@
-# I Reverse-Engineered Dunkin's Entire Mobile Infrastructure Because Their Reddit Ad Annoyed Me
+# I Reverse-Engineered Dunkin's Entire Digital Infrastructure Because Their Reddit Ad Annoyed Me
 
 # [EXPLORE THE INTERACTIVE NETWORK GRAPH](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)
 
-56 entities, 57 connections, 12 clusters. Every vendor, every subdomain, every cert SAN — connected. Drag it. Zoom it. Search it. One Reddit ad, fully deconstructed in a force-directed D3.js visualization.
+77 entities, 78 connections, 15 clusters. Every vendor, every subdomain, every cert SAN — connected. One Reddit ad, fully deconstructed.
 
 I'm scrolling Reddit. It's late. I see a Dunkin' ad. Fine. But then I see the *other* one. And then I click it.
 
@@ -27,192 +27,171 @@ No. No, your toddler did not have your phone. Your *copywriter* had your phone. 
 
 I ran the "gibberish" through keyboard distribution analysis. If a toddler actually mashed a keyboard, you'd expect roughly equal hits across all three rows — they don't know where the home row is. They're a toddler. They eat crayons.
 
-Here's what the analysis found:
-
 | Keyboard Row | Expected (toddler) | Actual |
 |---|---|---|
 | Top row (qwerty) | ~33% | **10%** |
 | Home row (asdf) | ~33% | **77%** |
 | Bottom row (zxcv) | ~33% | **12%** |
 
-**Seventy-seven percent home row.** That's not a toddler. That's a grown adult resting their fingers on asdfghjkl and wiggling them around. The gibberish also contains strategically embedded words:
+**Seventy-seven percent home row.** That's a grown adult resting their fingers on asdfghjkl and wiggling them around. The gibberish also contains strategically embedded words: `cat`, `dog`, `kid`, `mom`, `dad`, `dada` — all family-and-pet themed. All placed to make you go "aww" instead of "this is an ad."
 
-- `cat` (1x), `dog` (2x), `kid` (1x), `mom` (2x), `dad` (4x), `dada` (4x)
-
-All family-and-pet themed. All placed to make you go "aww that's relatable" instead of "this is an ad." The last line — `mamamama dad dad dad momm mom mom mommm78499` — is so obviously written by a 28-year-old in a WeWork that it hurts.
-
-It's a promoted post designed to look organic. The toddler is a psyop. Dunkin' is running narrative warfare on Reddit and the narrative is "I'm just like you, fellow parent."
+The toddler is a psyop. Dunkin' is running narrative warfare on Reddit.
 
 ### But Then I Clicked It
 
-Against my better judgment, I tapped the ad. The URL was:
+The URL was `ulink.prod.ddmprod.dunkindonuts.com`. That's a subdomain four levels deep with internal environment naming. `prod.ddmprod`? Production inside another production? What is `ddmprod`?
+
+**ddmprod** stands for **Dunkin' Donuts Mobile Production.** The name predates their 2018 rebrand from "Dunkin' Donuts" to just "Dunkin'" — the ghost of "Donuts" lives on in their DNS. The TLS certificate on this one subdomain lists every other service in their mobile platform. I mapped their entire backend from a single `openssl s_client`.
+
+So I did what any reasonable person would do. I opened a container and started running dig. 33 probe scripts later, here are the highlights.
+
+### GenrateOTPForUser
+
+`star.dunkinbrands.com` — a mystery service from early probing that only responded to GET — turned out to be the **Restaurant Administration Portal (RAP)**. It serves a full 18,447-byte login page for Dunkin' franchise operators. The form has three fields: CrunchTime Username, CrunchTime Password, and a 4-digit store EntityID. The submit button POSTs to `/User/LogInCrunchTime`.
+
+There's also an email-based one-time password flow. The endpoint it calls is **`/User/GenrateOTPForUser`**.
+
+`Genrate`. Not "Generate." *Genrate.*
+
+This is a production ASP.NET Core application serving 18,000+ Dunkin' locations and someone spelled "Generate" wrong in the API endpoint name. They can never fix it because every franchise operator's browser has the JavaScript that calls `GenrateOTPForUser` cached. The typo is load-bearing. It will outlive us all.
+
+### Sonic Put a Slack Message in DNS
+
+I enumerated DNS TXT records for all six Inspire Brands siblings. Most were normal — SPF, DKIM, domain verification strings. Then I got to Sonic Drive-In. 33 TXT records. One of them is:
 
 ```
-https://ulink.prod.ddmprod.dunkindonuts.com/dunkin/orders/category/119
+"[6:20 PM] Nelson, Brandi     atlassian-domain-verification=ePV5FzMQVHW78z2fSa9NUn8GwnrxUxwaPVUjsYP4bWfQliM21X7G4LMCvG65MgvF"
 ```
 
-Wait. `ulink.prod.ddmprod.dunkindonuts.com`? That's not a normal marketing URL. That's a subdomain four levels deep with what looks like internal environment naming. `prod.ddmprod`? Production inside... another production? What is `ddmprod`?
+Someone named **Brandi Nelson** sent the Atlassian verification string in a Slack or Teams channel at 6:20 PM, and whoever was adding it to DNS just... copied the entire message. Including the timestamp. Including Brandi's name. Into the TXT record. That was committed to production DNS.
 
-So I did what any reasonable person would do. I opened a container and started running dig.
+Every DNS resolver on the internet can now tell you that Brandi Nelson sent that verification string at 6:20 PM. She's part of the global DNS infrastructure now.
 
-> **[EXPLORE THE INTERACTIVE NETWORK GRAPH](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)** — 56 entities, 57 connections, 12 clusters. Every vendor, every subdomain, every cert SAN — connected. Drag it. Zoom it. Search it. One Reddit ad, fully deconstructed in a force-directed D3.js visualization.
+They added a clean copy of the same key later. But they never deleted the Brandi version. Both records coexist. Two copies of the same key, one wearing Brandi Nelson's name like a digital tramp stamp.
 
-### What Is ddmprod?
+### Somebody Else's Certificate
 
-**ddmprod** stands for **Dunkin' Donuts Mobile Production.** It's their entire internal mobile app platform. The name predates their 2018 rebrand from "Dunkin' Donuts" to just "Dunkin'" — the infrastructure team apparently didn't get the memo. Or didn't care. Either way, the ghost of "Donuts" lives on in their DNS.
-
-Here's the thing about TLS certificates — they have to list every domain they cover. The cert on `ulink.prod.ddmprod.dunkindonuts.com` has a Subject Alternative Names list that reads like someone left the architecture diagram on a public bus:
-
-| Service | What It Does |
-|---------|-------------|
-| `mapi-dun` | **Mobile API** — the actual app backend. This is the primary CN on the cert. `ulink` is just riding along. |
-| `ulink` | **Universal Links** — the thing I clicked. Routes you to the app or the web depending on your device. |
-| `ode` | **Order Delivery Engine** — exactly what it sounds like |
-| `swi` | Nobody knows. LIVE in prod AND all dev environments. Actively maintained. Prod returns 404 — no default route, not dead. |
-| `dun-assets` | Static asset CDN. Serves `dunkin_logo@2x.png` to the app. |
-| `cloud` | Only seen in preprod via Wayback. Mysterious. |
-
-All of these exist in both `prod` and `preprod` environments. The whole thing runs on **Akamai CDN** with **DigiCert ECC certificates** issued to **Dunkin' Brands, Inc., Canton, Massachusetts.**
-
-I mapped 56 entities from one drink ad. I know more about Dunkin's mobile backend than most of their employees.
-
-### The Three-Way Split
-
-The `ulink` service is a Node.js/Express app that sniffs your User-Agent and makes a decision:
-
-**If you're on an iPhone with the app installed:** iOS Universal Links kick in. The app opens directly to `dunkin://orders/category/119`. You never see a webpage. You're just suddenly looking at drinks.
-
-**If you're on a phone without the app:** You get the interstitial page (the "GET THE APP" screen I screenshotted). The "Continue on App" button is the good part — it links to:
+`wsapi.dunkinbrands.com` — Dunkin's "Web Service API" — returns 404 with custom headers: `x-theorem-auth: nil`, `x-theorem-platform: nil`. Theorem. Not Dunkin'. I pulled the TLS certificate:
 
 ```
-https://dunkin.smart.link/f6iexb4x5?destination=dunkin://orders/category/119
+subject=CN=api-test.theoremlp.com
+issuer=C=US, O=Let's Encrypt, CN=R13
 ```
 
-`dunkin.smart.link` — that's **Branch.io**, the deep linking vendor. They're the ones who make sure that if you install the app from the App Store, you still land on the right category page. Deferred deep linking. It's actually kind of clever, if you ignore everything else about this situation.
+Dunkin's subdomain is serving **Theorem LP's** test API certificate. A completely different company's cert. Someone at Theorem is still renewing it. On Dunkin's infrastructure. For Dunkin's subdomain. Nobody has noticed.
 
-**If you're on a desktop or you're a bot:** HTTP 302 redirect to `www.dunkindonuts.com/en/mobile-app`. Go away, you're not buying a drink from your laptop.
+### The Swagger Editor Somebody Left Running in 2019
 
-### How Many Companies Does It Take to Sell a Mango Drink
+`swagger.ddmdev.dunkindonuts.com` resolves to a bare EC2 instance with no CDN protection. Every other service in the entire Dunkin' infrastructure is behind Akamai or Cloudflare. This one is just... naked on the internet.
 
-| Vendor | Role | How I Found It |
-|--------|------|----------------|
-| **Branch.io** | Deep linking | `dunkin.smart.link` in the landing page HTML |
-| **OLO** | Online ordering | `order.dunkindonuts.com` CNAMEs to `whitelabel.olo.com` |
-| **CardFree** | Mobile payments / gift cards | Listed in the Apple App Site Association file as `com.cardfree.ddnationalprd` |
-| **Akamai** | CDN | CNAME chain: `edgekey.net` → `akamaiedge.net` |
-| **Proofpoint** | Email security | MX records, SPF, DMARC. Policy is `p=reject` — at least their email security is tight |
-| **DigiCert** | TLS certificates for mobile | ECC SHA384 certs for the ddmprod platform |
-| **AWS** | Everything else | Route 53 DNS, Application Load Balancer, ACM certs for the root domain |
+I built an entire probe script for it — 28-path enumeration, HTTP method sweeps, nmap, banner grabs.
 
-Seven vendors to sell you a zero-calorie tropical mango beverage. The `order.dunkindonuts.com` → `whitelabel.olo.com` CNAME was my favorite find. OLO is a restaurant ordering platform. The word "whitelabel" is right there in the DNS. It's like leaving the price tag on a gift.
+It's a **Swagger Editor.** Not API docs. A Swagger *Editor* — the tool you use to write API specs. 3,540 bytes of HTML, served by nginx, with a `Last-Modified` date of **December 23, 2019.**
 
-### Why Was This Ad Targeted at Me?
+Some developer spun up an nginx container on a bare EC2 instance five days before 2020 and walked away. That was over six years ago. The instance is still running. The cert is still being renewed. Someone is presumably still paying AWS for it. It has survived a pandemic, a parent company acquisition, and at least three generations of infrastructure. It serves no purpose. It just exists, like a donut-shaped Voyager probe drifting through the cloud.
 
-The Wayback Machine answered this one. Historical snapshots of the `ulink` URLs preserved the full UTM parameters from previous campaigns:
+### SWI: Area 51
 
-```
-utm_source=reddit
-utm_medium=paidsocial
-utm_campaign=dunkinrun
-utm_content=interests
-```
+The ddmprod platform has a service called `swi`. It's LIVE in production, preprod, dev, and qa. Six environments. Actively maintained. I threw 35 paths at it across every environment — API endpoints, health checks, Swagger, actuator, login, auth, webhook, push, message, even `/swi` and `/SWI`.
 
-The targeting parameter is literally called `interests`. Reddit served me this ad because of my subreddit engagement patterns. Dunkin' paid Reddit to show me a fake toddler post based on an algorithmic guess about what I might enjoy.
+**Every. Single. Path. Returns. 404.**
 
-Conversion tracking uses Reddit Click IDs (`rdt_cid` parameters) — unique identifiers appended to every ad click URL so Dunkin' can trace the journey from "saw ad on Reddit" to "ordered a drink in the app." There are at least 8 distinct `rdt_cid` values captured in Wayback from different campaign runs. Previous campaigns targeted categories 28, 53, and 70. Mine was 119.
+It's a Ruby on Rails app behind Akamai. It shares a TLS certificate with the Mobile API, the Order Delivery Engine, and Universal Links — it's a first-class citizen of the mobile platform. Six environments. Actively maintained. 35 paths probed. Purpose: completely unknown. SWI is this investigation's Area 51.
 
-### Bonus Round: The www Certificate
+### One Email Pipe, Seven Restaurant Chains
 
-I checked the TLS cert on `www.dunkindonuts.com` for good measure. It lists **47 Subject Alternative Names.** Forty-seven. Including:
+All seven Inspire Brands entities — Dunkin', Baskin-Robbins, Arby's, Buffalo Wild Wings, Sonic, Jimmy John's, and the parent company — use **identical email infrastructure:**
 
-- `dev2.dunkindonuts.com`, `qa.dunkindonuts.com`, `qa2.dunkindonuts.com`, `staging.dunkindonuts.com`, `staging3.dunkindonuts.com`, `uat.dunkindonuts.com` — their entire development lifecycle is in this cert
-- `ssoprd.dunkindonuts.com`, `social-ssoprd.dunkindonuts.com` — SSO infrastructure
-- `menu-pricing-prd.dunkindonuts.com` — the menu pricing API, in production
-- `franchiseecentral.dunkinbrands.com` — the franchisee portal
-- `www.baskinrobbins.com`, `staging.baskinrobbins.com`, `qa.baskinrobbins.com` — Baskin-Robbins shares the cert
+Same Proofpoint tenant. Same Microsoft 365 tenant. Same SPF macro. Same DMARC policy. Every email from every brand — Dunkin' promotions, Arby's coupons, BWW game day alerts, Sonic happy hour notices — all through the exact same pipe. One pipe. Seven chains. 44,000+ locations.
 
-Nothing is exposed or exploitable. But the fact that you can learn the names of all their internal environments from a single `openssl s_client` command is... very Dunkin'.
+The KnowBe4 phishing training token is the same across Arby's, BWW, and Sonic: `0c00dc3beaeabc5a1bb3e17db0f29f45`. Same account. If you hack the phishing training, you hack it for three fast food chains at once.
 
-But wait. 47 SANs means 47 live services on one certificate. Let me resolve every single one of them.
+### The Redirect Graveyard
 
-### I Resolved All 47 SANs and Most of Them Are Live
+Dunkin' owns a fleet of vanity domains from campaigns past. They age like forgotten donuts.
 
-Nearly every domain on that cert resolves. Most of them are behind Akamai. But a few rebels broke free:
+**dnkn.com** (registered 2003) still resolves. Still redirects. The TLS certificate has been **expired since September 28, 2022.** Three and a half years of expired cert. Nobody has noticed because nobody remembers this domain exists.
 
-- **`qa.dunkindonuts.com`** goes DIRECT to AWS (`52.71.129.172`) — no Akamai. The QA team said "we don't need a CDN, we're just testing." Bold move.
-- **`uat.dunkindonuts.com`** resolves to `216.255.76.18` — a completely different IP range from everything else. Contractor hosting? A managed testing vendor? Nobody knows. It doesn't respond to HTTPS.
-- **`ssoprd.dunkindonuts.com`** is LIVE. HTTP 200. 149 bytes. It's the SSO redirect page for production. Just sitting there. Behind Akamai, at least.
-- **`menu-pricing-prd.dunkindonuts.com`** returns a JSON 404 with Spring Boot security headers. It's a REST API for menu pricing. The endpoint exists. It works. It just doesn't know what you want because you didn't provide a path.
-- **`star.dunkinbrands.com`** returns HTTP 405 — Method Not Allowed. It's an API that will only talk to you if you know the right HTTP verb. I do not know the right HTTP verb.
-- **`fps.dunkinbrands.com`** has an AWS ELB called `caas-prod-dunkinbrands-com`. "CAAS" — Content As A Service? Connection refused. The ELB exists but nothing's home.
+**dunkinnation.com** is stuck in an infinite redirect loop: root → 301 → www → connection refused. The www subdomain is dead but the root keeps redirecting to it. Forever. A donut-shaped ouroboros.
 
-And then there's **`franchiseecentral.dunkinbrands.com`**. It's live. It's running ASP.NET behind Cloudflare and AWSALB. Its `Last-Modified` header says **July 12, 2016**. The franchisee portal has not been updated in ten years. It was built before the rebrand. It was built before the Inspire Brands acquisition. It may have been built before some of its franchise owners were born.
+**dunkinemail.com** goes through FIVE redirects — apex, www, legacy CMS path, dd-perks registration, dunkin rewards registration — and lands on a **403 Forbidden.** You can't sign up for their email list via their email signup domain.
+
+**lsmnow.com** (registered 2004) redirects to an F5 BIG-IP access policy manager — a VPN login page for a "Local Store Marketing" portal. Twenty-two years old. The MX record points to a company called Flair Promo. The portal is a fossil. The DNS is eternal.
+
+### The Dead Sweepstakes Running as "SSO Production"
+
+I found three generations of authentication running simultaneously. The endpoint named `ssoprd` — which you'd think stands for "SSO Production" — is actually a **DD Perks "Sip. Peel. Win Sweepstakes" login page.** The sweepstakes is long over. The login page is still there.
+
+Meanwhile, `auth0-stg.dunkindonuts.com` is an Auth0 staging instance on AWS API Gateway. Someone proposed Auth0 at a meeting once. The DNS record is still here.
+
+Three generations of auth. One is a dead sweepstakes. One is a meeting that became a DNS record. This is enterprise software.
 
 ### Baskin-Robbins Is Literally Dunkin'
 
-I figured while I was here, I'd check the Inspire Brands sister brands. Arby's, Buffalo Wild Wings, Sonic, Jimmy John's, Baskin-Robbins. Do any of them use the ddmprod pattern?
-
-No. None of them. ddmprod is Dunkin'-only. Each sister brand has completely different infrastructure — different registrars, different CDNs, different cert authorities. It's like Inspire Brands acquired six restaurants and said "you guys figure out your own IT."
-
-But then I looked at Baskin-Robbins more carefully and things got weird.
-
-`baskinrobbins.com` resolves to **`52.0.33.13` and `35.169.92.22`**. Those are the same A records as `dunkindonuts.com`. The *exact same IPs*. I checked the cert — it's the same GeoTrust cert with the 47 SANs. Same Route 53 nameservers. Baskin-Robbins isn't just "sharing infrastructure" with Dunkin'. Baskin-Robbins IS Dunkin'. They're the same box. You request `baskinrobbins.com` and the same server that serves you `dunkindonuts.com` goes "oh, you wanted ice cream? Same building, different door."
-
-The only difference: Dunkin' uses OLO for ordering (`whitelabel.olo.com`), but Baskin-Robbins uses **Tillster** (`www-br-us.tillster.com`). Two different ordering vendors for two brands on the same server. The server doesn't even know they're different companies.
+`baskinrobbins.com` resolves to the *exact same A records* as `dunkindonuts.com`. Same cert. Same Route 53 nameservers. Same box. You request `baskinrobbins.com` and the same server that serves `dunkindonuts.com` goes "oh, you wanted ice cream? Same building, different door."
 
 ### CardFree Runs Everything
 
-Remember CardFree from the Apple App Site Association file? I said they handled "mobile payments." I was wrong. They handle *everything*.
+The Dunkin' app's Android package is `com.cardfree.android.dunkindonuts`. The iOS entitlements are under `com.cardfree.ddnationalprd`. CardFree doesn't just handle payments. **CardFree IS the app.** Every time you tap "Order Ahead" you're interacting with a company you've never heard of. Dunkin' is a CardFree customer wearing a costume.
 
-The Android Asset Links file (`assetlinks.json`) on `ulink.prod.ddmprod` lists the Android packages:
+### Bakery Equipment Training on Adobe Experience Manager
 
-```
-com.cardfree.android.dunkindonuts.DEV
-com.cardfree.android.dunkindonuts.UAT
-```
+`thecenter.dunkinbrands.com` is an AEM learning portal for franchisees. Content includes "Dunkin Learning Path," "Spring Readiness" seasonal training, and — I am not making this up — a module about **bakery equipment.** There is a corporate LMS, running on Adobe Experience Manager, behind CloudFront, registered to Inspire Brands of Sandy Springs, Georgia, and it has a course about the equipment that makes the donuts.
 
-CardFree isn't just the payment vendor. CardFree **builds the entire Dunkin' mobile app** — iOS and Android. All environments. One signing key across DEV and UAT. The app in your pocket that says "Dunkin'" was made by a company called CardFree. The name "Dunkin' Brands" is on the certs but CardFree is on the code.
+### 29 Vendors to Sell Donuts
 
-### Branch.io Leaks Its Own Kubernetes
+| Vendor | Role |
+|--------|------|
+| Branch.io | Deep linking |
+| OLO | Online ordering (Dunkin') |
+| Tillster | Online ordering (Baskin-Robbins) |
+| CardFree | THE ENTIRE MOBILE APP |
+| CrunchTime | Restaurant operations (the GenrateOTP people) |
+| Akamai | CDN + WAF |
+| Cloudflare | CDN + DNS (other brands) |
+| Proofpoint | Email security (all 7 brands) |
+| Microsoft 365 | Corporate email (all 7 brands) |
+| SendGrid | Transactional email |
+| Salesforce Marketing Cloud | Email marketing |
+| Mailchimp/Mandrill | More email (Sonic) |
+| Mailgun | Even more email (Jimmy John's) |
+| DigiCert / GeoTrust | TLS certs |
+| Let's Encrypt | TLS certs (dev) |
+| AWS | Infrastructure |
+| Microsoft Azure | International site (just that one) |
+| IBM Cloud | UAT (dead) |
+| IPR Software | Investor relations + news |
+| ServiceNow | Customer chat |
+| Paradox AI | Recruiting |
+| Adobe Analytics | Web analytics |
+| Adobe Experience Manager | Bakery equipment courses |
+| Okta | SSO (internal apps) |
+| KnowBe4 | Phishing training |
+| Theorem LP | ??? (their cert is on Dunkin's domain) |
+| WeRecognize | Employee recognition |
+| F5 Networks | Load balancing (legacy) |
+| Flair Promo | Local Store Marketing (legacy) |
 
-I probed the Branch.io smart link and it returned HTTP 405 with these headers:
+Twenty-nine companies involved in operating six fast food chains that share the same email pipe. There are more vendors than there are items on most of these restaurants' menus.
 
-```
-server: istio-envoy
-x-envoy-decorator-operation: inboarder.links-inboarder.svc.cluster.local:80/*
-```
+### The Numbers
 
-That's an Istio service mesh on Kubernetes. The internal service is called `inboarder` in a namespace called `links-inboarder`. Branch.io's infrastructure is leaking its own service topology through response headers. The deep linking company has a shallow header policy.
+| Metric | Count |
+|--------|-------|
+| Probe scripts run | 33 |
+| Entities in the graph | 77 |
+| Anomalies | 33 |
+| Vendors identified | 29 |
+| Dead services | 19 |
+| Redirect loops | 2 |
+| Expired certificates in production | 1 (3.5 years) |
+| Slack messages in DNS | 1 |
+| Typos in production API endpoints | 1 |
+| Swagger Editors forgotten since 2019 | 1 |
+| Wrong company's certificate on your domain | 1 |
+| Fast food brands sharing one email pipe | 7 |
 
-### 931 Certificate Transparency Entries
-
-I queried `crt.sh` for `%.dunkinbrands.com` and got back **931 certificate entries**. Nine hundred and thirty-one. This is the pre-Inspire Brands corporate infrastructure, fossilized in certificate transparency logs:
-
-- **`citrix.dunkinbrands.com`** — Citrix remote access
-- **`sslvpn.dunkinbrands.com`** (and sslvpn2) — SSL VPN
-- **`vdi.dunkinbrands.com`** — Virtual Desktop Infrastructure
-- **`xen.dunkinbrands.com`** — Xen virtualization (vintage!)
-- **`quickplace.dunkinbrands.com`**, **`quickr.dunkinbrands.com`**, **`inotes.dunkinbrands.com`** — IBM collaboration stack. QuickPlace was discontinued in 2007. The cert was issued anyway.
-- **`smartsolve.dunkinbrands.com`** — SmartSolve EQMS (quality management)
-- **`genesisproduction.dunkinbrands.com`** — an internal platform called "Genesis"
-- **`rbos.dunkinbrands.com`** — RBOS. Restaurant Business Operating System? Nobody will confirm or deny.
-- **`smartphone.dunkinbrands.com`** (and smartphone2, smartphone3) — three separate mobile device management endpoints
-
-And then, buried in the entries: **`terry.ursino@dunkinbrands.com`**. Someone's email address. In a certificate Common Name. Submitted to public Certificate Transparency logs. Forever.
-
-Hi Terry. I hope you're doing well. Your email is in the blockchain of certificates now and there's nothing anyone can do about it.
-
-### The u/dunkin Reddit Account
-
-Created **October 18, 2018** — right when Dunkin' dropped "Donuts" from the name. The account was born with the rebrand. It has 62 link karma and 67 comment karma after 7+ years. The promoted posts don't appear in Reddit's public API because they're served through the ad system, not the user's post history. It's a ghost account that only exists to run paid campaigns.
-
-It is verified. It is a moderator. It has almost no karma. It pretends a toddler typed on its phone to sell you a drink. It is `u/dunkin`.
-
-### Methodology
-
-All probes ran inside containerized environments (`podman run --rm --dns 8.8.8.8 investigator`). DNS enumeration, HTTP redirect tracing, TLS certificate inspection, Wayback Machine CDX queries, Apple App Site Association file retrieval, Reddit public API, iTunes Search API, nmap port scanning. Zero exploitation, zero auth bypass, zero interaction with any service beyond reading what they publicly serve.
-
-I just looked at what was already there. Dunkin' made it easy.
+This started because a Dunkin' ad pretended a toddler typed on a phone.
 
 ![claude reacting to the findings](memes/claude-holy-shit.png)
 
@@ -220,13 +199,6 @@ I just looked at what was already there. Dunkin' made it easy.
 
 ---
 
-## Investigation Files
-- **[GRAPH.md](investigations/dunkin/GRAPH.md)** — The serious version. 56 entities, 12 clusters, 21 anomalies. Structured for machines.
-- **[Investigation directory](investigations/dunkin/)** — Evidence, artifacts, reproducible scripts.
-- **[GRAPH.md (index)](GRAPH.md)** — Investigation index.
+All probes ran inside containerized environments. 33 scripts across 3 waves. Zero exploitation, zero auth bypass, zero interaction with any service beyond reading what they publicly serve. I just looked at what was already there.
 
-## Setup
-
-```bash
-podman build -t investigator -f Containerfile.investigator .
-```
+**[Full investigation writeup](investigations/dunkin/README.md)** | **[GRAPH.md](investigations/dunkin/GRAPH.md)** (77 entities, 15 clusters, 33 anomalies) | **[Investigation directory](investigations/dunkin/)**
