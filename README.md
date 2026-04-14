@@ -151,6 +151,10 @@ Inspire Brands has two Okta organizations — one for employees (`inspire.okta.c
 I pulled the response headers. There's a P3P header — the "Platform for Privacy Preferences" compact policy. This is the W3C standard that lets websites declare their data handling practices in machine-readable form. Inspire Brands' franchisee SSO portal declares:
 
 ```
+curl -sI 'https://sso.inspirepartners.net' | grep -i p3p && echo
+```
+
+```
 P3P: CP="HONK"
 ```
 
@@ -166,7 +170,7 @@ The same endpoint's Content Security Policy also leaks: `inspirepartners-admin.o
 Baskin-Robbins has a Google Cloud Storage bucket named `baskin-robbins`. It's **publicly listable.** No auth required. I ran a container and listed it.
 
 ```
-$ curl -s 'https://storage.googleapis.com/baskin-robbins/' | head
+curl -s 'https://storage.googleapis.com/baskin-robbins/' | head && echo
 ```
 
 **34 objects.** All from February 2019. Ice cream menu photos, promotional images, intro screens. A complete mobile app asset dump sitting in an open bucket for **seven years.**
