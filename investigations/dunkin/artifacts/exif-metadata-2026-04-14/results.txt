@@ -1,0 +1,97 @@
+=== PROBE 48: EXIF METADATA EXTRACTION ===
+Started: 2026-04-14T07:26:12Z
+
+=== LOCAL INTAKE IMAGES ===
+=== DUNKIN WEBSITE IMAGES ===
+[Image URLs found on homepage]
+/content/dam/dd/img/brand/dd/dd_nav_logo.svg
+/content/dam/dd/img/brand/dd/dd_nav_logo.svg
+/content/dam/dd/img/menu-updates-global-nav/Locate.svg
+/content/dam/dd/img/menu-updates-global-nav/Locate.svg
+/content/dam/dd/img/rebranding/homepage/DDPERKS LOGO.svg 
+/content/dam/dd/img/rebranding/homepage/DDPERKS LOGO.svg
+/content/dam/dd/img/brand/dd/dd_nav_logo.svg
+/content/dam/dd/img/brand/dd/dd_nav_logo.svg
+/content/dam/dd/img/brand/dd/DunkinRewards_Horizontal_mobile.svg
+/content/dam/dd/img/backgrounds/modal-bg/Dunkin_Rewards_modal_donuts_mob.png
+
+--- Downloading: https://www.dunkindonuts.com/content/dam/dd/img/brand/dd/dd_nav_logo.svg ---
+  File type: /tmp/img_0.svg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (632)
+  EXIF: {
+  "FileName": "img_0.svg",
+  "FileSize": "4.4 kB",
+  "ImageSize": "140x27",
+  "Software": null,
+  "Creator": null,
+  "Author": null,
+  "Artist": null,
+  "Copyright": null,
+  "CreateDate": null,
+  "ModifyDate": null,
+  "Make": null,
+  "Model": null,
+  "XMPToolkit": null,
+  "CreatorTool": null
+}
+
+--- Downloading: https://www.dunkindonuts.com/content/dam/dd/img/brand/dd/dd_nav_logo.svg ---
+  File type: /tmp/img_1.svg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (632)
+  EXIF: {
+  "FileName": "img_1.svg",
+  "FileSize": "4.4 kB",
+  "ImageSize": "140x27",
+  "Software": null,
+  "Creator": null,
+  "Author": null,
+  "Artist": null,
+  "Copyright": null,
+  "CreateDate": null,
+  "ModifyDate": null,
+  "Make": null,
+  "Model": null,
+  "XMPToolkit": null,
+  "CreatorTool": null
+}
+
+--- Downloading: https://www.dunkindonuts.com/content/dam/dd/img/menu-updates-global-nav/Locate.svg ---
+  File type: /tmp/img_2.svg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (1012)
+  EXIF: {
+  "FileName": "img_2.svg",
+  "FileSize": "2.3 kB",
+  "ImageSize": "30x30",
+  "Software": null,
+  "Creator": null,
+  "Author": null,
+  "Artist": null,
+  "Copyright": null,
+  "CreateDate": null,
+  "ModifyDate": null,
+  "Make": null,
+  "Model": null,
+  "XMPToolkit": null,
+  "CreatorTool": null
+}
+
+--- Downloading: https://www.dunkindonuts.com/content/dam/dd/img/menu-updates-global-nav/Locate.svg ---
+  File type: /tmp/img_3.svg: SVG Scalable Vector Graphics image, ASCII text, with very long lines (1012)
+  EXIF: {
+  "FileName": "img_3.svg",
+  "FileSize": "2.3 kB",
+  "ImageSize": "30x30",
+  "Software": null,
+  "Creator": null,
+  "Author": null,
+  "Artist": null,
+  "Copyright": null,
+  "CreateDate": null,
+  "ModifyDate": null,
+  "Make": null,
+  "Model": null,
+  "XMPToolkit": null,
+  "CreatorTool": null
+}
+
+--- Downloading: https://www.dunkindonuts.com/content/dam/dd/img/rebranding/homepage/DDPERKS ---
+  FAILED to download or empty
+
+Completed: 2026-04-14T07:26:12Z

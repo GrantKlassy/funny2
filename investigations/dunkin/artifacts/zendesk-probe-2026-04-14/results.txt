@@ -1,0 +1,33 @@
+=== PROBE 45: ZENDESK/SUPPORT PORTAL DISCOVERY ===
+Started: 2026-04-14T07:24:45Z
+
+=== ZENDESK CHECKS ===
+  dunkin.zendesk.com -> HTTP 403
+  dunkindonuts.zendesk.com -> HTTP 403
+  dunkin-donuts.zendesk.com -> HTTP 403
+  dunkinbrands.zendesk.com -> HTTP 403
+  inspirebrands.zendesk.com -> HTTP 403
+  inspire-brands.zendesk.com -> HTTP 403
+  arbys.zendesk.com -> HTTP 403
+  buffalowildwings.zendesk.com -> HTTP 403
+  bww.zendesk.com -> HTTP 403
+  sonicdrivein.zendesk.com -> HTTP 403
+  sonic.zendesk.com -> HTTP 403
+  jimmyjohns.zendesk.com -> HTTP 403
+  jimmy-johns.zendesk.com -> HTTP 403
+  baskinrobbins.zendesk.com -> HTTP 403
+  baskin-robbins.zendesk.com -> HTTP 403
+  inspire.zendesk.com -> HTTP 403
+  inspirepartners.zendesk.com -> HTTP 403
+  dunkinhelp.zendesk.com -> HTTP 403
+  dunkin-help.zendesk.com -> HTTP 403
+  dunkin-support.zendesk.com -> HTTP 403
+  dunkinsupport.zendesk.com -> HTTP 403
+  dunkinrewards.zendesk.com -> HTTP 403
+
+=== FRESHDESK CHECKS ===
+  sonic.freshdesk.com -> HTTP 302
+
+=== INTERCOM CHECKS ===
+
+Completed: 2026-04-14T07:25:03Z

@@ -1,0 +1,84 @@
+=== PROBE 51: JIMMY JOHNS DEEP PROBE ===
+Started: 2026-04-14T07:27:58Z
+
+=== WSUS (104.129.153.139) ===
+[Port sweep]
+  OPEN: 53
+
+[HTTPS cert]
+  No TLS on 443
+
+[HTTPS 8531 cert (WSUS SSL)]
+  No TLS on 8531
+
+[HTTP 8530 (WSUS)]
+
+=== RODC (104.129.153.144) ===
+[Port sweep]
+  OPEN: 53
+
+[LDAP banner (389)]
+00000000: 4e63 6174 3a20 436f 6e6e 6563 7469 6f6e  Ncat: Connection
+00000010: 2072 6566 7573 6564 2e0a                  refused..
+
+[LDAPS cert (636)]
+  No TLS on 636
+
+[HTTPS cert (443)]
+  No TLS on 443
+
+[Kerberos (88)]
+00000000: 4e63 6174 3a20 5449 4d45 4f55 542e 0a    Ncat: TIMEOUT..
+
+=== BEYONDTRUST PORTAL (jj-fortiems.jimmyjohns.com) ===
+[DNS resolve]
+104.129.153.189
+
+[HTTPS probe]
+
+=== REMOTESUPPORT (remotesupport.jimmyjohns.com -> jjf.bomgarcloud.com) ===
+[DNS resolve]
+jjf.bomgarcloud.com.
+jjf.bomgarcloud.com.
+
+[HTTPS probe]
+
+=== VPN (vpn.jimmyjohns.com) ===
+[DNS resolve]
+104.129.153.190
+
+[HTTPS probe]
+
+[HTTPS cert]
+  No TLS
+
+=== INTRANET ===
+[DNS]
+104.18.218.87
+104.18.221.87
+104.18.220.87
+104.18.219.87
+104.18.217.87
+
+[HTTPS]
+HTTP/2 301 
+date: Tue, 14 Apr 2026 07:29:31 GMT
+content-type: text/html
+content-length: 167
+location: https://services.jimmyjohns.com/pages/aspx/dashboard/
+cache-control: max-age=3600
+expires: Tue, 14 Apr 2026 08:29:31 GMT
+set-cookie: __cf_bm=eEfGxrafGFtMg3ks6jwOICuc9IxQRv5tq5Bkl6uBWgU-1776151771-1.0.1.1-su_IA8RJkyLpQxGaMQjkCsHeqGkmsmiNbGjR7j2MWP9Dz.VWxV1Hr5GfTAMTn4iQGPod55yYP3mWw5BY4AKMDB_jLjWyXaxvt0hw0M7nT9Y; path=/; expires=Tue, 14-Apr-26 07:59:31 GMT; domain=.jimmyjohns.com; HttpOnly; Secure; SameSite=None
+server: cloudflare
+cf-ray: 9ec0fffc0f8ef3e8-SJC
+
+HTTP/2 302 
+date: Tue, 14 Apr 2026 07:29:31 GMT
+content-type: text/html
+content-length: 143
+
+=== GUEST WIFI (192.168.7.250) ===
+[HTTP probe - will fail but documenting]
+HTTP 000  Expected: unreachable (RFC 1918)
+
+Completed: 2026-04-14T07:29:34Z

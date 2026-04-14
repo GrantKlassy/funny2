@@ -1,0 +1,22 @@
+HTTP/2 103 
+link: </brands/inspire/heart.gif>; as=image; rel=preload, </_next/static/css/8119c92762aac774.css>; as=style; rel=preload, </_next/static/css/99aeb4f531e09537.css>; as=style; rel=preload, </_next/static/css/b6bd4d502e31fa78.css>; as=style; rel=preload, </_next/static/css/05968bb29557f1c4.css>; as=style; rel=preload, </_next/static/css/f72f2b379db2a174.css>; as=style; rel=preload, </_next/static/css/8507cb92fa940c74.css>; as=style; rel=preload, </_next/static/css/b85a88203ca8bd1f.css>; as=style; rel=preload
+
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:36 GMT
+content-type: text/html; charset=utf-8
+cf-ray: 9ec012cfca5d2af7-SJC
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+link: </brands/inspire/heart.gif>; rel="preload"; as=image, </_next/static/css/8119c92762aac774.css>; rel="preload"; as=style, </_next/static/css/99aeb4f531e09537.css>; rel="preload"; as=style, </_next/static/css/b6bd4d502e31fa78.css>; rel="preload"; as=style, </_next/static/css/05968bb29557f1c4.css>; rel="preload"; as=style, </_next/static/css/f72f2b379db2a174.css>; rel="preload"; as=style, </_next/static/css/8507cb92fa940c74.css>; rel="preload"; as=style, </_next/static/css/b85a88203ca8bd1f.css>; rel="preload"; as=style
+referrer-policy: strict-origin-when-cross-origin
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=smRYmrjTWP9zsIESNF%2FOBn%2Fr%2F3u7il8Hm3of2n1qj40P%2FlCd91FwjncrVGgXU5NQWa%2FfTLEx%2BDMaVtYltjoHv%2FryYzzTiQQ%2BzyjXoMCzTHyGfAPHXe8JpdTfKZCpLwZvhx9LukXVkPtiBdUbYWwVOHeruyg%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+vary: Accept-Encoding
+cf-cache-status: DYNAMIC
+set-cookie: __cf_bm=AeL3RRwCCiiQqHk5.wloLm9hCsWtw7kwqo_4fDtdZ3w-1776142056-1.0.1.1-ct6.uCSsXMJzRqT.D0VKA9JTnFEU1l5BY_UsGi3vJc7BSZs4qzv8pOm4ijYz.UDSnvhAwBjLHlFVQnPXnRCOwpZ3MnnOZVCJG0vIE3RgGX0; path=/; expires=Tue, 14-Apr-26 05:17:36 GMT; domain=.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+set-cookie: _cfuvid=FpfTg.BbjzfAHtNji1rN_B.w06khKRx4UGmip2m6jHk-1776142056979-0.0.1.1-604800000; path=/; domain=.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+server: cloudflare
+alt-svc: h3=":443"; ma=86400
+

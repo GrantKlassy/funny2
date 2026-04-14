@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Tue, 14 Apr 2026 04:47:34 GMT
+Server: Microsoft-IIS/10.0
+Set-Cookie: ARRAffinity=bca044f3f2a7c22ab74af05e7a624a676b298b912833eb44ae7db863d885fa4a;Path=/;HttpOnly;Secure;Domain=dmbt.sonicdrivein.com
+Set-Cookie: ARRAffinitySameSite=bca044f3f2a7c22ab74af05e7a624a676b298b912833eb44ae7db863d885fa4a;Path=/;HttpOnly;SameSite=None;Secure;Domain=dmbt.sonicdrivein.com
+Transfer-Encoding: chunked
+Request-Context: appId=cid-v1:c18291ab-e6d3-41a1-9694-0f05fb67df73
+X-Powered-By: ASP.NET
+

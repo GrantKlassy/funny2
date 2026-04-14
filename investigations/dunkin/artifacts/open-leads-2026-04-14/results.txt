@@ -1,0 +1,172 @@
+=== PROBE 49: OPEN LEAD FOLLOW-UPS ===
+Started: 2026-04-14T07:26:40Z
+
+=== 49a: SWI MYSTERY - HTTP METHOD & HEADER PERMUTATIONS ===
+[OPTIONS /]
+HTTP/1.1 404 Not Found
+Content-Type: text/html; charset=utf-8
+Content-Length: 728
+Server: nginx
+Status: 404 Not Found
+X-Request-Id: 01a2e6a3-82be-4aa9-b774-c5a15e057f7d
+X-Runtime: 0.002444
+Date: Tue, 14 Apr 2026 07:26:40 GMT
+Connection: keep-alive
+X-N: S
+
+
+[POST / with JSON]
+HTTP/1.1 404 Not Found
+Content-Type: application/json; charset=utf-8
+Content-Length: 36
+Server: nginx
+Status: 404 Not Found
+X-Request-Id: 14185cc9-9b1d-4290-b6c4-ce59a63f1848
+X-Runtime: 0.002110
+Date: Tue, 14 Apr 2026 07:26:40 GMT
+Connection: close
+
+
+[GET / with XHR header]
+HTTP/1.1 404 Not Found
+Content-Type: application/json; charset=utf-8
+Content-Length: 36
+Server: nginx
+Status: 404 Not Found
+X-Request-Id: fd9ff3ff-7d3b-4aa4-a972-c3ab8d2d27b2
+X-Runtime: 0.002823
+Date: Tue, 14 Apr 2026 07:26:40 GMT
+Connection: keep-alive
+
+
+[GET / with Authorization header]
+HTTP/1.1 404 Not Found
+Content-Type: text/html; charset=utf-8
+Content-Length: 728
+Server: nginx
+Status: 404 Not Found
+X-Request-Id: 70dba427-7e0b-43e1-8fba-0c548a7eab59
+X-Runtime: 0.002335
+Date: Tue, 14 Apr 2026 07:26:40 GMT
+Connection: keep-alive
+X-N: S
+
+
+[Rails-specific paths]
+  /rails/info/routes -> 404
+  /rails/info/properties -> 404
+  /rails/info -> 404
+  /cable -> 404
+  /up -> 404
+  /rails/health -> 404
+  /rails/mailers -> 404
+  /sidekiq -> 404
+  /resque -> 404
+  /delayed_job -> 404
+  /active_storage/blobs -> 404
+  /active_storage/representations -> 404
+  /.well-known/health-check -> 404
+  /graphql -> 404
+  /graphiql -> 404
+  /playground -> 404
+
+[POST to common API patterns with JSON]
+  POST / -> 404
+  POST /api -> 404
+  POST /api/v1 -> 404
+  POST /v1 -> 404
+  POST /graphql -> 404
+  POST /query -> 404
+  POST /search -> 404
+  POST /webhook -> 404
+  POST /events -> 404
+
+[HEAD requests]
+  HEAD / -> 404
+  HEAD /health -> 404
+  HEAD /ping -> 404
+  HEAD /status -> 404
+
+===================================
+
+=== 49b: TERRY URSINO - CT LOG RETRY ===
+[crt.sh - direct name search]
+[]
+
+[crt.sh - wildcard ursino]
+
+[crt.sh - terry.ursino@dunkinbrands.com in HTML]
+
+[crt.sh - dunkinbrands.com identity search]
+
+===================================
+
+=== 49c: THEOREM LP CERT EXPIRY CHECK ===
+[Current cert on wsapi.dunkinbrands.com]
+subject=CN=api-test.theoremlp.com
+issuer=C=US, O=Let's Encrypt, CN=R13
+notBefore=Jan 21 04:32:56 2026 GMT
+notAfter=Apr 21 04:32:55 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:api-test.theoremlp.com
+
+[Current cert on api-test.theoremlp.com]
+subject=CN=api-test.theoremlp.com
+issuer=C=US, O=Let's Encrypt, CN=R13
+notBefore=Jan 21 04:32:56 2026 GMT
+notAfter=Apr 21 04:32:55 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:api-test.theoremlp.com
+
+[HTTP response from wsapi.dunkinbrands.com]
+HTTP/2 404 
+content-length: 9
+content-type: text/plain
+x-theorem-auth: nil
+x-theorem-platform: nil
+date: Tue, 14 Apr 2026 07:27:47 GMT
+server: envoy
+
+
+===================================
+
+=== 49d: BAM SERVICE DEEP PROBE ===
+[BAM paths]
+  / -> 302|https://sso.inspirepartners.net/app/inspirepartners_bam_1/exk938s08y7yt4V9f697/sso/saml
+  /api -> 404|
+  /health -> 404|
+  /login -> 404|
+  /bam -> 404|
+  /dashboard -> 404|
+  /admin -> 404|
+  /status -> 404|
+  /version -> 404|
+  /.well-known/openid-configuration -> 404|
+  /saml/metadata -> 404|
+  /auth -> 404|
+  /oauth -> 404|
+
+[BAM cert details]
+subject=CN=*.dunkinbrands.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M04
+notBefore=Feb 24 00:00:00 2026 GMT
+notAfter=Sep  9 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:*.dunkinbrands.com, DNS:*.corporateportal.dunkinbrands.com, DNS:*.franchisee.dunkinbrands.com
+
+[BAM on related subdomains]
+  bam.corporateportal.dunkinbrands.com:
+    DNS: 
+  bam.franchisee.dunkinbrands.com:
+    DNS: 
+
+[Okta org probe - inspire.okta.com]
+{
+  "issuer": "https://inspire.okta.com",
+  "authorization_endpoint": "https://inspire.okta.com/oauth2/v1/authorize",
+  "token_endpoint": "https://inspire.okta.com/oauth2/v1/token",
+  "userinfo_endpoint": "https://inspire.okta.com/oauth2/v1/userinfo",
+  "end_session_endpoint": "https://inspire.okta.com/oauth2/v1/logout"
+}
+
+Completed: 2026-04-14T07:27:54Z

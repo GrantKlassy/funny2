@@ -1,0 +1,13 @@
+HTTP/1.1 303 See Other
+Date: Tue, 14 Apr 2026 04:47:38 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 359
+Connection: keep-alive
+Set-Cookie: ApplicationGatewayAffinityCORS=3df63867cf253355ab4e4fb20f9cd4ea; Path=/; SameSite=None; Secure
+Set-Cookie: ApplicationGatewayAffinity=3df63867cf253355ab4e4fb20f9cd4ea; Path=/
+X-Content-Type-Options: nosniff
+Location: http://suf.gateway.sonicdrivein.com/en-US/
+Vary: Accept-Language
+X-Frame-Options: SAMEORIGIN
+Server: Splunkd
+

@@ -1,0 +1,23 @@
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:30 GMT
+content-type: text/html; charset=utf-8
+content-length: 250405
+access-control-allow-origin: https://careers.sonicdrivein.com
+access-control-allow-credentials: true
+access-control-expose-headers: Version, Content-Type, Content-disposition
+requestid: 3546d916795b83b97694889a13eb9fe7
+set-cookie: ct=s%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlZTYyMmJmNy05MjZiLTQyZTQtOTRkMi05YmU2YTAxMDZjOGYiLCJpYXQiOjE3NzYxNDIwNTAsImV4cCI6MTc3NjMxNDg1MH0.OZl2WGlqKXLhR_0adIMwU5Ijh4czOtIqTMcLUPeHHs0.5kSL5j2BRDkl3ai3BCZd1EiVnSg53xQVkdAqal6zr%2FM; Path=/; HttpOnly; Secure; SameSite=Lax
+access-control-allow-methods: GET, POST, OPTIONS
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+x-dns-prefetch-control: on
+x-download-options: noopen
+cache-control: no-cache
+feature-policy: geolocation *
+x-frame-options: sameorigin
+referrer-policy: strict-origin-when-cross-origin
+expect-ct: max-age=300
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy: img-src 'self' data: www.google.com www.google.ca dy5f5j6i37p1a.cloudfront.net olivia.paradox.ai dokumfe7mps0i.cloudfront.net i.ytimg.com *.google-analytics.com www.googletagmanager.com *.recruiting.com *.paradox.ai d25zu39ynyitwy.cloudfront.net i.vimeocdn.com d2ir6gu3mx7cqv.cloudfront.net www.facebook.com *.imagekit.io; font-src d2ir6gu3mx7cqv.cloudfront.net dokumfe7mps0i.cloudfront.net maxcdn.bootstrapcdn.com fonts.gstatic.com 'self' *.paradox.ai d25zu39ynyitwy.cloudfront.net d2ir6gu3mx7cqv.cloudfront.net olivia.paradox.ai; frame-src 'self' *.recruiting.com www.youtube.com www.google.com www.youtube-nocookie.com player.vimeo.com jsv3.recruitics.com td.doubleclick.net www.googletagmanager.com app.careerarc.com dokumfe7mps0i.cloudfront.net olivia.paradox.ai recaptcha.google.com; style-src 'self' https: dy5f5j6i37p1a.cloudfront.net dokumfe7mps0i.cloudfront.net 'unsafe-inline' *.paradox.ai olivia.paradox.ai; script-src 'self' *.googleapis.com www.google.com d2ir6gu3mx7cqv.cloudfront.net www.youtube.com www.google.com player.vimeo.com *.google-analytics.com *.googletagmanager.com www.gstatic.com *.pardot.com dokumfe7mps0i.cloudfront.net www.google.com 'unsafe-inline' 'unsafe-eval' *.paradox.ai d25zu39ynyitwy.cloudfront.net global.ketchcdn.com cdn.ketchjs.com jsv3.recruitics.com connect.facebook.net analytics.tiktok.com googleads.g.doubleclick.net olivia.paradox.ai; default-src 'self' www.facebook.com *.google-analytics.com www.google.com stats.g.doubleclick.net olivia.paradox.ai dy5f5j6i37p1a.cloudfront.net dokumfe7mps0i.cloudfront.net o1000039.ingest.sentry.io wss://ws.paradox.ai *.paradox.ai d25zu39ynyitwy.cloudfront.net d2ir6gu3mx7cqv.cloudfront.net olivia.paradox.ai; form-action 'self';  connect-src wss://*.stg.paradox.ai wss://*.paradox.ai careers.sonicdrivein.com *.paradox.ai www.google.com www.google-analytics.com analytics-ipv6.tiktokw.us d25zu39ynyitwy.cloudfront.net analytics.tiktok.com global.ketchcdn.com www.google.com dokumfe7mps0i.cloudfront.net olivia.paradox.ai; object-src 'none'; frame-ancestors 'none';
+etag: W/"3d225-TrC4rQNy8oqPJkPqpBylJSZsRxE"
+

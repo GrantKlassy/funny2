@@ -431,3 +431,488 @@ Sonic: 228 live, 43 dead
   totzone.sonicdrivein.com → 000
   training.sonicdrivein.com → 000
   tsg.sonicdrivein.com → 000
+  unity.sonicdrivein.com → 000
+  vdr-2016.sonicdrivein.com → 000
+  vdr-2018.sonicdrivein.com → 000
+  vdr-2019.sonicdrivein.com → 000
+  videoredirect.sonicdrivein.com → 200
+  view.email.sonicdrivein.com → 302
+  view.sonicdrivein.com → 000
+  view7.sonicdrivein.com → 000
+  viewtemp.sonicdrivein.com → 000
+  vma.sonicdrivein.com → 000
+  vpn.sonicdrivein.com → 000
+  vsat.sonicdrivein.com → 000
+  web-dev.sonicdrivein.com → 000
+  web.sonicdrivein.com → 000
+  webapi.sonicdrivein.com → 000
+  webapp-preprod.sonicdrivein.com → 404
+  webapp.sonicdrivein.com → 502
+  webtrends.sonicdrivein.com → 000
+  wiki.sonicdrivein.com → 000
+  www-d.sonicdrivein.com → 000
+  www-new.sonicdrivein.com → 000
+  www-new1.sonicdrivein.com → 000
+  www-new2.sonicdrivein.com → 000
+  www-new3.sonicdrivein.com → 000
+  www-s.sonicdrivein.com → 000
+  www-test.sonicdrivein.com → 000
+  www.foundation.sonicdrivein.com → 200
+  www.jobs.sonicdrivein.com → 000
+  www.mobile.sonicdrivein.com → 000
+  www.sonicdrivein.com → 200
+  www2.sonicdrivein.com → 000
+  xmpp.sonicdrivein.com → 000
+
+--- SONIC DEEP PROBE (interesting hits) ---
+
+[accounts.sonicdrivein.com] Status: 200
+  Body: 2312 bytes
+HTTP/1.1 200 OK
+Date: Tue, 14 Apr 2026 04:47:29 GMT
+Content-Type: text/html
+Content-Length: 2312
+Last-Modified: Tue, 30 May 2017 22:52:44 GMT
+  <title>Sonic Drive-In</title>
+subject=C=US, ST=OK, L=Oklahoma City, O=America's Drive-In Brand Properties LLC, CN=*.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert SHA2 High Assurance Server CA
+
+[b2bftp.sonicdrivein.com] Status: 200
+  Body: 14760 bytes
+HTTP/1.0 200 OK
+Server: Serv-U/15.5.4
+Date: Tue, 14 Apr 2026 04:47:29 GMT
+Accept-Encoding: deflate
+X-Permitted-Cross-Domain-Policies: none
+  <title>WebClient</title>
+subject=C=US, ST=Oklahoma, L=Oklahoma City, O=America's Drive-In Brand Properties LLC, CN=*.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert TLS RSA SHA256 2020 CA1
+
+[careers.sonicdrivein.com] Status: 200
+  Body: 250405 bytes
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:30 GMT
+content-type: text/html; charset=utf-8
+content-length: 250405
+access-control-allow-origin: https://careers.sonicdrivein.com
+  <title>Careers at SONIC | Let’s Roll</title>
+subject=CN=careers.sonicdrivein.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M02
+
+[chat.sonicdrivein.com] Status: 200
+  Body: 50641 bytes
+HTTP/1.1 200 OK
+Server: snow_adc
+Date: Tue, 14 Apr 2026 04:47:31 GMT
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+  <title>ServiceNow</title>
+subject=CN=chat.sonicdrivein.com
+issuer=C=US, O=Let's Encrypt, CN=R13
+
+[chatdev.sonicdrivein.com] Status: 200
+  Body: 41397 bytes
+HTTP/1.1 200 OK
+Server: snow_adc
+Date: Tue, 14 Apr 2026 04:47:32 GMT
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+  <title>ServiceNow</title>
+subject=CN=chatdev.sonicdrivein.com
+issuer=C=US, O=Let's Encrypt, CN=R13
+
+[chattest.sonicdrivein.com] Status: 200
+  Body: 40779 bytes
+HTTP/1.1 200 OK
+Server: snow_adc
+Date: Tue, 14 Apr 2026 04:47:33 GMT
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+  <title>ServiceNow</title>
+subject=CN=chattest.sonicdrivein.com
+issuer=C=US, O=Let's Encrypt, CN=R12
+
+[cloud.email.sonicdrivein.com] Status: 500
+  Body: 17 bytes
+HTTP/1.1 500 Internal Server Error
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Date: Tue, 14 Apr 2026 04:47:33 GMT
+Connection: close
+subject=C=US, ST=California, L=San Francisco, O=Salesforce, Inc., CN=cloud.email.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+
+[dmb.sonicdrivein.com] Status: 200
+  Body: 3269 bytes
+HTTP/1.1 200 OK
+Content-Length: 3269
+Content-Type: text/html
+Date: Tue, 14 Apr 2026 04:47:34 GMT
+Server: Microsoft-IIS/10.0
+  <title>Microsoft Azure App Service - Welcome</title>
+subject=CN=dmb.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=GeoTrust TLS RSA CA G1
+
+[dmbt.sonicdrivein.com] Status: 200
+  Body: 1303 bytes
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Tue, 14 Apr 2026 04:47:34 GMT
+Server: Microsoft-IIS/10.0
+Set-Cookie: ARRAffinity=bca044f3f2a7c22ab74af05e7a624a676b298b912833eb44ae7db863d885fa4a;Path=/;HttpOnly;Secure;Domain=dmbt.sonicdrivein.com
+  <title>Welcome to the Digital Menu Board API</title>
+subject=C=US, ST=Georgia, L=Atlanta, O=Inspire Brands, Inc, CN=dmbt.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+
+[ff.sonicdrivein.com] Status: 200
+  Body: 3601 bytes
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:35 GMT
+content-type: text/html; charset=utf-8
+content-length: 3601
+cf-ray: 9ec012c8991a9e53-SJC
+  <title>SONIC — Friends & Family</title>
+subject=CN=ff.sonicdrivein.com
+issuer=C=US, O=Google Trust Services, CN=WE1
+
+[filetransfer.sonicdrivein.com] Status: 200
+  Body: 4792 bytes
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:36 GMT
+content-type: text/html; charset=utf-8
+content-length: 4792
+x-frame-options: SAMEORIGIN
+  <title>Home | Sonic File Transfer</title>
+subject=C=US, ST=Georgia, L=Atlanta, O=Inspire Brands, Inc, CN=*.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+
+[legacy.sonicdrivein.com] Status: 200
+  Body: 1516641 bytes
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:36 GMT
+content-type: text/html; charset=utf-8
+cf-ray: 9ec012ce2bab679d-SJC
+access-control-allow-origin: *
+  <title>Sonic | Home</title>
+subject=CN=legacy.sonicdrivein.com
+issuer=C=US, O=Google Trust Services, CN=WE1
+
+[mbdp.sonicdrivein.com] Status: 200
+  Body: 1007434 bytes
+HTTP/2 103 
+link: </brands/inspire/heart.gif>; as=image; rel=preload, </_next/static/css/8119c92762aac774.css>; as=style; rel=preload, </_next/static/css/99aeb4f531e09537.css>; as=style; rel=preload, </_next/static/css/b6bd4d502e31fa78.css>; as=style; rel=preload, </_next/static/css/05968bb29557f1c4.css>; as=style; rel=preload, </_next/static/css/f72f2b379db2a174.css>; as=style; rel=preload, </_next/static/css/8507cb92fa940c74.css>; as=style; rel=preload, </_next/static/css/b85a88203ca8bd1f.css>; as=style; rel=preload
+
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:36 GMT
+  <title>Sonic | Home</title>
+subject=CN=mbdp.sonicdrivein.com
+issuer=C=US, O=Google Trust Services, CN=WE1
+
+[mi.sonicdrivein.com] Status: 200
+  Body: 79 bytes
+HTTP/2 200 
+content-type: text/html
+content-length: 79
+x-uuid: 6cef852e-fc8e-43e5-bb96-489b6f0e8410
+date: Tue, 14 Apr 2026 04:47:37 GMT
+  <title>Movable Ink Domain</title>
+subject=CN=mi.sonicdrivein.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M03
+
+[offers.sonicdrivein.com] Status: 200
+  Body: 6 bytes
+HTTP/1.1 200 OK
+Date: Tue, 14 Apr 2026 04:47:37 GMT
+Content-Type: text/html
+Content-Length: 6
+Last-Modified: Thu, 09 Jun 2016 16:08:59 GMT
+subject=C=US, ST=OK, L=Oklahoma City, O=America's Drive-In Brand Properties LLC, CN=*.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert SHA2 High Assurance Server CA
+
+[press.sonicdrivein.com] Status: 200
+  Body: 62026 bytes
+HTTP/2 200 
+server: nginx
+date: Tue, 14 Apr 2026 04:47:37 GMT
+content-type: text/html; charset=UTF-8
+content-length: 62026
+  <title>Press &#8211; Sonic | America&#039;s Drive-In</title>
+subject=CN=press.sonicdrivein.com
+issuer=C=US, O=Let's Encrypt, CN=R13
+
+[services.sonicdrivein.com] Status: 200
+  Body: 47 bytes
+HTTP/1.1 200 OK
+Date: Tue, 14 Apr 2026 04:47:38 GMT
+Content-Type: text/html
+Content-Length: 47
+Connection: keep-alive
+subject=C=US, ST=Georgia, L=Atlanta, O=Inspire Brands, Inc, CN=*.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+
+[staging.sonicdrivein.com] Status: 200
+  Body: 5800 bytes
+HTTP/2 200 
+vary: Accept-Encoding
+content-type: text/html;charset=utf-8
+x-cloud-trace-context: c6c6c77dbe1b2bddd327678a0c5fc76a;o=1
+date: Tue, 14 Apr 2026 04:47:38 GMT
+subject=C=US, ST=Oklahoma, L=Oklahoma City, O=America's Drive-In Brand Properties LLC, CN=*.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert TLS RSA SHA256 2020 CA1
+
+[suf.gateway.sonicdrivein.com] Status: 303
+  Body: 359 bytes
+HTTP/1.1 303 See Other
+Date: Tue, 14 Apr 2026 04:47:38 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 359
+Connection: keep-alive
+  <title>303 See Other</title>
+subject=C=US, ST=Georgia, L=Sandy Springs, O=Inspire Brands, Inc., CN=suf.gateway.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+
+[videoredirect.sonicdrivein.com] Status: 200
+  Body: 703 bytes
+HTTP/1.1 200 OK
+Date: Tue, 14 Apr 2026 04:47:39 GMT
+Content-Type: text/html
+Content-Length: 703
+Connection: keep-alive
+  <title>IIS Windows Server</title>
+subject=C=US, ST=Georgia, L=Atlanta, O=Inspire Brands, Inc, CN=*.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+
+[webapp.sonicdrivein.com] Status: 502
+  Body: 183 bytes
+HTTP/1.1 502 Bad Gateway
+Server: Microsoft-Azure-Application-Gateway/v2
+Date: Tue, 14 Apr 2026 04:47:39 GMT
+Content-Type: text/html
+Content-Length: 183
+  <title>502 Bad Gateway</title>
+subject=C=US, ST=Georgia, L=Atlanta, O=Inspire Brands, Inc, CN=*.sonicdrivein.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+
+[www.foundation.sonicdrivein.com] Status: 200
+  Body: 893331 bytes
+HTTP/2 200 
+accept-ranges: bytes
+age: 105028
+content-type: text/html;charset=utf-8
+date: Sun, 12 Apr 2026 23:36:32 GMT
+  <title>SONIC Foundation</title>
+subject=CN=www.foundation.sonicdrivein.com
+issuer=C=US, O=Let's Encrypt, CN=R13
+
+[www.sonicdrivein.com] Status: 200
+  Body: 1007434 bytes
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:41 GMT
+content-type: text/html; charset=utf-8
+cf-ray: 9ec012e97ab64fd0-SJC
+access-control-allow-origin: *
+  <title>Sonic | Home</title>
+subject=CN=www.sonicdrivein.com
+issuer=C=US, O=Google Trust Services, CN=WE1
+
+========================================
+--- ARBY'S DNS SWEEP ---
+LIVE: AutoDiscover.arbys.com  A: autodiscover.outlook.com.,autodiscover.outlook.cloud.microsoft.,acdcatm.autodiscover.mira.tm.svc.cloud.microsoft.  CNAME: autodiscover.outlook.com.
+LIVE: a.api.arbys.com  A: 104.18.43.71,172.64.144.185  CNAME: none
+LIVE: account.arbys.com  A: 216.52.186.204  CNAME: none
+LIVE: activesync.wendysarbys.com  A: 38.180.235.143  CNAME: none
+LIVE: adfs.arbys.com  A: 191.237.31.219  CNAME: none
+LIVE: agency.arbys.com  A: 98.129.129.80  CNAME: none
+LIVE: api-ss.arbys.com  A: 104.18.43.71,172.64.144.185  CNAME: none
+LIVE: api.arbys.com  A: 172.64.144.185,104.18.43.71  CNAME: none
+LIVE: api.locations.arbys.com  A: api.locations.arbys.com.prod.rioseo.com.  CNAME: api.locations.arbys.com.prod.rioseo.com.
+LIVE: arbys.com  A: 104.18.43.71,172.64.144.185  CNAME: none
+LIVE: archive.arbys.com  A: 98.129.129.80  CNAME: none
+LIVE: argbusinesscenter.arbys.com  A: 66.151.187.19  CNAME: none
+LIVE: argmobile.arbys.com  A: 66.151.187.19  CNAME: none
+LIVE: asfm.arbys.com  A: 208.88.165.36  CNAME: none
+LIVE: assets.locations.arbys.com  A: assets.locations.arbys.com.prod.rioseo.com.  CNAME: assets.locations.arbys.com.prod.rioseo.com.
+LIVE: autodiscover.arbys.com  A: autodiscover.outlook.com.,autodiscover.outlook.cloud.microsoft.,acdcatm.autodiscover.mira.tm.svc.cloud.microsoft.  CNAME: autodiscover.outlook.com.
+LIVE: autodiscover.wendysarbys.com  A: 38.180.235.143  CNAME: none
+LIVE: blog.arbys.com  A: 50.57.2.116  CNAME: none
+LIVE: careers.arbys.com  A: careers-arbys-com.sites.paradox.ai.,54.89.118.22,52.70.21.157  CNAME: careers-arbys-com.sites.paradox.ai.
+LIVE: cds.arbys.com  A: 172.64.144.185,104.18.43.71  CNAME: none
+LIVE: chat.arbys.com  A: inspirecustomer.service-now.com.,148.139.177.75  CNAME: inspirecustomer.service-now.com.
+LIVE: chatdev.arbys.com  A: inspirecustomerdev.service-now.com.,148.139.161.75  CNAME: inspirecustomerdev.service-now.com.
+LIVE: chattest.arbys.com  A: inspirecustomertest.service-now.com.,148.139.177.75  CNAME: inspirecustomertest.service-now.com.
+LIVE: click.emails.arbys.com  A: 13.111.241.210  CNAME: none
+LIVE: cloud.emails.arbys.com  A: 128.245.16.48  CNAME: none
+LIVE: content.arbys.com  A: 172.64.144.185,104.18.43.71  CNAME: none
+LIVE: cor.arbys.com  A: 208.88.165.19  CNAME: none
+LIVE: coupon.arbys.com  A: 66.216.109.254  CNAME: none
+LIVE: directaccess.arbys.com  A: 208.88.165.28  CNAME: none
+LIVE: ecatalog.arbys.com  A: 208.10.201.247  CNAME: none
+LIVE: ecatalogsso.arbys.com  A: 208.10.201.248  CNAME: none
+LIVE: ecatsso.arbys.com  A: 208.88.165.41  CNAME: none
+LIVE: email.arbys.com  A: 208.88.165.34  CNAME: none
+LIVE: emails.arbys.com  A: 13.111.18.27  CNAME: none
+LIVE: error.arbys.com  A: 172.64.144.185,104.18.43.71  CNAME: none
+LIVE: facebook.arbys.com  A: facebook.arbys.com.pub.vitrue.com.,srm-emcee.us2.cloud.oracle.com.,160.34.0.153  CNAME: facebook.arbys.com.pub.vitrue.com.
+LIVE: ff.arbys.com  A: 172.64.144.185,104.18.43.71  CNAME: none
+LIVE: findev.arbys.com  A: 208.10.201.232  CNAME: none
+LIVE: flowcharts.arbys.com  A: 52.226.251.26  CNAME: none
+LIVE: foundation.arbys.com  A: 35.203.134.245  CNAME: none
+LIVE: franchiseereporting.arbys.com  A: 208.88.165.20  CNAME: none
+LIVE: franchiseereportingdev.arbys.com  A: 208.88.165.21  CNAME: none
+LIVE: ftp.arbys.com  A: 216.87.240.146  CNAME: none
+LIVE: ftp1.arbys.com  A: 208.88.165.24  CNAME: none
+LIVE: honkytonk.arbys.com  A: 209.235.212.164  CNAME: none
+LIVE: image.emails.arbys.com  A: tl3h8v5lrrts8ngszslttcxbyrvq.image-sap.sfmc-content.com.,d33rfzh3b1oeyz.cloudfront.net.,99.84.215.82  CNAME: tl3h8v5lrrts8ngszslttcxbyrvq.image-sap.sfmc-content.com.
+LIVE: iog.arbys.com  A: 208.88.165.23  CNAME: none
+LIVE: legacy.arbys.com  A: 104.18.43.71,172.64.144.185  CNAME: none
+LIVE: locations.arbys.com  A: locations.arbys.com.prod.rioseo.com.  CNAME: locations.arbys.com.prod.rioseo.com.
+LIVE: lyncdiscover.arbys.com  A: webdir.online.lync.com.  CNAME: webdir.online.lync.com.
+LIVE: mail.wendysarbys.com  A: 38.180.235.143  CNAME: none
+LIVE: maps.locations.arbys.com  A: maps.locations.arbys.com.prod.rioseo.com.  CNAME: maps.locations.arbys.com.prod.rioseo.com.
+LIVE: mbdp.arbys.com  A: 104.18.43.71,172.64.144.185  CNAME: none
+LIVE: meatcraftedinsights.arbys.com  A: 52.167.228.59  CNAME: none
+LIVE: menu.arbys.com  A: 172.64.144.185,104.18.43.71  CNAME: none
+LIVE: mft.arbys.com  A: 192.237.147.167  CNAME: none
+LIVE: mi.arbys.com  A: d2wxbc2sdhmp3g.cloudfront.net.,99.84.215.34,99.84.215.82  CNAME: d2wxbc2sdhmp3g.cloudfront.net.
+LIVE: msoid.arbys.com  A: clientconfig.microsoftonline-p.net.,a.privatelink.msidentity.com.,prda.aadg.msidentity.com.  CNAME: clientconfig.microsoftonline-p.net.
+LIVE: mta.emails.arbys.com  A: 13.111.143.43  CNAME: none
+LIVE: o302.ptr3254.jobalerts.arbys.com  A: 149.72.213.203  CNAME: none
+LIVE: o303.ptr9174.careeralerts.arbys.com  A: 149.72.138.13  CNAME: none
+LIVE: odata.arbys.com  A: 208.88.165.14  CNAME: none
+LIVE: one.arbys.com  A: 208.10.201.231  CNAME: none
+LIVE: order.arbys.com  A: 172.64.144.185,104.18.43.71  CNAME: none
+LIVE: outboundmail2.arbys.com  A: 208.88.165.30  CNAME: none
+LIVE: owa.arbys.com  A: 208.10.201.227  CNAME: none
+LIVE: pages.emails.arbys.com  A: pages.virt.s10.exacttarget.com.,13.111.18.25  CNAME: pages.virt.s10.exacttarget.com.
+LIVE: pop.arbys.com  A: 208.88.165.30  CNAME: none
+LIVE: press.arbys.com  A: 35.203.134.245  CNAME: none
+LIVE: prod.redesign.arbys.com  A: 209.114.51.77  CNAME: none
+LIVE: rac.arbys.com  A: 208.88.165.7  CNAME: none
+LIVE: rstatic.locations.arbys.com  A: rstatic.locations.arbys.com.prod.rioseo.com.  CNAME: rstatic.locations.arbys.com.prod.rioseo.com.
+LIVE: salesreporting.arbys.com  A: 207.97.225.153  CNAME: none
+LIVE: sip.arbys.com  A: sipdir.online.lync.com.  CNAME: sipdir.online.lync.com.
+LIVE: smtp.arbys.com  A: 208.10.201.234  CNAME: none
+LIVE: social.arbys.com  A: social.arbys.com.pub.vitrue.com.,srm-emcee.us2.cloud.oracle.com.,160.34.0.153  CNAME: social.arbys.com.pub.vitrue.com.
+LIVE: stage.arbys.com  A: 66.216.109.142  CNAME: none
+LIVE: stage.cds.arbys.com  A: 166.78.34.176  CNAME: none
+LIVE: stage.coupon.arbys.com  A: 166.78.143.32  CNAME: none
+LIVE: stage.redesign.arbys.com  A: 72.32.28.77  CNAME: none
+LIVE: stores.arbys.com  A: 208.88.165.13  CNAME: none
+LIVE: tableau.arbys.com  A: 208.88.165.29  CNAME: none
+LIVE: tableaupub.arbys.com  A: 52.167.228.59  CNAME: none
+LIVE: tabreporting.arbys.com  A: 52.179.168.222  CNAME: none
+LIVE: testsalesreporting.arbys.com  A: 161.47.143.136  CNAME: none
+LIVE: uat.arbys.com  A: 50.57.2.117  CNAME: none
+LIVE: uat.cds.arbys.com  A: 166.78.34.178  CNAME: none
+LIVE: uat.redesign.arbys.com  A: 209.114.51.77  CNAME: none
+LIVE: url.arbys.com  A: arbys_prod.bapi-04.moengage.com.,moe-caddy-nlb-dc36285df97ceea3.elb.us-east-2.amazonaws.com.,3.140.205.70  CNAME: arbys_prod.bapi-04.moengage.com.
+LIVE: view.emails.arbys.com  A: 13.111.243.211  CNAME: none
+LIVE: webmail.arbys.com  A: 208.10.201.227  CNAME: none
+LIVE: webmail1.arbys.com  A: 208.88.165.30  CNAME: none
+LIVE: www.arbys.com  A: 172.64.144.185,104.18.43.71  CNAME: none
+LIVE: www.coupon.arbys.com  A: 66.216.109.254  CNAME: none
+LIVE: www.foundation.arbys.com  A: foundation.arbys.com.,35.203.134.245  CNAME: foundation.arbys.com.
+LIVE: www.mail.wendysarbys.com  A: 38.180.235.143  CNAME: none
+
+Arby's: 96 live, 8 dead
+
+--- ARBY'S HTTP STATUS SWEEP ---
+  AutoDiscover.arbys.com → 000
+  a.api.arbys.com → 404
+  account.arbys.com → 000
+  activesync.wendysarbys.com → 000
+  adfs.arbys.com → 000
+  agency.arbys.com → 000
+  api-ss.arbys.com → 302
+  api.arbys.com → 404
+  api.locations.arbys.com → 000
+  arbys.com → 301
+  archive.arbys.com → 000
+  argbusinesscenter.arbys.com → 000
+  argmobile.arbys.com → 000
+  asfm.arbys.com → 000
+  assets.locations.arbys.com → 000
+  autodiscover.arbys.com → 000
+  autodiscover.wendysarbys.com → 000
+  blog.arbys.com → 000
+  careers.arbys.com → 200
+  cds.arbys.com → 000
+  chat.arbys.com → 200
+  chatdev.arbys.com → 200
+  chattest.arbys.com → 200
+  click.emails.arbys.com → 403
+  cloud.emails.arbys.com → 404
+  content.arbys.com → 404
+  cor.arbys.com → 000
+  coupon.arbys.com → 000
+  directaccess.arbys.com → 000
+  ecatalog.arbys.com → 000
+  ecatalogsso.arbys.com → 000
+  ecatsso.arbys.com → 000
+  email.arbys.com → 000
+  emails.arbys.com → 000
+  error.arbys.com → 404
+  facebook.arbys.com → 000
+  ff.arbys.com → 200
+  findev.arbys.com → 000
+  flowcharts.arbys.com → 200
+  foundation.arbys.com → 200
+  franchiseereporting.arbys.com → 000
+  franchiseereportingdev.arbys.com → 000
+  ftp.arbys.com → 000
+  ftp1.arbys.com → 000
+  honkytonk.arbys.com → 000
+  image.emails.arbys.com → 403
+  iog.arbys.com → 000
+  legacy.arbys.com → 200
+  locations.arbys.com → 000
+  lyncdiscover.arbys.com → 000
+  mail.wendysarbys.com → 000
+  maps.locations.arbys.com → 000
+  mbdp.arbys.com → 200
+  meatcraftedinsights.arbys.com → 000
+  menu.arbys.com → 404
+  mft.arbys.com → 000
+  mi.arbys.com → 200
+  msoid.arbys.com → 302
+  mta.emails.arbys.com → 000
+  o302.ptr3254.jobalerts.arbys.com → 000
+  o303.ptr9174.careeralerts.arbys.com → 000
+  odata.arbys.com → 000
+  one.arbys.com → 000
+  order.arbys.com → 301
+  outboundmail2.arbys.com → 000
+  owa.arbys.com → 000
+  pages.emails.arbys.com → 403
+  pop.arbys.com → 000
+  press.arbys.com → 200
+  prod.redesign.arbys.com → 000
+  rac.arbys.com → 000
+  rstatic.locations.arbys.com → 000
+  salesreporting.arbys.com → 200
+  sip.arbys.com → 000
+  smtp.arbys.com → 000
+  social.arbys.com → 000
+  stage.arbys.com → 000
+  stage.cds.arbys.com → 000
+  stage.coupon.arbys.com → 000
+  stage.redesign.arbys.com → 000
+  stores.arbys.com → 000
+  tableau.arbys.com → 000
+  tableaupub.arbys.com → 000
+  tabreporting.arbys.com → 000
+  testsalesreporting.arbys.com → 000
+  uat.arbys.com → 000
+  uat.cds.arbys.com → 000
+  uat.redesign.arbys.com → 000
+  url.arbys.com → 404
+  view.emails.arbys.com → 302
+  webmail.arbys.com → 000
+  webmail1.arbys.com → 000
+  www.arbys.com → 200
+  www.coupon.arbys.com → 000
+  www.foundation.arbys.com → 301
+  www.mail.wendysarbys.com → 000
+
+=== PROBE COMPLETE ===
+Date: 2026-04-14T04:57:26Z

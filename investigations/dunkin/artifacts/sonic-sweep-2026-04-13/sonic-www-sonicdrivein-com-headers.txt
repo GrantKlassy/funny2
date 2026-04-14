@@ -1,0 +1,21 @@
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:41 GMT
+content-type: text/html; charset=utf-8
+cf-ray: 9ec012e97ab64fd0-SJC
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+link: </brands/inspire/heart.gif>; rel="preload"; as=image, </_next/static/css/8119c92762aac774.css>; rel="preload"; as=style, </_next/static/css/99aeb4f531e09537.css>; rel="preload"; as=style, </_next/static/css/b6bd4d502e31fa78.css>; rel="preload"; as=style, </_next/static/css/05968bb29557f1c4.css>; rel="preload"; as=style, </_next/static/css/f72f2b379db2a174.css>; rel="preload"; as=style, </_next/static/css/8507cb92fa940c74.css>; rel="preload"; as=style, </_next/static/css/b85a88203ca8bd1f.css>; rel="preload"; as=style
+referrer-policy: strict-origin-when-cross-origin
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=1wkMLozcjTGTmjLwFSWnK59C%2F6ozFdcT%2Bit2bXsUr1D9Xo%2B7qT1qdqHrGVcI0NX9yDOeKQvuSZDV%2BcWBFwbeU%2FprFLU75d%2FRj3dgglruRX3J5fW1%2B8%2Fi7CWSPRRzv5nMxG22hPAZV6H3xyZgY2jwBmXQ2rA%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+vary: Accept-Encoding
+cf-cache-status: DYNAMIC
+set-cookie: __cf_bm=0I59qz7YMdVFqS7jAk5JHSZ5sfoXmi23l9Jgc7Zq37k-1776142061-1.0.1.1-lkFLFJ1in8XAgbxRl2noXRelBw1RJ3c3KXHHz0hX.RLGny0rNraqfK2g3HxUwDFjqumviBacYRw102m5h6Nn7U3.RMPgi8hpv7wvKXxV0oc; path=/; expires=Tue, 14-Apr-26 05:17:41 GMT; domain=.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+set-cookie: _cfuvid=7zj5qy1QBIqIR0VcTSilj38qJmuTWmaONFrmcH1VgNM-1776142061130-0.0.1.1-604800000; path=/; domain=.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+set-cookie: __cf_bm=OMLhdQyJNzvOp8zt6w34wXfve4iqHDVGCigfToSdHRE-1776142061-1.0.1.1-njD7vCKwbGS9c7yfKpLL17OVTUfBg.sP1DSOsVAgV4BGiPVR74ij_ZCJ0PfvQvdPsvCwUOF9Nz54zi7dKrGC3gdone6Gx3OCF8QAIa32gYE; path=/; expires=Tue, 14-Apr-26 05:17:41 GMT; domain=.www.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+set-cookie: __cflb=02DiuE5jjiMPJDG9adMaUoUtoRKZ4BpFEv771Dd9H1wVu; SameSite=Lax; path=/; expires=Tue, 21-Apr-26 04:47:41 GMT; HttpOnly
+strict-transport-security: max-age=31536000
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+server: cloudflare
+

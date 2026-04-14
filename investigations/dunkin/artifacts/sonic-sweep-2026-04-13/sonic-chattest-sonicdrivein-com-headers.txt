@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Server: snow_adc
+Date: Tue, 14 Apr 2026 04:47:33 GMT
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: BIGipServerpool_inspirecustomertest=b1864f11c0f5f37346233e19a13ad28b; httponly; secure; samesite=None; path=/
+Set-Cookie: JSESSIONID=9A23074F2DEB9977A7CB0C22EF7D004C; Path=/; Secure; HttpOnly; SameSite=None
+Server-Timing: sem_wait;dur=0, sesh_wait;dur=0
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: glide_user=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; Secure; HttpOnly; SameSite=None
+Set-Cookie: glide_user_session=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; Secure; HttpOnly; SameSite=None
+Set-Cookie: glide_user_route=glide.d82d004211e70715e936fae2f842539a; Max-Age=2147483647; Expires=Sun, 02-May-2094 08:01:39 GMT; Path=/; Secure; HttpOnly; SameSite=None
+Set-Cookie: glide_node_id_for_js=aacd68aa88a42ffb968c2d534d35b4552912f4f0b51a82cbac1ed673834b1f4b; Path=/; Secure; SameSite=None
+X-Is-Logged-In: false
+X-Transaction-ID: 245c1fac3390
+X-Content-Type-Options: nosniff
+Pragma: no-store,no-cache
+Cache-Control: no-cache,no-store,must-revalidate,max-age=-1
+Expires: 0
+Referrer-Policy: same-origin
+Strict-Transport-Security: max-age=63072000; includeSubDomains
+

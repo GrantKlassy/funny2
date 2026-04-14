@@ -1,0 +1,18 @@
+=== EXIF RE-RUN ON INTAKE IMAGES ===
+ls: cannot open directory '/intake/': Permission denied
+
+--- dunkin*.jpg ---
+
+=== BASKIN-ROBBINS GCS BUCKET IMAGE EXIF ===
+--- df/icecream/31day.jpg ---
+ExifTool Version Number         : 13.50
+
+--- df/promo/card.jpg ---
+ExifTool Version Number         : 13.50
+
+--- intro0.jpg ---
+ExifTool Version Number         : 13.50
+
+--- df/icecream/type/02_quater.jpg ---
+ExifTool Version Number         : 13.50
+

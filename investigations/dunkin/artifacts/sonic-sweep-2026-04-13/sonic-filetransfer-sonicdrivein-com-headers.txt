@@ -1,0 +1,22 @@
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:36 GMT
+content-type: text/html; charset=utf-8
+content-length: 4792
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+x-download-options: noopen
+x-permitted-cross-domain-policies: none
+referrer-policy: strict-origin-when-cross-origin
+cache-control: no-store
+expires: Mon, 01 Jan 1990 00:00:00 GMT
+x-forwarded-for: undefined
+link: </assets/application-3451271e01281fa43f696d5a95bf3ef707b11cc4dd66c0ce814ba0ca93dc48d6.css>; rel=preload; as=style; nopush,</i18n/en-aac8851938541a9fd202d2bec5377a96f32be41d5d94129bf6af8b2a55004bb9.js>; rel=preload; as=script; nopush,</assets/application-aacd00ad57a29b5821d4ab198218a4668ceb81f832109bff3b0bf77c34c59d83.js>; rel=preload; as=script; nopush
+vary: Accept
+content-security-policy: default-src 'none'; base-uri 'none'; form-action https://inspire.okta.com 'self'; frame-ancestors 'none'; img-src 'self'; script-src 'strict-dynamic' 'nonce-d5gp+73dJvPzM734Lz7g8w=='; style-src 'self' 'nonce-d5gp+73dJvPzM734Lz7g8w==' 'sha256-J7S43U7P4IyRwR2p1HK6h8nBUj1WYn8uQhCoaTy1GMU=' ; font-src 'self'; connect-src 'self';
+etag: W/"d9c5e2b21301d678e13beef1a025b898"
+set-cookie: _filetransfer_session=P8bKaRQJX0cupq%2FIiiD%2FfRXFuXR5gPYf%2FgSSeVOguayJ3MZ7dwM%2BrFBbtxJ4a9EzgYDUTjDEwqU%2FNVoDZwENC5%2FUhFj9pP2RfW136ZGOgxEVNaU6BwsNhM%2FsCNxc0TTGC2Vm7Hgmh4ci31VhJY%2F7Vgj0CfAHjj19o5bxB6U85m9BrromAgRQBUqCFGXFC9LojbYW5X8X52Ggp9ArHVyMvxfSEyDpW2KQ%2FMn9gscZ24FnmF3mNinh0k72v0tB0Fq5lyW%2BPjRO9QOkyeTa0hM5Dg3hPJ4i9cnUGNsON2k%3D--ToqY%2Bqj7EDFDgg7F--%2BTPNOhtGMWoNMp%2F5xEtYBw%3D%3D; path=/; secure; HttpOnly; SameSite=Lax
+x-request-id: 0df0246c-e429-4f73-9f16-62e05abfb8d3
+strict-transport-security: max-age=63072000
+x-robots-tag: noindex, nofollow
+permissions-policy: camera=(), fullscreen=(self), geolocation=(self), gyroscope=(), microphone=(), clipboard-read=(self), clipboard-write=(self)
+

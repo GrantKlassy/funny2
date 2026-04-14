@@ -1,0 +1,15 @@
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:35 GMT
+content-type: text/html; charset=utf-8
+content-length: 3601
+cf-ray: 9ec012c8991a9e53-SJC
+cache-control: no-store, max-age=0
+cache-control: private,no-cache
+set-cookie: __cf_bm=XozZ21bFlOG3rrH8yQL3qrVEQ3vFHL4DBRtYbrdXaWY-1776142055-1.0.1.1-ZtnDyaklMZzVpXLOXxiDcZP21879Y9_NvHUlanZQGPJF0Hq7lg6GsAgkxAi2uizJCLtDEzSWJbYBH0sVAqRA7WgVWNWHaROfqe3smNib0mc; path=/; expires=Tue, 14-Apr-26 05:17:35 GMT; domain=.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+set-cookie: _cfuvid=ACMu_XPeMEMsyKgOUwbkYl0LxmnHhFPjMz36JbrIHw8-1776142055794-0.0.1.1-604800000; path=/; domain=.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-robots-tag: noindex,nofollow
+server: cloudflare
+alt-svc: h3=":443"; ma=86400
+

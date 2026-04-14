@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Date: Tue, 14 Apr 2026 04:47:39 GMT
+Content-Type: text/html
+Content-Length: 703
+Connection: keep-alive
+Last-Modified: Tue, 13 Jan 2026 09:49:20 GMT
+Accept-Ranges: bytes
+ETag: "2f5c39e47184dc1:0"
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Methods: GET
+

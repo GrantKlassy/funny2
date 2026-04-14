@@ -1,0 +1,221 @@
+=== PROBE 50 (ADJUSTED): SONIC WEB SERVICES + INSPIRE DOMAINS ===
+Started: 2026-04-14T07:30:30Z
+
+=== SONIC FRESHDESK (sonic.freshdesk.com) ===
+[Following redirect]
+HTTP/2 302 
+date: Tue, 14 Apr 2026 07:30:30 GMT
+content-type: text/html; charset=utf-8
+location: https://sonic.freshdesk.com/support/home
+status: 302 Found
+cache-control: no-store
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+pragma: no-cache
+x-xss-protection: 1; mode=block
+x-request-id: 46377969-b511-9c92-bc8d-c91cb373ff8f
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+content-security-policy: default-src 'self'; connect-src 'self' *.freshconnect.io/ *.freshsales.io/ *.freshworks.com/ *.freshdesk.com/ *.freshworksapi.com/ *.qualtrics.com/ *.freshdeskusercontent.com/ *.freshdeskusercontent-euc.com/ *.freshdeskusercontent-in.com/ *.freshdeskusercontent-aus.com/ *.fconstage.io/ analytics.inlinemanual.com/__profile analytics.inlinemanual.com/__ptm backend.getbeamer.com/ heapanalytics.com/ d3h0owdjgzys62.cloudfront.net/ d2uy6ubiilaqku.cloudfront.net/assets/ dcdu85ocrj5q6.cloudfront.net/ dtdafz6i4gvv1.cloudfront.net/ d3r4aewxkdubw4.cloudfront.net/ d2lz1e868xzctj.cloudfront.net/ rum.haystack.es/freshdesk/analytics fonts.googleapis.com/ fonts.gstatic.com/ sentry.io/api/ wss://*.freshworksapi.com/ wss://*.freshdesk.com/ fg8vvsvnieiv3ej16jby.litix.io/ distillery.wistia.com/ pipedream.wistia.com/ freshworks.asknice.ly/ embedwistia-a.akamaihd.net/ embed-fastly.wistia.com/ maps.googleapis.com/ graph.microsoft.com/v1.0/ freshcaller-attachments.s3.amazonaws.com/production/ euc-freshcaller-attachments.s3.eu-central-1.amazonaws.com/production/ mec-freshcaller-attachments.s3.me-central-1.amazonaws.com/production/ eun-freshcaller-attachments.s3.me-central-1.amazonaws.com/production/ au-freshcaller-attachments.s3-ap-southeast-2.amazonaws.com/production/ in-freshcaller-attachments.s3.ap-south-1.amazonaws.com/production/ pubsub.rtschannel.com/ api.fdcollab.com/ wss://pubsub.rtschannel.com/ cloudflareinsights.com/ data: blob: api.appcues.net/ wss://api.appcues.net/ fast.appcues.com/ cdn.jsdelivr.net/npm/@freshworks/crayons-icon@next/dist/ translate.googleapis.com/translate_a/t translate.googleapis.com/element/log fast.wistia.net/ fast.wistia.com/ embed-cloudfront.wistia.com/deliveries/ app.inlinemanual.com/ client-api.auryc.com/ *.surveyserv.com *.freshsurvey.com *.freddybot.com *.freshreports.com rum.haystack.es/freshreports/analytics dsv27oefxtf0.cloudfront.net/ d259946rb8u125.cloudfront.net/ d26h8g5t9na1ph.cloudfront.net/ d3k2px406bziu5.cloudfront.net/ d3vemg63yfopge.cloudfront.net/ d18u0ykezz20xl.cloudfront.net/ d38bgnd74qpt7g.cloudfront.net/ *.userpilot.io/ wss://*.userpilot.io/; font-src 'self' *.freshdesk.com/ fonts.gstatic.com/ fonts.googleapis.com/ cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/ fast.wistia.net/ fast.wistia.com/ *.freddybot.com cdn.inlinemanual.com/inm/author/ d259946rb8u125.cloudfront.net/ d26h8g5t9na1ph.cloudfront.net/ d3k2px406bziu5.cloudfront.net/ d3vemg63yfopge.cloudfront.net/ d18u0ykezz20xl.cloudfront.net/ d38bgnd74qpt7g.cloudfront.net/ data:; frame-src 'self' https:; img-src 'self' https: data: blob:; media-src 'self' https: blob:; object-src 'none'; script-src 'self' *.freshworksapi.com/ *.freshworks.com/ *.myfreshworks.com/ *.freshdesk.com/ *.freshchat.com/ *.freshcaller.com/ *.freshconnect.io/ *.freshcloud.io/ *.fconstage.io/ accounts.freshworks.com/ wchat.freshchat.com/js/ wchat.freshchat.com/widget/js/ *.siteintercept.qualtrics.com/SIE/ *.qualtrics.com assets.calendly.com/assets/external/widget.js d3h0owdjgzys62.cloudfront.net/ d2uy6ubiilaqku.cloudfront.net/ dtdafz6i4gvv1.cloudfront.net/ dcdu85ocrj5q6.cloudfront.net/ d3r4aewxkdubw4.cloudfront.net/ app.getbeamer.com/js/beamer-embed.js analytics.inlinemanual.com/ cdn.inlinemanual.com/embed/ cdn.heapanalytics.com/ s3.amazonaws.com/assets.freshdesk.com/ cdnjs.cloudflare.com/ ajax.cloudflare.com/ static.cloudflareinsights.com/ js.chargebee.com/v1/chargebee.js js.braintreegateway.com/v1/braintree.js static.freshdev.io/ fast.wistia.net/ fast.wistia.com/ static.getbeamer.com/ calendly.com/ unpkg.com/@webcomponents/webcomponentsjs@2.4.3/custom-elements-es5-adapter.js unpkg.com/@webcomponents/webcomponentsjs@2.4.3/webcomponents-loader.js js-agent.newrelic.com/ www.googletagmanager.com/gtag/js static.asknice.ly/dist/standalone/asknicely-in-app-conversation.js www.dropbox.com/static/api/2/dropins.js js.live.net/v7.2/OneDrive.js apis.google.com/ asknice.ly bam.nr-data.net/ www.google-analytics.com/analytics.js maps.googleapis.com/ unpkg.com/@freshworks/crayons@v3/dist/crayons/crayons.esm.js unpkg.com/@freshworks/crayons@v3/dist/crayons/crayons.js s3.amazonaws.com/freshcaller-widget-loader/ in-freshcaller-widget-loader.s3.ap-south-1.amazonaws.com/ s3.eu-central-1.amazonaws.com/euc-freshcaller-widget-loader/ mec-freshcaller-widget-loader.s3.me-central-1.amazonaws.com/ eun-freshcaller-widget-loader.s3.me-central-1.amazonaws.com/ au-freshcaller-widget-loader.s3-ap-southeast-2.amazonaws.com/ www.dropbox.com/static/api/1/dropbox.js fast.appcues.com/ translate.google.com/translate_a/element.js translate.googleapis.com/_/translate_http/_/js/ translate-pa.googleapis.com/v1/supportedLanguages cdn.surveyserv.com/widget.min.js cdn.freshdev.io/assets/marketplace-heap.js cdn.freshcloud.io/assets/marketplace-heap.js cdn.freshdev.io/assets/marketplace-analytics.js cdn.inlinemanual.com/inm/author/ app.inlinemanual.com/ *.surveyserv.com *.freshsurvey.com www.google.com/recaptcha/ www.gstatic.com/recaptcha/ *.freddybot.com d3el5jsqgryo0a.cloudfront.net d259946rb8u125.cloudfront.net/ d26h8g5t9na1ph.cloudfront.net/ d3k2px406bziu5.cloudfront.net/ d3vemg63yfopge.cloudfront.net/ d18u0ykezz20xl.cloudfront.net/ d38bgnd74qpt7g.cloudfront.net/ accounts.google.com/ js.userpilot.io/ 'unsafe-inline' 'unsafe-eval'; style-src 'self' *.freshworks.com *.myfreshworks.com/ *.freshchat.com/ d3h0owdjgzys62.cloudfront.net/ dcdu85ocrj5q6.cloudfront.net/ dtdafz6i4gvv1.cloudfront.net/ d3r4aewxkdubw4.cloudfront.net/ d2uy6ubiilaqku.cloudfront.net/ d259946rb8u125.cloudfront.net/ d26h8g5t9na1ph.cloudfront.net/ d3k2px406bziu5.cloudfront.net/ d3vemg63yfopge.cloudfront.net/ d18u0ykezz20xl.cloudfront.net/ d38bgnd74qpt7g.cloudfront.net/ fonts.googleapis.com/ app.getbeamer.com/styles/beamer-embed.css s3.amazonaws.com/assets.freshdesk.com/ *.freshdesk.com/ wchat.freshchat.com/ calendly.com/ unpkg.com/@webcomponents/webcomponentsjs@2.4.3/custom-elements-es5-adapter.js unpkg.com/@webcomponents/webcomponentsjs@2.4.3/webcomponents-loader.js static.asknice.ly/dist/standalone/asknicely-in-app-conversation.css fast.appcues.com/ asknice.ly *.surveyserv.com *.freshsurvey.com *.freddybot.com cdn.inlinemanual.com/inm/author/ 'unsafe-inline'; worker-src 'self' blob:
+expires: Fri, 01 Jan 1990 00:00:00 GMT
+x-envoy-upstream-service-time: 36
+x-trace-id: 00-d29487adf88fd25904f5ab04cc121f60-18b66807c195a7e0-01
+nel: { "report_to": "nel-endpoint-freshdesk", "max_age": 2592000, "include_subdomains": true}
+report-to: { "group": "nel-endpoint-freshdesk", "max_age": 2592000, "include_subdomains": true, "endpoints": [{"url": "https://nel.us-east-1.freshedge.net/nelreports/freshdesk"}]}
+x-server-processing-time-ms: 41
+x-fw-ratelimiting-managed: false
+server: cloudflare
+cf-cache-status: DYNAMIC
+set-cookie: _x_w=47_1; path=/; HttpOnly; secure
+set-cookie: _x_m=x_a; path=/; HttpOnly; secure
+set-cookie: __cf_bm=sehhimvDEQsgn6X1c3OsI6zFa8W7O5kVsYja2996SAk-1776151830.8141775-1.0.1.1-hOsDz0z03nNZx3ckSW8VtsHcGZn_aI8lV2lqnj.2NygnRvjBz9N7zJibZZmwHepPkRYX3iT730yJ2p5CKuz11i7uq6XG4SRqfqS2pHSsmRnAE39346Fih2s9DjRuNQMd; HttpOnly; Secure; Path=/; Domain=freshdesk.com; Expires=Tue, 14 Apr 2026 08:00:30 GMT
+cf-ray: 9ec1016e9ef5e865-SJC
+
+HTTP/2 302 
+date: Tue, 14 Apr 2026 07:30:31 GMT
+content-type: text/html; charset=utf-8
+
+[Help center]
+HTTP 302
+[Solutions/articles]
+HTTP 302
+[Login page]
+HTTP 302
+=== SONIC ON-PREM HTTPS SWEEP ===
+[Testing HTTPS on interesting Sonic IPs]
+  12.41.206.211 (443): 000
+  12.41.206.95 (443): 000
+  12.41.206.234 (443): 000
+  12.41.206.235 (443): 000
+  12.41.206.10 (443): 000
+  12.41.206.11 (443): 000
+  12.41.206.69 (443): 000
+  12.41.206.66 (443): 000
+  12.41.206.30 (443): 000
+  12.41.206.200 (443): 000
+  12.41.206.100 (443): 000
+  12.41.206.50 (443): 000
+  12.41.206.1 (443): 000
+
+[Testing HTTP (80) on interesting Sonic IPs]
+  12.41.206.211 (80): 000
+  12.41.206.95 (80): 000
+  12.41.206.234 (80): 000
+  12.41.206.235 (80): 000
+  12.41.206.10 (80): 000
+  12.41.206.11 (80): 000
+  12.41.206.69 (80): 000
+  12.41.206.66 (80): 000
+  12.41.206.30 (80): 000
+
+=== INSPIRE BRANDS INTERNAL SERVICES ===
+
+[thevault.inspirebrands.com - Digital Asset Management]
+HTTP/2 302 
+content-type: text/html;charset=UTF-8
+content-length: 0
+date: Tue, 14 Apr 2026 07:31:44 GMT
+permissions-policy: camera=(), geolocation=(), microphone=()
+server: nginx
+set-cookie: bynder=FA4D3B16-D2EB-4830-BDACFAA0ABAC3C34;Path=/;Secure;HttpOnly
+set-cookie: DEFAULTLOCALE=en_US;Path=/
+content-security-policy-report-only: default-src 'self'; child-src blob: https://*; connect-src 'self' blob: https://d8ejoa1fys2rk.cloudfront.net https://static.bynder.cloud https://dam.bynder.com https://sentry10.bynder.cloud https://api2.amplitude.com https://*.google-analytics.com https://stats.g.doubleclick.net https://*.amazonaws.com https://fast.appcues.com https://api.appcues.com https://api.appcues.net wss://api.appcues.net https://*.courier.com wss://*.courier.com https://apiv2.webdamdb.com/oauth2/token https://cmp.osano.com https://consent.api.osano.com https://tattle.api.osano.com https://disclosure.api.osano.com https://api.eu1.honeycomb.io https://heapanalytics.com https://*.heapanalytics.com https://*.heap-api.com; font-src https://* data: ; img-src https://* data: blob:; media-src https://*; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://d8ejoa1fys2rk.cloudfront.net https://static.bynder.cloud https://www.googletagmanager.com https://www.google-analytics.com https://js.hs-analytics.net https://fast.appcues.com https://browser.sentry-cdn.com https://bynder-static.s3.amazonaws.com https://cmp.osano.com https://consent.api.osano.com https://tattle.api.osano.com https://disclosure.api.osano.com  https://heapanalytics.com https://*.heapanalytics.com https://*.heap-api.com; style-src 'self' 'unsafe-inline' https://d8ejoa1fys2rk.cloudfront.net https://static.bynder.cloud https://fonts.googleapis.com https://bynder-static.s3.amazonaws.com https://fast.appcues.com https://cmp.osano.com https://consent.api.osano.com https://tattle.api.osano.com https://disclosure.api.osano.com https://heapanalytics.com https://*.heapanalytics.com https://*.heap-api.com; worker-src 'self' blob:; report-uri https://sentry10.bynder.cloud/api/1817/security/?sentry_key=638cfd1ab10c78c179140416b9893c0e
+location: /login/
+x-api-correlation-id: 199987dc-9d14-c336-e9b4-eec75c4c803d
+cross-origin-resource-policy: cross-origin
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=63072000; includeSubdomains
+referrer-policy: strict-origin-when-cross-origin
+
+  Cert:
+subject=CN=inspirebrands.bynder.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Dec 19 00:00:00 2025 GMT
+notAfter=Jan 17 23:59:59 2027 GMT
+
+[impact.inspirebrands.com - Impact Tracking]
+HTTP/2 200 
+server: nginx
+date: Tue, 14 Apr 2026 07:31:44 GMT
+content-type: text/html; charset=UTF-8
+vary: Accept-Encoding
+vary: Accept-Encoding
+vary: Accept-Encoding
+link: <https://impact.inspirebrands.com/wp-json/>; rel="https://api.w.org/"
+link: <https://impact.inspirebrands.com/wp-json/wp/v2/pages/4>; rel="alternate"; title="JSON"; type="application/json"
+link: <https://impact.inspirebrands.com/>; rel=shortlink
+x-powered-by: WP Engine
+x-cacheable: SHORT
+vary: Accept-Encoding,Cookie
+cache-control: max-age=600, must-revalidate
+accept-ranges: bytes
+
+  Cert:
+subject=CN=impact.inspirebrands.com
+issuer=C=US, O=Let's Encrypt, CN=R12
+notBefore=Mar  5 20:25:10 2026 GMT
+notAfter=Jun  3 20:25:09 2026 GMT
+
+[sso.inspirepartners.net - Okta SSO]
+HTTP/2 302 
+server: nginx
+date: Tue, 14 Apr 2026 07:31:44 GMT
+content-type: text/html;charset=ISO-8859-1
+x-content-type-options: nosniff
+x-okta-request-id: ad3tYJlHokutGq6mW1bFUgAI0G8
+accept-ch: Sec-CH-UA-Platform-Version
+x-xss-protection: 0
+p3p: CP="HONK"
+content-security-policy: default-src 'self' inspirepartners.okta.com sso.inspirepartners.net *.oktacdn.com; connect-src 'self' inspirepartners.okta.com inspirepartners-admin.okta.com sso.inspirepartners.net *.oktacdn.com *.mixpanel.com *.mapbox.com inspirepartners.kerberos.okta.com inspirepartners.mtls.okta.com *.authenticatorlocalprod.com:8769 http://localhost:8769 http://127.0.0.1:8769 *.authenticatorlocalprod.com:65111 http://localhost:65111 http://127.0.0.1:65111 *.authenticatorlocalprod.com:65121 http://localhost:65121 http://127.0.0.1:65121 *.authenticatorlocalprod.com:65131 http://localhost:65131 http://127.0.0.1:65131 *.authenticatorlocalprod.com:65141 http://localhost:65141 http://127.0.0.1:65141 *.authenticatorlocalprod.com:65151 http://localhost:65151 http://127.0.0.1:65151 https://oinmanager.okta.com data:; script-src 'unsafe-inline' 'nonce-4fB-LWyEXD_TBMBadS7IVA' 'self' 'report-sample' inspirepartners.okta.com sso.inspirepartners.net *.oktacdn.com; style-src 'unsafe-inline' 'self' 'report-sample' inspirepartners.okta.com sso.inspirepartners.net *.oktacdn.com; frame-src 'self' inspirepartners.okta.com inspirepartners-admin.okta.com sso.inspirepartners.net login.okta.com *.vidyard.com com-okta-authenticator:; img-src 'self' inspirepartners.okta.com sso.inspirepartners.net *.oktacdn.com *.tiles.mapbox.com *.mapbox.com *.vidyard.com data: blob:; font-src 'self' inspirepartners.okta.com sso.inspirepartners.net data: *.oktacdn.com fonts.gstatic.com; frame-ancestors 'self'
+location: https://sso.inspirepartners.net/app/UserHome?iss=https%3A%2F%2Fsso.inspirepartners.net&session_hint=AUTHENTICATED
+strict-transport-security: max-age=315360000; includeSubDomains
+x-robots-tag: noindex,nofollow
+set-cookie: sid="";Version=1;Path=/;Max-Age=0
+set-cookie: xids="";Version=1;Path=/;Max-Age=0
+
+  Cert:
+subject=CN=sso.inspirepartners.net
+issuer=C=US, O=Let's Encrypt, CN=R12
+notBefore=Mar 20 23:50:13 2026 GMT
+notAfter=Jun 18 23:50:12 2026 GMT
+
+[inspirepartners.net root]
+
+165.160.15.20
+165.160.13.20
+5 mxa-00919702.gslb.pphosted.com.
+5 mxb-00919702.gslb.pphosted.com.
+"v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+"MS=ms37399585"
+"_7ayo9ql8d86lmovqii5nzgfsz4pqyo9"
+"_gdae2nuzcumawu1zsfyi9739xggbor0"
+"_mcl9v5pzpx1j7jxbykig21xbdu76doi"
+"by3t9wcmwgfpps0679qm16djfxwntnn2"
+"c8zt5lcwc20yv4gx5fspn65h08gzcmsq"
+"xwwbgvf2gx6v1sqhx0y4ph4f9zzbfqlj"
+
+=== API KEY IDENTIFICATION ===
+[Radar.io key check - HB8XN-5GW29-UAXQ4-9XSZN-WM7MY]
+HTTP 401
+[Checking if its a Radar publishable key format]
+  Format: 5-char groups separated by hyphens. Not standard Radar.io format.
+  Checking common services with this key format...
+
+=== BASKIN-ROBBINS GCS BUCKET DEEP DIVE ===
+[Full listing with metadata]
+Total objects: 35
+
+  1080.png                                                 3,522 bytes  2019-02-12T12:20:05.419Z
+  df/                                                         11 bytes  2019-02-19T09:40:14.908Z
+  df/icecream/                                                11 bytes  2019-02-19T09:52:29.570Z
+  df/icecream/31day.jpg                                   34,554 bytes  2019-02-19T09:54:42.930Z
+  df/icecream/kt.jpg                                      27,764 bytes  2019-02-19T09:54:43.043Z
+  df/icecream/partyday.jpg                               113,480 bytes  2019-02-19T09:54:42.924Z
+  df/icecream/rainyday.jpg                                24,081 bytes  2019-02-19T09:54:43.223Z
+  df/icecream/smilepay.jpg                                29,404 bytes  2019-02-19T09:54:43.242Z
+  df/icecream/thismonth.jpg                               25,367 bytes  2019-02-19T09:54:43.372Z
+  df/icecream/type/                                           11 bytes  2019-02-19T10:29:56.222Z
+  df/icecream/type/01_pint.jpg                            43,001 bytes  2019-02-19T10:37:09.600Z
+  df/icecream/type/02_quater.jpg                          41,906 bytes  2019-02-19T10:37:09.600Z
+  df/icecream/type/03_family.jpg                          45,748 bytes  2019-02-19T10:37:09.560Z
+  df/icecream/type/04_half.jpg                            47,395 bytes  2019-02-19T10:37:10.008Z
+  df/icecream/type/05_var.jpg                             51,434 bytes  2019-02-19T10:37:10.012Z
+  df/icecream/type/06_hand.jpg                            56,667 bytes  2019-02-19T10:37:09.971Z
+  df/icecream/type/double_junior.jpg                      40,390 bytes  2019-02-19T10:31:44.314Z
+  df/icecream/type/double_reg.jpg                         39,462 bytes  2019-02-19T10:31:44.307Z
+  df/icecream/type/single.jpg                             94,822 bytes  2019-02-19T10:31:44.746Z
+  df/icecream/type/single_reg.jpg                         92,808 bytes  2019-02-19T10:31:44.366Z
+  df/promo/                                                   11 bytes  2019-02-19T09:41:53.674Z
+  df/promo/card.jpg                                       42,167 bytes  2019-02-19T09:42:09.747Z
+  df/promo/discount.jpg                                   36,271 bytes  2019-02-19T09:42:09.760Z
+  df/promo/point.jpg                                      96,960 bytes  2019-02-19T09:42:09.786Z
+  df/promo/promo.jpg                                      37,154 bytes  2019-02-19T09:42:10.163Z
+  intro0.jpg                                             149,422 bytes  2019-02-12T12:46:40.494Z
+  intro0_v.jpg                                            70,591 bytes  2019-02-13T02:51:34.108Z
+  intro1.jpg                                             141,442 bytes  2019-02-12T12:46:53.603Z
+  intro2.jpg                                             121,082 bytes  2019-02-12T12:46:53.591Z
+  menu/                                                       11 bytes  2019-02-19T05:36:41.398Z
+  menu/intro01.jpg                                        30,257 bytes  2019-02-19T05:53:45.845Z
+  menu/intro02.jpg                                        30,289 bytes  2019-02-19T05:53:45.826Z
+  menu/intro03.jpg                                        23,693 bytes  2019-02-19T05:53:45.809Z
+  menu/quiz_fail.jpg                                      44,483 bytes  2019-02-19T08:02:49.378Z
+  menu/quiz_ok.jpg                                        31,311 bytes  2019-02-19T08:02:52.549Z
+
+[Downloading typo image: 02_quater.jpg]
+  File size: 269 bytes
+  File type: /tmp/quater.jpg: XML document, ASCII text, with no line terminators
+ExifTool Version Number         : 13.50
+File Name                       : quater.jpg
+Directory                       : /tmp
+File Size                       : 269 bytes
+File Modification Date/Time     : 2026:04:14 07:31:55+00:00
+File Access Date/Time           : 2026:04:14 07:31:55+00:00
+File Inode Change Date/Time     : 2026:04:14 07:31:55+00:00
+File Permissions                : -rw-r--r--
+File Type                       : XML
+File Type Extension             : xml
+MIME Type                       : application/xml
+Error Code                      : UserProjectAccountProblem
+Error Message                   : The project to be billed is associated with an absent billing account.
+Error Details                   : The billing account for the owning project is disabled in state absent
+
+Completed: 2026-04-14T07:31:55Z

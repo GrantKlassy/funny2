@@ -1,0 +1,20 @@
+HTTP/1.0 200 OK
+Server: Serv-U/15.5.4
+Date: Tue, 14 Apr 2026 04:47:29 GMT
+Accept-Encoding: deflate
+X-Permitted-Cross-Domain-Policies: none
+Connection: close
+X-Frame-Options: sameorigin
+X-Same-Domain: 1
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Referrer-Policy: same-origin
+Content-Security-Policy: script-src 'nonce-0B5A582C6E4FE85775A0AC88764C1F55'; frame-ancestors 'none';
+Strict-Transport-Security: max-age=0
+Content-Type: text/html
+Pragma: no-cache
+Cache-Control: no-cache,no-store,max-age=0,must-revalidate
+Expires: -1
+Set-Cookie: CsrfToken=; expires=Thu, 01-Jan-1970 00:00:01 GMT; SameSite=Strict; path=/;  secure; httponly
+Content-Length: 14760
+

@@ -1,0 +1,163 @@
+=== PROBE 42: SMTP BANNER GRABBING ===
+Started: 2026-04-14T07:24:14Z
+
+--- mail.sonicdrivein.com (12.41.206.211) ---
+[Port 25 SMTP]
+  CLOSED/TIMEOUT
+
+[Port 587 SMTP Submission]
+  CLOSED/TIMEOUT
+
+[Port 465 SMTPS]
+  CLOSED/TIMEOUT
+
+[Port 143 IMAP]
+  CLOSED/TIMEOUT
+
+[Port 993 IMAPS]
+  CLOSED/TIMEOUT
+
+[Port 110 POP3]
+  CLOSED/TIMEOUT
+
+[Port 995 POP3S]
+  CLOSED/TIMEOUT
+
+[STARTTLS Cert - Port 25]
+  No STARTTLS or CLOSED
+
+[STARTTLS Cert - Port 587]
+  No STARTTLS or CLOSED
+
+===================================
+
+--- exchangehub01.sonicdrivein.com (12.41.206.95) ---
+[Port 25 SMTP]
+  CLOSED/TIMEOUT
+
+[Port 587 SMTP Submission]
+  CLOSED/TIMEOUT
+
+[Port 465 SMTPS]
+  CLOSED/TIMEOUT
+
+[Port 143 IMAP]
+  CLOSED/TIMEOUT
+
+[Port 993 IMAPS]
+  CLOSED/TIMEOUT
+
+[Port 110 POP3]
+  CLOSED/TIMEOUT
+
+[Port 995 POP3S]
+  CLOSED/TIMEOUT
+
+[STARTTLS Cert - Port 25]
+  No STARTTLS or CLOSED
+
+[STARTTLS Cert - Port 587]
+  No STARTTLS or CLOSED
+
+===================================
+
+--- flq-prod-idp.dunkinbrands.com (74.199.217.23) ---
+[Port 25 SMTP]
+  CLOSED/TIMEOUT
+
+[Port 587 SMTP Submission]
+  CLOSED/TIMEOUT
+
+[Port 465 SMTPS]
+  CLOSED/TIMEOUT
+
+[Port 143 IMAP]
+  CLOSED/TIMEOUT
+
+[Port 993 IMAPS]
+  CLOSED/TIMEOUT
+
+[Port 110 POP3]
+  CLOSED/TIMEOUT
+
+[Port 995 POP3S]
+  CLOSED/TIMEOUT
+
+[STARTTLS Cert - Port 25]
+  No STARTTLS or CLOSED
+
+[STARTTLS Cert - Port 587]
+  No STARTTLS or CLOSED
+
+===================================
+
+--- smartsolve.dunkinbrands.com (74.199.217.32) ---
+[Port 25 SMTP]
+  CLOSED/TIMEOUT
+
+[Port 587 SMTP Submission]
+  CLOSED/TIMEOUT
+
+[Port 465 SMTPS]
+  CLOSED/TIMEOUT
+
+[Port 143 IMAP]
+  CLOSED/TIMEOUT
+
+[Port 993 IMAPS]
+  CLOSED/TIMEOUT
+
+[Port 110 POP3]
+  CLOSED/TIMEOUT
+
+[Port 995 POP3S]
+  CLOSED/TIMEOUT
+
+[STARTTLS Cert - Port 25]
+  No STARTTLS or CLOSED
+
+[STARTTLS Cert - Port 587]
+  No STARTTLS or CLOSED
+
+===================================
+
+--- uat.dunkinbrands.com (216.255.76.18) ---
+[Port 25 SMTP]
+  CLOSED/TIMEOUT
+
+[Port 587 SMTP Submission]
+  CLOSED/TIMEOUT
+
+[Port 465 SMTPS]
+  CLOSED/TIMEOUT
+
+[Port 143 IMAP]
+  CLOSED/TIMEOUT
+
+[Port 993 IMAPS]
+  CLOSED/TIMEOUT
+
+[Port 110 POP3]
+  CLOSED/TIMEOUT
+
+[Port 995 POP3S]
+  CLOSED/TIMEOUT
+
+[STARTTLS Cert - Port 25]
+  No STARTTLS or CLOSED
+
+[STARTTLS Cert - Port 587]
+  No STARTTLS or CLOSED
+
+===================================
+
+--- Proofpoint MX (mxa-00919702.gslb.pphosted.com) ---
+[Port 25 SMTP]
+Ncat: TIMEOUT.
+  CLOSED/TIMEOUT
+
+[Port 25 SMTP - mxb variant]
+Ncat: TIMEOUT.
+  CLOSED/TIMEOUT
+
+Completed: 2026-04-14T07:28:39Z

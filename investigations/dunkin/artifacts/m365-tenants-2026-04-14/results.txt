@@ -1,0 +1,165 @@
+=== PROBE 43: M365 TENANT DISCOVERY ===
+Started: 2026-04-14T07:24:25Z
+
+=== dunkindonuts.com ===
+[OpenID Configuration]
+  No M365 tenant found
+
+[GetUserRealm]
+<RealmInfo Success="true"><State>4</State><UserState>1</UserState><Login>test@dunkindonuts.com</Login><NameSpaceType>Unknown</NameSpaceType></RealmInfo>
+
+[DKIM Selector CNAMEs]
+
+[Autodiscover]
+  No autodiscover CNAME
+
+---
+
+=== dunkinbrands.com ===
+[OpenID Configuration]
+  Tenant ID: 2f611596-a3da-4a81-94e8-fd4483868fc1
+  Token endpoint: https://login.microsoftonline.com/2f611596-a3da-4a81-94e8-fd4483868fc1/oauth2/token
+
+[GetUserRealm]
+<RealmInfo Success="true"><State>4</State><UserState>1</UserState><Login>test@dunkinbrands.com</Login><NameSpaceType>Managed</NameSpaceType><DomainName>dunkinbrands.com</DomainName><IsFederatedNS>false</IsFederatedNS><FederationBrandName>Inspire Brands</FederationBrandName><CloudInstanceName>microsoftonline.com</CloudInstanceName><CloudInstanceIssuerUri>urn:federation:MicrosoftOnline</CloudInstanceIssuerUri></RealmInfo>
+
+[DKIM Selector CNAMEs]
+  selector1._domainkey.dunkinbrands.com -> selector1-dunkinbrands-com._domainkey.inspirebrands.onmicrosoft.com.
+  selector2._domainkey.dunkinbrands.com -> selector2-dunkinbrands-com._domainkey.inspirebrands.onmicrosoft.com.
+
+[Autodiscover]
+  autodiscover.dunkinbrands.com -> autodiscover.outlook.com.
+
+---
+
+=== inspirebrands.com ===
+[OpenID Configuration]
+  Tenant ID: 2f611596-a3da-4a81-94e8-fd4483868fc1
+  Token endpoint: https://login.microsoftonline.com/2f611596-a3da-4a81-94e8-fd4483868fc1/oauth2/token
+
+[GetUserRealm]
+<RealmInfo Success="true"><State>3</State><UserState>2</UserState><Login>test@inspirebrands.com</Login><NameSpaceType>Federated</NameSpaceType><DomainName>inspirebrands.com</DomainName><FederationGlobalVersion>-1</FederationGlobalVersion><AuthURL>https://inspire.okta.com/app/office365/exk1tue64p6nCY9BV2p7/sso/wsfed/passive?username=test%40inspirebrands.com&amp;wa=wsignin1.0&amp;wtrealm=urn%3afederation%3aMicrosoftOnline&amp;wctx=</AuthURL><IsFederatedNS>true</IsFederatedNS><STSAuthURL>https://inspire.okta.com/app/office365/exk1tue64p6nCY9BV2p7/sso/wsfed/active</STSAuthURL><FederationTier>0</FederationTier><FederationBrandName>Inspire Brands</FederationBrandName><AllowFedUsersWLIDSignIn>false</AllowFedUsersWLIDSignIn><Certificate>TUlJRG5qQ0NBb2FnQXdJQkFnSUdBV05QK05qcE1BMEdDU3FHU0liM0RRRUJCUVVBTUlHUE1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQXdLUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnd3TlUyRnVJRVp5WVc1amFYTmpiekVOTUFzR0ExVUVDZ3dFVDJ0MFlURVVNQklHQTFVRUN3d0xVMU5QVUhKdmRtbGtaWEl4RURBT0JnTlZCQU1NQjJsdWMzQnBjbVV4SERBYUJna3Foa2lHOXcwQkNRRVdEV2x1Wm05QWIydDBZUzVqYjIwd0hoY05NVGd3TlRFeE1UWXhNRE00V2hjTk1qZ3dOVEV4TVRZeE1UTTRXakNCanpFTE1Ba0dBMVVFQmhNQ1ZWTXhFekFSQmdOVkJBZ01Da05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNNRFZOaGJpQkdjbUZ1WTJselkyOHhEVEFMQmdOVkJBb01CRTlyZEdFeEZEQVNCZ05WQkFzTUMxTlRUMUJ5YjNacFpHVnlNUkF3RGdZRFZRUUREQWRwYm5Od2FYSmxNUnd3R2dZSktvWklodmNOQVFrQkZnMXBibVp2UUc5cmRHRXVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFoSXVhbEhwYVhySjNDVXUrUGpKdVZVd2dCOVIxTVViZERhdVAyazR0Rld5NDFSTWNEbENIMnNXeTBlem1PQkZzSThMYkpmU0gyQjNvcmQ3Ni9BMTA0MGJyZjRIQTVjM1lLc2JBN3NjMWtJam92cEtBY2RnRjl6QmlDT2M2b2w0TDNOcjZDOWZ2U3QyTEpMRVRqekpFejVrbktoa2xVeG0wNmNMVjNiVFo1M2QzMjFUQURxRUsrcTBBQ0FnMDNRY3RtK3FBTTc4cGZZdG1paERvYUNCbkQ3Z1NCS1BERFY0S2FLMnE4MVFCS2VSL3RQdnJtbkROVkRRZG1HZTBrbVcyNlZMV2o4aWFnQ2w4VERNdDRualkraTg1WDNxdDZOVUFTRHUxQmNFbGplMlkxTWZvcnhmZE9jdlArUmNLRFdzWVRqS2QvUmZYSU8wZVJMMmlmdWY2VHdJREFRQUJNQTBHQ1NxR1NJYjNEUUVCQlFVQUE0SUJBUUFaVEEybDRkVDdlSTg4TTZtOXFmVFF0YUVvQlJvZVBUR1VBcGtoeVhmc3NBSWtvRnhoakRKa2Rqc0dlRGFLR2d2cVhmdW1WZ2IvSWJQekVxd28xQjRlOThwOG1vckxleW14MEZZeWxReFRCQkRxVmt6dnB4QWFOaisrN3VIdC9nSEY0SHpSRVQzbUxFcUg3L2k2UnFER3hrcURMcDBhdlJZOGZWaXVhWmRZaGM0Z0p2ZkFTOTFpZGtVWld3WU00WkRnWmN3KzFua2dwNEdZa0tkUk45K3V2TDVUcWY0c0pMSTh0T1g0L2VWcmw0UERNaTlNWkV6emZ2VEVKczc0QnFWTFJHcFJuSWMyZVNjTTdqVEhVeFpDRXlqd1dkbVh6UlNiK2szWFdKLzNrcDY2ejZ6cUFneWlSUlJ3YmRlbm5nUzE1ZCtSNU1GenVRUlpkdXhwelVoag==</Certificate><MEXURL>https://inspire.okta.com/app/office365/exk1tue64p6nCY9BV2p7/sso/wsfed/mex</MEXURL><PreferredProtocol>1</PreferredProtocol><EDUDomainFlags>0</EDUDomainFlags><CloudInstanceName>microsoftonline.com</CloudInstanceName><CloudInstanceIssuerUri>urn:federation:MicrosoftOnline</CloudInstanceIssuerUri></RealmInfo>
+
+[DKIM Selector CNAMEs]
+  selector1._domainkey.inspirebrands.com -> selector1-inspirebrands-com._domainkey.inspirebrands.onmicrosoft.com.
+  selector2._domainkey.inspirebrands.com -> selector2-inspirebrands-com._domainkey.inspirebrands.onmicrosoft.com.
+
+[Autodiscover]
+  autodiscover.inspirebrands.com -> autodiscover.outlook.com.
+
+---
+
+=== arbys.com ===
+[OpenID Configuration]
+  Tenant ID: 2f611596-a3da-4a81-94e8-fd4483868fc1
+  Token endpoint: https://login.microsoftonline.com/2f611596-a3da-4a81-94e8-fd4483868fc1/oauth2/token
+
+[GetUserRealm]
+<RealmInfo Success="true"><State>4</State><UserState>1</UserState><Login>test@arbys.com</Login><NameSpaceType>Managed</NameSpaceType><DomainName>arbys.com</DomainName><IsFederatedNS>false</IsFederatedNS><FederationBrandName>Inspire Brands</FederationBrandName><CloudInstanceName>microsoftonline.com</CloudInstanceName><CloudInstanceIssuerUri>urn:federation:MicrosoftOnline</CloudInstanceIssuerUri></RealmInfo>
+
+[DKIM Selector CNAMEs]
+  selector1._domainkey.arbys.com -> selector1-arbys-com._domainkey.inspirebrands.onmicrosoft.com.
+  selector2._domainkey.arbys.com -> selector2-arbys-com._domainkey.inspirebrands.onmicrosoft.com.
+
+[Autodiscover]
+  autodiscover.arbys.com -> autodiscover.outlook.com.
+
+---
+
+=== buffalowildwings.com ===
+[OpenID Configuration]
+  Tenant ID: 2f611596-a3da-4a81-94e8-fd4483868fc1
+  Token endpoint: https://login.microsoftonline.com/2f611596-a3da-4a81-94e8-fd4483868fc1/oauth2/token
+
+[GetUserRealm]
+<RealmInfo Success="true"><State>4</State><UserState>1</UserState><Login>test@buffalowildwings.com</Login><NameSpaceType>Managed</NameSpaceType><DomainName>buffalowildwings.com</DomainName><IsFederatedNS>false</IsFederatedNS><FederationBrandName>Inspire Brands</FederationBrandName><CloudInstanceName>microsoftonline.com</CloudInstanceName><CloudInstanceIssuerUri>urn:federation:MicrosoftOnline</CloudInstanceIssuerUri></RealmInfo>
+
+[DKIM Selector CNAMEs]
+  selector1._domainkey.buffalowildwings.com -> selector1-buffalowildwings-com._domainkey.inspirebrands.onmicrosoft.com.
+  selector2._domainkey.buffalowildwings.com -> selector2-buffalowildwings-com._domainkey.inspirebrands.onmicrosoft.com.
+
+[Autodiscover]
+  autodiscover.buffalowildwings.com -> autodiscover.outlook.com.
+
+---
+
+=== sonicdrivein.com ===
+[OpenID Configuration]
+  Tenant ID: 2f611596-a3da-4a81-94e8-fd4483868fc1
+  Token endpoint: https://login.microsoftonline.com/2f611596-a3da-4a81-94e8-fd4483868fc1/oauth2/token
+
+[GetUserRealm]
+<RealmInfo Success="true"><State>3</State><UserState>2</UserState><Login>test@sonicdrivein.com</Login><NameSpaceType>Federated</NameSpaceType><DomainName>sonicdrivein.com</DomainName><FederationGlobalVersion>-1</FederationGlobalVersion><AuthURL>https://inspire.okta.com/app/office365/exk50lfvv21Ks2cBe2p7/sso/wsfed/passive?username=test%40sonicdrivein.com&amp;wa=wsignin1.0&amp;wtrealm=urn%3afederation%3aMicrosoftOnline&amp;wctx=</AuthURL><IsFederatedNS>true</IsFederatedNS><STSAuthURL>https://inspire.okta.com/app/office365/exk50lfvv21Ks2cBe2p7/sso/wsfed/active</STSAuthURL><FederationTier>0</FederationTier><FederationBrandName>Inspire Brands</FederationBrandName><AllowFedUsersWLIDSignIn>false</AllowFedUsersWLIDSignIn><Certificate>TUlJRG5qQ0NBb2FnQXdJQkFnSUdBV05QK05qcE1BMEdDU3FHU0liM0RRRUJCUVVBTUlHUE1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQXdLUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnd3TlUyRnVJRVp5WVc1amFYTmpiekVOTUFzR0ExVUVDZ3dFVDJ0MFlURVVNQklHQTFVRUN3d0xVMU5QVUhKdmRtbGtaWEl4RURBT0JnTlZCQU1NQjJsdWMzQnBjbVV4SERBYUJna3Foa2lHOXcwQkNRRVdEV2x1Wm05QWIydDBZUzVqYjIwd0hoY05NVGd3TlRFeE1UWXhNRE00V2hjTk1qZ3dOVEV4TVRZeE1UTTRXakNCanpFTE1Ba0dBMVVFQmhNQ1ZWTXhFekFSQmdOVkJBZ01Da05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNNRFZOaGJpQkdjbUZ1WTJselkyOHhEVEFMQmdOVkJBb01CRTlyZEdFeEZEQVNCZ05WQkFzTUMxTlRUMUJ5YjNacFpHVnlNUkF3RGdZRFZRUUREQWRwYm5Od2FYSmxNUnd3R2dZSktvWklodmNOQVFrQkZnMXBibVp2UUc5cmRHRXVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFoSXVhbEhwYVhySjNDVXUrUGpKdVZVd2dCOVIxTVViZERhdVAyazR0Rld5NDFSTWNEbENIMnNXeTBlem1PQkZzSThMYkpmU0gyQjNvcmQ3Ni9BMTA0MGJyZjRIQTVjM1lLc2JBN3NjMWtJam92cEtBY2RnRjl6QmlDT2M2b2w0TDNOcjZDOWZ2U3QyTEpMRVRqekpFejVrbktoa2xVeG0wNmNMVjNiVFo1M2QzMjFUQURxRUsrcTBBQ0FnMDNRY3RtK3FBTTc4cGZZdG1paERvYUNCbkQ3Z1NCS1BERFY0S2FLMnE4MVFCS2VSL3RQdnJtbkROVkRRZG1HZTBrbVcyNlZMV2o4aWFnQ2w4VERNdDRualkraTg1WDNxdDZOVUFTRHUxQmNFbGplMlkxTWZvcnhmZE9jdlArUmNLRFdzWVRqS2QvUmZYSU8wZVJMMmlmdWY2VHdJREFRQUJNQTBHQ1NxR1NJYjNEUUVCQlFVQUE0SUJBUUFaVEEybDRkVDdlSTg4TTZtOXFmVFF0YUVvQlJvZVBUR1VBcGtoeVhmc3NBSWtvRnhoakRKa2Rqc0dlRGFLR2d2cVhmdW1WZ2IvSWJQekVxd28xQjRlOThwOG1vckxleW14MEZZeWxReFRCQkRxVmt6dnB4QWFOaisrN3VIdC9nSEY0SHpSRVQzbUxFcUg3L2k2UnFER3hrcURMcDBhdlJZOGZWaXVhWmRZaGM0Z0p2ZkFTOTFpZGtVWld3WU00WkRnWmN3KzFua2dwNEdZa0tkUk45K3V2TDVUcWY0c0pMSTh0T1g0L2VWcmw0UERNaTlNWkV6emZ2VEVKczc0QnFWTFJHcFJuSWMyZVNjTTdqVEhVeFpDRXlqd1dkbVh6UlNiK2szWFdKLzNrcDY2ejZ6cUFneWlSUlJ3YmRlbm5nUzE1ZCtSNU1GenVRUlpkdXhwelVoag==</Certificate><MEXURL>https://inspire.okta.com/app/office365/exk50lfvv21Ks2cBe2p7/sso/wsfed/mex</MEXURL><PreferredProtocol>1</PreferredProtocol><EDUDomainFlags>0</EDUDomainFlags><CloudInstanceName>microsoftonline.com</CloudInstanceName><CloudInstanceIssuerUri>urn:federation:MicrosoftOnline</CloudInstanceIssuerUri></RealmInfo>
+
+[DKIM Selector CNAMEs]
+  selector1._domainkey.sonicdrivein.com -> selector1-sonicdrivein-com._domainkey.inspirebrands.onmicrosoft.com.
+  selector2._domainkey.sonicdrivein.com -> selector2-sonicdrivein-com._domainkey.inspirebrands.onmicrosoft.com.
+
+[Autodiscover]
+  No autodiscover CNAME
+
+---
+
+=== jimmyjohns.com ===
+[OpenID Configuration]
+  Tenant ID: 2f611596-a3da-4a81-94e8-fd4483868fc1
+  Token endpoint: https://login.microsoftonline.com/2f611596-a3da-4a81-94e8-fd4483868fc1/oauth2/token
+
+[GetUserRealm]
+<RealmInfo Success="true"><State>3</State><UserState>2</UserState><Login>test@jimmyjohns.com</Login><NameSpaceType>Federated</NameSpaceType><DomainName>jimmyjohns.com</DomainName><FederationGlobalVersion>-1</FederationGlobalVersion><AuthURL>https://inspire.okta.com/app/office365/exk7hrs0c7hQwroHg2p7/sso/wsfed/passive?username=test%40jimmyjohns.com&amp;wa=wsignin1.0&amp;wtrealm=urn%3afederation%3aMicrosoftOnline&amp;wctx=</AuthURL><IsFederatedNS>true</IsFederatedNS><STSAuthURL>https://inspire.okta.com/app/office365/exk7hrs0c7hQwroHg2p7/sso/wsfed/active</STSAuthURL><FederationTier>0</FederationTier><FederationBrandName>Inspire Brands</FederationBrandName><AllowFedUsersWLIDSignIn>false</AllowFedUsersWLIDSignIn><Certificate>TUlJRG5qQ0NBb2FnQXdJQkFnSUdBV05QK05qcE1BMEdDU3FHU0liM0RRRUJCUVVBTUlHUE1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQXdLUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnd3TlUyRnVJRVp5WVc1amFYTmpiekVOTUFzR0ExVUVDZ3dFVDJ0MFlURVVNQklHQTFVRUN3d0xVMU5QVUhKdmRtbGtaWEl4RURBT0JnTlZCQU1NQjJsdWMzQnBjbVV4SERBYUJna3Foa2lHOXcwQkNRRVdEV2x1Wm05QWIydDBZUzVqYjIwd0hoY05NVGd3TlRFeE1UWXhNRE00V2hjTk1qZ3dOVEV4TVRZeE1UTTRXakNCanpFTE1Ba0dBMVVFQmhNQ1ZWTXhFekFSQmdOVkJBZ01Da05oYkdsbWIzSnVhV0V4RmpBVUJnTlZCQWNNRFZOaGJpQkdjbUZ1WTJselkyOHhEVEFMQmdOVkJBb01CRTlyZEdFeEZEQVNCZ05WQkFzTUMxTlRUMUJ5YjNacFpHVnlNUkF3RGdZRFZRUUREQWRwYm5Od2FYSmxNUnd3R2dZSktvWklodmNOQVFrQkZnMXBibVp2UUc5cmRHRXVZMjl0TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFoSXVhbEhwYVhySjNDVXUrUGpKdVZVd2dCOVIxTVViZERhdVAyazR0Rld5NDFSTWNEbENIMnNXeTBlem1PQkZzSThMYkpmU0gyQjNvcmQ3Ni9BMTA0MGJyZjRIQTVjM1lLc2JBN3NjMWtJam92cEtBY2RnRjl6QmlDT2M2b2w0TDNOcjZDOWZ2U3QyTEpMRVRqekpFejVrbktoa2xVeG0wNmNMVjNiVFo1M2QzMjFUQURxRUsrcTBBQ0FnMDNRY3RtK3FBTTc4cGZZdG1paERvYUNCbkQ3Z1NCS1BERFY0S2FLMnE4MVFCS2VSL3RQdnJtbkROVkRRZG1HZTBrbVcyNlZMV2o4aWFnQ2w4VERNdDRualkraTg1WDNxdDZOVUFTRHUxQmNFbGplMlkxTWZvcnhmZE9jdlArUmNLRFdzWVRqS2QvUmZYSU8wZVJMMmlmdWY2VHdJREFRQUJNQTBHQ1NxR1NJYjNEUUVCQlFVQUE0SUJBUUFaVEEybDRkVDdlSTg4TTZtOXFmVFF0YUVvQlJvZVBUR1VBcGtoeVhmc3NBSWtvRnhoakRKa2Rqc0dlRGFLR2d2cVhmdW1WZ2IvSWJQekVxd28xQjRlOThwOG1vckxleW14MEZZeWxReFRCQkRxVmt6dnB4QWFOaisrN3VIdC9nSEY0SHpSRVQzbUxFcUg3L2k2UnFER3hrcURMcDBhdlJZOGZWaXVhWmRZaGM0Z0p2ZkFTOTFpZGtVWld3WU00WkRnWmN3KzFua2dwNEdZa0tkUk45K3V2TDVUcWY0c0pMSTh0T1g0L2VWcmw0UERNaTlNWkV6emZ2VEVKczc0QnFWTFJHcFJuSWMyZVNjTTdqVEhVeFpDRXlqd1dkbVh6UlNiK2szWFdKLzNrcDY2ejZ6cUFneWlSUlJ3YmRlbm5nUzE1ZCtSNU1GenVRUlpkdXhwelVoag==</Certificate><MEXURL>https://inspire.okta.com/app/office365/exk7hrs0c7hQwroHg2p7/sso/wsfed/mex</MEXURL><PreferredProtocol>1</PreferredProtocol><EDUDomainFlags>0</EDUDomainFlags><CloudInstanceName>microsoftonline.com</CloudInstanceName><CloudInstanceIssuerUri>urn:federation:MicrosoftOnline</CloudInstanceIssuerUri></RealmInfo>
+
+[DKIM Selector CNAMEs]
+  selector1._domainkey.jimmyjohns.com -> selector1-jimmyjohns-com._domainkey.inspirebrands.onmicrosoft.com.
+  selector2._domainkey.jimmyjohns.com -> selector2-jimmyjohns-com._domainkey.inspirebrands.onmicrosoft.com.
+
+[Autodiscover]
+  autodiscover.jimmyjohns.com -> autodiscover.outlook.com.
+
+---
+
+=== baskinrobbins.com ===
+[OpenID Configuration]
+  Tenant ID: 2f611596-a3da-4a81-94e8-fd4483868fc1
+  Token endpoint: https://login.microsoftonline.com/2f611596-a3da-4a81-94e8-fd4483868fc1/oauth2/token
+
+[GetUserRealm]
+<RealmInfo Success="true"><State>4</State><UserState>1</UserState><Login>test@baskinrobbins.com</Login><NameSpaceType>Managed</NameSpaceType><DomainName>baskinrobbins.com</DomainName><IsFederatedNS>false</IsFederatedNS><FederationBrandName>Inspire Brands</FederationBrandName><CloudInstanceName>microsoftonline.com</CloudInstanceName><CloudInstanceIssuerUri>urn:federation:MicrosoftOnline</CloudInstanceIssuerUri></RealmInfo>
+
+[DKIM Selector CNAMEs]
+  selector1._domainkey.baskinrobbins.com -> selector1-baskinrobbins-com._domainkey.inspirebrands.onmicrosoft.com.
+  selector2._domainkey.baskinrobbins.com -> selector2-baskinrobbins-com._domainkey.inspirebrands.onmicrosoft.com.
+
+[Autodiscover]
+  No autodiscover CNAME
+
+---
+
+=== lsmnow.com ===
+[OpenID Configuration]
+  No M365 tenant found
+
+[GetUserRealm]
+<RealmInfo Success="true"><State>4</State><UserState>1</UserState><Login>test@lsmnow.com</Login><NameSpaceType>Unknown</NameSpaceType></RealmInfo>
+
+[DKIM Selector CNAMEs]
+
+[Autodiscover]
+  No autodiscover CNAME
+
+---
+
+=== dunkinnation.com ===
+[OpenID Configuration]
+  No M365 tenant found
+
+[GetUserRealm]
+<RealmInfo Success="true"><State>4</State><UserState>1</UserState><Login>test@dunkinnation.com</Login><NameSpaceType>Unknown</NameSpaceType></RealmInfo>
+
+[DKIM Selector CNAMEs]
+
+[Autodiscover]
+  No autodiscover CNAME
+
+---
+
+Completed: 2026-04-14T07:24:37Z

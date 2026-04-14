@@ -2,7 +2,7 @@
 
 # :doughnut: I Reverse-Engineered Dunkin's Entire Digital Infrastructure Because Their Reddit Ad Annoyed Me :doughnut:
 
-**41 probe scripts. 88 entities. 32 vendors. 19 dead services. 1 load-bearing typo.**
+**51 probe scripts. 98 entities. 37 vendors. 19 dead services. 4 load-bearing typos. 1 HONK.**
 
 **All because a fake toddler tried to sell me a mango drink.**
 
@@ -42,24 +42,52 @@ No. Your toddler did not have your phone. Your **copywriter** had your phone. I 
 
 I clicked the ad. The URL was `ulink.prod.ddmprod.dunkindonuts.com` — a subdomain four levels deep leaking internal environment naming. I opened a container and started digging.
 
-I didn't stop for four waves.
+I didn't stop for five waves.
 
 ---
 
 ## :rotating_light: The Findings :rotating_light:
 
-### :abc: The Load-Bearing Typo
+### :abc: The Typo Collection
 
-I found Dunkin's **Restaurant Administration Portal** — an internal tool serving 18,000+ franchise locations. It has a one-time-password login flow. The API endpoint is:
+A $30 billion restaurant conglomerate. Six brands. 44,000+ locations. **Four typos in production.**
+
+#### 1. The Load-Bearing Typo
+
+Dunkin's **Restaurant Administration Portal** — an internal tool serving 18,000+ franchise locations. It has a one-time-password login flow. The API endpoint is:
 
 > ### `/User/GenrateOTPForUser`
 
 <kbd>G</kbd><kbd>e</kbd><kbd>n</kbd><kbd>r</kbd><kbd>a</kbd><kbd>t</kbd><kbd>e</kbd>
 
-Not "Generate." ***Genrate.***
+Not "Generate." ***Genrate.*** This is a production ASP.NET Core application. The typo is baked into every franchise operator's cached JavaScript. **They can never fix it.** The typo is load-bearing. It will outlive us all.
+
+#### 2. The Quater Pounder
+
+Baskin-Robbins has a Google Cloud Storage bucket. It's publicly listable (more on that below). Among the 34 ice cream photos inside:
+
+> `df/icecream/type/02_quater.jpg`
+
+*Quater.* Not "quarter." A quarter-sized serving of ice cream, misspelled, in a publicly accessible cloud bucket, since **February 2019.**
+
+#### 3. The Analityc
+
+Dunkin's Adobe Experience Manager has a directory:
+
+> `analitycSelectors/`
+
+Not "analytics." ***Analityc.*** It returns HTTP 200. 429 bytes. It's alive. Nobody will ever notice it.
+
+#### 4. The Shared Typo (three brands, one misspelling)
+
+I was analyzing JavaScript bundles across all Inspire Brands sites. Arby's, Sonic, and Buffalo Wild Wings all share a Next.js platform with this meta tag:
+
+> `<meta name="generatDataTestIds" content="false">`
+
+Not "generate." ***Generat.*** The same typo, in the same shared codebase, on three restaurant chains. Jimmy John's doesn't have it — they may be on an older platform version that predates the misspelling, which means someone introduced this typo in an *upgrade.*
 
 > [!CAUTION]
-> This is a production ASP.NET Core application serving 18,000+ Dunkin' locations. The typo is baked into every franchise operator's cached JavaScript. **They can never fix it.** The typo is load-bearing. It will outlive us all.
+> Four typos. Four brands. Two different misspellings of "generate." One company worth $30 billion. The Inspire Brands house style is apparently to drop letters from the word "generate" and see what happens.
 
 ---
 
@@ -108,7 +136,43 @@ The mobile platform has a service called **SWI**. It's LIVE in production, prepr
 
 **Every. Single. Path. Returns. 404.**
 
-Ruby on Rails. Behind Akamai. Shares a TLS cert with the Mobile API and the Order Delivery Engine. A first-class citizen of the platform that does *nothing anyone can see from outside.* Six environments. 35 paths. Zero answers. SWI remains this investigation's Area 51.
+Ruby on Rails. Behind Akamai. Shares a TLS cert with the Mobile API and the Order Delivery Engine. A first-class citizen of the platform that does *nothing anyone can see from outside.* Six environments. 35 paths. Zero answers.
+
+Wave 5 update: it content-negotiates. Send it `Accept: application/json` and it responds with `Content-Type: application/json`. Send it HTML headers, you get HTML headers back. It generates a unique `X-Request-Id` for every request. It's hitting the Rails router (`X-Runtime: 0.002s`). It's *alive.* It just refuses to do anything. I tried Rails-specific paths (`/rails/info/routes`, `/cable`, `/graphql`), every HTTP method, XHR headers, Authorization headers. All 404. SWI remains this investigation's Area 51.
+
+---
+
+### :goose: CP="HONK"
+
+Inspire Brands has two Okta organizations — one for employees (`inspire.okta.com`) and one for partners and franchisees (`sso.inspirepartners.net`). The partner SSO handles login for internal apps like BAM (Brand Asset Management).
+
+I pulled the response headers. There's a P3P header — the "Platform for Privacy Preferences" compact policy. This is the W3C standard that lets websites declare their data handling practices in machine-readable form. Inspire Brands' franchisee SSO portal declares:
+
+```
+P3P: CP="HONK"
+```
+
+> [!WARNING]
+> That is the **entire** privacy policy. Just "HONK." Not a valid P3P token. Not an abbreviation. Not an acronym. Someone set their franchisee authentication portal's privacy policy to a goose sound. Every Dunkin', Arby's, Sonic, BWW, and Jimmy John's franchisee who logs into internal tools gets HONKed.
+
+The same endpoint's Content Security Policy also leaks: `inspirepartners-admin.okta.com` (admin panel domain), `inspirepartners.kerberos.okta.com`, `inspirepartners.mtls.okta.com`, and `oinmanager.okta.com`. But honestly, after "HONK," the security implications feel secondary.
+
+---
+
+### :ice_cream: The Public Bucket
+
+Baskin-Robbins has a Google Cloud Storage bucket named `baskin-robbins`. It's **publicly listable.** No auth required. I ran a container and listed it.
+
+```
+$ curl -s 'https://storage.googleapis.com/baskin-robbins/' | head
+```
+
+**34 objects.** All from February 2019. Ice cream menu photos, promotional images, intro screens. A complete mobile app asset dump sitting in an open bucket for **seven years.**
+
+Contents include: `1080.png`, `intro0.jpg` through `intro2.jpg` (app onboarding screens), `df/icecream/31day.jpg` (31-cent scoop day promo), an entire `df/icecream/type/` directory with serving sizes (pint, family, half, single, and *quater*), and a `df/promo/` directory with loyalty card images.
+
+> [!NOTE]
+> For the record: ten S3 buckets also exist (`dunkin`, `dunkindonuts`, `dunkin-assets`, `dunkin-menu`, `baskinrobbins`, `arbys`, `arby`, `bww`, `jimmyjohns`, `inspire-assets`) — all return 403 (exist but private). Only the Baskin-Robbins GCS bucket is wide open. One brand, one cloud provider, one oversight.
 
 ---
 
@@ -242,6 +306,8 @@ The Let's Encrypt cert expires **April 21, 2026.** This creates a beautiful para
 > [!IMPORTANT]
 > Schrodinger's TLS cert. It is both maintained and abandoned until someone checks.
 
+**Update (Wave 5, April 14):** Seven days to expiry. I checked again. The cert has **not been renewed.** Let's Encrypt certbot auto-renewal typically fires at 30 days before expiry — that would have been March 22. It didn't fire. Something is broken, or nobody is watching. The clock is ticking. By the time you read this, the cert may already be expired, and Dunkin's `wsapi` subdomain is either serving TLS errors or someone at Theorem finally noticed.
+
 ---
 
 ### :uk: The Ghost of British Dunkin'
@@ -275,7 +341,7 @@ There is a corporate learning management system, running on **Adobe Experience M
 ---
 
 <details>
-<summary><h3>:briefcase: 29 Vendors to Sell Donuts (click to expand)</h3></summary>
+<summary><h3>:briefcase: 37 Vendors to Sell Donuts (click to expand)</h3></summary>
 
 | # | Vendor | What They Do |
 |---|--------|-------------|
@@ -311,6 +377,11 @@ There is a corporate learning management system, running on **Adobe Experience M
 | 30 | Movable Ink | Email tracking pixels (`mi.dunkindonuts.com`) |
 | 31 | **Delivery Agent** | **Donut merchandise store (dead since 2019, DNS still pointing)** |
 | 32 | Google Firebase | BWW's "buffalo-united" project (never built) |
+| 33 | **Bynder** | **Digital Asset Management — "The Vault" for all brand images** |
+| 34 | PerimeterX | Bot protection (different app ID per brand, key hardcoded in HTML) |
+| 35 | Fiserv UCOM | Payment processing (brand-specific: `ucom-dnkn`, `ucom-bskn`) |
+| 36 | Radar.io | Geolocation / store locator |
+| 37 | Freshdesk | Sonic kept their own support platform post-acquisition |
 
 More vendors than menu items.
 
@@ -324,24 +395,29 @@ More vendors than menu items.
 
 | | |
 |---|---|
-| :bar_chart: **Probe scripts** | 41 |
-| :globe_with_meridians: **Entities mapped** | 88 |
-| :warning: **Anomalies** | 46 |
-| :briefcase: **Vendors** | 32 |
+| :bar_chart: **Probe scripts** | 51 |
+| :globe_with_meridians: **Entities mapped** | 98 |
+| :warning: **Anomalies** | 57 |
+| :briefcase: **Vendors** | 37 |
 | :headstone: **Dead services** | 19 |
 | :arrows_counterclockwise: **Redirect loops** | 2 |
 | :fossil: **Fossilized redirect chains** | 5 *(up to 4 brand eras deep)* |
-| :lock: **Expired certs in production** | 1 *(3.5 years)* |
+| :lock: **Expired certs in production** | 1 *(3.5 years and counting)* |
 | :speech_balloon: **Slack messages in DNS** | 1 |
-| :abc: **Typos in production endpoints** | 1 |
+| :abc: **Typos in production** | 4 *(two different misspellings of "generate," plus "quater" and "analityc")* |
 | :ghost: **Forgotten EC2 instances** | 1 *(since 2019)* |
-| :name_badge: **Wrong company's service** | 1 *(entire Envoy proxy)* |
+| :name_badge: **Wrong company's service** | 1 *(entire Envoy proxy, cert expires in 7 days)* |
 | :house: **Private IPs in public DNS** | 1 *(192.168.7.250)* |
 | :chicken: **Abandoned Firebase projects** | 1 *(default page since 2020)* |
 | :keyboard: **Exchange internal gibberish in public DNS** | 1 *(fydibohf25spdlt — not a typo, Microsoft just talks like that)* |
 | :briefcase: **M&A data rooms still in DNS** | 3 *(year-stamped, a $2.3B acquisition you can read like tree rings)* |
 | :hotdog: **Sonic live subdomains** | 228 *(including one for bad weather, their existential nemesis)* |
 | :email: **Brands sharing one email pipe** | 7 |
+| :goose: **Privacy policies that just say HONK** | 1 |
+| :ice_cream: **Publicly listable cloud buckets** | 1 *(34 ice cream photos since 2019)* |
+| :file_cabinet: **Confirmed S3 buckets** | 10 *(all 403, but they're there)* |
+| :detective: **Services whose purpose is completely unknown** | 1 *(SWI — 6 environments, content-negotiates, serves nothing)* |
+| :lock: **Okta organizations** | 2 *(employees get one, franchisees get HONKed)* |
 
 **This started because a Dunkin' ad pretended a toddler typed on a phone.**
 
@@ -359,6 +435,6 @@ More vendors than menu items.
 
 All probes ran in containers. Zero exploitation. Zero auth bypass. I just looked at what was already there.
 
-[![Graph](https://img.shields.io/badge/GRAPH.md-88_entities,_46_anomalies-orange?style=flat-square)](investigations/dunkin/GRAPH.md) [![Scripts](https://img.shields.io/badge/Scripts-41_probe_scripts-green?style=flat-square)](investigations/dunkin/scripts/)
+[![Graph](https://img.shields.io/badge/GRAPH.md-98_entities,_57_anomalies-orange?style=flat-square)](investigations/dunkin/GRAPH.md) [![Scripts](https://img.shields.io/badge/Scripts-51_probe_scripts-green?style=flat-square)](investigations/dunkin/scripts/)
 
 </div>

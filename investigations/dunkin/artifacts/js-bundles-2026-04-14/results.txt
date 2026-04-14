@@ -1,0 +1,323 @@
+=== PROBE 47: JAVASCRIPT BUNDLE ANALYSIS ===
+Started: 2026-04-14T07:25:59Z
+
+=== Dunkin Donuts (https://www.dunkindonuts.com) ===
+[Page size: 209431 bytes]
+
+[Script tags found]
+/etc/designs/dd/scripts/cust_common.js
+/etc/designs/dd/scripts/headlibs.min.d54cde629facb96818e5ba27a33eb925.js
+/etc/designs/dd/manifest.json
+https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js
+https://js.radar.com/v4.5.3/radar.min.js
+https://www.dunkindonuts.com/pxns/Prod_Dunkin_Challenge.js
+//client.px-cloud.net/PXt8Yg6FBv/main.min.js
+https://ucom-dnkn.fiservapis.com/ucom/v2/static/v2/js/ucom-sdk.js
+/etc/clientcontext/legacy/config.init.js?path=/content/dd/en
+/etc/designs/dd/scripts/effects/snowFall.min.fc8e1fbf08b49c0b20c478f120c6dd55.js
+/etc/designs/dd/scripts/all.min.b034a7b7bff2594f9f44686ddb37eff4.js
+/etc/designs/dd/scripts/analitycSelectors/homePageTagging.min.6cf7044e18a87b400cb0a9c1dff92dcc.js
+
+[Inline script patterns]
+http://news.dunkindonuts.com/
+http://shop.dunkindonuts.com
+http://ulink.prod.ddmprod.dunkindonuts.com
+https://careers.dunkindonuts.com/us/en
+https://careers.dunkindonuts.com/us/en/search-results
+https://careers.inspirebrands.com/us/en
+https://secureshop.dunkindonuts.com
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-boston/en-responsive_image_1924310349
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-boston/en-responsive_image_1924310349.thumb.png
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-boston/en-responsive_image_1924310349/_jcr_content/par.html
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-dallas/en-responsive_image_1924310349
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-dallas/en-responsive_image_1924310349.thumb.png
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-dallas/en-responsive_image_1924310349/_jcr_content/par.html
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-new-york/en-responsive_image_1924310349
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-new-york/en-responsive_image_1924310349.thumb.png
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-new-york/en-responsive_image_1924310349/_jcr_content/par.html
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-unknown/en-responsive_image_1924310349
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-unknown/en-responsive_image_1924310349.thumb.png
+https://www.dunkindonuts.com/content/campaigns/dunkin/master/en/dduser/dma-unknown/en-responsive_image_1924310349/_jcr_content/par.html
+
+[Tracking IDs]
+GTM-NM9G46
+
+[API keys / tokens in HTML]
+API_key="HB8XN-5GW29-UAXQ4-9XSZN-WM7MY"
+
+[Meta tags]
+<meta name="msvalidate.01" content="A0FE6B356487605715B8E97E74E7C656"/>
+<meta name="title" content=" Dunkin&#39;® | America&#39;s Favorite Coffee, Espresso and Donuts | Dunkin&#39;® | Dunkin&#39;®"/>
+<meta name="keywords"/>
+<meta name="description" content="Dunkin&#39; is now pourin&#39; protein! Try the NEW Megan&#39;s Mango Protein Refresher today! Sip into Dunkin&#39; and enjoy America&#39;s favorite coffee and baked goods chain. View menu items, join Dunkin&#39; Rewards, locate stores, and discover career opportunities."/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Dunkin&#39; is now pourin&#39; protein! Try the NEW Megan&#39;s Mango Protein Refresher today! Sip into Dunkin&#39; and enjoy America&#39;s favorite coffee and baked goods chain. View menu items, join Dunkin&#39; Rewards, locate stores, and discover career opportunities."/>
+<meta property="og:keywords"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=" Dunkin&#39;® | America&#39;s Favorite Coffee, Espresso and Donuts | Dunkin&#39;® | Dunkin&#39;®"/>
+<meta name="twitter:description" content="Dunkin&#39; is now pourin&#39; protein! Try the NEW Megan&#39;s Mango Protein Refresher today! Sip into Dunkin&#39; and enjoy America&#39;s favorite coffee and baked goods chain. View menu items, join Dunkin&#39; Rewards, locate stores, and discover career opportunities."/>
+<meta name="google-site-verification" content="x3B41dPzOsthrqZOnIEd3bUICz2kCvuv0N7tQWX1JxY"/>
+
+[Analyzing: https://www.dunkindonuts.com/etc/designs/dd/scripts/cust_common.js]
+  Size: 19 bytes
+  [Internal domains]
+  [Staging/dev URLs]
+  [API endpoints]
+  [API keys/secrets]
+  [Vendor references]
+
+[Analyzing: https://www.dunkindonuts.com/etc/designs/dd/scripts/headlibs.min.d54cde629facb96818e5ba27a33eb925.js]
+  Size: 883546 bytes
+  [Internal domains]
+  [Staging/dev URLs]
+  [API endpoints]
+  [API keys/secrets]
+  [Vendor references]
+http://api.jqueryui.com
+http://dojofoundation.org
+http://jquery.com
+http://jquery.org
+http://jqueryui.com
+http://lodash.com
+http://momentjs.com
+http://sizzlejs.com
+http://sorgalla.com
+http://underscorejs.org
+
+[Analyzing: https://www.dunkindonuts.com/etc/designs/dd/manifest.json]
+  Size: 420 bytes
+  [Internal domains]
+  [Staging/dev URLs]
+  [API endpoints]
+  [API keys/secrets]
+  [Vendor references]
+
+===================================
+
+=== Baskin Robbins (https://www.baskinrobbins.com) ===
+[Page size: 115596 bytes]
+
+[Script tags found]
+/common/br/library/common_jscript.js
+https://www.dunkindonuts.com/pxns/Prod_Baskin_Challenge.js
+https://client.px-cloud.net/PXvTB0VdEc/main.min.js
+https://ucom-bskn.fiservapis.com/ucom/v2/static/v2/js/ucom-sdk.js
+/etc/designs/br/scripts/headlibs.min.2f2fd18a0b1739951ce100e2c2e5ee6d.js
+/etc/designs/br/favicons/manifest.json
+/etc/clientcontext/legacy/config.init.js?path=/content/br/en
+/etc/designs/br/scripts/all.min.5a61e390228831f01a9e7903753cdc7f.js
+
+[Inline script patterns]
+https://impact.inspirebrands.com
+https://www.dunkindonuts.com/pxns/Prod_Baskin_Challenge.js
+
+[Tracking IDs]
+GTM-K3XCXBK
+
+[API keys / tokens in HTML]
+
+[Meta tags]
+<meta name="title" content="Baskin-Robbins"/>
+<meta name="keywords" content="ice cream, ice cream shops, ice cream near me, birthday cake, ice cream cake, custom birthday cakes, custom cakes, ice cream sundaes, ice cream delivery, ice cream waffle cone, smoothies, milkshakes, ice cream floats, ice cream pints"/>
+<meta name="description" content="Flavors for everyone, every day, for every occasion. Seize the Yay and order online today."/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Flavors for everyone, every day, for every occasion. Seize the Yay and order online today."/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Baskin-Robbins"/>
+<meta name="twitter:description" content="Flavors for everyone, every day, for every occasion. Seize the Yay and order online today."/>
+<meta name="google-site-verification" content="ocen-7rRsHyTOq_voxhHBWfgXtrvEtJI5MOu0rTbT4A"/>
+<meta name="theme-color" content="#ffffff"/>
+
+[Analyzing: https://www.baskinrobbins.com/common/br/library/common_jscript.js]
+  Size: 115596 bytes
+  [Internal domains]
+https://impact.inspirebrands.com
+https://www.dunkindonuts.com/pxns/Prod_Baskin_Challenge.js
+  [Staging/dev URLs]
+  [API endpoints]
+  [API keys/secrets]
+  [Vendor references]
+http://www.youtube.com
+https://client.px-cloud.net
+https://cloud.typography.com
+https://global.ketchcdn.com
+https://go.microsoft.com
+https://itunes.apple.com
+https://ucom-bskn.fiservapis.com
+https://www.instagram.com
+https://www.tiktok.com
+
+[Analyzing: https://www.dunkindonuts.com/pxns/Prod_Baskin_Challenge.js]
+  Size: 411 bytes
+  [Internal domains]
+https://www.dunkindonuts.com/pxns/baskin_logo.png
+  [Staging/dev URLs]
+  [API endpoints]
+  [API keys/secrets]
+  [Vendor references]
+
+[Analyzing: https://client.px-cloud.net/PXvTB0VdEc/main.min.js]
+  Size: 327633 bytes
+  [Internal domains]
+  [Staging/dev URLs]
+  [API endpoints]
+"/api/v2/collector"
+  [API keys/secrets]
+  [Vendor references]
+https://b.px-cdn.net
+https://collector-PXvTB0VdEc.px-cloud.net
+https://collector-a.px-cloud.net
+https://tzm.px-cloud.net
+
+===================================
+
+=== Arbys (https://www.arbys.com) ===
+[Page size: 353678 bytes]
+
+[Script tags found]
+/_next/static/chunks/polyfills-42372ed130431b0a.js
+/_next/static/chunks/9791.8fece71c819bc1ff.js
+/_next/static/chunks/1450.90490265540c363d.js
+/_next/static/chunks/1911.8b201eb60504d2eb.js
+/_next/static/chunks/5811.c872708873c87559.js
+/_next/static/chunks/webpack-0060aa5ea43587be.js
+/_next/static/chunks/framework-7b196dbe792167aa.js
+/_next/static/chunks/main-7a951dc175c7af95.js
+/_next/static/chunks/lib-generated-9f8fd36058434d6c.js
+/_next/static/chunks/cms-data-ab2838dd0e69e4a6.js
+/_next/static/chunks/pages/_app-32a68e06ce60fec2.js
+/_next/static/chunks/1038-35b6151dcff1e9da.js
+/_next/static/chunks/5253-57ce9d5c3f41ab15.js
+/_next/static/chunks/9511-32e5eb2fee8035eb.js
+/_next/static/chunks/8477-a04f083202205683.js
+/_next/static/chunks/9107-9c7a4d6662b803d1.js
+/_next/static/chunks/5676-d4335ae7e9600340.js
+/_next/static/chunks/1547-2b5058d2bee882f7.js
+/_next/static/chunks/5468-af3748239bbea94e.js
+/_next/static/chunks/6323-02b3a524fab2791d.js
+
+[Inline script patterns]
+https://thevault.inspirebrands.com/transform/0969d581-3179-48d7-8d61-37b4d9881f45/26_ARB_2428450_OD_French-Dip-Royale_Web-Banner_Mobile
+https://thevault.inspirebrands.com/transform/0ce7eb07-3506-4a72-85cf-2a996e9bed43/25_ARB_1931321_OD_Visual-ID-Updates_SMS-Campaign_WebModule_4000x3000_F
+https://thevault.inspirebrands.com/transform/45a1811c-9dfe-406b-8d6c-62cfab4109d7/Meat-3-Chicken-Web-Module-Without-NEW
+https://thevault.inspirebrands.com/transform/67f038e1-35bc-4b2e-84b5-32bea8445bc5/26_ARB_2436950_OD_Spend-20-Get-20_Web-Module
+https://thevault.inspirebrands.com/transform/bbba867c-062f-4581-b0a6-e5008acce789/26_ARB_2428450_OD_French-Dip-Royale_Web-Banner_Desktop
+https://thevault.inspirebrands.com/transform/bdb503bf-430f-4f0b-a4d7-442794e40600/App-Peach-Cobbler-Roll
+
+[Tracking IDs]
+
+[API keys / tokens in HTML]
+
+[Meta tags]
+<meta name="description" content="Arby&#x27;s sandwich shops are known for slow roasted roast beef, turkey, and premium Angus beef sandwiches, sliced fresh every day"/>
+<meta name="next-head-count" content="12"/>
+<meta name="enable-dataTestId" content="generatDataTestIds=false"/>
+<meta name="x-app-variant" content="mbdp-ignite"/>
+
+[Analyzing: https://www.arbys.com/_next/static/chunks/polyfills-42372ed130431b0a.js]
+  Size: 112594 bytes
+  [Internal domains]
+  [Staging/dev URLs]
+  [API endpoints]
+  [API keys/secrets]
+  [Vendor references]
+https://github.com
+
+[Analyzing: https://www.arbys.com/_next/static/chunks/9791.8fece71c819bc1ff.js]
+  Size: 3483 bytes
+  [Internal domains]
+  [Staging/dev URLs]
+  [API endpoints]
+  [API keys/secrets]
+  [Vendor references]
+
+[Analyzing: https://www.arbys.com/_next/static/chunks/1450.90490265540c363d.js]
+  Size: 6877 bytes
+  [Internal domains]
+  [Staging/dev URLs]
+  [API endpoints]
+  [API keys/secrets]
+  [Vendor references]
+
+===================================
+
+=== Sonic Drive-In (https://www.sonicdrivein.com) ===
+[Page size: 1007435 bytes]
+
+[Script tags found]
+/_next/static/chunks/polyfills-42372ed130431b0a.js
+/_next/static/chunks/9791.c9a2ba3e441c3de2.js
+/_next/static/chunks/1450.90490265540c363d.js
+/_next/static/chunks/1911.8b201eb60504d2eb.js
+/_next/static/chunks/5811.551b386da5a4f606.js
+/_next/static/chunks/webpack-3f226298f9f4263e.js
+/_next/static/chunks/framework-7b196dbe792167aa.js
+/_next/static/chunks/main-7a951dc175c7af95.js
+/_next/static/chunks/lib-generated-f300e6d6b5a6d58c.js
+/_next/static/chunks/cms-data-08f739bd7e81127d.js
+/_next/static/chunks/pages/_app-21f29fb0962f9c49.js
+/_next/static/chunks/1038-35b6151dcff1e9da.js
+/_next/static/chunks/5253-57ce9d5c3f41ab15.js
+/_next/static/chunks/8477-a04f083202205683.js
+/_next/static/chunks/9511-32e5eb2fee8035eb.js
+/_next/static/chunks/9107-9c7a4d6662b803d1.js
+/_next/static/chunks/5676-862f294b0fccecd5.js
+/_next/static/chunks/1547-2feb8faaf12c51d3.js
+/_next/static/chunks/5468-af3748239bbea94e.js
+/_next/static/chunks/6323-83e496ef5403cfab.js
+
+[Inline script patterns]
+https://thevault.inspirebrands.com/transform/04377e0f-1569-4fd5-a27a-6028b9cc53ec/26_SON_2374100_OD_-1-99-Jr-Double-Cheeseburger-Offer_MainBanner_Mobile
+https://thevault.inspirebrands.com/transform/0c918282-bfd6-411e-a71d-b2903a223d30/SONICRewards_1Equals10_SkyReverseWhiteAlt
+https://thevault.inspirebrands.com/transform/1550d9b9-4ccc-4056-a7ba-1f477f1349ad/SONICRewards_OFFERS_SkyBlue
+https://thevault.inspirebrands.com/transform/1c27bf6e-3156-4eed-9f88-be5cc03a079a/SONICRewards_1Equals11_SkyReverseWhiteAlt
+https://thevault.inspirebrands.com/transform/23860676-238e-4e45-a8e0-fb6acc2348cc/26_SON_2328753_OD_CW2-New-1-99-Menu-Lineup-March-May-_ExploreMore_FullMenu-BlueBG
+https://thevault.inspirebrands.com/transform/2b39bd6f-0b8d-44a4-9744-c267932859f5/SONICRewards_Birthday_Sky
+https://thevault.inspirebrands.com/transform/34c031c0-5274-4786-a346-2574c7602556/SONIC-Rewards-Logo-Midnight-RGB
+https://thevault.inspirebrands.com/transform/3fbaa2bd-4b16-4157-99d8-35c6ee8817e3/26_SON_2374100_OD_-1-99-Jr-Double-Cheeseburger-Offer_MainBanner_Desktop
+https://thevault.inspirebrands.com/transform/755154e2-f644-4749-b232-e1dbe8c3cdb9/SONICRewards_SONICRewardsIcon_SkyFrost_Small
+https://thevault.inspirebrands.com/transform/8d57d4eb-60fa-492a-8ddf-d7843b80bba5/SON_icon-cup
+https://thevault.inspirebrands.com/transform/8e96e7fb-53a2-4a1d-92ea-d4d88457b4b2/SONICRewards_1Equals12_SkyReverseWhiteAlt
+https://thevault.inspirebrands.com/transform/aa11aba6-f352-45ec-b596-f5f3bc15ec04/SONICRewards_SONICRewardsIcon_SkyFrost
+https://thevault.inspirebrands.com/transform/c4b6a031-042f-4ac6-a67f-c7c88e650ed5/25_SON_2146450_OD_New-Smasher-Builds-LTP_ExploreMore_All-Builds_4000x3000_F
+https://thevault.inspirebrands.com/transform/cf040ff7-3431-435d-8ec7-5df783f96a47/26_SON_2327200_OD_CW2-Refreshers_Web_ExploreMore_BN_4000x3000
+
+[Tracking IDs]
+
+[API keys / tokens in HTML]
+
+[Meta tags]
+<meta name="description" content="America&#x27;s Drive In"/>
+<meta name="next-head-count" content="12"/>
+<meta name="enable-dataTestId" content="generatDataTestIds=false"/>
+<meta name="x-app-variant" content="mbdp-ignite"/>
+
+[Analyzing: https://www.sonicdrivein.com/_next/static/chunks/polyfills-42372ed130431b0a.js]
+  Size: 112594 bytes
+  [Internal domains]
+  [Staging/dev URLs]
+  [API endpoints]
+  [API keys/secrets]
+  [Vendor references]
+https://github.com
+
+[Analyzing: https://www.sonicdrivein.com/_next/static/chunks/9791.c9a2ba3e441c3de2.js]
+  Size: 3487 bytes
+  [Internal domains]
+  [Staging/dev URLs]
+  [API endpoints]
+  [API keys/secrets]
+  [Vendor references]
+
+[Analyzing: https://www.sonicdrivein.com/_next/static/chunks/1450.90490265540c363d.js]
+  Size: 6877 bytes
+  [Internal domains]
+  [Staging/dev URLs]
+  [API endpoints]
+  [API keys/secrets]
+  [Vendor references]
+
+===================================
+
+Completed: 2026-04-14T07:26:02Z

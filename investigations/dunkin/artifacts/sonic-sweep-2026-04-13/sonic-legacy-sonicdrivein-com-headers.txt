@@ -1,0 +1,19 @@
+HTTP/2 200 
+date: Tue, 14 Apr 2026 04:47:36 GMT
+content-type: text/html; charset=utf-8
+cf-ray: 9ec012ce2bab679d-SJC
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+link: <https://images.ctfassets.net>; rel="preconnect", <https://api-idp.sonicdrivein.com>; rel="preconnect", </brands/inspire/heart.gif>; rel="preload"; as=image, </_next/static/css/8863b695d1070f66.css>; rel="preload"; as=style, </_next/static/css/734c62cefca7bd2e.css>; rel="preload"; as=style, </_next/static/css/df85c8dd3df59037.css>; rel="preload"; as=style, </_next/static/css/3066663366d1b3b1.css>; rel="preload"; as=style, </_next/static/css/e33177f1a3142f9a.css>; rel="preload"; as=style, </_next/static/css/3337a61445e5e560.css>; rel="preload"; as=style, </_next/static/css/39886e4218b98d89.css>; rel="preload"; as=style
+referrer-policy: strict-origin-when-cross-origin
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=8UhejCH0eUxapELbF2s6vpLGvdvJ6b1aa5URzVVZqIUhEUkEIDI5FcwiQwJH42z4M0eymRF2ox%2F6vIc0yH6h7p0EuVZv%2BP1d%2BxaIVA7qCGEp9NmTEE%2Fj%2F%2BhDtXtRCj5NM2ASWWQ6hObOQ1XXBxoeby5zYu4zQQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+vary: Accept-Encoding
+cf-cache-status: DYNAMIC
+set-cookie: __cf_bm=4ekxwi6CnHhqtcspyRr5TmFocOKdOFynzOT_DG3zxow-1776142056-1.0.1.1-29x2DbxalnLalmvaRaTT7KJjGCKUQGHc.CrZGc_EeS3k1VuPCvk3Lh0lP6Ua5bPlArh2N67Sc3EW4eYKn9hgBY6xywndlvBUbPJ5oFWN50M; path=/; expires=Tue, 14-Apr-26 05:17:36 GMT; domain=.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+set-cookie: _cfuvid=5pHgOA.hozTUHxUjMzqYTQXsEcO03blJDsexxQq0bKY-1776142056754-0.0.1.1-604800000; path=/; domain=.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+server: cloudflare
+alt-svc: h3=":443"; ma=86400
+

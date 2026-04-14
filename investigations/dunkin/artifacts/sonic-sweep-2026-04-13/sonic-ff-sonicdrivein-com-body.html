@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SONIC — Friends & Family</title>
+  <link rel="icon" type="image/png" href="https://snc.sonicdrivein.com/brands/sdi/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; background:#0b0b0b; color:#111; }
+    .sticky-top { position: sticky; top:0; z-index:999; }
+    .nav { padding: 10px 52px; background:#ffffff; text-align:center; }
+    .logo { height:55px; max-width:200px; width:auto; }
+    .hero { position:relative; height:50vh; min-height:340px; background:#137AC9; display:grid; place-items:center; text-align:center; color:#ffffff; }
+    .hero h1 { font-family: 'Barlow Semi Condensed', Arial, sans-serif; font-size:32px; margin:.25rem 0; }
+    .hero p  { font-family: 'Oswald', sans-serif; font-size:18px; margin:0; }
+    .hero a { color:#ffffff; text-decoration:underline; }
+    .card { position:relative; width:min(94%,560px); margin:-80px auto 40px; background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,.15); }
+    .card h2 { font-family:'Barlow Semi Condensed', Arial, sans-serif; margin:0 0 .75rem; font-size:26px; }
+    label { display:block; font-size:.9rem; color:#2a221c; margin:.25rem 0 .4rem; }
+    .field { width:100%; height:42px; padding:0 12px; border-radius:10px; border:1px solid #d1d5db; font-size:1.05rem; }
+    .incorrect { margin-top:.5rem; color:#d71920; font-size:.9rem; }
+    .btn { display:block; width:100%; margin-top:1rem; padding:.8rem 1rem; border:0; border-radius:10px; background:#E40046; color:#fff; font-weight:700; cursor:pointer; font-family:'Oswald', sans-serif; font-size:1.1rem; }
+    .meta { margin-top:.75rem; font-size:.85rem; color:#6b7280; text-align:center; }
+    @media (max-width: 768px) {
+      .hero { height:60vh; }
+      .hero h1 { font-size:1.5rem; }
+      .hero p { font-size:1rem; padding:0 1rem; }
+      .card { margin:-60px auto 32px; width:min(94%,600px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="sticky-top">
+    <nav class="nav">
+      <img class="logo" src="https://images.ctfassets.net/2iottqjdrp5h/phqg9dQr6HT4MNh4XX56E/44768d4d693419d251fb471d989744f6/Logo.svg" alt="Brand logo">
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div>
+      <h1>Welcome to our new online experience!</h1>
+      <p>Don’t have a password? Our new site will launch soon. In the meantime, visit
+        <a href="https://www.sonicdrivein.com/">sonicdrivein.com</a> to satisfy your cravings.</p>
+    </div>
+  </section>
+
+  <main class="card">
+    <form method="POST" action="/__ff-login">
+      <h2>SIGN IN</h2>
+      <input type="hidden" name="redirect" value="https://ff.sonicdrivein.com/">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" class="field" placeholder="Enter password" autocomplete="current-password" required>
+      
+      <button class="btn" type="submit">SUBMIT</button>
+      <div class="meta">You’ll stay signed in on this browser for 7 days.</div>
+      <div class="meta" style="margin-top:.25rem; font-size:.8rem; color:#9ca3af;">Host: ff.sonicdrivein.com</div>
+    </form>
+  </main>
+</body>
+</html>
