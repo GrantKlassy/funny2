@@ -150,7 +150,9 @@ Inspire Brands has two Okta organizations — one for employees (`inspire.okta.c
 
 I pulled the response headers. There's a P3P header — the "Platform for Privacy Preferences" compact policy. This is the W3C standard that lets websites declare their data handling practices in machine-readable form. Inspire Brands' franchisee SSO portal declares:
 
-```
+**TRY IT YOURSELF.** Open a terminal. Copy this. Witness a Fortune 500 company's entire privacy policy in one word:
+
+```bash
 curl -sI 'https://sso.inspirepartners.net' | grep -i p3p && echo
 ```
 
