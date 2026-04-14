@@ -1,0 +1,151 @@
+=== EMAIL INFRASTRUCTURE MAPPING ===
+Date: 2026-04-14T02:27:12Z
+
+--- Dunkin Email Subdomains ---
+LIVE  click.emailinfo.dunkindonuts.com (Salesforce MC Click Tracker)
+  CNAME: none A: 128.245.32.164
+  HTTPS: 403
+Content-Type: text/html
+LIVE  cloud.emailinfo.dunkindonuts.com (Salesforce MC Cloud)
+  CNAME: none A: 128.245.17.9
+  HTTPS: 404
+Content-Type: text/html; charset=utf-8
+LIVE  image.emailinfo.dunkindonuts.com (Salesforce MC Image Host)
+  CNAME: tlslqbwkv8v13zjsh56c1pgb1tn0.image-sap.sfmc-content.com. A: tlslqbwkv8v13zjsh56c1pgb1tn0.image-sap.sfmc-content.com.,d33rfzh3b1oeyz.cloudfront.net.,99.84.215.53
+  HTTPS: 403
+server: AkamaiNetStorage
+LIVE  view.emailinfo.dunkindonuts.com (Salesforce MC View Tracker)
+  CNAME: none A: 128.245.48.163
+  HTTPS: 302
+Content-Type: text/html; charset=utf-8
+Location: /Error.aspx
+LIVE  amp.news.dunkindonuts.com (AMP for Email (News))
+  CNAME: amp.dunkin.iprsoftware.com. A: amp.dunkin.iprsoftware.com.,130.211.19.35
+  HTTPS: 403
+content-type: text/html
+LIVE  news.dunkindonuts.com (News)
+  CNAME: news.dunkindonuts.com.iprsoftware.com. A: news.dunkindonuts.com.iprsoftware.com.,main-news-dunkindonuts-com.iprsoftware.com.,gce-news-dunkindonuts-com.iprsoftware.com.
+  HTTPS: 200
+content-type: text/html; charset=utf-8
+LIVE  emails.dunkindonuts.com (Emails)
+  CNAME: none A: 159.127.198.247
+  HTTPS: 000
+LIVE  mi.dunkindonuts.com (Marketing Intelligence?)
+  CNAME: d187xgimezr5cv.cloudfront.net. A: d187xgimezr5cv.cloudfront.net.,13.249.126.104,13.249.126.98
+  HTTPS: 200
+content-type: text/html
+DEAD  email.dunkindonuts.com (Email)
+DEAD  mail.dunkindonuts.com (Mail)
+
+========================================
+CROSS-BRAND EMAIL VENDOR COMPARISON
+========================================
+
+[dunkindonuts.com]
+  MX:
+    100 dunkindonuts.com.s8a1.psmtp.com.
+    200 dunkindonuts.com.s8a2.psmtp.com.
+    300 dunkindonuts.com.s8b1.psmtp.com.
+    400 dunkindonuts.com.s8b2.psmtp.com.
+  SPF:
+    "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+  DMARC:
+    _dmarc.dunkindonuts.com.dmarc.has.pphosted.com.
+    "v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+  Authorized Senders (from SPF):
+    include:%{ir}.%{v}.%{d}.spf.has.pphosted.com
+  click.emailinfo.dunkindonuts.com → 128.245.32.164
+  cloud.emailinfo.dunkindonuts.com → 128.245.17.9
+  image.emailinfo.dunkindonuts.com → tlslqbwkv8v13zjsh56c1pgb1tn0.image-sap.sfmc-content.com.
+  emails.dunkindonuts.com → 159.127.198.247
+  news.dunkindonuts.com → news.dunkindonuts.com.iprsoftware.com.
+
+[baskinrobbins.com]
+  MX:
+    10 mxa-00919702.gslb.pphosted.com.
+    10 mxb-00919702.gslb.pphosted.com.
+  SPF:
+    "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+  DMARC:
+    _dmarc.baskinrobbins.com.dmarc.has.pphosted.com.
+    "v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+  Authorized Senders (from SPF):
+    include:%{ir}.%{v}.%{d}.spf.has.pphosted.com
+  emails.baskinrobbins.com → 159.127.198.11
+  news.baskinrobbins.com → news.baskinrobbins.com.iprsoftware.com.
+
+[arbys.com]
+  MX:
+    10 mxa-00919702.gslb.pphosted.com.
+    10 mxb-00919702.gslb.pphosted.com.
+  SPF:
+    "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+  DMARC:
+    _dmarc.arbys.com.dmarc.has.pphosted.com.
+    "v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+  Authorized Senders (from SPF):
+    include:%{ir}.%{v}.%{d}.spf.has.pphosted.com
+  emails.arbys.com → 13.111.18.27
+  email.arbys.com → 208.88.165.34
+
+[buffalowildwings.com]
+  MX:
+    10 mxa-00919702.gslb.pphosted.com.
+    10 mxb-00919702.gslb.pphosted.com.
+  SPF:
+    "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+  DMARC:
+    _dmarc.buffalowildwings.com.dmarc.has.pphosted.com.
+    "v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+  Authorized Senders (from SPF):
+    include:%{ir}.%{v}.%{d}.spf.has.pphosted.com
+  click.emailinfo.buffalowildwings.com → 13.111.48.171
+  cloud.emailinfo.buffalowildwings.com → 13.111.47.186
+  image.emailinfo.buffalowildwings.com → tl47fgl41htcqq7g-jydt6stv-kq.image-sap.sfmc-content.com.
+
+[sonicdrivein.com]
+  MX:
+    5 mxa-00919702.gslb.pphosted.com.
+    5 mxb-00919702.gslb.pphosted.com.
+  SPF:
+    "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+  DMARC:
+    _dmarc.sonicdrivein.com.dmarc.has.pphosted.com.
+    "v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+  Authorized Senders (from SPF):
+    include:%{ir}.%{v}.%{d}.spf.has.pphosted.com
+  email.sonicdrivein.com → 13.111.18.27
+
+[jimmyjohns.com]
+  MX:
+    5 mxa-00919702.gslb.pphosted.com.
+    5 mxb-00919702.gslb.pphosted.com.
+  SPF:
+    "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+  DMARC:
+    _dmarc.jimmyjohns.com.dmarc.has.pphosted.com.
+    "v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+  Authorized Senders (from SPF):
+    include:%{ir}.%{v}.%{d}.spf.has.pphosted.com
+  click.emailinfo.jimmyjohns.com → 13.111.241.208
+  cloud.emailinfo.jimmyjohns.com → 128.245.16.46
+  image.emailinfo.jimmyjohns.com → tlrl6gb3hk31hmsyql4y47dz8lzy.image-sap.sfmc-content.com.
+  email.jimmyjohns.com → mailgun.org.
+
+[inspirebrands.com]
+  MX:
+    5 mxa-00919702.gslb.pphosted.com.
+    5 mxb-00919702.gslb.pphosted.com.
+  SPF:
+    "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+  DMARC:
+    _dmarc.inspirebrands.com.dmarc.has.pphosted.com.
+    "v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+  Authorized Senders (from SPF):
+    include:%{ir}.%{v}.%{d}.spf.has.pphosted.com
+  click.emailinfo.inspirebrands.com → tl38t0x16jt7d6q2zfm3vp4b3dd4.click-sap.sfmc-marketing.com.
+  cloud.emailinfo.inspirebrands.com → tlbbb167s0tq9062m43p017pvwd4.cp-sap.sfmc-content.com.
+  image.emailinfo.inspirebrands.com → tl5mq-sqw4zvp0-972xngtc4ld88.image-sap.sfmc-content.com.
+
+=== DONE ===
+Completed: 2026-04-14T02:27:35Z

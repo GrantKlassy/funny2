@@ -1,0 +1,50 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cardfree.android.dunkindonuts.DEV",
+      "sha256_cert_fingerprints": [
+        "CE:A1:2D:A2:01:CF:9C:D0:CF:5B:05:2D:B7:FC:D0:FB:46:5B:33:9C:6A:98:8E:EF:53:B6:4F:F0:29:C4:D8:64"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cardfree.android.dunkindonuts.UAT",
+      "sha256_cert_fingerprints": [
+        "CE:A1:2D:A2:01:CF:9C:D0:CF:5B:05:2D:B7:FC:D0:FB:46:5B:33:9C:6A:98:8E:EF:53:B6:4F:F0:29:C4:D8:64"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cardfree.android.dunkindonuts.STAGE",
+      "sha256_cert_fingerprints": [
+        "CE:A1:2D:A2:01:CF:9C:D0:CF:5B:05:2D:B7:FC:D0:FB:46:5B:33:9C:6A:98:8E:EF:53:B6:4F:F0:29:C4:D8:64"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dunkinbrands.otgo",
+      "sha256_cert_fingerprints": [
+        "CE:A1:2D:A2:01:CF:9C:D0:CF:5B:05:2D:B7:FC:D0:FB:46:5B:33:9C:6A:98:8E:EF:53:B6:4F:F0:29:C4:D8:64"
+      ]
+    }
+  }
+]

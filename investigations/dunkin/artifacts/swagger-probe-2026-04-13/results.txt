@@ -1,0 +1,119 @@
+=== SWAGGER ENDPOINT FULL PROBE ===
+Target: swagger.ddmdev.dunkindonuts.com (34.237.71.65)
+Date: 2026-04-14T02:23:36Z
+
+--- DNS Resolution (multi-resolver) ---
+  @8.8.8.8 → A: 34.237.71.65,32.192.124.144, CNAME: none
+  @1.1.1.1 → A: 34.237.71.65,32.192.124.144, CNAME: none
+  @9.9.9.9 → A: 34.237.71.65,32.192.124.144, CNAME: none
+  @208.67.222.222 → A: 34.237.71.65,32.192.124.144, CNAME: none
+
+--- Reverse DNS ---
+ec2-34-237-71-65.compute-1.amazonaws.com.
+
+--- Whois (34.237.71.65) ---
+NetRange:       34.192.0.0 - 34.255.255.255
+CIDR:           34.192.0.0/10
+RegDate:        2016-09-12
+Updated:        2016-09-12
+Ref:            https://rdap.arin.net/registry/ip/34.192.0.0
+OrgName:        Amazon Technologies Inc.
+OrgId:          AT-88-Z
+City:           Seattle
+StateProv:      WA
+Country:        US
+RegDate:        2011-12-08
+Updated:        2024-01-24
+Ref:            https://rdap.arin.net/registry/entity/AT-88-Z
+OrgRoutingRef:    https://rdap.arin.net/registry/entity/IPROU3-ARIN
+OrgTechRef:    https://rdap.arin.net/registry/entity/ANO24-ARIN
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/AEA8-ARIN
+OrgRoutingRef:    https://rdap.arin.net/registry/entity/ARMP-ARIN
+OrgNOCRef:    https://rdap.arin.net/registry/entity/AANO1-ARIN
+
+--- TLS Certificate ---
+        Issuer: C=US, O=Amazon, CN=Amazon RSA 2048 M01
+        Validity
+            Not Before: Feb 18 00:00:00 2026 GMT
+            Not After : Mar 18 23:59:59 2027 GMT
+        Subject: CN=*.ddmdev.dunkindonuts.com
+        Subject Public Key Info:
+--
+                DNS:*.ddmdev.dunkindonuts.com
+            X509v3 Certificate Policies: 
+
+--- TLS SANs (full) ---
+X509v3 Subject Alternative Name: 
+DNS:*.ddmdev.dunkindonuts.com
+
+--- HTTP Method Sweep (/) ---
+  GET / → 200
+  POST / → 405
+  HEAD / → 200
+  OPTIONS / → 405
+  PUT / → 405
+  DELETE / → 405
+  PATCH / → 405
+
+--- Swagger/API Path Enumeration ---
+  / → 200 (3540B) [text/html]
+  ** CAPTURING BODY → root.response **
+  /swagger-ui → 404 (146B) [text/html]
+  /swagger-ui/ → 404 (146B) [text/html]
+  /swagger-ui.html → 404 (146B) [text/html]
+  /swagger-ui/index.html → 404 (146B) [text/html]
+  /v2/api-docs → 404 (146B) [text/html]
+  /v3/api-docs → 404 (146B) [text/html]
+  /openapi.json → 404 (146B) [text/html]
+  /openapi.yaml → 404 (146B) [text/html]
+  /api-docs → 404 (146B) [text/html]
+  /swagger-resources → 404 (146B) [text/html]
+  /swagger-resources/configuration/ui → 404 (146B) [text/html]
+  /v3/api-docs/swagger-config → 404 (146B) [text/html]
+  /actuator → 404 (146B) [text/html]
+  /actuator/health → 404 (146B) [text/html]
+  /actuator/info → 404 (146B) [text/html]
+  /actuator/env → 404 (146B) [text/html]
+  /health → 404 (146B) [text/html]
+  /status → 404 (146B) [text/html]
+  /info → 404 (146B) [text/html]
+  /version → 404 (146B) [text/html]
+  /api → 404 (146B) [text/html]
+  /api/v1 → 404 (146B) [text/html]
+  /api/v2 → 404 (146B) [text/html]
+  /docs → 404 (146B) [text/html]
+  /redoc → 404 (146B) [text/html]
+  /graphql → 404 (146B) [text/html]
+  /webjars/springfox-swagger-ui/springfox.css → 404 (146B) [text/html]
+
+--- HTTP (port 80) check ---
+  GET http://swagger.ddmdev.dunkindonuts.com/ → 000
+
+--- Nmap Top 20 Ports ---
+Starting Nmap 7.92 ( https://nmap.org ) at 2026-04-14 02:23 UTC
+nmap FAILED
+
+--- Banner Grab ---
+  Port 80: no banner / closed
+  Port 443: no banner / closed
+  Port 8080: no banner / closed
+  Port 8443: no banner / closed
+  Port 3000: no banner / closed
+  Port 5000: no banner / closed
+  Port 9090: no banner / closed
+
+--- Full Response Headers (GET /) ---
+HTTP/2 200 
+date: Tue, 14 Apr 2026 02:24:13 GMT
+content-type: text/html
+content-length: 3540
+server: nginx
+last-modified: Mon, 23 Dec 2019 16:16:14 GMT
+vary: Accept-Encoding
+etag: "5e00e84e-dd4"
+x-frame-options: deny
+accept-ranges: bytes
+
+
+=== DONE ===
+Completed: 2026-04-14T02:24:13Z

@@ -1,0 +1,181 @@
+=== GHOST DOMAINS & VANITY DOMAIN PROBE ===
+Date: 2026-04-14T02:23:40Z
+
+--- New Domain DNS ---
+clubdunkin.com
+  A: 35.173.143.243,35.153.79.184  CNAME: none
+  NS: ns-632.awsdns-15.net.,ns-1379.awsdns-44.org.  MX: none
+  TXT: "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com -all"
+www.clubdunkin.com
+  A: none  CNAME: none
+  NS: none  MX: none
+  TXT: none
+dnkn.com
+  A: 44.218.38.45,35.171.76.215  CNAME: none
+  NS: ns-592.awsdns-10.net.,ns-7.awsdns-00.com.  MX: none
+  TXT: "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com -all"
+www.dnkn.com
+  A: 44.218.38.45,35.171.76.215  CNAME: none
+  NS: none  MX: none
+  TXT: none
+lsmnow.com
+  A: 35.171.76.215,44.218.38.45  CNAME: none
+  NS: ns-860.awsdns-43.net.,ns-1400.awsdns-47.org.  MX: 20 mail.flairpromo.com.
+  TXT: "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com -all"
+www.lsmnow.com
+  A: lsmnow.com.,35.171.76.215,44.218.38.45  CNAME: lsmnow.com.
+  NS: lsmnow.com.,ns-418.awsdns-52.com.  MX: lsmnow.com.,20 mail.flairpromo.com.
+  TXT: lsmnow.com.|"v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com -all"
+dunkindonuts.co.uk
+  A: 35.173.143.243,35.153.79.184  CNAME: none
+  NS: ns-1688.awsdns-19.co.uk.,ns-214.awsdns-26.com.  MX: none
+  TXT: "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com -all"|"google-site-verification=aeYsas1vOyfx4fMRw0IUHWSeptA7Ran9OIBHQ2pOHhI"
+www.dunkindonuts.co.uk
+  A: 35.153.79.184,35.173.143.243  CNAME: none
+  NS: none  MX: none
+  TXT: none
+
+--- HTTP Redirect Chains ---
+
+[clubdunkin.com] HTTPS redirect chain:
+https://www.dunkindonuts.com:443/en/clubdunkin (final status: 200, redirects: 1)
+[clubdunkin.com] HTTP redirect chain:
+https://www.dunkindonuts.com:443/en/clubdunkin (final status: 200, redirects: 2)
+
+[dnkn.com] HTTPS redirect chain:
+https://www.dunkindonuts.com/en (final status: 200, redirects: 2)
+[dnkn.com] HTTP redirect chain:
+http://dnkn.com/ (final status: 000, redirects: 0)
+
+[lsmnow.com] HTTPS redirect chain:
+https://lsm-prod-idp.dunkinbrands.com/my.policy (final status: 302, redirects: 4)
+  HTTPS FAILED
+[lsmnow.com] HTTP redirect chain:
+http://lsmnow.com/ (final status: 000, redirects: 0)
+
+[dunkindonuts.co.uk] HTTPS redirect chain:
+https://dunkin.co.uk:443/ (final status: 403, redirects: 1)
+[dunkindonuts.co.uk] HTTP redirect chain:
+https://dunkindonuts.co.uk:443/ (final status: 301, redirects: 1)
+
+--- TLS Certificates ---
+
+[clubdunkin.com] cert:
+subject=CN=dunkinrun.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Oct  7 00:00:00 2025 GMT
+notAfter=Nov  4 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrun.com, DNS:clubdunkin.com, DNS:dunkinemail.com, DNS:*.dunkinbrands.com, DNS:*.dunkindonuts.co.uk, DNS:ddperks.com, DNS:dunkinperks.com
+
+[dnkn.com] cert:
+subject=CN=brglobalfranchising.com
+issuer=C=US, O=Amazon, OU=Server CA 1B, CN=Amazon
+notBefore=Aug 30 00:00:00 2021 GMT
+notAfter=Sep 28 23:59:59 2022 GMT
+X509v3 Subject Alternative Name: 
+    DNS:brglobalfranchising.com, DNS:*.dnkn.com, DNS:catering.dunkindonuts.com, DNS:*.lsmnow.com, DNS:lsmnow.com, DNS:dunkinnation.com, DNS:dnkn.com, DNS:staging.dunkinfranchising.com
+
+[lsmnow.com] cert:
+subject=CN=brglobalfranchising.com
+issuer=C=US, O=Amazon, OU=Server CA 1B, CN=Amazon
+notBefore=Aug 30 00:00:00 2021 GMT
+notAfter=Sep 28 23:59:59 2022 GMT
+X509v3 Subject Alternative Name: 
+    DNS:brglobalfranchising.com, DNS:*.dnkn.com, DNS:catering.dunkindonuts.com, DNS:*.lsmnow.com, DNS:lsmnow.com, DNS:dunkinnation.com, DNS:dnkn.com, DNS:staging.dunkinfranchising.com
+
+[dunkindonuts.co.uk] cert:
+subject=CN=dunkinrun.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Oct  7 00:00:00 2025 GMT
+notAfter=Nov  4 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:dunkinrun.com, DNS:clubdunkin.com, DNS:dunkinemail.com, DNS:*.dunkinbrands.com, DNS:*.dunkindonuts.co.uk, DNS:ddperks.com, DNS:dunkinperks.com
+
+========================================
+DUNKINNATION.COM REDIRECT LOOP ANALYSIS
+========================================
+--- Hop-by-hop redirect trace ---
+  Hop 1: http://dunkinnation.com/ → 301
+    Location: https://www.dunkinnation.com/
+    
+  Hop 2: https://www.dunkinnation.com/ → 000
+    
+    
+
+--- HTTPS attempt ---
+HTTP/1.1 301 Moved Permanently
+Content-length: 0
+Location: https://www.dunkinnation.com/
+Connection: keep-alive
+
+
+--- Additional Dunkin Subdomains ---
+LIVE  catering.dunkindonuts.com → CNAME: none A: 35.171.76.215,44.218.38.45 HTTP: 301
+DEAD  giftcards.dunkindonuts.com → CNAME: none A: none HTTP: n/a
+LIVE  shop.dunkindonuts.com → CNAME: none A: 44.205.124.88,3.208.66.180 HTTP: 301
+DEAD  staging.shop.dunkindonuts.com → CNAME: none A: none HTTP: n/a
+LIVE  secureshop.dunkindonuts.com → CNAME: secureshop-dunkindonuts.st.deliveryagent.com. A: secureshop-dunkindonuts.st.deliveryagent.com. HTTP: 000
+DEAD  loyalty.dunkindonuts.com → CNAME: none A: none HTTP: n/a
+LIVE  international.dunkindonuts.com → CNAME: none A: 20.74.242.116 HTTP: 200
+  Capturing shop.dunkindonuts.com → shop_dunkindonuts_com
+  Capturing international.dunkindonuts.com → international_dunkindonuts_com
+
+--- Whois ---
+
+[clubdunkin.com] whois:
+   Registrar WHOIS Server: whois.corporatedomains.com
+   Registrar URL: http://cscdbs.com
+   Updated Date: 2025-08-30T05:11:04Z
+   Creation Date: 2020-09-03T15:32:51Z
+   Registry Expiry Date: 2026-09-03T15:32:51Z
+   Registrar: CSC Corporate Domains, Inc.
+   Registrar IANA ID: 299
+   Registrar Abuse Contact Email: domainabuse@cscglobal.com
+   Registrar Abuse Contact Phone: 8887802723
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: NS-1379.AWSDNS-44.ORG
+   Name Server: NS-140.AWSDNS-17.COM
+   Name Server: NS-1596.AWSDNS-07.CO.UK
+   Name Server: NS-632.AWSDNS-15.NET
+For more information on Whois status codes, please visit https://icann.org/epp
+  whois FAILED
+
+[dnkn.com] whois:
+   Registrar WHOIS Server: whois.corporatedomains.com
+   Registrar URL: http://cscdbs.com
+   Updated Date: 2025-12-16T06:06:31Z
+   Creation Date: 2003-12-20T16:19:38Z
+   Registry Expiry Date: 2026-12-20T16:19:38Z
+   Registrar: CSC Corporate Domains, Inc.
+   Registrar IANA ID: 299
+   Registrar Abuse Contact Email: domainabuse@cscglobal.com
+   Registrar Abuse Contact Phone: 8887802723
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: NS-1252.AWSDNS-28.ORG
+   Name Server: NS-1772.AWSDNS-29.CO.UK
+   Name Server: NS-592.AWSDNS-10.NET
+   Name Server: NS-7.AWSDNS-00.COM
+For more information on Whois status codes, please visit https://icann.org/epp
+  whois FAILED
+
+[lsmnow.com] whois:
+   Registrar WHOIS Server: whois.corporatedomains.com
+   Registrar URL: http://cscdbs.com
+   Updated Date: 2026-02-01T06:07:16Z
+   Creation Date: 2004-02-05T23:24:00Z
+   Registry Expiry Date: 2027-02-05T23:24:00Z
+   Registrar: CSC Corporate Domains, Inc.
+   Registrar IANA ID: 299
+   Registrar Abuse Contact Email: domainabuse@cscglobal.com
+   Registrar Abuse Contact Phone: 8887802723
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Name Server: NS-1400.AWSDNS-47.ORG
+   Name Server: NS-1583.AWSDNS-05.CO.UK
+   Name Server: NS-418.AWSDNS-52.COM
+   Name Server: NS-860.AWSDNS-43.NET
+For more information on Whois status codes, please visit https://icann.org/epp
+  whois FAILED
+
+=== DONE ===
+Completed: 2026-04-14T02:28:21Z

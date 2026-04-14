@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'><head><meta http-equiv='content-type' content='text/html; charset=utf-8' /><title>POST data</title><script>    function setRequestPathCookies() {        var requestPath = window.location.pathname+window.location.search+window.location.hash;       document.cookie = "saml_request_path="+encodeURIComponent(requestPath)+";path=/;";   }</script></head><body onload='setRequestPathCookies(); document.forms[0].submit();'><noscript><p><strong>Note:</strong> Since your browser does not support JavaScript, you must press the button below once to proceed.</p></noscript><form method='post' action='https://sso.inspirepartners.net/app/inspirepartners_adobeexperiencemanager_1/exk2mn85ssDid0y6q697/sso/saml'><input type='hidden' name='SAMLRequest' value='PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHNh
+bWxwOkF1dGhuUmVxdWVzdCB4bWxuczpzYW1scD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4w
+OnByb3RvY29sIiBEZXN0aW5hdGlvbj0iaHR0cHM6Ly9zc28uaW5zcGlyZXBhcnRuZXJzLm5ldC9h
+cHAvaW5zcGlyZXBhcnRuZXJzX2Fkb2JlZXhwZXJpZW5jZW1hbmFnZXJfMS9leGsybW44NXNzRGlk
+MHk2cTY5Ny9zc28vc2FtbCIgSUQ9Il8wZWU5ZjVmOC03ZDgwLTQ4OTctYWNmNi02YmM5N2Y2YzQ5
+YmUiIElzc3VlSW5zdGFudD0iMjAyNi0wNC0xNFQwMjoyNzoxNloiIFByb3RvY29sQmluZGluZz0i
+dXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmJpbmRpbmdzOkhUVFAtUE9TVCIgVmVyc2lvbj0i
+Mi4wIj48c2FtbDpJc3N1ZXIgeG1sbnM6c2FtbD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4w
+OmFzc2VydGlvbiI+dGhlY2VudGVyLmR1bmtpbmJyYW5kcy5jb208L3NhbWw6SXNzdWVyPjxTaWdu
+YXR1cmUgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxTaWduZWRJ
+bmZvPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcv
+MjAwMS8xMC94bWwtZXhjLWMxNG4jIi8+PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6
+Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiLz48UmVmZXJlbmNl
+IFVSST0iI18wZWU5ZjVmOC03ZDgwLTQ4OTctYWNmNi02YmM5N2Y2YzQ5YmUiPjxUcmFuc2Zvcm1z
+PjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcj
+ZW52ZWxvcGVkLXNpZ25hdHVyZSIvPjxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3Lncz
+Lm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiLz48L1RyYW5zZm9ybXM+PERpZ2VzdE1ldGhvZCBB
+bGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZW5jI3NoYTI1NiIvPjxEaWdl
+c3RWYWx1ZT5FSllLTXRBcUdxTWo1RjFNM1pKUW5kRlcxUVYvSjdHUGVnVUw0VjMzTVNjPTwvRGln
+ZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPjxTaWduYXR1cmVWYWx1ZT5BSXpJOHFC
+R1R2ZHZ0NW1TMG02T2lUbjVSL1NJVEJVUWVsZ3dRc1l3M1VwaFpmeHluVzFZbXdJU1d0YkIvSE1u
+dDNxWEtOUVdNaCtQJiMxMzsKTUJXalcraGdBWk1sVVgyTjVkMzREREZNNUhBZWpNdG92Zzd3aE1C
+QWdqNWpDSSsyb1VySWZSU2V1NW1EYWlTNW0wc2phWlRrdEUyZSYjMTM7CjdmTTNDQlY2Tk83OThL
+KzF6b3ZvemZHemloM1VSVFdvdmIrclZrV3RMRlRGbmhjZnEyNzlQcnlodWR5S2pPOTFJMGhyRkV2
+bjRkNjcmIzEzOwpyQmFGK1g5a0FOS3JrbnhlclpWWXRHbVZPRTdKWWJ1cHhFZnUrRTNKMXBSWXRS
+Q0dtY01zN3Z3Vm0yeExJYWNRZTRsV1pEbTNtS0M2JiMxMzsKWnZWdGx2Yk1KN2xUVGNmQmI1QXVY
+TGJnN3g0VHJzZjV0SHFqVWc9PTwvU2lnbmF0dXJlVmFsdWU+PC9TaWduYXR1cmU+PHNhbWxwOk5h
+bWVJRFBvbGljeSBBbGxvd0NyZWF0ZT0idHJ1ZSIgRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6
+U0FNTDoyLjA6bmFtZWlkLWZvcm1hdDp0cmFuc2llbnQiLz48L3NhbWxwOkF1dGhuUmVxdWVzdD4=' /><noscript><input type='submit' value='Submit' /></noscript></form></body></html>

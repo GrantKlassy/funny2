@@ -1,0 +1,17 @@
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+strict-transport-security: max-age=2592000
+x-frame-options: SAMEORIGIN
+x-akamai-transformed: 9 13737 0 pmb=mRUM,2
+expires: Tue, 14 Apr 2026 02:23:39 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Tue, 14 Apr 2026 02:23:39 GMT
+content-length: 18447
+set-cookie: .AspNetCore.Antiforgery.tCKmxRLTd38=CfDJ8DAXReN4K_NOnwGbf9eLPyXNak9DxVLDmzGqPb8a7dgbF3k8VpUhEaM3gleHWoStbj6lbZXoU-crnnn6jtjIZsWaKOq01r-uCLZnqwYxVOKIJnSSA9BbTnZDZOIT6Cjp2f_YbnJhBAbjQFNun-0JQRw; path=/; samesite=strict; httponly
+set-cookie: .AspNetCore.Session=CfDJ8DAXReN4K%2FNOnwGbf9eLPyWsSV4RskdoO8SUKGz5naLXqq8ql4WyRpfP3B6998SsxQmRH4fCVx%2BKGWTjvdrOIH%2BDysnJoZEPFOqQzxiBpvV8TFtq1mFbfyyzXvV%2BT8HTzxkIkgZAYPFqFOEUKG2GTeCjRYkV%2FXDtX9FtdVabtnIG; path=/; samesite=lax; httponly
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=454
+server-timing: origin; dur=25
+server-timing: ak_p; desc="1776133419469_389286970_1918388389_47855_986_4_11_15";dur=1
+

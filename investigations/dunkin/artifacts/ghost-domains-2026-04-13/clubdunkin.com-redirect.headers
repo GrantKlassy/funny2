@@ -1,0 +1,28 @@
+HTTP/2 301 
+server: awselb/2.0
+date: Tue, 14 Apr 2026 02:23:43 GMT
+content-type: text/html
+content-length: 134
+location: https://www.dunkindonuts.com:443/en/clubdunkin
+
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains
+last-modified: Tue, 07 Apr 2026 12:09:39 GMT
+cache-control: no-cache, no-store, must-revalidate
+expires: Tue, 14 Apr 2026 02:23:43 GMT
+x-ua-compatible: IE=edge
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+x-platform: P-1
+x-akamai-transformed: 9 21112 0 pmb=mRUM,2
+date: Tue, 14 Apr 2026 02:23:43 GMT
+set-cookie: AWSALB=nVIwdMnTR3qgTQ+kSfVBuCDfBINE8oqeKRdGIgIKAF5eyaNVvB1NGQoy7I/AA7bVv1fxWLijnwEQQLhA0HmWkV7fyln8YGE+bxBkFB2BlOcBxZtdh27XiRQuVhTj; Expires=Tue, 21 Apr 2026 02:23:43 GMT; Path=/
+set-cookie: AWSALBCORS=nVIwdMnTR3qgTQ+kSfVBuCDfBINE8oqeKRdGIgIKAF5eyaNVvB1NGQoy7I/AA7bVv1fxWLijnwEQQLhA0HmWkV7fyln8YGE+bxBkFB2BlOcBxZtdh27XiRQuVhTj; Expires=Tue, 21 Apr 2026 02:23:43 GMT; Path=/; SameSite=None; Secure
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=77
+server-timing: origin; dur=10
+server-timing: ak_p; desc="1776133423374_399924815_965789633_8615_7582_5_5_15";dur=1
+

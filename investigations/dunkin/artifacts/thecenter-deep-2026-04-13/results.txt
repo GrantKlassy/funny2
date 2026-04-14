@@ -1,0 +1,90 @@
+=== THE CENTER LEARNING PORTAL DEEP PROBE ===
+Target: thecenter.dunkinbrands.com
+Date: 2026-04-14T02:27:15Z
+
+--- DNS ---
+d1zthqe9odn0bu.cloudfront.net.
+d1zthqe9odn0bu.cloudfront.net.
+99.84.41.78
+99.84.41.41
+99.84.41.57
+99.84.41.53
+
+--- TLS Certificate ---
+subject=C=US, ST=Georgia, L=Sandy Springs, O=Inspire Brands, Inc., CN=thecenter.dunkinbrands.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+notBefore=Sep  8 00:00:00 2025 GMT
+notAfter=Oct  9 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:thecenter.dunkinbrands.com
+
+--- Root Probe ---
+  Status: HTTP/2 200 
+  Headers:
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+content-length: 3279
+date: Tue, 14 Apr 2026 02:27:15 GMT
+x-content-type-options: nosniff
+set-cookie: AWSALB=mHlnY3UxpmQN+GnStisB4jwUfmDHZfMxKw5QkzkK3ALg9qYZRAMa5LkQyr1YxPn4O33ZSE5iI3+wMKqn1d9AylV/qSv0FAvjdsyb2CScfcOg15sk+tT6eEa44BhB; Expires=Tue, 21 Apr 2026 02:27:15 GMT; Path=/
+set-cookie: AWSALBCORS=mHlnY3UxpmQN+GnStisB4jwUfmDHZfMxKw5QkzkK3ALg9qYZRAMa5LkQyr1YxPn4O33ZSE5iI3+wMKqn1d9AylV/qSv0FAvjdsyb2CScfcOg15sk+tT6eEa44BhB; Expires=Tue, 21 Apr 2026 02:27:15 GMT; Path=/; SameSite=None; Secure
+server: Apache
+x-dispatcher: dispatcher1useast1-06105218
+x-vhost: publish
+cache-control: private, max-age=0, no-cache, no-store
+x-frame-options: SAMEORIGIN
+vary: Accept-Encoding
+x-cache: Miss from cloudfront
+via: 1.1 b3804902dae1ef0c5d7e34abf05bf4f4.cloudfront.net (CloudFront)
+x-amz-cf-pop: LAX54-P11
+x-amz-cf-id: rJUxE-dXW4iceNdsJyRWCtq4orevfV07d01Q986IcufhXyBpZtm8TA==
+
+
+--- AEM Content Paths (from Wayback) ---
+  /content/combo/us/en/home.html → 200 (3279B) [text/html;]
+  /content/combo/us/en/header/learning-path-combo.html → 200 (3279B) [text/html;]
+  /content/combo/us/en/header/learning-path-combo/dunkin-learning-path-11-27.html → 200 (3279B) [text/html;]
+  /content/combo/us/en/header/readiness/spring-readiness-february-21-april-30.html → 200 (3279B) [text/html;]
+  /content/dam/public-facing-documents/Background_Login.png → 200 (2727223B) [image/png]
+  /content/dam/public-facing-documents/okta-login-screen.css → 200 (1125B) [text/css]
+  /content/dam/public-facing-documents/TheCenter_Logo_090622.png → 200 (180461B) [image/png]
+  /content/dam/public-facing-documents/favicon.ico → 404 (196B) [text/html;]
+  /content/combo/us/en/home/dunkin-equipment/bakery-equipment.html → 200 (3279B) [text/html;]
+  /system/sling/logout.html → 302 (0B) [text/html;]
+  /libs/granite/core/content/login.html → 200 (12753B) [text/html;charset=utf-8]
+
+--- AEM Security Paths ---
+  /crx/de → 404 (196B)
+  /crx/de/index.jsp → 404 (196B)
+  /crx/explorer/browser/index.jsp → 404 (196B)
+  /libs/granite/security/currentuser.json → 404 (196B)
+  /system/console/bundles → 404 (196B)
+  /system/console/configMgr → 404 (196B)
+  /system/console/status-Configurations.txt → 404 (196B)
+  /bin/querybuilder.json → 404 (196B)
+  /bin/wcm/search/gql.json → 404 (196B)
+  /.json → 404 (196B)
+  /content.json → 404 (196B)
+  /etc.json → 404 (196B)
+  /apps.json → 404 (196B)
+  /var.json → 404 (196B)
+  /system/console → 404 (196B)
+  /_jcr_content.json → 404 (196B)
+  /content/combo.infinity.json → 404 (3279B)
+
+--- Wayback Machine ---
+  HTTP: 200
+timestamp statuscode mimetype original
+20230226164313 - warc/revisit http://thecenter.dunkinbrands.com/
+20240321002451 200 text/html https://thecenter.dunkinbrands.com/content/combo/us/en/header/learning-path-combo.html
+20240320234319 200 text/html https://thecenter.dunkinbrands.com/content/combo/us/en/header/learning-path-combo/dunkin-learning-path-11-27.html
+20240320234355 200 text/html https://thecenter.dunkinbrands.com/content/combo/us/en/header/readiness/spring-readiness-february-21-april-30.html
+20240320234233 200 text/html https://thecenter.dunkinbrands.com/content/combo/us/en/home.html
+20240320234426 200 text/html https://thecenter.dunkinbrands.com/content/combo/us/en/home/dunkin-equipment/bakery-equipment.html
+20240320234215 200 image/png https://thecenter.dunkinbrands.com/content/dam/public-facing-documents/Background_Login.png
+20240320234215 200 text/css https://thecenter.dunkinbrands.com/content/dam/public-facing-documents/okta-login-screen.css
+20240320234216 200 image/png https://thecenter.dunkinbrands.com/content/dam/public-facing-documents/TheCenter_Logo_090622.png
+20240322010600 302 text/html https://thecenter.dunkinbrands.com/system/sling/logout.html
+
+=== DONE ===
+Completed: 2026-04-14T02:27:25Z

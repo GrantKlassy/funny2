@@ -1,0 +1,12 @@
+[
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.arbys.android.arbysapp",
+            "sha256_cert_fingerprints": [
+                "F1:F8:06:A4:B3:ED:D0:AD:F1:49:C2:F6:95:C3:61:D3:AC:A2:00:C5:6E:DF:7A:2C:01:28:15:9C:06:29:2A:9E"
+            ]
+        }
+    }
+]

@@ -1,0 +1,42 @@
+=== CAAS PLATFORM ARCHAEOLOGY ===
+Date: 2026-04-14T02:27:13Z
+
+--- CAAS ELB DNS ---
+ELB: caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com
+
+--- fps.dunkinbrands.com ---
+caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com.
+caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com.
+--- rbos.dunkinbrands.com ---
+caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com.
+caas-prod-dunkinbrands-com-261297133.us-east-1.elb.amazonaws.com.
+
+--- CAAS DNS Variants ---
+DEAD  caas.dunkinbrands.com
+DEAD  caas-dev.dunkinbrands.com
+DEAD  caas-staging.dunkinbrands.com
+DEAD  caas-stg.dunkinbrands.com
+DEAD  caas-qa.dunkinbrands.com
+DEAD  caas-uat.dunkinbrands.com
+DEAD  caas-preprod.dunkinbrands.com
+
+--- Wayback: fps.dunkinbrands.com ---
+  HTTP: 200
+timestamp statuscode mimetype original
+20190819004742 200 text/html https://fps.dunkinbrands.com/login.aspx?ReturnUrl=%2F
+20180404042834 404 text/html https://fps.dunkinbrands.com/robots.txt
+
+--- Wayback: rbos.dunkinbrands.com ---
+  HTTP: 200
+
+--- Wayback: CAAS ELB ---
+  HTTP: 200
+[]
+
+--- ELB IP Whois ---
+
+--- crt.sh: caas*.dunkinbrands.com ---
+  HTTP: 502
+
+=== DONE ===
+Completed: 2026-04-14T02:27:47Z

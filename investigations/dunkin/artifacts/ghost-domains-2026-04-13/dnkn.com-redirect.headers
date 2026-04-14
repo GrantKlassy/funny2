@@ -1,0 +1,42 @@
+HTTP/1.1 301 Moved Permanently
+Location: https://www.dunkindonuts.com/
+Content-Length: 0
+Connection: keep-alive
+
+HTTP/2 301 
+content-type: text/html; charset=iso-8859-1
+content-length: 310
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains
+location: https://www.dunkindonuts.com/en
+cache-control: max-age=0
+expires: Tue, 14 Apr 2026 02:23:58 GMT
+date: Tue, 14 Apr 2026 02:23:58 GMT
+set-cookie: AWSALB=pWZD32OYhfebOu2nYdUUbnnNtsuAHrB4SoG9WlpHXkIQjmFZjpknt/bqC6SYcCDZ9qaQAS+HvxiDQuMh5L1N0nsng6HlQCWCxWol2LdypL++a4pziUeJZBUg75/x; Expires=Tue, 21 Apr 2026 02:23:58 GMT; Path=/
+set-cookie: AWSALBCORS=pWZD32OYhfebOu2nYdUUbnnNtsuAHrB4SoG9WlpHXkIQjmFZjpknt/bqC6SYcCDZ9qaQAS+HvxiDQuMh5L1N0nsng6HlQCWCxWol2LdypL++a4pziUeJZBUg75/x; Expires=Tue, 21 Apr 2026 02:23:58 GMT; Path=/; SameSite=None; Secure
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=69
+server-timing: origin; dur=4
+server-timing: ak_p; desc="1776133438145_399924815_965800697_7326_7453_5_5_15";dur=1
+
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains
+last-modified: Tue, 07 Apr 2026 11:43:33 GMT
+cache-control: no-cache, no-store, must-revalidate
+expires: Tue, 14 Apr 2026 02:23:58 GMT
+x-ua-compatible: IE=edge
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+x-platform: P-1
+x-akamai-transformed: 9 20447 0 pmb=mRUM,2
+date: Tue, 14 Apr 2026 02:23:58 GMT
+set-cookie: AWSALB=qyPzrV6s6XVL7AEGOB0tgJh27ZJYXoVg1URgwaVXHGdKOAOXg1QOUr0eXFBUtEVESflfJ8DrTaQKAFf1S49oBx3wYNV6WiaErwV7883BAOD1nylg9L6+u6PJidgI; Expires=Tue, 21 Apr 2026 02:23:58 GMT; Path=/
+set-cookie: AWSALBCORS=qyPzrV6s6XVL7AEGOB0tgJh27ZJYXoVg1URgwaVXHGdKOAOXg1QOUr0eXFBUtEVESflfJ8DrTaQKAFf1S49oBx3wYNV6WiaErwV7883BAOD1nylg9L6+u6PJidgI; Expires=Tue, 21 Apr 2026 02:23:58 GMT; Path=/; SameSite=None; Secure
+server-timing: cdn-cache; desc=MISS
+server-timing: edge; dur=129
+server-timing: origin; dur=20
+server-timing: ak_p; desc="1776133438236_399924815_965800759_14878_6865_5_0_15";dur=1
+

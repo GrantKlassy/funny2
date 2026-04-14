@@ -1,0 +1,47 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "web",
+      "site": "https://www.jimmyjohns.com"
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jimmyjohns",
+      "sha256_cert_fingerprints": [
+        "DD:A5:63:F0:96:A2:EE:AA:17:02:79:A5:E8:BA:C1:C9:B7:31:64:62:10:DB:08:6D:68:66:11:8E:B7:7C:5A:EC"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jimmyjohns",
+      "sha256_cert_fingerprints": [
+        "DD:A5:63:F0:96:A2:EE:AA:17:02:79:A5:E8:BA:C1:C9:B7:31:64:62:10:DB:08:6D:68:66:11:8E:B7:7C:5A:EC"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jimmyjohns.debug",
+      "sha256_cert_fingerprints": [
+        "2A:B2:01:84:58:B4:78:67:DD:B1:F9:DF:FA:31:ED:C5:3F:31:8D:E5:C8:D3:CD:3A:AC:92:10:DC:B6:8E:9E:83"
+      ]
+    }
+  }
+]

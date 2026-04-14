@@ -1,0 +1,221 @@
+=== POS / DBAPI / OPC ENDPOINT CLUSTER ===
+Date: 2026-04-14T02:25:56Z
+
+========================================
+TARGET: pos-api.dunkindonuts.com (Point of Sale API)
+========================================
+  DNS → CNAME: d-4lyjsnt947.execute-api.us-east-1.amazonaws.com. A: d-4lyjsnt947.execute-api.us-east-1.amazonaws.com.,52.55.178.112,3.232.227.133
+  Method sweep:
+    GET → 403 23
+    POST → 403 23
+    HEAD → 403 0
+    OPTIONS → 403 23
+  Headers:
+HTTP/2 403 
+date: Tue, 14 Apr 2026 02:25:57 GMT
+content-type: application/json
+content-length: 0
+x-amzn-requestid: cf24b7ef-ea1c-4942-beb0-6f3978190fdb
+x-amzn-errortype: ForbiddenException
+x-amz-apigw-id: bybUYGhgIAMEEOw=
+
+  API Gateway detection:
+    x-amzn-requestid: 96ad8d4e-d177-4e0e-b99c-c67c8cc62fc7
+    x-amz-apigw-id: bybUaGRRIAMEoYQ=
+    x-amzn-errortype: ForbiddenException
+  Body: 23 bytes
+  Body preview:
+{"message":"Forbidden"}
+  TLS Cert:
+subject=CN=pos-api.dunkindonuts.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M02
+notBefore=Aug  8 00:00:00 2025 GMT
+notAfter=Sep  5 23:59:59 2026 GMT
+  Path sweep:
+
+========================================
+TARGET: pos-ws.dunkindonuts.com (POS WebSocket)
+========================================
+  DNS → CNAME: d-9qf2wa4mt6.execute-api.us-east-1.amazonaws.com. A: d-9qf2wa4mt6.execute-api.us-east-1.amazonaws.com.,54.209.217.73,34.195.159.121
+  Method sweep:
+    GET → 426 0
+    POST → 403 24
+    HEAD → 403 0
+    OPTIONS → 403 24
+  Headers:
+HTTP/2 403 
+date: Tue, 14 Apr 2026 02:26:00 GMT
+content-length: 24
+x-amz-apigw-id: bybU7eAfoAMCE2A=
+
+  API Gateway detection:
+    x-amz-apigw-id: bybU-feRIAMCICw=
+  Body: 0 bytes
+  TLS Cert:
+subject=CN=pos-ws.dunkindonuts.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M02
+notBefore=Aug  6 00:00:00 2025 GMT
+notAfter=Sep  3 23:59:59 2026 GMT
+  Path sweep:
+    /api → 426
+    /api/v1 → 426
+    /health → 426
+    /status → 426
+    /swagger-ui → 426
+    /v2/api-docs → 426
+    /docs → 426
+
+========================================
+TARGET: opc-api.dunkindonuts.com (OPC API)
+========================================
+  DNS → CNAME: d-3478q4sxnd.execute-api.us-east-1.amazonaws.com. A: d-3478q4sxnd.execute-api.us-east-1.amazonaws.com.,54.237.164.33,98.89.8.250
+  Method sweep:
+    GET → 403 23
+    POST → 403 23
+    HEAD → 403 0
+    OPTIONS → 403 23
+  Headers:
+HTTP/2 403 
+date: Tue, 14 Apr 2026 02:26:04 GMT
+content-type: application/json
+content-length: 0
+x-amzn-requestid: 698da8a1-104e-4c17-9f9a-9342eb28dd1e
+x-amzn-errortype: ForbiddenException
+x-amz-apigw-id: bybVfFymoAMECjQ=
+
+  API Gateway detection:
+    x-amzn-requestid: 4f520ad5-36bf-433d-98e3-291bad5f68a7
+    x-amz-apigw-id: bybVhFJEoAMEVcw=
+    x-amzn-errortype: ForbiddenException
+  Body: 23 bytes
+  Body preview:
+{"message":"Forbidden"}
+  TLS Cert:
+subject=CN=opc-api.dunkindonuts.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M04
+notBefore=Nov 17 00:00:00 2025 GMT
+notAfter=Dec 15 23:59:59 2026 GMT
+  Path sweep:
+
+========================================
+TARGET: dbapi.dunkindonuts.com (Database API)
+========================================
+  DNS → CNAME: none A: 3.163.125.80,3.163.125.60,3.163.125.42
+  Method sweep:
+    GET → 403 23
+    POST → 403 23
+    HEAD → 403 0
+    OPTIONS → 403 23
+  Headers:
+HTTP/2 403 
+content-type: application/json
+content-length: 0
+date: Tue, 14 Apr 2026 02:26:07 GMT
+x-amz-apigw-id: bybV-ElcoAMEHXg=
+x-amzn-requestid: 9818d15b-5529-4c6a-8161-e4219b3ed819
+x-amzn-errortype: ForbiddenException
+x-cache: Error from cloudfront
+via: 1.1 a2dcca404bdea6d6911a6146c6b5b15e.cloudfront.net (CloudFront)
+x-amz-cf-pop: LAX54-P1
+x-amz-cf-id: KKw32PVay2ljDckrT8RU9jeulXKIyeC8VFJPIEwsM7-Q4t2wEepNPA==
+
+  API Gateway detection:
+    x-amzn-requestid: 9f61dcff-fb0a-4fce-8b38-2a6b74462bec
+    x-amz-apigw-id: bybV_H1GIAMEGFQ=
+    x-amz-cf-id: 1vBxNM2Bdjti3E0eOlCiilhzOIcQTrwfhUYStFugdPNHwJfs6TTWxQ==
+    x-amzn-errortype: ForbiddenException
+  Body: 23 bytes
+  Body preview:
+{"message":"Forbidden"}
+  TLS Cert:
+subject=CN=dbapi.dunkindonuts.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Jan 21 00:00:00 2026 GMT
+notAfter=Feb 19 23:59:59 2027 GMT
+  Path sweep:
+
+========================================
+TARGET: dbapi-ws.dunkindonuts.com (Database API WebSocket)
+========================================
+  DNS → CNAME: d-jd10dqc4l6.execute-api.us-east-1.amazonaws.com. A: d-jd10dqc4l6.execute-api.us-east-1.amazonaws.com.,32.192.105.7,52.21.186.107
+  Method sweep:
+    GET → 426 0
+    POST → 403 24
+    HEAD → 403 0
+    OPTIONS → 403 24
+  Headers:
+HTTP/2 403 
+date: Tue, 14 Apr 2026 02:26:09 GMT
+content-length: 24
+x-amz-apigw-id: bybWXdkEIAMCEbg=
+
+  API Gateway detection:
+    x-amz-apigw-id: bybWZfYboAMCJtA=
+  Body: 0 bytes
+  TLS Cert:
+subject=CN=dbapi-ws.dunkindonuts.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Dec  6 00:00:00 2025 GMT
+notAfter=Jan  3 23:59:59 2027 GMT
+  Path sweep:
+    /api → 426
+    /api/v1 → 426
+    /health → 426
+    /status → 426
+    /swagger-ui → 426
+    /v2/api-docs → 426
+    /docs → 426
+
+========================================
+TARGET: ddapi.dunkindonuts.com (DD API)
+========================================
+  DNS → CNAME: none A: 164.109.105.49
+  Method sweep:
+    GET → 000 0
+    POST → 000 0
+    HEAD → 000 0
+    OPTIONS → 000 0
+  Headers:
+    FAILED
+  API Gateway detection:
+  Body: 0 bytes
+  TLS Cert:
+    TLS FAILED
+  Path sweep:
+
+========================================
+TARGET: ddapi.staging.dunkindonuts.com (DD API Staging)
+========================================
+  DNS → CNAME: none A: 164.109.104.165
+  Method sweep:
+    GET → 000 0
+    POST → 000 0
+    HEAD → 000 0
+    OPTIONS → 000 0
+  Headers:
+    FAILED
+  API Gateway detection:
+  Body: 0 bytes
+  TLS Cert:
+    TLS FAILED
+  Path sweep:
+
+========================================
+TARGET: ddwlapi.staging.dunkindonuts.com (DD White Label API Staging)
+========================================
+  DNS → CNAME: none A: 164.109.104.21
+  Method sweep:
+    GET → 000 0
+    POST → 000 0
+    HEAD → 000 0
+    OPTIONS → 000 0
+  Headers:
+    FAILED
+  API Gateway detection:
+  Body: 0 bytes
+  TLS Cert:
+    TLS FAILED
+  Path sweep:
+
+=== DONE ===
+Completed: 2026-04-14T02:33:00Z

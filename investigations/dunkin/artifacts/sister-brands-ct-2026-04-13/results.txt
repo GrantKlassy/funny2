@@ -1,0 +1,166 @@
+=== SISTER BRANDS CT LOG QUERIES ===
+Date: 2026-04-14T02:23:45Z
+
+--- Arby's: %.arbys.com ---
+  Querying crt.sh...
+  SUCCESS: 859 entries
+  Unique subdomains: 110
+*.api-ss.arbys.com
+*.api.arbys.com
+*.arbys.com
+*.cds.arbys.com
+AutoDiscover.arbys.com
+DirectAccess.Arbys.com
+a.api.arbys.com
+account.arbys.com
+activesync.wendysarbys.com
+adfs.arbys.com
+agency.arbys.com
+api-ss.arbys.com
+api.arbys.com
+api.locations.arbys.com
+arbys.com
+archive.arbys.com
+argbusinesscenter.arbys.com
+argmobile.arbys.com
+asfm.arbys.com
+assets.locations.arbys.com
+autodiscover.arbys.com
+autodiscover.red.arbys.com
+autodiscover.wendysarbys.com
+blog.arbys.com
+careers.arbys.com
+cds.arbys.com
+chat.arbys.com
+chatdev.arbys.com
+chattest.arbys.com
+click.emails.arbys.com
+  ... and 80 more
+  Cert Issuers:
+    122 C=US, O=Let's Encrypt, CN=R3
+     99 C=US, O="Cloudflare, Inc.", CN=Cloudflare Inc ECC CA-3
+     97 C=US, O=Google Trust Services, CN=WE1
+     93 C=US, O="Cloudflare, Inc.", CN=Cloudflare Inc RSA CA-2
+     82 C=US, O=Let's Encrypt, CN=Let's Encrypt Authority X3
+     56 C=US, O=Google Trust Services, CN=WR1
+     44 C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+     36 C=US, O=Let's Encrypt, CN=R10
+     28 C=US, O=DigiCert Inc, CN=DigiCert TLS RSA SHA256 2020 CA1
+     20 C=US, O=Let's Encrypt, CN=E1
+  Environment breakdown:
+    dev: 3
+    uat: 3
+    test: 2
+
+--- Buffalo Wild Wings: %.buffalowildwings.com ---
+  Querying crt.sh...
+  FAILED (HTTP 000) — retrying in 5s...
+  RETRY FAILED (HTTP 000)
+
+--- Sonic Drive-In: %.sonicdrivein.com ---
+  Querying crt.sh...
+  SUCCESS: 2787 entries
+  Unique subdomains: 281
+*.api-idp.sonicdrivein.com
+*.api-rap.sonicdrivein.com
+*.dev.sonicdrivein.com
+*.gifts.sonicdrivein.com
+*.scma-dev.sonicdrivein.com
+*.scma-preprod.sonicdrivein.com
+*.scma-qa.sonicdrivein.com
+*.scma.sonicdrivein.com
+*.snclg-api.sonicdrivein.com
+*.sonicdrivein.com
+12-41-206-1.sonicdrivein.com
+443jr8e8btg9htcf9hzb.foundation.sonicdrivein.com
+443jr8e8btg9htcf9hzb.sonicdrivein.com
+EXPe.sonicdrivein.com
+Hybrid01.sonicdrivein.com
+Hybrid02.sonicdrivein.com
+JPDCLDW28S.sonicdrivein.com
+Lyncdiscover.sonicdrivein.com
+LyncdiscoverInternal.sonicdrivein.com
+Syslog-PPS.sonicdrivein.com
+a.api-idp.sonicdrivein.com
+abs.sonicdrivein.com
+account-dev.sonicdrivein.com
+account-preprod.sonicdrivein.com
+account-qa.sonicdrivein.com
+account-sandbox.sonicdrivein.com
+account.sonicdrivein.com
+accounts.sonicdrivein.com
+accruent.sonicdrivein.com
+adfs.sonicdrivein.com
+  ... and 251 more
+  Cert Issuers:
+    510 C=US, O=Google Trust Services, CN=WE1
+    365 C=US, O=Google Trust Services, CN=WR1
+    296 C=US, O=Let's Encrypt, CN=R3
+    278 C=US, O="Cloudflare, Inc.", CN=Cloudflare Inc ECC CA-3
+    268 C=US, O="Cloudflare, Inc.", CN=Cloudflare Inc RSA CA-2
+    209 C=US, O=Let's Encrypt, CN=Let's Encrypt Authority X3
+    116 C=US, O=Let's Encrypt, CN=R11
+    102 C=US, O=Let's Encrypt, CN=E1
+    100 C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+     74 C=US, O=Let's Encrypt, CN=R10
+  Environment breakdown:
+    dev: 13
+    qa: 30
+    staging: 1
+    preprod: 5
+    sandbox: 4
+    test: 5
+
+--- Jimmy John's: %.jimmyjohns.com ---
+  Querying crt.sh...
+  FAILED (HTTP 404) — retrying in 5s...
+  RETRY SUCCESS: 688 entries
+  Unique subdomains: 86
+*.api-idp.jimmyjohns.com
+*.api-rap.jimmyjohns.com
+*.jimmyjohns.com
+*.locations.jimmyjohns.com
+CDN.jimmyjohns.com
+IC3.jimmyjohns.com
+WSUS.JIMMYJOHNS.COM
+api-idp.jimmyjohns.com
+api-rap.jimmyjohns.com
+api.jimmyjohns.com
+api.locations.jimmyjohns.com
+api2.jimmyjohns.com
+apps.jimmyjohns.com
+apps01.jimmyjohns.com
+assets.locations.jimmyjohns.com
+auth.jimmyjohns.com
+aw-cg.jimmyjohns.com
+bitbucket.jimmyjohns.com
+careers.jimmyjohns.com
+catalog.jimmyjohns.com
+chat.jimmyjohns.com
+chatdev.jimmyjohns.com
+chattest.jimmyjohns.com
+click.emailinfo.jimmyjohns.com
+cloud.emailinfo.jimmyjohns.com
+core.jimmyjohns.com
+core01.jimmyjohns.com
+dev-portainer.jimmyjohns.com
+dev01.jimmyjohns.com
+docker.jimmyjohns.com
+
+--- Baskin-Robbins: %.baskinrobbins.com ---
+  Querying crt.sh...
+  FAILED (HTTP 502) — retrying in 5s...
+  RETRY FAILED (HTTP 502)
+
+--- Inspire Brands (parent): %.inspirebrands.com ---
+  Querying crt.sh...
+  FAILED (HTTP 502) — retrying in 5s...
+  RETRY FAILED (HTTP 502)
+
+--- Dunkin' Brands (RETRY): %.dunkinbrands.com ---
+  Querying crt.sh...
+  FAILED (HTTP 502) — retrying in 5s...
+  RETRY FAILED (HTTP 502)
+
+=== DONE ===
+Completed: 2026-04-14T02:28:17Z

@@ -1,0 +1,538 @@
+=== SISTER BRANDS: CERTS, AASA, VENDOR DETECTION ===
+Date: 2026-04-14T02:23:44Z
+
+========================================
+BRAND: dunkindonuts.com
+========================================
+--- TLS Certificate (www.dunkindonuts.com) ---
+subject=C=US, ST=Massachusetts, L=Canton, O=Dunkin' Brands, Inc., CN=www.dunkindonuts.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=GeoTrust TLS RSA CA G1
+notBefore=Nov 20 00:00:00 2025 GMT
+notAfter=Nov 19 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.dunkindonuts.com, DNS:afm.dunkinbrands.com, DNS:dev2.dunkindonuts.com, DNS:dunkindonuts.com, DNS:dunkinnation.com, DNS:dunkinrewards.com, DNS:fps.dunkinbrands.com, DNS:franchiseecentral.dunkinbrands.com, DNS:global.dunkinfranchising.com, DNS:loyalty.dunkindonuts.com, DNS:menu-pricing-prd.dunkindonuts.com, DNS:menu-pricing-prd1.dunkindonuts.com, DNS:menu-pricing-stg.dunkindonuts.com, DNS:qa.baskinrobbins.com, DNS:qa.dunkindonuts.com, DNS:qa2.dunkindonuts.com, DNS:qrmenu-stg.dunkinbrands.com, DNS:qrmenu.dunkinbrands.com, DNS:social-ssoprd.dunkindonuts.com, DNS:social-ssopreprod.dunkindonuts.com, DNS:social-ssostg.dunkindonuts.com, DNS:ssoprd.dunkindonuts.com, DNS:ssostg.dunkindonuts.com, DNS:staging.baskinrobbins.com, DNS:staging.dunkindonuts.com, DNS:staging.dunkinfranchising.com, DNS:staging.dunkinnation.com, DNS:staging2.baskinrobbins.com, DNS:staging3.dunkindonuts.com, DNS:staging3.dunkinnation.com, DNS:star-stg.dunkinbrands.com, DNS:star.dunkinbrands.com, DNS:uat.dunkindonuts.com, DNS:wsvc.dunkinrun.com, DNS:www.baskinrobbins.com, DNS:www.baskinrobbinsfranchising.com, DNS:www.brglobalfranchising.com, DNS:www.ddglobalfranchising.com, DNS:www.ddperks.com, DNS:www.dunkinemail.com, DNS:www.dunkinfranchising.com, DNS:www.dunkinnation.com, DNS:www.dunkinperks.com, DNS:www.dunkinrewards.com, DNS:www.dunkinrun.com, DNS:www.franchiseecentral.dunkinbrands.com, DNS:www2.baskinrobbins.com
+
+--- Apple App Site Association ---
+  Status: 200
+{
+  "activitycontinuation": {
+    "apps": [
+      "7UARB5Z69S.com.dunkinbrands.otgo"
+    ]
+  },
+  "appclips": {
+    "apps": [
+      "7UARB5Z69S.com.dunkinbrands.otgo.Clip"
+    ]
+  },
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "7UARB5Z69S.com.dunkinbrands.otgo",
+        "paths": [
+          "/en/menu/espresso-and-coffee/*",
+          "/en/menu/teas-and-more/*",
+          "/en/menu/frozen-drinks/*",
+          "/en/menu/sandwiches-and-more/*",
+          "/en/menu/snacks-and-wraps/*",
+          "/en/menu/bagels-and-muffins/*",
+          "/en/menu/donuts/*",
+          "/en/menu/brew-at-home/*",
+          "NOT /*",
+          "NOT /en/menu/*"
+        ]
+      }
+    ]
+  }
+}
+  App IDs:
+7UARB5Z69S.com.dunkinbrands.otgo
+
+--- Android Asset Links ---
+  Status: 200
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cardfree.android.dunkindonuts.DEV",
+      "sha256_cert_fingerprints": [
+        "CE:A1:2D:A2:01:CF:9C:D0:CF:5B:05:2D:B7:FC:D0:FB:46:5B:33:9C:6A:98:8E:EF:53:B6:4F:F0:29:C4:D8:64"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cardfree.android.dunkindonuts.UAT",
+      "sha256_cert_fingerprints": [
+        "CE:A1:2D:A2:01:CF:9C:D0:CF:5B:05:2D:B7:FC:D0:FB:46:5B:33:9C:6A:98:8E:EF:53:B6:4F:F0:29:C4:D8:64"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cardfree.android.dunkindonuts.STAGE",
+      "sha256_cert_fingerprints": [
+        "CE:A1:2D:A2:01:CF:9C:D0:CF:5B:05:2D:B7:FC:D0:FB:46:5B:33:9C:6A:98:8E:EF:53:B6:4F:F0:29:C4:D8:64"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dunkinbrands.otgo",
+      "sha256_cert_fingerprints": [
+        "CE:A1:2D:A2:01:CF:9C:D0:CF:5B:05:2D:B7:FC:D0:FB:46:5B:33:9C:6A:98:8E:EF:53:B6:4F:F0:29:C4:D8:64"
+      ]
+    }
+  }
+]
+  Package names:
+com.cardfree.android.dunkindonuts.DEV
+com.cardfree.android.dunkindonuts.STAGE
+com.cardfree.android.dunkindonuts.UAT
+com.dunkinbrands.otgo
+
+--- Branch.io Detection ---
+  HIT: dunkindonuts.smart.link → 34.36.249.118
+  HIT: dunkindonuts.app.link → 18.154.144.11
+  HIT: dunkindonuts.test-app.link → 3.168.147.13
+  HIT: dunkindonuts.smart.link → 34.36.249.118
+  HIT: dunkindonuts.app.link → 18.154.144.11
+  HIT: dunkindonuts.test-app.link → 3.168.147.13
+  HIT: dunkin.smart.link → 34.36.249.118
+  HIT: dunkin.app.link → 18.154.144.61
+  HIT: dunkin.test-app.link → 3.168.147.13
+
+--- HTTP Headers (www.dunkindonuts.com) ---
+HTTP/2 301 
+content-type: text/html; charset=iso-8859-1
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains
+location: https://www.dunkindonuts.com/en
+cache-control: max-age=0
+expires: Tue, 14 Apr 2026 02:23:44 GMT
+content-length: 0
+date: Tue, 14 Apr 2026 02:23:44 GMT
+set-cookie: AWSALB=HA20UejaVuYa3dGvssuWCTdyhR1Tp3S9KM2Tavnp/jBiBWSTfbJrShVp5E5+LpfELBtfF5CAxbl6bzF0iKXRHAiu3y8kbnGkeT4rI7VTOAoCnP/u4LwL1p5L3yxe; Expires=Tue, 21 Apr 2026 02:23:44 GMT; Path=/
+set-cookie: AWSALBCORS=HA20UejaVuYa3dGvssuWCTdyhR1Tp3S9KM2Tavnp/jBiBWSTfbJrShVp5E5+LpfELBtfF5CAxbl6bzF0iKXRHAiu3y8kbnGkeT4rI7VTOAoCnP/u4LwL1p5L3yxe; Expires=Tue, 21 Apr 2026 02:23:44 GMT; Path=/; SameSite=None; Secure
+server-timing: ak_p; desc="1776133424646_399924815_965790625_10881_6806_4_5_15";dur=1
+
+
+========================================
+BRAND: baskinrobbins.com
+========================================
+--- TLS Certificate (www.baskinrobbins.com) ---
+subject=C=US, ST=Massachusetts, L=Canton, O=Dunkin' Brands, Inc., CN=www.dunkindonuts.com
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=GeoTrust TLS RSA CA G1
+notBefore=Nov 20 00:00:00 2025 GMT
+notAfter=Nov 19 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.dunkindonuts.com, DNS:afm.dunkinbrands.com, DNS:dev2.dunkindonuts.com, DNS:dunkindonuts.com, DNS:dunkinnation.com, DNS:dunkinrewards.com, DNS:fps.dunkinbrands.com, DNS:franchiseecentral.dunkinbrands.com, DNS:global.dunkinfranchising.com, DNS:loyalty.dunkindonuts.com, DNS:menu-pricing-prd.dunkindonuts.com, DNS:menu-pricing-prd1.dunkindonuts.com, DNS:menu-pricing-stg.dunkindonuts.com, DNS:qa.baskinrobbins.com, DNS:qa.dunkindonuts.com, DNS:qa2.dunkindonuts.com, DNS:qrmenu-stg.dunkinbrands.com, DNS:qrmenu.dunkinbrands.com, DNS:social-ssoprd.dunkindonuts.com, DNS:social-ssopreprod.dunkindonuts.com, DNS:social-ssostg.dunkindonuts.com, DNS:ssoprd.dunkindonuts.com, DNS:ssostg.dunkindonuts.com, DNS:staging.baskinrobbins.com, DNS:staging.dunkindonuts.com, DNS:staging.dunkinfranchising.com, DNS:staging.dunkinnation.com, DNS:staging2.baskinrobbins.com, DNS:staging3.dunkindonuts.com, DNS:staging3.dunkinnation.com, DNS:star-stg.dunkinbrands.com, DNS:star.dunkinbrands.com, DNS:uat.dunkindonuts.com, DNS:wsvc.dunkinrun.com, DNS:www.baskinrobbins.com, DNS:www.baskinrobbinsfranchising.com, DNS:www.brglobalfranchising.com, DNS:www.ddglobalfranchising.com, DNS:www.ddperks.com, DNS:www.dunkinemail.com, DNS:www.dunkinfranchising.com, DNS:www.dunkinnation.com, DNS:www.dunkinperks.com, DNS:www.dunkinrewards.com, DNS:www.dunkinrun.com, DNS:www.franchiseecentral.dunkinbrands.com, DNS:www2.baskinrobbins.com
+
+--- Apple App Site Association ---
+  Status: 302
+
+--- Android Asset Links ---
+  Status: 302
+
+--- Branch.io Detection ---
+  HIT: baskinrobbins.smart.link → 34.36.249.118
+  HIT: baskinrobbins.app.link → 18.154.144.61
+  HIT: baskinrobbins.test-app.link → 3.168.147.39
+  HIT: baskinrobbins.smart.link → 34.36.249.118
+  HIT: baskinrobbins.app.link → 18.154.144.86
+  HIT: baskinrobbins.test-app.link → 3.168.147.39
+  HIT: baskinrobbins.smart.link → 34.36.249.118
+  HIT: baskinrobbins.app.link → 18.154.144.86
+  HIT: baskinrobbins.test-app.link → 3.168.147.39
+  HIT: br.smart.link → 34.36.249.118
+  HIT: br.app.link → 18.154.144.86
+  HIT: br.test-app.link → 3.168.147.37
+
+--- HTTP Headers (www.baskinrobbins.com) ---
+HTTP/1.1 503 Service Unavailable
+Server: AkamaiGHost
+Mime-Version: 1.0
+Content-Type: text/html
+Content-Length: 282
+Expires: Tue, 14 Apr 2026 02:23:46 GMT
+Cache-Control: max-age=0, no-cache, no-store
+Pragma: no-cache
+Date: Tue, 14 Apr 2026 02:23:46 GMT
+Connection: keep-alive
+
+
+========================================
+BRAND: arbys.com
+========================================
+--- TLS Certificate (www.arbys.com) ---
+subject=CN=arbys.com
+issuer=C=US, O=Let's Encrypt, CN=E7
+notBefore=Mar 28 17:30:34 2026 GMT
+notAfter=Jun 26 17:30:33 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:*.arbys.com, DNS:arbys.com
+
+--- Apple App Site Association ---
+  Status: 404
+
+--- Android Asset Links ---
+  Status: 200
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.arbys.android.arbysapp",
+      "sha256_cert_fingerprints": [
+        "F1:F8:06:A4:B3:ED:D0:AD:F1:49:C2:F6:95:C3:61:D3:AC:A2:00:C5:6E:DF:7A:2C:01:28:15:9C:06:29:2A:9E"
+      ]
+    }
+  }
+]
+  Package names:
+com.arbys.android.arbysapp
+
+--- Branch.io Detection ---
+  HIT: arbys.smart.link → 34.36.249.118
+  HIT: arbys.app.link → 18.154.144.61
+  HIT: arbys.test-app.link → 3.168.147.37
+  HIT: arbys.smart.link → 34.36.249.118
+  HIT: arbys.app.link → 18.154.144.20
+  HIT: arbys.test-app.link → 3.168.147.37
+  HIT: arbys.smart.link → 34.36.249.118
+  HIT: arbys.app.link → 18.154.144.20
+  HIT: arbys.test-app.link → 3.168.147.96
+
+--- HTTP Headers (www.arbys.com) ---
+HTTP/2 200 
+date: Tue, 14 Apr 2026 02:23:47 GMT
+content-type: text/html; charset=utf-8
+cf-ray: 9ebf40200d13cdb3-SJC
+access-control-allow-origin: *
+cache-control: public, max-age=120
+link: </brands/inspire/heart.gif>; rel="preload"; as=image, </_next/static/css/6b5483becaa04533.css>; rel="preload"; as=style, </_next/static/css/58443f4f6a61fa36.css>; rel="preload"; as=style, </_next/static/css/6ae3d5b2a796a746.css>; rel="preload"; as=style, </_next/static/css/e9186cc5192687d3.css>; rel="preload"; as=style, </_next/static/css/5af54c5afa2e4b0a.css>; rel="preload"; as=style, </_next/static/css/8507cb92fa940c74.css>; rel="preload"; as=style, </_next/static/css/b85a88203ca8bd1f.css>; rel="preload"; as=style
+referrer-policy: strict-origin-when-cross-origin
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=0hgho38Yr0j%2FQQMpkKuR%2FTpIvuPqtQBjPn0HtiSzl%2FBHvJ5Z1hGbO54Di3dN0w80Kx8WZ7z84A0Wkwq%2Bsg1UvaIedZEqZJ%2BV60aQOEaKufAvRpbF0Ns0spUFIw6Lyia90A%3D%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+vary: Accept-Encoding
+cf-cache-status: MISS
+set-cookie: __cf_bm=N2g9EGNrix..avIHrrr_rYk7O8WTJLfvllPj9ZwU.B0-1776133427-1.0.1.1-2IHA2uTI9I5xMrh3mNGYgD1K4s6dvDzOejkgafWu7EASUcgaFYTIJdxYNewJO15S5qdC1IiuuQB5Qxqr_tvqM98N3GmXzoq8fC_tlH3N9PZKpJICYrT9kgXRAICuZu3.; path=/; expires=Tue, 14-Apr-26 02:53:47 GMT; domain=.arbys.com; HttpOnly; Secure; SameSite=None
+set-cookie: __cf_bm=Aaz2ZXbaWxfAW_pD8yRQDwgFzKRjik342HuaTK5yvy4-1776133427-1.0.1.1-ypSoaxyyhwjET00tN6DsI3LNYPaNhJ_DchOIW8dr77J3y2yK1HtfhQeI8mGmMtAZsZLUFotFXmTi1H_y2L1jo3P8zeqA3Rp1ahQ_nTz9tapKsAEpYRkspJlZWBsQcRV_; path=/; expires=Tue, 14-Apr-26 02:53:47 GMT; domain=.arbys.com; HttpOnly; Secure; SameSite=None
+set-cookie: __cflb=0H28vuQLaDsMW3xGLJrsXFqYwasYuKzc3KUBmxi91um; SameSite=None; Secure; path=/; expires=Tue, 21-Apr-26 02:23:47 GMT; HttpOnly
+alt-svc: h3=":443"; ma=86400
+expires: Tue, 14 Apr 2026 02:25:47 GMT
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=31536000
+x-content-type-options: nosniff
+server: cloudflare
+
+
+========================================
+BRAND: buffalowildwings.com
+========================================
+--- TLS Certificate (www.buffalowildwings.com) ---
+subject=CN=www.buffalowildwings.com
+issuer=C=US, O=Let's Encrypt, CN=E8
+notBefore=Feb 24 13:48:21 2026 GMT
+notAfter=May 25 13:48:20 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.buffalowildwings.com
+
+--- Apple App Site Association ---
+  Status: 404
+
+--- Android Asset Links ---
+  Status: 200
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.buffalowildwings.blazinrewards",
+      "sha256_cert_fingerprints": [
+        "23:DA:5C:F4:22:F5:E5:4D:A7:55:74:AC:81:55:A8:B3:E9:4D:85:69:4F:1C:72:59:EF:79:59:18:37:2B:99:80"
+      ]
+    }
+  }
+]
+  Package names:
+com.buffalowildwings.blazinrewards
+
+--- Branch.io Detection ---
+  HIT: buffalowildwings.smart.link → 34.36.249.118
+  HIT: buffalowildwings.app.link → 18.154.144.20
+  HIT: buffalowildwings.test-app.link → 3.168.147.37
+  HIT: buffalowildwings.smart.link → 34.36.249.118
+  HIT: buffalowildwings.app.link → 18.154.144.11
+  HIT: buffalowildwings.test-app.link → 3.168.147.39
+  HIT: bww.smart.link → 34.36.249.118
+  HIT: bww.app.link → 18.154.144.20
+  HIT: bww.test-app.link → 3.168.147.13
+  HIT: bdubs.smart.link → 34.36.249.118
+  HIT: bdubs.app.link → 18.154.144.11
+  HIT: bdubs.test-app.link → 3.168.147.39
+
+--- HTTP Headers (www.buffalowildwings.com) ---
+HTTP/2 200 
+date: Tue, 14 Apr 2026 02:23:48 GMT
+content-type: text/html; charset=utf-8
+cf-ray: 9ebf40275b38176b-SJC
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+link: </brands/inspire/heart.gif>; rel="preload"; as=image, </_next/static/css/21fee22732454abf.css>; rel="preload"; as=style, </_next/static/css/9e85f5a01ae69a75.css>; rel="preload"; as=style, </_next/static/css/047bf468a6b32d20.css>; rel="preload"; as=style, </_next/static/css/88094608b348d882.css>; rel="preload"; as=style, </_next/static/css/b23f1128c9dd9bbd.css>; rel="preload"; as=style, </_next/static/css/8507cb92fa940c74.css>; rel="preload"; as=style, </_next/static/css/b85a88203ca8bd1f.css>; rel="preload"; as=style
+referrer-policy: strict-origin-when-cross-origin
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=ZQnHgQZAZPVnCzsAW4FWDm6MKdDCSffqPq0QopV3pBkXIf82stLGyH9i06b3W5dFEr24sqU1jcNkTinw7rWRRpL%2FHxQEX5e5RIvD1CfOmJwUdTML1B3sKRQ6qcs5BuzVewgGBJhPpuD8yg%2FV"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+vary: Accept-Encoding
+cf-cache-status: DYNAMIC
+set-cookie: __cf_bm=vKYTntq.4mhvmhUjX0FndSxC1jxKe2lm3AHyqlAVY74-1776133428-1.0.1.1-uQTRMPFLShzkDmE6nvi1pOmPBLYngDVyd5whhosg_puo01IBnXE9H35xDg8C.TFwkq7dgtd4hLfNiNpOybIwI98oCnKII5gSTzU22HhWhFI; path=/; expires=Tue, 14-Apr-26 02:53:48 GMT; domain=.buffalowildwings.com; HttpOnly; Secure; SameSite=None
+set-cookie: __cf_bm=ubYlrkCQpf3bfEh12PdjFD1gXLOFBwqSTW7mWOaV9OQ-1776133428-1.0.1.1-6kAccdsK7Ta_a4qCkY1LA7ts4pYv49WPCrH9lrdQyvs2Qsu.Ez6TJB8HBS1E4i40rkDexy8dtNuqT5EuVQ0p.0Cc8153YfsbA78ev0prBpQ; path=/; expires=Tue, 14-Apr-26 02:53:48 GMT; domain=.buffalowildwings.com; HttpOnly; Secure; SameSite=None
+set-cookie: __cflb=0H28vTGKESGUs8wjX7pCfk31LrMaUvDfbYGbuRTK6qZ; SameSite=None; Secure; path=/; expires=Tue, 21-Apr-26 02:23:48 GMT; HttpOnly
+alt-svc: h3=":443"; ma=86400
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=31536000
+x-content-type-options: nosniff
+server: cloudflare
+
+
+========================================
+BRAND: sonicdrivein.com
+========================================
+--- TLS Certificate (www.sonicdrivein.com) ---
+subject=CN=www.sonicdrivein.com
+issuer=C=US, O=Google Trust Services, CN=WE1
+notBefore=Apr  4 20:55:32 2026 GMT
+notAfter=Jul  3 21:55:30 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.sonicdrivein.com
+
+--- Apple App Site Association ---
+  Status: 404
+
+--- Android Asset Links ---
+  Status: 200
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sonic.sonicdrivein",
+      "sha256_cert_fingerprints": [
+        "79:05:F5:B3:74:1E:D9:8E:6C:3C:ED:2F:13:8F:F5:CB:AF:60:F2:D2:E2:AC:BF:09:11:C7:2B:9C:0A:FE:64:5F"
+      ]
+    }
+  }
+]
+  Package names:
+com.sonic.sonicdrivein
+
+--- Branch.io Detection ---
+  HIT: sonicdrivein.smart.link → 34.36.249.118
+  HIT: sonicdrivein.app.link → 18.154.144.86
+  HIT: sonicdrivein.test-app.link → 3.168.147.13
+  HIT: sonicdrivein.smart.link → 34.36.249.118
+  HIT: sonicdrivein.app.link → 18.154.144.61
+  HIT: sonicdrivein.test-app.link → 3.168.147.37
+  HIT: sonic.smart.link → 34.36.249.118
+  HIT: sonic.app.link → 18.154.144.86
+  HIT: sonic.test-app.link → 3.168.147.96
+
+--- HTTP Headers (www.sonicdrivein.com) ---
+HTTP/2 200 
+date: Tue, 14 Apr 2026 02:23:49 GMT
+content-type: text/html; charset=utf-8
+cf-ray: 9ebf402d7d94c236-SJC
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+link: </brands/inspire/heart.gif>; rel="preload"; as=image, </_next/static/css/8119c92762aac774.css>; rel="preload"; as=style, </_next/static/css/99aeb4f531e09537.css>; rel="preload"; as=style, </_next/static/css/b6bd4d502e31fa78.css>; rel="preload"; as=style, </_next/static/css/05968bb29557f1c4.css>; rel="preload"; as=style, </_next/static/css/f72f2b379db2a174.css>; rel="preload"; as=style, </_next/static/css/8507cb92fa940c74.css>; rel="preload"; as=style, </_next/static/css/b85a88203ca8bd1f.css>; rel="preload"; as=style
+referrer-policy: strict-origin-when-cross-origin
+report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=13EBdfEf7jC9%2F8VOQ3x%2BJknp3L8%2BJyEUYqeLfHoMxmYUFRD2VxeDav%2Bi%2F%2FE%2BuiRX%2B6%2FSILKKCcMSOhy8tm%2BzhIJj%2FtdftDgTbOZb1zUAmoRBWhWD%2BipQWbpoLagisNgXTa6HOb8QmKGW2%2FqdEDhYWbcjfy4%3D"}],"group":"cf-nel","max_age":604800}
+nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+vary: Accept-Encoding
+cf-cache-status: DYNAMIC
+set-cookie: __cf_bm=YCnmLKIwSjHDaWvgxKJ9vDBsPhuVlp8LuyxH7vXSTcs-1776133429-1.0.1.1-3YGNSgETbiZZNGDvDGkKkRyfwy4kLzW8CAzXRRn8kRHsMcBNNtdQGe0lopjJZTW9gbrlN4mZAsZpA2BovK5T_GJAckPlUBBthSsEqLtyHj8; path=/; expires=Tue, 14-Apr-26 02:53:49 GMT; domain=.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+set-cookie: _cfuvid=Vx_PNfz7FCtQ8VePF4k3g4Mz5X6_zQAxGL0gfrNud2Q-1776133429412-0.0.1.1-604800000; path=/; domain=.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+set-cookie: __cf_bm=QP1WtMTbd0ZXpLjx213YSwyBIcoGFvBtYfGRvhJOshM-1776133429-1.0.1.1-QdRk6KCMGqgaaYoSx8buEwToQvqPsnFUEmufwF39fMC_HcY9cNTRrEI_GtgHdT1JGatLvc3GgXKHRhfDmGtdfFZcNF.N5B7yrCsmMzOPXf4; path=/; expires=Tue, 14-Apr-26 02:53:49 GMT; domain=.www.sonicdrivein.com; HttpOnly; Secure; SameSite=None
+set-cookie: __cflb=02DiuE5jjiMPJDG9adMaUoUtoRKZ4BpFECwRatUBj9xEP; SameSite=Lax; path=/; expires=Tue, 21-Apr-26 02:23:49 GMT; HttpOnly
+strict-transport-security: max-age=31536000
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+server: cloudflare
+
+
+========================================
+BRAND: jimmyjohns.com
+========================================
+--- TLS Certificate (www.jimmyjohns.com) ---
+subject=CN=www.jimmyjohns.com
+issuer=C=US, O=Google Trust Services, CN=WR3
+notBefore=Mar 27 01:18:54 2026 GMT
+notAfter=Jun 25 02:12:48 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.jimmyjohns.com
+
+--- Apple App Site Association ---
+  Status: 200
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "CUH3SHJHG7.com.jimmyjohns.jimmyjohns",
+        "paths": [
+          "/catering",
+          "/catering/*",
+          "/locations",
+          "/locations/*",
+          "/favorites",
+          "/favorites/*",
+          "/menu",
+          "/menu/*",
+          "/my-account",
+          "/my-account/*",
+          "/rewards",
+          "/rewards/*",
+          "/"
+        ]
+      },
+      {
+        "appID": "CUH3SHJHG7.com.jimmyjohns.jimmyjohns.beta",
+        "paths": [
+          "/catering",
+          "/catering/*",
+          "/locations",
+          "/locations/*",
+          "/favorites",
+          "/favorites/*",
+          "/menu",
+          "/menu/*",
+          "/my-account",
+          "/my-account/*",
+          "/rewards",
+          "/rewards/*",
+          "/"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "CUH3SHJHG7.com.jimmyjohns.jimmyjohns",
+      "CUH3SHJHG7.com.jimmyjohns.jimmyjohns.beta"
+    ]
+  }
+}
+  App IDs:
+CUH3SHJHG7.com.jimmyjohns.jimmyjohns
+CUH3SHJHG7.com.jimmyjohns.jimmyjohns.beta
+
+--- Android Asset Links ---
+  Status: 200
+[
+  {
+    "relation": [
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "web",
+      "site": "https://www.jimmyjohns.com"
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jimmyjohns",
+      "sha256_cert_fingerprints": [
+        "DD:A5:63:F0:96:A2:EE:AA:17:02:79:A5:E8:BA:C1:C9:B7:31:64:62:10:DB:08:6D:68:66:11:8E:B7:7C:5A:EC"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jimmyjohns",
+      "sha256_cert_fingerprints": [
+        "DD:A5:63:F0:96:A2:EE:AA:17:02:79:A5:E8:BA:C1:C9:B7:31:64:62:10:DB:08:6D:68:66:11:8E:B7:7C:5A:EC"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jimmyjohns.debug",
+      "sha256_cert_fingerprints": [
+        "2A:B2:01:84:58:B4:78:67:DD:B1:F9:DF:FA:31:ED:C5:3F:31:8D:E5:C8:D3:CD:3A:AC:92:10:DC:B6:8E:9E:83"
+      ]
+    }
+  }
+]
+  Package names:
+com.jimmyjohns
+com.jimmyjohns.debug
+
+--- Branch.io Detection ---
+  HIT: jimmyjohns.smart.link → 34.36.249.118
+  HIT: jimmyjohns.app.link → 18.154.144.61
+  HIT: jimmyjohns.test-app.link → 3.168.147.13
+  HIT: jimmyjohns.smart.link → 34.36.249.118
+  HIT: jimmyjohns.app.link → 18.154.144.20
+  HIT: jimmyjohns.test-app.link → 3.168.147.13
+  HIT: jimmyjohns.smart.link → 34.36.249.118
+  HIT: jimmyjohns.app.link → 18.154.144.86
+  HIT: jimmyjohns.test-app.link → 3.168.147.96
+  HIT: jjs.smart.link → 34.36.249.118
+  HIT: jjs.app.link → 18.154.144.20
+  HIT: jjs.test-app.link → 3.168.147.39
+
+--- HTTP Headers (www.jimmyjohns.com) ---
+HTTP/2 200 
+content-type: text/html
+last-modified: Wed, 08 Apr 2026 13:24:22 GMT
+vary: Accept-Encoding
+etag: "69d65706-27e6"
+cache-control: no-store, no-cache, must-revalidate
+accept-ranges: bytes
+x-cloud-trace-context: 3de4e68dfbfd143a18c2f7026c902a8b
+set-cookie: GAESA=CpwBMDA4YzE1ZmYwODFhODkyYzNlYTUwNmMxMmJmMDRjZjI1ODk3ZmIxZDY0OTJlZDZlYThhNjIwYWZlMmIyZWM0ZjZhMjFhMzE0MmY1YTcyNGNkZWI4ZGYyNWM0MjZkMmFmYTBmMjMyOGIzZjE0ZTZjMjYxNjZkMDcxYWY0ZjRjOTI1ZWYwMGUyZjExN2E0Y2IzMDE2YjBkMmNjNjI0EPa2tc7YMw; expires=Thu, 14-May-2026 02:23:50 GMT; path=/
+content-length: 10214
+date: Tue, 14 Apr 2026 02:23:50 GMT
+server: Google Frontend
+via: 1.1 google
+cache-status: miss
+strict-transport-security: max-age=31536000
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+
+=== DONE ===
+Completed: 2026-04-14T02:23:50Z

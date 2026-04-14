@@ -1,0 +1,3 @@
+X509v3 Subject Alternative Name: 
+DNS:*.arbys.com
+DNS:arbys.com

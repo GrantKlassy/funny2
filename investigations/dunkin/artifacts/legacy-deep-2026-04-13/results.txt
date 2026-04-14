@@ -1,0 +1,313 @@
+=== LEGACY SERVICES DEEP PROBE ===
+Date: 2026-04-14T02:25:54Z
+
+========================================
+TARGET: smartsolve.dunkinbrands.com (SmartSolve EQMS)
+========================================
+  DNS → CNAME: none A: 74.199.217.32
+  Methods:
+    GET → 000 0
+    POST → 000 0
+    HEAD → 000 0
+    OPTIONS → 200 247
+    PUT → 200 247
+    DELETE → 200 247
+    GET (HTTP) → 302
+  Headers (GET /):
+    FAILED
+  TLS Cert:
+subject=C=US, ST=Georgia, L=Atlanta, O=Inspire Brands, Inc, CN=*.Dunkinbrands.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+notBefore=Jun 10 00:00:00 2025 GMT
+notAfter=Jul 11 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:*.Dunkinbrands.com
+
+--- SmartSolve: OPTIONS response body ---
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/html; charset=utf-8
+Pragma: no-cache
+Content-Length: 247
+Vary: Accept-Encoding
+
+
+--- SmartSolve: path sweep ---
+  /SmartProd → 000
+  /SmartProd/login.aspx → 000
+  /login → 000
+  /api → 000
+  /swagger-ui → 000
+  /DesktopModules → 000
+========================================
+TARGET: bam.dunkinbrands.com (BAM (unknown))
+========================================
+  DNS → CNAME: none A: 3.221.205.138,54.159.12.89
+  Methods:
+    GET → 302 204
+    POST → 411 344
+    HEAD → 302 0
+    OPTIONS → 200 0
+    PUT → 411 344
+    DELETE → 405 1293
+    GET (HTTP) → 301
+  Headers (GET /):
+HTTP/2 302 
+date: Tue, 14 Apr 2026 02:26:04 GMT
+content-type: text/html; charset=utf-8
+content-length: 204
+location: https://sso.inspirepartners.net/app/inspirepartners_bam_1/exk938s08y7yt4V9f697/sso/saml
+set-cookie: AWSALB=Y/5eqlvsrP07m9R6fM/15RRxRTesQr7vbGhDtkNda8QOWlK95j+2uVX/2bt58FMPZJ9K12wIaHdoXHFL9/GLAP4iKTjy/dOUhzW+myICWsgbVPKSmXxlejnCIoib; Expires=Tue, 21 Apr 2026 02:26:04 GMT; Path=/
+set-cookie: AWSALBCORS=Y/5eqlvsrP07m9R6fM/15RRxRTesQr7vbGhDtkNda8QOWlK95j+2uVX/2bt58FMPZJ9K12wIaHdoXHFL9/GLAP4iKTjy/dOUhzW+myICWsgbVPKSmXxlejnCIoib; Expires=Tue, 21 Apr 2026 02:26:04 GMT; Path=/; SameSite=None; Secure
+cache-control: private
+server: Microsoft-IIS/10.0
+x-aspnet-version: 4.0.30319
+set-cookie: __AntiXsrfToken=9924326f1ea846a583741334b7d75323; path=/; secure; HttpOnly
+x-powered-by: ASP.NET
+
+  TLS Cert:
+subject=CN=*.dunkinbrands.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M04
+notBefore=Feb 24 00:00:00 2026 GMT
+notAfter=Sep  9 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:*.dunkinbrands.com, DNS:*.corporateportal.dunkinbrands.com, DNS:*.franchisee.dunkinbrands.com
+
+========================================
+TARGET: sts.dunkinbrands.com (STS (Security Token Service))
+========================================
+  DNS → CNAME: stsprod.itdns.dunkinbrands.com. A: stsprod.itdns.dunkinbrands.com.,12.170.52.233
+  Methods:
+    GET → 000 0
+    POST → 000 0
+    HEAD → 000 0
+    OPTIONS → 000 0
+    PUT → 000 0
+    DELETE → 000 0
+    GET (HTTP) → 000
+  Headers (GET /):
+    FAILED
+  TLS Cert:
+    TLS FAILED
+
+--- STS: Federation metadata ---
+  /adfs/ls → 000 0
+  /adfs/services/trust/mex → 000 0
+  /FederationMetadata/2007-06/FederationMetadata.xml → 000 0
+  /.well-known/openid-configuration → 000 0
+  /adfs/.well-known/openid-configuration → 000 0
+========================================
+TARGET: wsapi.dunkinbrands.com (Web Service API)
+========================================
+  DNS → CNAME: none A: 54.172.180.235
+  Methods:
+    GET → 404 9
+    POST → 404 9
+    HEAD → 404 0
+    OPTIONS → 404 9
+    PUT → 404 9
+    DELETE → 404 9
+    GET (HTTP) → 000
+  Headers (GET /):
+HTTP/2 404 
+content-length: 9
+content-type: text/plain
+x-theorem-auth: nil
+x-theorem-platform: nil
+date: Tue, 14 Apr 2026 02:28:33 GMT
+server: envoy
+
+  TLS Cert:
+subject=CN=api-test.theoremlp.com
+issuer=C=US, O=Let's Encrypt, CN=R13
+notBefore=Jan 21 04:32:56 2026 GMT
+notAfter=Apr 21 04:32:55 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:api-test.theoremlp.com
+
+========================================
+TARGET: citrix.dunkinbrands.com (Citrix Gateway)
+========================================
+  DNS → CNAME: none A: 164.109.80.73
+  Methods:
+    GET → 000 0
+    POST → 000 0
+    HEAD → 000 0
+    OPTIONS → 000 0
+    PUT → 000 0
+    DELETE → 000 0
+    GET (HTTP) → 000
+  Headers (GET /):
+    FAILED
+  TLS Cert:
+    TLS FAILED
+
+========================================
+TARGET: sslvpn.dunkinbrands.com (SSL VPN)
+========================================
+  DNS → CNAME: none A: 12.170.52.152
+  Methods:
+    GET → 000 0
+    POST → 000 0
+    HEAD → 000 0
+    OPTIONS → 000 0
+    PUT → 000 0
+    DELETE → 000 0
+    GET (HTTP) → 000
+  Headers (GET /):
+    FAILED
+  TLS Cert:
+    TLS FAILED
+
+========================================
+TARGET: plmsupplier.dunkinbrands.com (PLM Supplier Portal)
+========================================
+  DNS → CNAME: d2a5ic6e5dkdrc.cloudfront.net. A: d2a5ic6e5dkdrc.cloudfront.net.,18.154.144.60,18.154.144.42
+  Methods:
+    GET → 403 919
+    POST → 403 919
+    HEAD → 403 0
+    OPTIONS → 403 919
+    PUT → 403 919
+    DELETE → 403 919
+    GET (HTTP) → 301
+  Headers (GET /):
+HTTP/2 403 
+server: CloudFront
+date: Tue, 14 Apr 2026 02:31:50 GMT
+content-type: text/html
+content-length: 919
+x-cache: Error from cloudfront
+via: 1.1 9c28cd6d113d7011318d3a0909cee6ea.cloudfront.net (CloudFront)
+x-amz-cf-pop: LAX50-P4
+x-amz-cf-id: fcTRXWxqqk-DMUaipzIAhQ8oBDxalsCng9LO6rzDaq-T8qc6ehhzbQ==
+vary: Origin
+
+  TLS Cert:
+subject=CN=dbiprdweb.verdantcloud.com
+issuer=C=US, O=Amazon, CN=Amazon RSA 2048 M01
+notBefore=Nov  9 00:00:00 2025 GMT
+notAfter=Dec  8 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:dbiprdweb.verdantcloud.com, DNS:plmsupplier.dunkinbrands.com
+
+--- PLM Supplier path sweep ---
+  /supplier → 403
+  /login → 403
+  /api → 403
+  /portal → 403
+  /PLM → 403
+========================================
+TARGET: afm.dunkinbrands.com (AFM (unknown))
+========================================
+  DNS → CNAME: none A: 164.109.97.13
+  Methods:
+    GET → 000 0
+    POST → 000 0
+    HEAD → 000 0
+    OPTIONS → 000 0
+    PUT → 000 0
+    DELETE → 000 0
+    GET (HTTP) → 000
+  Headers (GET /):
+    FAILED
+  TLS Cert:
+    TLS FAILED
+
+========================================
+TARGET: flq-prod-idp.dunkinbrands.com (FLQ Identity Provider)
+========================================
+  DNS → CNAME: none A: 74.199.217.23
+  Methods:
+    GET → 302 0
+    POST → 302 0
+    HEAD → 404 3104
+    OPTIONS → 404 3104
+    PUT → 404 3104
+    DELETE → 404 3104
+    GET (HTTP) → 302
+  Headers (GET /):
+HTTP/1.1 404 Not Found
+Server: BigIP
+Content-Type: text/html; charset=utf-8
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Connection: close
+Date: Tue, 14 Apr 2026 02:33:33 GMT
+Age:    5289
+Content-Length:       3104
+
+  TLS Cert:
+subject=C=US, ST=Georgia, L=Atlanta, O=Inspire Brands, Inc, CN=*.Dunkinbrands.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+notBefore=Jun 10 00:00:00 2025 GMT
+notAfter=Jul 11 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:*.Dunkinbrands.com
+
+--- FLQ-IDP: OIDC/SAML discovery ---
+  /.well-known/openid-configuration → 302 0
+  /adfs/ls → 302 0
+  /adfs/services/trust/mex → 302 0
+  /FederationMetadata/2007-06/FederationMetadata.xml → 302 0
+  /saml/metadata → 302 0
+  /oauth2/authorize → 302 0
+  /login → 302 0
+========================================
+TARGET: thecenter.dunkinbrands.com (The Center (Learning Portal))
+========================================
+  DNS → CNAME: d1zthqe9odn0bu.cloudfront.net. A: d1zthqe9odn0bu.cloudfront.net.,99.84.41.53,99.84.41.57
+  Methods:
+    GET → 200 3279
+    POST → 200 3279
+    HEAD → 200 0
+    OPTIONS → 403 199
+    PUT → 200 3279
+    DELETE → 200 3279
+    GET (HTTP) → 301
+  Headers (GET /):
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+date: Tue, 14 Apr 2026 02:33:35 GMT
+set-cookie: AWSALB=9XkSFItu0bS2Hcqh7zN8y7Do8175vvt4OEfzRFk4MYck4d/GYlfbI0gQvSvLL0C02mqir+uFtl+KZX+RTVkODoAO784w+s+ZKb7K4CjC95A6tVhUA2xPhL9S8ylH; Expires=Tue, 21 Apr 2026 02:33:35 GMT; Path=/
+set-cookie: AWSALBCORS=9XkSFItu0bS2Hcqh7zN8y7Do8175vvt4OEfzRFk4MYck4d/GYlfbI0gQvSvLL0C02mqir+uFtl+KZX+RTVkODoAO784w+s+ZKb7K4CjC95A6tVhUA2xPhL9S8ylH; Expires=Tue, 21 Apr 2026 02:33:35 GMT; Path=/; SameSite=None; Secure
+server: Apache
+x-dispatcher: dispatcher2useast1-06105218
+x-vhost: publish
+cache-control: private, max-age=0, no-cache, no-store
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+x-cache: Hit from cloudfront
+via: 1.1 354bc3bad674235f6c264e49e0372e42.cloudfront.net (CloudFront)
+x-amz-cf-pop: LAX54-P11
+x-amz-cf-id: dO9gwrvPPhURq2HCVDAULfusQyqFp6DcV4fwiDTL6VTgy1rGMRxbNw==
+
+  TLS Cert:
+subject=C=US, ST=Georgia, L=Sandy Springs, O=Inspire Brands, Inc., CN=thecenter.dunkinbrands.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+notBefore=Sep  8 00:00:00 2025 GMT
+notAfter=Oct  9 23:59:59 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:thecenter.dunkinbrands.com
+
+========================================
+SUBNET INVESTIGATION: 74.199.217.0/24
+========================================
+(flq-prod-idp at .23, smartsolve at .32)
+NetRange:       74.199.128.0 - 74.199.255.255
+CIDR:           74.199.128.0/17
+Organization:   GTT Americas, LLC (GAL-104)
+OrgName:        GTT Americas, LLC
+OrgId:          GAL-104
+City:           Arlington
+StateProv:      VA
+Country:        US
+NetRange:       74.199.217.0 - 74.199.217.127
+CIDR:           74.199.217.0/25
+City:           Canton
+StateProv:      MA
+Country:        US
+
+=== DONE ===
+Completed: 2026-04-14T02:33:36Z

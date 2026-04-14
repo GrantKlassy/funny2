@@ -1,0 +1,334 @@
+=== SWI MYSTERY SERVICE DEEP PROBE ===
+Date: 2026-04-14T02:23:37Z
+
+--- DNS Resolution ---
+LIVE  swi.prod.ddmprod.dunkindonuts.com → CNAME: swi.prod.ddmprod.dunkindonuts.com.edgekey.net. → A: swi.prod.ddmprod.dunkindonuts.com.edgekey.net.,e36726.dsca.akamaiedge.net.,23.216.149.149
+LIVE  swi.preprod.ddmprod.dunkindonuts.com → CNAME: swi.preprod.ddmprod.dunkindonuts.com.edgekey.net. → A: swi.preprod.ddmprod.dunkindonuts.com.edgekey.net.,e36726.dsca.akamaiedge.net.,23.216.149.138
+DEAD  swi.stage.ddmprod.dunkindonuts.com
+LIVE  swi.dev.ddmdev.dunkindonuts.com → CNAME: swi.dev.ddmdev.dunkindonuts.com.edgekey.net. → A: swi.dev.ddmdev.dunkindonuts.com.edgekey.net.,e39122.dsca.akamaiedge.net.,23.216.149.155
+LIVE  swi.dlt-dev.ddmdev.dunkindonuts.com → CNAME: swi.dlt-dev.ddmdev.dunkindonuts.com.edgekey.net. → A: swi.dlt-dev.ddmdev.dunkindonuts.com.edgekey.net.,e39122.dsca.akamaiedge.net.,23.216.149.135
+LIVE  swi.dlt-qa.ddmdev.dunkindonuts.com → CNAME: swi.dlt-qa.ddmdev.dunkindonuts.com.edgekey.net. → A: swi.dlt-qa.ddmdev.dunkindonuts.com.edgekey.net.,e39122.dsca.akamaiedge.net.,23.216.149.155
+LIVE  swi.qa.ddmdev.dunkindonuts.com → CNAME: swi.qa.ddmdev.dunkindonuts.com.edgekey.net. → A: swi.qa.ddmdev.dunkindonuts.com.edgekey.net.,e39122.dsca.akamaiedge.net.,23.216.149.135
+
+--- HTTP Method Sweep (/) per host ---
+
+[swi.prod.ddmprod.dunkindonuts.com]
+  GET / → 404 728
+  POST / → 411 326
+  HEAD / → 404 0
+  OPTIONS / → 404 728
+  PUT / → 501 370
+  DELETE / → 501 373
+  PATCH / → 501 372
+
+[swi.preprod.ddmprod.dunkindonuts.com]
+  GET / → 404 728
+  POST / → 411 326
+  HEAD / → 404 0
+  OPTIONS / → 404 728
+  PUT / → 501 373
+  DELETE / → 501 376
+  PATCH / → 501 375
+
+[swi.dev.ddmdev.dunkindonuts.com]
+  GET / → 404 728
+  POST / → 411 324
+  HEAD / → 404 0
+  OPTIONS / → 404 728
+  PUT / → 411 324
+  DELETE / → 404 728
+  PATCH / → 411 324
+
+[swi.dlt-dev.ddmdev.dunkindonuts.com]
+  GET / → 503 162
+  POST / → 411 326
+  HEAD / → 503 0
+  OPTIONS / → 503 162
+  PUT / → 411 326
+  DELETE / → 503 162
+  PATCH / → 411 326
+
+[swi.dlt-qa.ddmdev.dunkindonuts.com]
+  GET / → 503 373
+  POST / → 411 326
+  HEAD / → 503 0
+  OPTIONS / → 503 373
+  PUT / → 411 326
+  DELETE / → 503 373
+  PATCH / → 411 326
+
+[swi.qa.ddmdev.dunkindonuts.com]
+  GET / → 404 728
+  POST / → 411 324
+  HEAD / → 404 0
+  OPTIONS / → 404 728
+  PUT / → 411 324
+  DELETE / → 404 728
+  PATCH / → 411 324
+
+--- Path Enumeration ---
+
+[swi.prod.ddmprod.dunkindonuts.com] path sweep:
+  / → 404 (728B) [text/html;]
+  /api → 404 (728B) [text/html;]
+  /api/v1 → 404 (728B) [text/html;]
+  /api/v2 → 404 (728B) [text/html;]
+  /health → 404 (728B) [text/html;]
+  /healthcheck → 404 (728B) [text/html;]
+  /status → 404 (728B) [text/html;]
+  /version → 404 (728B) [text/html;]
+  /info → 404 (728B) [text/html;]
+  /swagger-ui → 404 (728B) [text/html;]
+  /swagger-ui.html → 404 (728B) [text/html;]
+  /v2/api-docs → 404 (728B) [text/html;]
+  /v3/api-docs → 404 (728B) [text/html;]
+  /actuator → 404 (728B) [text/html;]
+  /actuator/health → 404 (728B) [text/html;]
+  /actuator/info → 404 (728B) [text/html;]
+  /login → 404 (728B) [text/html;]
+  /auth → 404 (728B) [text/html;]
+  /token → 404 (728B) [text/html;]
+  /oauth → 404 (728B) [text/html;]
+  /callback → 404 (728B) [text/html;]
+  /webhook → 404 (728B) [text/html;]
+  /notify → 404 (728B) [text/html;]
+  /push → 404 (728B) [text/html;]
+  /message → 404 (728B) [text/html;]
+  /send → 404 (728B) [text/html;]
+  /swi → 404 (728B) [text/html;]
+  /SWI → 404 (728B) [text/html;]
+  /config → 404 (728B) [text/html;]
+  /settings → 404 (728B) [text/html;]
+  /admin → 404 (728B) [text/html;]
+  /console → 404 (728B) [text/html;]
+  /dashboard → 404 (728B) [text/html;]
+  /.well-known/openid-configuration → 404 (728B) [text/html;]
+
+[swi.preprod.ddmprod.dunkindonuts.com] path sweep:
+  / → 404 (728B) [text/html;]
+  /api → 404 (728B) [text/html;]
+  /api/v1 → 404 (728B) [text/html;]
+  /api/v2 → 404 (728B) [text/html;]
+  /health → 404 (728B) [text/html;]
+  /healthcheck → 404 (728B) [text/html;]
+  /status → 404 (728B) [text/html;]
+  /version → 404 (728B) [text/html;]
+  /info → 404 (728B) [text/html;]
+  /swagger-ui → 404 (728B) [text/html;]
+  /swagger-ui.html → 404 (728B) [text/html;]
+  /v2/api-docs → 404 (728B) [text/html;]
+  /v3/api-docs → 404 (728B) [text/html;]
+  /actuator → 404 (728B) [text/html;]
+  /actuator/health → 404 (728B) [text/html;]
+  /actuator/info → 404 (728B) [text/html;]
+  /login → 404 (728B) [text/html;]
+  /auth → 404 (728B) [text/html;]
+  /token → 404 (728B) [text/html;]
+  /oauth → 404 (728B) [text/html;]
+  /callback → 404 (728B) [text/html;]
+  /webhook → 404 (728B) [text/html;]
+  /notify → 404 (728B) [text/html;]
+  /push → 404 (728B) [text/html;]
+  /message → 404 (728B) [text/html;]
+  /send → 404 (728B) [text/html;]
+  /swi → 404 (728B) [text/html;]
+  /SWI → 404 (728B) [text/html;]
+  /config → 404 (728B) [text/html;]
+  /settings → 404 (728B) [text/html;]
+  /admin → 404 (728B) [text/html;]
+  /console → 404 (728B) [text/html;]
+  /dashboard → 404 (728B) [text/html;]
+  /.well-known/openid-configuration → 404 (728B) [text/html;]
+
+[swi.dev.ddmdev.dunkindonuts.com] path sweep:
+  / → 404 (728B) [text/html;]
+  /api → 404 (728B) [text/html;]
+  /api/v1 → 404 (728B) [text/html;]
+  /api/v2 → 404 (728B) [text/html;]
+  /health → 404 (728B) [text/html;]
+  /healthcheck → 404 (728B) [text/html;]
+  /status → 404 (728B) [text/html;]
+  /version → 404 (728B) [text/html;]
+  /info → 404 (728B) [text/html;]
+  /swagger-ui → 404 (728B) [text/html;]
+  /swagger-ui.html → 404 (728B) [text/html;]
+  /v2/api-docs → 404 (728B) [text/html;]
+  /v3/api-docs → 404 (728B) [text/html;]
+  /actuator → 404 (728B) [text/html;]
+  /actuator/health → 404 (728B) [text/html;]
+  /actuator/info → 404 (728B) [text/html;]
+  /login → 404 (728B) [text/html;]
+  /auth → 404 (728B) [text/html;]
+  /token → 404 (728B) [text/html;]
+  /oauth → 404 (728B) [text/html;]
+  /callback → 404 (728B) [text/html;]
+  /webhook → 404 (728B) [text/html;]
+  /notify → 404 (728B) [text/html;]
+  /push → 404 (728B) [text/html;]
+  /message → 404 (728B) [text/html;]
+  /send → 404 (728B) [text/html;]
+  /swi → 404 (728B) [text/html;]
+  /SWI → 404 (728B) [text/html;]
+  /config → 404 (728B) [text/html;]
+  /settings → 404 (728B) [text/html;]
+  /admin → 404 (728B) [text/html;]
+  /console → 404 (728B) [text/html;]
+  /dashboard → 404 (728B) [text/html;]
+  /.well-known/openid-configuration → 404 (728B) [text/html;]
+
+[swi.dlt-dev.ddmdev.dunkindonuts.com] path sweep:
+  / → 503 (162B) [text/html]
+  /api → 503 (162B) [text/html]
+  /api/v1 → 503 (162B) [text/html]
+  /api/v2 → 503 (162B) [text/html]
+  /health → 503 (162B) [text/html]
+  /healthcheck → 503 (162B) [text/html]
+  /status → 503 (162B) [text/html]
+  /version → 503 (162B) [text/html]
+  /info → 503 (162B) [text/html]
+  /swagger-ui → 503 (162B) [text/html]
+  /swagger-ui.html → 503 (162B) [text/html]
+  /v2/api-docs → 503 (162B) [text/html]
+  /v3/api-docs → 503 (162B) [text/html]
+  /actuator → 503 (162B) [text/html]
+  /actuator/health → 503 (162B) [text/html]
+  /actuator/info → 503 (162B) [text/html]
+  /login → 503 (162B) [text/html]
+  /auth → 503 (162B) [text/html]
+  /token → 503 (162B) [text/html]
+  /oauth → 503 (162B) [text/html]
+  /callback → 503 (162B) [text/html]
+  /webhook → 503 (162B) [text/html]
+  /notify → 503 (162B) [text/html]
+  /push → 503 (162B) [text/html]
+  /message → 503 (162B) [text/html]
+  /send → 503 (162B) [text/html]
+  /swi → 503 (162B) [text/html]
+  /SWI → 503 (162B) [text/html]
+  /config → 503 (162B) [text/html]
+  /settings → 503 (162B) [text/html]
+  /admin → 503 (162B) [text/html]
+  /console → 503 (162B) [text/html]
+  /dashboard → 503 (162B) [text/html]
+  /.well-known/openid-configuration → 503 (162B) [text/html]
+
+[swi.dlt-qa.ddmdev.dunkindonuts.com] path sweep:
+  / → 503 (373B) [text/html]
+  /api → 503 (373B) [text/html]
+  /api/v1 → 503 (373B) [text/html]
+  /api/v2 → 503 (373B) [text/html]
+  /health → 503 (373B) [text/html]
+  /healthcheck → 503 (373B) [text/html]
+  /status → 503 (373B) [text/html]
+  /version → 503 (373B) [text/html]
+  /info → 503 (373B) [text/html]
+  /swagger-ui → 503 (373B) [text/html]
+  /swagger-ui.html → 503 (373B) [text/html]
+  /v2/api-docs → 503 (373B) [text/html]
+  /v3/api-docs → 503 (373B) [text/html]
+  /actuator → 503 (373B) [text/html]
+  /actuator/health → 503 (373B) [text/html]
+  /actuator/info → 503 (373B) [text/html]
+  /login → 503 (373B) [text/html]
+  /auth → 503 (373B) [text/html]
+  /token → 503 (373B) [text/html]
+  /oauth → 503 (373B) [text/html]
+  /callback → 503 (373B) [text/html]
+  /webhook → 503 (373B) [text/html]
+  /notify → 503 (373B) [text/html]
+  /push → 503 (373B) [text/html]
+  /message → 503 (373B) [text/html]
+  /send → 503 (373B) [text/html]
+  /swi → 503 (373B) [text/html]
+  /SWI → 503 (373B) [text/html]
+  /config → 503 (373B) [text/html]
+  /settings → 503 (373B) [text/html]
+  /admin → 503 (373B) [text/html]
+  /console → 503 (373B) [text/html]
+  /dashboard → 503 (373B) [text/html]
+  /.well-known/openid-configuration → 503 (373B) [text/html]
+
+[swi.qa.ddmdev.dunkindonuts.com] path sweep:
+  / → 404 (728B) [text/html;]
+  /api → 404 (728B) [text/html;]
+  /api/v1 → 404 (728B) [text/html;]
+  /api/v2 → 404 (728B) [text/html;]
+  /health → 404 (728B) [text/html;]
+  /healthcheck → 404 (728B) [text/html;]
+  /status → 404 (728B) [text/html;]
+  /version → 404 (728B) [text/html;]
+  /info → 404 (728B) [text/html;]
+  /swagger-ui → 404 (728B) [text/html;]
+  /swagger-ui.html → 404 (728B) [text/html;]
+  /v2/api-docs → 404 (728B) [text/html;]
+  /v3/api-docs → 404 (728B) [text/html;]
+  /actuator → 404 (728B) [text/html;]
+  /actuator/health → 404 (728B) [text/html;]
+  /actuator/info → 404 (728B) [text/html;]
+  /login → 404 (728B) [text/html;]
+  /auth → 404 (728B) [text/html;]
+  /token → 404 (728B) [text/html;]
+  /oauth → 404 (728B) [text/html;]
+  /callback → 404 (728B) [text/html;]
+  /webhook → 404 (728B) [text/html;]
+  /notify → 404 (728B) [text/html;]
+  /push → 404 (728B) [text/html;]
+  /message → 404 (728B) [text/html;]
+  /send → 404 (728B) [text/html;]
+  /swi → 404 (728B) [text/html;]
+  /SWI → 404 (728B) [text/html;]
+  /config → 404 (728B) [text/html;]
+  /settings → 404 (728B) [text/html;]
+  /admin → 404 (728B) [text/html;]
+  /console → 404 (728B) [text/html;]
+  /dashboard → 404 (728B) [text/html;]
+  /.well-known/openid-configuration → 404 (728B) [text/html;]
+
+--- Full Headers Comparison (prod vs dev) ---
+
+[swi.prod.ddmprod.dunkindonuts.com] GET / headers:
+HTTP/1.1 404 Not Found
+Content-Type: text/html; charset=utf-8
+Content-Length: 728
+Server: nginx
+Status: 404 Not Found
+X-Request-Id: c59fd0c8-ab78-4f11-8758-b57ba3a0ee1a
+X-Runtime: 0.004005
+Date: Tue, 14 Apr 2026 02:25:05 GMT
+Connection: keep-alive
+X-N: S
+
+
+[swi.dev.ddmdev.dunkindonuts.com] GET / headers:
+HTTP/1.1 404 Not Found
+Content-Type: text/html; charset=utf-8
+Content-Length: 728
+Server: nginx
+Status: 404 Not Found
+X-Runtime: 0.002492
+X-Request-Id: 476704b3-ba92-43ff-9d62-ad4ac00cd4fc
+Date: Tue, 14 Apr 2026 02:25:05 GMT
+Connection: keep-alive
+X-N: S
+
+
+--- TLS Certificate Comparison ---
+
+[swi.prod.ddmprod.dunkindonuts.com] cert:
+subject=C=US, ST=Massachusetts, L=Canton, O=Dunkin' Brands, Inc., CN=mapi-dun.prod.ddmprod.dunkindonuts.com
+issuer=C=US, O=DigiCert Inc, CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1
+notBefore=Dec 31 00:00:00 2025 GMT
+notAfter=Jan  5 23:59:59 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:mapi-dun.prod.ddmprod.dunkindonuts.com, DNS:mapi-dun.preprod.ddmprod.dunkindonuts.com, DNS:ode.preprod.ddmprod.dunkindonuts.com, DNS:ode.prod.ddmprod.dunkindonuts.com, DNS:swi.preprod.ddmprod.dunkindonuts.com, DNS:swi.prod.ddmprod.dunkindonuts.com, DNS:ulink.preprod.ddmprod.dunkindonuts.com, DNS:ulink.prod.ddmprod.dunkindonuts.com
+
+[swi.dev.ddmdev.dunkindonuts.com] cert:
+subject=CN=ddmdev.dunkindonuts.com
+issuer=C=US, O=Let's Encrypt, CN=R13
+notBefore=Mar 26 17:02:53 2026 GMT
+notAfter=Jun 24 17:02:52 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:akam-mapi-dun.dev.ddmdev.dunkindonuts.com, DNS:akam-mapi-dun.dlt-dev.ddmdev.dunkindonuts.com, DNS:akam-mapi-dun.dlt-qa.ddmdev.dunkindonuts.com, DNS:akam-mapi-dun.qa.ddmdev.dunkindonuts.com, DNS:ddmdev.dunkindonuts.com, DNS:mapi-dun.stage.ddmprod.dunkindonuts.com, DNS:ode.dev.ddmdev.dunkindonuts.com, DNS:ode.dlt-dev.ddmdev.dunkindonuts.com, DNS:ode.dlt-qa.ddmdev.dunkindonuts.com, DNS:ode.qa.ddmdev.dunkindonuts.com, DNS:ode.stage.ddmprod.dunkindonuts.com, DNS:swi.dev.ddmdev.dunkindonuts.com, DNS:swi.dlt-dev.ddmdev.dunkindonuts.com, DNS:swi.dlt-qa.ddmdev.dunkindonuts.com, DNS:swi.qa.ddmdev.dunkindonuts.com, DNS:swi.stage.ddmprod.dunkindonuts.com, DNS:ulink.dev.ddmdev.dunkindonuts.com, DNS:ulink.dlt-dev.ddmdev.dunkindonuts.com, DNS:ulink.dlt-qa.ddmdev.dunkindonuts.com, DNS:ulink.qa.ddmdev.dunkindonuts.com, DNS:ulink.stage.ddmprod.dunkindonuts.com
+
+=== DONE ===
+Completed: 2026-04-14T02:25:05Z

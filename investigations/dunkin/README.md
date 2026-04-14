@@ -269,15 +269,261 @@ By Wave 2 the vendor list has grown considerably:
 
 **Seventeen vendors.** To sell donuts. And mango drinks. The international site runs on Azure — a completely different cloud from everything else — because apparently "international" means "different everything." The employee recognition platform is literally called WeRecognize. I can't make this up.
 
+## Wave 3: I Opened Every Door
+
+I ran 16 more probe scripts. Every mystery from Wave 2 — every "we should come back to this later" — I came back. I probed the sister brands. I probed the ghost domains. I probed the swagger endpoint. I probed things that hadn't been probed since the Obama administration. Here's what I found.
+
+### The Restaurant Administration Portal (star.dunkinbrands.com)
+
+Remember `star.dunkinbrands.com`? The mystery service from Wave 2 that only answered GET and returned 405 on everything else? I finally captured the response body.
+
+It's a login page. Not just any login page. It's the **Restaurant Administration Portal (RAP)** — an internal tool for Dunkin' franchise operators. The full 18,447-byte HTML came back with a CrunchTime integration login form asking for:
+
+- **Username** (your CrunchTime username)
+- **Password** (your CrunchTime password)
+- **EntityID** (your four-digit CrunchTime store ID, e.g., 0022 or 1234)
+
+The submit button POSTs to `/User/LogInCrunchTime`. On success, it redirects to `/dashboard`. There's also an email-based OTP flow that calls... and I am not making this up... **`/User/GenrateOTPForUser`**.
+
+`Genrate`. Not "Generate." `Genrate`.
+
+This is a production ASP.NET Core application serving real franchise operators at 18,000+ Dunkin' locations and someone spelled "Generate" wrong in the API endpoint name. And they can never fix it because every franchise operator's browser has the JavaScript that calls `GenrateOTPForUser` cached. The typo is load-bearing. It will outlive us all.
+
+The page also includes Google reCAPTCHA, jQuery 3.5.1 loaded from CloudFront, an Akamai mPulse RUM beacon (API key: `GFCZV-BTVLG-LZNSL-B55G9-NWDGT`), and a CSRF token baked right into the HTML. The staging instance at `star-stg.dunkinbrands.com` is also live and presumably also can't spell "Generate."
+
+**CrunchTime**, by the way, is a restaurant operations platform. It handles inventory, food cost tracking, scheduling — the boring stuff that actually makes restaurants work. Dunkin' trusts them with everything. And CrunchTime trusts Dunkin' to spell "Generate." Both parties have been let down.
+
+### The Swagger Editor (swagger.ddmdev.dunkindonuts.com)
+
+This was supposed to be the big one. The "single most interesting door I haven't opened" from Wave 2. A Swagger endpoint on a bare EC2 instance with no CDN protection. I built an entire probe script for it — DNS across four resolvers, reverse DNS, whois, TLS cert inspection, 28-path enumeration, HTTP method sweeps, nmap port scanning, banner grabbing.
+
+It's a Swagger Editor.
+
+Not Swagger UI. Not API documentation. A **Swagger Editor** — the tool you use to *write* API specs, not the thing that *serves* them. It returned a 3,540-byte HTML page, served by nginx, with a `Last-Modified` date of **December 23, 2019.**
+
+Some developer, five days before the world rang in 2020, spun up an nginx container on a bare EC2 instance, dropped the Swagger Editor static files in it, and walked away. That was over six years ago. The instance is still running. The wildcard cert (`*.ddmdev.dunkindonuts.com`) is still being renewed. Someone is presumably still paying AWS for this instance. It has survived a pandemic, a parent company acquisition, and at least three generations of infrastructure. It serves no purpose. It just exists, like a donut-shaped Voyager probe drifting through the cloud.
+
+The nmap scan failed because nmap isn't available in my container image (oops), but banner grabs on ports 80, 443, 8080, 8443, 3000, 5000, and 9090 all came back empty. It's just port 443, nginx, and the ghost of a developer who wanted to edit some YAML in the browser.
+
+### The SWI Mystery: Even More Mysterious
+
+Wave 2 found SWI — an unknown service running in 6+ environments across the ddmprod and ddmdev platforms. I threw 35 paths at it across every live environment. API paths. Health checks. Swagger. Actuator. Login. Auth. Webhook. Push. Message. Even `/swi` and `/SWI`.
+
+**Every. Single. Path. Returns. 404.**
+
+Not 403 (blocked). Not 401 (auth required). 404 — "nothing here." Across prod, preprod, dev, and qa. All returning identical 728-byte HTML error pages. The dlt-dev and dlt-qa environments are even weirder — they return 503 Service Unavailable on everything, suggesting those sub-environments have been taken down while the main ones keep running.
+
+The headers confirm it's a **Ruby on Rails** application:
+
+```
+Server: nginx
+Status: 404 Not Found
+X-Request-Id: c59fd0c8-ab78-4f11-8758-b57ba3a0ee1a
+X-Runtime: 0.004005
+X-N: S
+```
+
+`X-Runtime` and `X-Request-Id` are classic Rails. The `Status` header in the response is also a Rails-ism. This is a Rails app, running on nginx, behind Akamai, in production, that does... nothing visible. Every route is behind authentication or the app genuinely has no public-facing routes. The cert reveals SWI shares infrastructure with the Mobile API (mapi-dun), the Order Delivery Engine (ode), and the Universal Links service (ulink). It's a first-class citizen of the mobile platform that does nothing anyone can see from outside.
+
+Six environments. Actively maintained. Purpose: classified. SWI remains this investigation's Area 51.
+
+### Sonic Put a Slack Message in DNS
+
+I enumerated DNS TXT records for all six Inspire Brands siblings. Most of what I found was normal: SPF records, DKIM selectors, domain verification strings for Google, Facebook, Adobe, Apple, Atlassian.
+
+Then I got to Sonic Drive-In.
+
+Sonic has **33 TXT records.** That's already a lot. But one of them is:
+
+```
+"[6:20 PM] Nelson, Brandi     atlassian-domain-verification=ePV5FzMQVHW78z2fSa9NUn8GwnrxUxwaPVUjsYP4bWfQliM21X7G4LMCvG65MgvF"
+```
+
+Read that again. That's a **Slack message pasted into a DNS record.** Someone named Brandi Nelson sent the Atlassian domain verification string in a Slack or Teams channel at 6:20 PM, and whoever was adding it to DNS just... copied the entire message. Including the timestamp. Including Brandi's name. Into the TXT record. That was committed to production DNS.
+
+Every DNS resolver on the internet can now tell you that Brandi Nelson sent that verification string at 6:20 PM. It's been there long enough that it's probably been replicated to thousands of recursive resolvers worldwide. Brandi Nelson is now part of the global DNS infrastructure. I hope she knows.
+
+They have another copy of the same Atlassian verification string *without* the chat metadata, so they presumably noticed at some point and added a clean one. But they never deleted the Brandi version. Both records coexist in DNS, two copies of the same key, one wearing Brandi Nelson's name like a digital tramp stamp.
+
+### wsapi: Somebody Else's Certificate
+
+`wsapi.dunkinbrands.com` resolves to 54.172.180.235 (AWS). It returns 404 on everything with a `server: envoy` header and two custom headers:
+
+```
+x-theorem-auth: nil
+x-theorem-platform: nil
+```
+
+Theorem. Not Dunkin'. I pulled the TLS certificate:
+
+```
+subject=CN=api-test.theoremlp.com
+issuer=C=US, O=Let's Encrypt, CN=R13
+```
+
+The certificate is for **`api-test.theoremlp.com`** — a test API belonging to **Theorem LP**, a digital product consultancy. Dunkin's Web Service API subdomain is serving another company's test certificate. The cert expires April 21, 2026 — meaning someone at Theorem is still renewing it. On Dunkin's infrastructure. For Dunkin's subdomain.
+
+Either Theorem is a current vendor who configured something wrong, or they *were* a vendor and nobody cleaned up the DNS when the engagement ended. Either way, `wsapi.dunkinbrands.com` has been answering "I'm Theorem LP's test API" to anyone who bothers to check the certificate, and apparently nobody has bothered.
+
+### One Company, Seven Brands, One Email Pipe
+
+I compared email infrastructure across ALL seven Inspire Brands entities: Dunkin', Baskin-Robbins, Arby's, Buffalo Wild Wings, Sonic, Jimmy John's, and the Inspire Brands parent.
+
+They are **all identical.**
+
+| Configuration | Value (same for all 7) |
+|---|---|
+| MX Provider | Proofpoint (`mxa-00919702.gslb.pphosted.com`) |
+| SPF Macro | `include:%{ir}.%{v}.%{d}.spf.has.pphosted.com` |
+| DMARC Policy | `p=reject; rua=mailto:dmarc_rua@emaildefense.proofpoint.com` |
+| M365 DKIM | `selector1/selector2` → `inspirebrands.onmicrosoft.com` |
+
+Same Proofpoint tenant. Same Microsoft 365 tenant. Same DMARC reporting. Every email from every brand — Dunkin' promotions, Arby's coupons, BWW game day alerts, Sonic happy hour notices, Jimmy John's delivery confirmations — all flow through the exact same email infrastructure. One pipe. Seven restaurant chains. 44,000+ locations.
+
+Dunkin' uses legacy Proofpoint MX naming (`psmtp.com`) while the other brands use modern naming (`pphosted.com`), suggesting Dunkin' was already a Proofpoint customer before the Inspire Brands acquisition consolidated everyone onto one tenant. They migrated the config but left the old MX records because changing MX records is scary and donuts don't require bravery.
+
+For transactional email, the brands branch out slightly: Arby's, BWW, Sonic, and Jimmy John's all use **SendGrid** (each with their own account). Sonic also has **Mailchimp/Mandrill**. Jimmy John's has **Mailgun** as a side channel. Dunkin' and BWW both use **Salesforce Marketing Cloud** for engagement tracking.
+
+The KnowBe4 phishing awareness training verification token is the same across Arby's, BWW, and Sonic: `0c00dc3beaeabc5a1bb3e17db0f29f45`. Same security training platform, same account, three brands. If you hack the phishing training, you hack the phishing training for three fast food chains at once.
+
+### The Center: Where Franchisees Learn About Bakery Equipment
+
+`thecenter.dunkinbrands.com` is an **Adobe Experience Manager** learning portal behind CloudFront. The TLS cert says `O=Inspire Brands, Inc., L=Sandy Springs` — Sandy Springs, Georgia is Inspire Brands' headquarters.
+
+The portal serves franchisee training content. Wayback Machine captured the content paths:
+
+- `/content/combo/us/en/header/learning-path-combo/dunkin-learning-path-11-27.html` — the "Dunkin Learning Path" from November 2027
+- `/content/combo/us/en/home/dunkin-equipment/bakery-equipment.html` — **bakery equipment training**
+- `/content/combo/us/en/header/readiness/spring-readiness-february-21-april-30.html` — "Spring Readiness" seasonal training
+
+There's a course for bakery equipment. There is a corporate learning management system, hosted on Adobe Experience Manager, running on AWS behind CloudFront, registered to Inspire Brands of Sandy Springs, Georgia, and it has a module about bakery equipment. Franchisees log in with Okta, navigate to the learning path, and learn about the equipment that makes the donuts. This is the circle of life.
+
+The AEM admin login page at `/libs/granite/core/content/login.html` returns 200 and serves 12,753 bytes of HTML. The security-sensitive paths (`/crx/de`, `/system/console`, `/bin/querybuilder.json`) are properly 404'd — someone configured the AEM dispatcher correctly. But the fact that the admin login *page* is accessible means you can see the Granite UI login screen even if you can't do anything with it. It's like pressing your face against the window of a locked store.
+
+### The Ghost Domain Graveyard
+
+I probed every vanity domain found in the Wave 2 cert SANs. The results are a masterclass in "we registered this domain for a campaign in 2004 and we're still paying for it."
+
+**dnkn.com** — Created December 20, 2003. Still resolves. Still redirects to dunkindonuts.com. The TLS certificate has been **expired since September 28, 2022.** Three and a half years of expired cert. The cert's CN is `brglobalfranchising.com` with SANs covering `*.dnkn.com`, `*.lsmnow.com`, `catering.dunkindonuts.com`, and `dunkinnation.com`. Nobody has renewed this cert because nobody remembers this cert exists. It just sits there, serving browsers a security warning, redirecting them to a donut website.
+
+**lsmnow.com** — "Local Store Marketing." Created February 5, 2004. This one redirects to `lsm-prod-idp.dunkinbrands.com/my.policy` — that's an **F5 BIG-IP access policy manager**, which is basically a VPN login page. The MX record points to `mail.flairpromo.com`, a promotional marketing company. Twenty-two years ago, someone at Dunkin' Brands had a vision for a "Local Store Marketing" portal. They bought a domain. They set up an F5 appliance. They hired Flair Promo to handle the emails. The portal is now a redirect to a login page that probably doesn't work anymore. But the DNS is eternal.
+
+**clubdunkin.com** — Created September 3, 2020. Redirects to `www.dunkindonuts.com/en/clubdunkin`. A loyalty program that existed for approximately the blink of an eye before being folded into Dunkin' Rewards.
+
+**dunkinnation.com** — The redirect loop. HTTP root → 301 → HTTPS root → 301 → `https://www.dunkinnation.com/` → connection refused. The www subdomain is dead but the root A record still points to a running server that dutifully redirects you to the dead subdomain. Forever. It will keep redirecting until either the server dies or the sun explodes. Dunkin' Nation has become a donut-shaped ouroboros.
+
+### BAM: Another Portal Behind Another SSO
+
+`bam.dunkinbrands.com` immediately 302-redirects to:
+
+```
+https://sso.inspirepartners.net/app/inspirepartners_bam_1/exk938s08y7yt4V9f697/sso/saml
+```
+
+That's **Okta** at `sso.inspirepartners.net`. The app ID is `inspirepartners_bam_1`. Whatever BAM is (Brand Asset Management? Business Analytics Module? Bagel Acquisition Matrix?), it's an Inspire Partners internal application authenticated via Okta SAML.
+
+The server runs **IIS 10.0** with **ASP.NET 4.0.30319** — the .NET Framework version, not .NET Core. The TLS cert reveals two wildcard SANs that didn't appear anywhere else: `*.corporateportal.dunkinbrands.com` and `*.franchisee.dunkinbrands.com`. There's a whole tier of portal infrastructure we haven't even started mapping.
+
+### The Graveyard Graveyard (Legacy Infrastructure)
+
+Three legacy services are DEAD on AT&T IP space:
+
+| Service | IP | Status |
+|---|---|---|
+| `sts.dunkinbrands.com` (Security Token Service) | 12.170.52.233 | Dead. CNAME: `stsprod.itdns.dunkinbrands.com` |
+| `sslvpn.dunkinbrands.com` (SSL VPN) | 12.170.52.152 | Dead. Same AT&T /24 as STS. |
+| `citrix.dunkinbrands.com` (Citrix Gateway) | 164.109.80.73 | Dead. |
+
+These are fossils from the pre-cloud era. AT&T managed hosting. ADFS federation. Citrix remote access. This was Dunkin' Brands' IT infrastructure before AWS existed, before Inspire Brands existed, before the donuts dropped from the name. The DNS records survive like petroglyphs, pointing at IP addresses that will never answer again.
+
+The STS endpoint has a CNAME to `stsprod.itdns.dunkinbrands.com` — that's an internal DNS naming convention that suggests there was once an `ststest.itdns` and `stsstg.itdns` too. A whole ADFS topology for a donut company, running on AT&T iron, serving SAML tokens to people who needed to check the fryer schedule. All gone.
+
+SmartSolve is the interesting one. IP 74.199.217.32 (same /24 subnet as the identity provider at .23). It responds to OPTIONS, PUT, and DELETE with HTTP 200 on HTTPS, but GET and POST just... hang and die. HTTP GET returns 302. Something is alive in there. Something that answers to unusual HTTP methods but refuses normal ones. SmartSolve is an "Equipment Quality Management System" — it manages quality workflows for manufacturing. What a donut chain needs with an EQMS is between them and their god.
+
+### The Sandbox Is Dead
+
+I probed all 8 sandbox endpoints from the CT logs:
+
+```
+DEAD  loyalty-api.sandbox.dunkindonuts.com
+DEAD  loyalty-mock-api.sandbox.dunkindonuts.com
+DEAD  rewards-api.sandbox.dunkindonuts.com
+DEAD  oats-api.sandbox.dunkindonuts.com
+DEAD  oats-ws.sandbox.dunkindonuts.com
+DEAD  splunkelb.sandbox.dunkindonuts.com
+DEAD  swagger.sandbox.dunkindonuts.com
+DEAD  ecselb.sandbox.dunkindonuts.com
+```
+
+All NXDOMAIN. The entire `sandbox.dunkindonuts.com` environment has been decommissioned. Wayback shows they were alive as recently as 2022-2023 — the OATS WebSocket returned 404 XML, the sandbox Swagger had a robots.txt. There was an entire parallel universe of loyalty APIs, rewards systems, and Splunk monitoring, and now it's gone. Eight services. Eight NXDOMAIN. The sandbox didn't survive the winter.
+
+### The Full Vendor Census (Updated)
+
+| Vendor | What They Do | Brands |
+|--------|-------------|--------|
+| Branch.io | Deep linking | Dunkin' |
+| OLO | Online ordering | Dunkin' |
+| Tillster | Online ordering | Baskin-Robbins |
+| CardFree | THE ENTIRE MOBILE APP | Dunkin' |
+| CrunchTime | Restaurant operations (RAP) | Dunkin' |
+| Akamai | CDN + WAF | Dunkin', BR |
+| Cloudflare | CDN + DNS | Arby's, BWW, Sonic, JJ, franchising |
+| Proofpoint | Email security | ALL 7 brands |
+| Microsoft 365 | Corporate email (DKIM) | ALL 7 brands |
+| SendGrid | Transactional email | Arby's, BWW, Sonic, JJ |
+| Salesforce Marketing Cloud | Email marketing | Dunkin', BWW, JJ, Inspire |
+| Mailchimp/Mandrill | Email | Sonic |
+| Mailgun | Email | Jimmy John's |
+| DigiCert / GeoTrust | TLS certs (mobile) | Dunkin' |
+| Let's Encrypt | TLS certs (dev) | Dunkin' dev, Arby's |
+| AWS | Infrastructure | Dunkin', BR, most brands |
+| Microsoft Azure | International site | Dunkin' (just that one) |
+| IBM Cloud | UAT (dead) | Dunkin' (dead) |
+| IPR Software | Investor relations + news | Dunkin', BR |
+| ServiceNow | Customer chat | All (inspirecustomer) |
+| Paradox AI | Recruiting / careers | Dunkin' |
+| Adobe Analytics | Web analytics | Dunkin' |
+| Adobe Experience Manager | Franchisee training (The Center) | Dunkin' |
+| Okta | SSO (internal apps) | Inspire Partners |
+| KnowBe4 | Phishing training | Arby's, BWW, Sonic |
+| Theorem LP | ??? (cert on wsapi) | Dunkin' |
+| WeRecognize | Employee recognition | Dunkin' |
+| F5 Networks | Load balancing (legacy) | Dunkin' |
+| Flair Promo | Local Store Marketing | Dunkin' |
+
+**Twenty-nine vendors.** Up from seventeen. Almost doubled. Twenty-nine companies involved in the operation of six fast food chains that share the same email pipe. If you include the defunct ones (AT&T managed hosting, IBM Cloud), we're at thirty-one. There are more vendors than there are items on most of these restaurants' menus.
+
+## The Numbers
+
+| Metric | Count |
+|--------|-------|
+| Probe scripts run | 33 |
+| Artifact directories | 30 |
+| Entities in the graph | 77 |
+| Edges | 78 |
+| Clusters | 15 |
+| Anomalies | 33 |
+| Vendors identified | 29 |
+| Dead services | 19 |
+| Redirect loops | 2 |
+| Expired certificates | 1 (3.5 years expired) |
+| Slack messages in DNS | 1 |
+| Typos in production endpoints | 1 (GenrateOTPForUser) |
+| Swagger Editors forgotten since 2019 | 1 |
+| Wrong company's certificate on Dunkin' infrastructure | 1 |
+| Fast food brands sharing one email pipe | 7 |
+
+This started because a Dunkin' ad pretended a toddler typed on a phone.
+
 ## Methodology
 
-All probes ran inside containerized environments (`podman run --rm --dns 8.8.8.8 investigator`). DNS enumeration, HTTP redirect tracing, TLS certificate inspection, certificate transparency log queries, Wayback Machine CDX queries, Apple App Site Association file retrieval, Reddit public API, iTunes Search API, nmap port scanning, Spring Boot actuator probing, OIDC discovery endpoint enumeration. 17 probe scripts across 2 waves. Zero exploitation, zero auth bypass, zero interaction with any service beyond reading what they publicly serve.
+All probes ran inside containerized environments (`podman run --rm --dns 8.8.8.8 investigator`). DNS enumeration, HTTP redirect tracing, TLS certificate inspection, certificate transparency log queries, Wayback Machine CDX queries, Apple App Site Association file retrieval, Reddit public API, iTunes Search API, nmap port scanning, Spring Boot actuator probing, OIDC discovery endpoint enumeration, cross-brand DNS/DKIM/DMARC comparison, AEM path enumeration, Okta SSO redirect capture. 33 probe scripts across 3 waves. Zero exploitation, zero auth bypass, zero interaction with any service beyond reading what they publicly serve.
 
 I just looked at what was already there. Dunkin' made it easy.
 
 ## Files
 
-- **[GRAPH.md](GRAPH.md)** — The serious version. 56 entities, 12 clusters, 21 anomalies. Structured for machines.
+- **[GRAPH.md](GRAPH.md)** — The serious version. 77 entities, 15 clusters, 33 anomalies. Structured for machines.
 - **`intake-2026-04-13/`** — The evidence. Screenshots and the URL that started all of this.
-- **`artifacts/`** — Raw probe output from 17 artifact directories. DNS, HTTP, certs, OSINT, CT logs, SSO discovery, menu pricing API, QA environments, legacy services, vanity domains.
-- **`scripts/`** — 17 reproducible probe scripts. Run them yourself. Everything is containerized.
+- **`artifacts/`** — Raw probe output from 30 artifact directories. DNS, HTTP, certs, OSINT, CT logs, SSO discovery, menu pricing API, QA environments, legacy services, vanity domains, sister brands, ghost domains, email infrastructure, POS APIs, sandbox graveyards.
+- **`scripts/`** — 33 reproducible probe scripts. Run them yourself. Everything is containerized.

@@ -1,0 +1,15 @@
+=== SANDBOX ENVIRONMENT PROBE ===
+Date: 2026-04-14T02:27:11Z
+
+--- DNS Resolution ---
+DEAD  loyalty-api.sandbox.dunkindonuts.com (Loyalty API)
+DEAD  loyalty-mock-api.sandbox.dunkindonuts.com (Loyalty Mock API)
+DEAD  rewards-api.sandbox.dunkindonuts.com (Rewards API)
+DEAD  oats-api.sandbox.dunkindonuts.com (OATS API)
+DEAD  oats-ws.sandbox.dunkindonuts.com (OATS WebSocket)
+DEAD  splunkelb.sandbox.dunkindonuts.com (Splunk ELB)
+DEAD  swagger.sandbox.dunkindonuts.com (Swagger Sandbox)
+DEAD  ecselb.sandbox.dunkindonuts.com (ECS ELB)
+
+=== DONE ===
+Completed: 2026-04-14T02:27:12Z

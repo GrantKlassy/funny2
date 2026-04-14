@@ -1,0 +1,342 @@
+=== SISTER BRANDS DEEP DNS ENUMERATION ===
+Date: 2026-04-14T02:23:42Z
+
+========================================
+BRAND: dunkindonuts.com
+========================================
+--- NS ---
+ns-1463.awsdns-54.org.
+ns-1876.awsdns-42.co.uk.
+ns-271.awsdns-33.com.
+ns-727.awsdns-26.net.
+--- SOA ---
+ns-727.awsdns-26.net. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+--- MX ---
+100 dunkindonuts.com.s8a1.psmtp.com.
+200 dunkindonuts.com.s8a2.psmtp.com.
+300 dunkindonuts.com.s8b1.psmtp.com.
+400 dunkindonuts.com.s8b2.psmtp.com.
+--- TXT ---
+"google-site-verification=8OCqsSly4VJHnBKwUtlMolvrLZkbEcPy-k78G2IawOQ"
+"google-site-verification=LQjOvXQ4BhKNc7NhnNNG05C02BdoTqcyOzILGQ3D96Y"
+"google-site-verification=ZrVBzpYO5IdCTr0hYkExkz4Qvete_PEKyA1rNgQMoDc"
+"v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+"y83y9hw0xvjmpwzsg9kp6rm9bm9pxd75"
+"7r39ul03it0qfghnj3v78ismr7"
+"_0132x0yceckblqv9oy4wr4gsyns3cs1"
+"_vaznrew1x7wg07fodvwijker0kemb1f"
+"apple-domain-verification=XNCwvqGHRrPqh7pYN8XJo-brS_Wn5VWsNhDU_ovpb7E"
+"facebook-domain-verification=27htcefwulw7pb3ogqrnq398flrxze"
+--- DMARC ---
+_dmarc.dunkindonuts.com.dmarc.has.pphosted.com.
+"v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+--- CAA ---
+--- DKIM Selectors ---
+--- www CNAME chain ---
+  www.dunkindonuts.com → www.dunkindonuts.com.edgekey.net.
+  www.dunkindonuts.com.edgekey.net. → e5079.a.akamaiedge.net.
+  e5079.a.akamaiedge.net. → A: 23.203.213.158
+--- order CNAME chain ---
+  order.dunkindonuts.com → whitelabel.olo.com.
+  whitelabel.olo.com. → whitelabel.olo.com.cdn.cloudflare.net.
+  whitelabel.olo.com.cdn.cloudflare.net. → A: 104.17.45.81
+--- Root A Records ---
+35.169.92.22
+52.0.33.13
+
+========================================
+BRAND: baskinrobbins.com
+========================================
+--- NS ---
+ns-1239.awsdns-26.org.
+ns-1881.awsdns-43.co.uk.
+ns-60.awsdns-07.com.
+ns-659.awsdns-18.net.
+--- SOA ---
+ns-1881.awsdns-43.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+--- MX ---
+10 mxa-00919702.gslb.pphosted.com.
+10 mxb-00919702.gslb.pphosted.com.
+--- TXT ---
+"MS=ms95374820"
+"_787kihol36n7kl2umfderj2plnsmteg"
+"_b3kj7n7qlsr305iz5yl62rbtrkpygdc"
+"facebook-domain-verification=zk9p26pgo5ustxzhmj38aha1y1hatx"
+"google-site-verification=5FMQ26TYpO5cRF30w3Qxa1wtx7Q5R1ITDuumC64qm88"
+"google-site-verification=CnXBhkYFkZfvysK6HGUS8cWRDRX4Yhdi3JaLQ241jEc"
+"google-site-verification=RgDDWs2P4EnydYvCI16uPYyUm4YfkTscDaS9h2Nzv2w"
+"icat2pa2tfue7r3jsbckv5p425"
+"mentimeter-9cdb763b-97ba-4ccc-9dc8-2eadf50ca1bd"
+"v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+--- DMARC ---
+_dmarc.baskinrobbins.com.dmarc.has.pphosted.com.
+"v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+--- CAA ---
+--- DKIM Selectors ---
+  HIT: selector1._domainkey.baskinrobbins.com
+    selector1-baskinrobbins-com._domainkey.inspirebrands.onmicrosoft.com.
+  HIT: selector2._domainkey.baskinrobbins.com
+    selector2-baskinrobbins-com._domainkey.inspirebrands.onmicrosoft.com.
+--- www CNAME chain ---
+  www.baskinrobbins.com → www.baskinrobbins.com.edgekey.net.
+  www.baskinrobbins.com.edgekey.net. → e5079.b.akamaiedge.net.
+  e5079.b.akamaiedge.net. → A: 23.203.213.158
+--- order CNAME chain ---
+  order.baskinrobbins.com → www-br-us.tillster.com.
+  www-br-us.tillster.com. → d958sif0b5nej.cloudfront.net.
+  d958sif0b5nej.cloudfront.net. → A: 99.84.215.26
+--- Root A Records ---
+35.169.92.22
+52.0.33.13
+
+========================================
+BRAND: arbys.com
+========================================
+--- NS ---
+dee.ns.cloudflare.com.
+javon.ns.cloudflare.com.
+--- SOA ---
+dee.ns.cloudflare.com. dns.cloudflare.com. 2400743451 10000 2400 604800 1800
+--- MX ---
+10 mxa-00919702.gslb.pphosted.com.
+10 mxb-00919702.gslb.pphosted.com.
+--- TXT ---
+"knowbe4-site-verification=0c00dc3beaeabc5a1bb3e17db0f29f45"
+"mentimeter-5751d254-269e-4bcb-9e3e-f8aa18516da1"
+"tgcjqqbl3prrgfwv6knlm760v4z1z249"
+"v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+"vnztwv5h3p7xdk493ct53klcqln5t2bm"
+"1c5jz0qlbwf54syct07wkvymtb8970mg"
+"23sftk5wbwvvtlppy3jdf5gmjd5xhwym"
+"MS=ms33090182"
+"MS=ms86636645"
+"_fmyzfhqef3yn8ss1uiv8ry24ubq94is"
+"adobe-idp-site-verification=284c6f850ff0349a3f277ea40e2fdcea6dcc6daccb8a58e1b80cfe2333e3f57e"
+"apple-domain-verification=BLWaP23Q8H7UsRcu"
+"apple-domain-verification=OUWfvHPpBrSyLwb9XIW6ZxSxer54LNp9qkPTjXPcbXc"
+"apple-domain-verification=X8RK32vuo2fr9WvoynDfCxHFfzAaO1YVRGWqLhcCd14"
+"ciscocidomainverification=202e1a9eff9439e60245b98f356d0f78f0c09d4635dbd972d90514485153e988"
+"d7dc372b712kwc15l71z2pcpqjk1x6fy"
+"facebook-domain-verification=dyhno14xcarx2qfhah5c4xhigi0beh"
+"facebook-domain-verification=y2lflgbou3w96n308c5k48uzkq1ywa"
+"google-site-verification=7u2kojw3X6ScUHdmC1EW7eph49ODHuvimMcJsw2x7XM"
+"google-site-verification=Msrrj_0nTs0A2U1Uy2SDY7a490nsRbg8v1nXQCoS84E"
+"google-site-verification=nY56E92PvI2CjpfqpAx5qcIC_SiPDfSZuMpn0gtKTBk"
+"google-site-verification=xRr1TQhXL-4sr_OFlm7dYsu-nV5iCokcGSSWXrjxc8c"
+"kWZMFsL5KV7ObLCbGnRHejgq8sUSlLSmQf83BoXv3o9VsPOFBaM2Z4CAGtiG2lRaUokxn0qB9pdU2lkEbXCoOw=="
+--- DMARC ---
+_dmarc.arbys.com.dmarc.has.pphosted.com.
+"v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+--- CAA ---
+--- DKIM Selectors ---
+  HIT: s1._domainkey.arbys.com
+    s1.domainkey.u34483924.wl175.sendgrid.net.
+  HIT: s2._domainkey.arbys.com
+    s2.domainkey.u34483924.wl175.sendgrid.net.
+  HIT: selector1._domainkey.arbys.com
+    selector1-arbys-com._domainkey.inspirebrands.onmicrosoft.com.
+  HIT: selector2._domainkey.arbys.com
+    selector2-arbys-com._domainkey.inspirebrands.onmicrosoft.com.
+--- www CNAME chain ---
+  www.arbys.com → A: 172.64.144.185
+--- order CNAME chain ---
+  order.arbys.com → A: 172.64.144.185
+--- Root A Records ---
+104.18.43.71
+172.64.144.185
+
+========================================
+BRAND: buffalowildwings.com
+========================================
+--- NS ---
+dns1.cscdns.net.
+dns2.cscdns.net.
+--- SOA ---
+dns1.cscdns.net. hostmaster.cscdns.net. 2019071463 10800 3600 604800 7200
+--- MX ---
+10 mxa-00919702.gslb.pphosted.com.
+10 mxb-00919702.gslb.pphosted.com.
+--- TXT ---
+"google-site-verification=P4w5eUaFIPFArxaezbDExrFmeo9KfXzhMcLuDnYqJ-I"
+"google-site-verification=mAnRn_fsSq7gPyYM9ajE32CQIPHmagOa3WJa1DFgRTc"
+"fu1eBfoH+HTFLBcD7LdWy3PWJ/JqHZI5aqBLxuWGmueJ0lk2IH/IJHjNXdXLvmencM0huN65gtVeD6wxMKwHsQ=="
+"ciscocidomainverification=1d204e1fc9ce79fd3f0fce405aeea7eaed855aab3f94436680cdb62b5219cab1"
+"MS=ms31826865"
+"MS=ms80760188"
+"firebase=buffalo-united"
+"_97jvksee539fxzpejvmab822svgx8ss"
+"_bu5os8htg2v7ylvo3oou5h6wc71j6w4"
+"hl6r39wtdh7mlj5nrxwr9lrbpw98zg1q"
+"yp4dsbc81zry072gm0hby6bdl3f504zd"
+"ca3-54df949b0ca04cf3bd4f4745d4590fdc"
+"apple-domain-verification=yuVE8AEYtErG8Otk"
+"v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+"knowbe4-site-verification=0c00dc3beaeabc5a1bb3e17db0f29f45"
+"facebook-domain-verification=b5jq7zyxqiqcwofn3sv92aym0we7xp"
+"facebook-domain-verification=g9ricqb83a9f5gx2bs09k87hyxm1fg"
+"google-site-verification=-rvr57tSCkBPCx2pSc7tYi421D-Jud4FSrwI5UCTZuk"
+"google-site-verification=8FaaLO3FzuUYa4KG3cI4BewSBUEeV7e3RUeVaMAH9qM"
+"google-site-verification=FfhJnedLpSzpt5E0hySgxRfqreOs98wIDYEgkLNmsHY"
+"google-site-verification=GL4gc4gv8DQLqO8_athAjIC_AURdMi3MpRIaT8rnvk8"
+"google-site-verification=IQzyT2gysyjI1xs5-KVTBMe0ZdShHQWN-53Q4S5Q2Zg"
+"google-site-verification=KEy3PohNV8kofMt1lrg9-gjM3Eye_P1cG9xLo5uYYxc"
+--- DMARC ---
+_dmarc.buffalowildwings.com.dmarc.has.pphosted.com.
+"v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+--- CAA ---
+--- DKIM Selectors ---
+  HIT: s1._domainkey.buffalowildwings.com
+    s1.domainkey.u30126554.wi055.sendgrid.net.
+  HIT: s2._domainkey.buffalowildwings.com
+    s2.domainkey.u30126554.wi055.sendgrid.net.
+  HIT: selector1._domainkey.buffalowildwings.com
+    selector1-buffalowildwings-com._domainkey.inspirebrands.onmicrosoft.com.
+  HIT: selector2._domainkey.buffalowildwings.com
+    selector2-buffalowildwings-com._domainkey.inspirebrands.onmicrosoft.com.
+--- www CNAME chain ---
+  www.buffalowildwings.com → www.buffalowildwings.com.cdn.cloudflare.net.
+  www.buffalowildwings.com.cdn.cloudflare.net. → A: 104.18.32.155
+--- order CNAME chain ---
+  order.buffalowildwings.com → NXDOMAIN
+--- Root A Records ---
+104.18.6.152
+
+========================================
+BRAND: sonicdrivein.com
+========================================
+--- NS ---
+dns1.cscdns.net.
+dns2.cscdns.net.
+--- SOA ---
+dns1.cscdns.net. hostmaster.cscdns.net. 2020031935 83000 10000 600000 86400
+--- MX ---
+5 mxa-00919702.gslb.pphosted.com.
+5 mxb-00919702.gslb.pphosted.com.
+--- TXT ---
+"google-site-verification=aa856c8OegiOwxWf_XmbnHGXpLAc3lh_rJPw0N2UU6w"
+"google-site-verification=loyoi7igNDZZG0isgDKQGqFObGF-7o4EaepAtmuw_Mg"
+"google-site-verification=s9rjE2JaX92OJBhpBY4ThDr94uTZ6ARKK87H1gMCroY"
+"apple-domain-verification=56fN9-2ErB_1cS8pd0VdYsWmnj7bgiBX9TXusZUzoUo"
+"apple-domain-verification=PU-hQQZ0ttZTeZE8jOaCBlM8Lp1bpltcHyiOY1XjI0g"
+"_globalsign-domain-verification=-92MnhdADd_MUDIP4MJusUdzRREBZBYMaw1u0wSAKW"
+"_globalsign-domain-verification=AV95JD93Kkx4Ze8xK3kxFqSBTzLat_4A5bg8Rt7qci"
+"1DbHCa2Pk+FVmOf52veim9ad5SF6FbjkQ0kNCf27wKIDZTWol3oFrr36T4LOWLyC2nlgdri54NRg49Jrtav8HA=="
+"fvQ+ol9AGV7DfwnO32UxPDMzusYIceThI1ZcW6B/LnGb8X7jfGY41hW2U2BMwuTvh1EIGsKf5YPaBODy0MOsgA=="
+"l9jRjpUbf/xYtF1g4uUCfFgekVhEEOAmr8FY19r/Vfs/T9XfmNTWXljh+BZYaRetjjP+UU+m4LORj3kXb9Ekdw=="
+"Dynatrace-site-verification=c0da05e4-f039-4c83-88c8-7f9af3b6026c__k3k33g1th8fsodhua4javogirj"
+"adobe-idp-site-verification=284c6f850ff0349a3f277ea40e2fdcea6dcc6daccb8a58e1b80cfe2333e3f57e"
+"atlassian-domain-verification=ePV5FzMQVHW78z2fSa9NUn8GwnrxUxwaPVUjsYP4bWfQliM21X7G4LMCvG65MgvF"
+"atlassian-domain-verification=hRNh8wgjM+L9HOl25NYrF8c4SCQlD1y+iTSJ53nRJWq+V68MO5sWQK5no5v3MnuD"
+"[6:20 PM] Nelson, Brandi     atlassian-domain-verification=ePV5FzMQVHW78z2fSa9NUn8GwnrxUxwaPVUjsYP4bWfQliM21X7G4LMCvG65MgvF"
+"MS=ms57187811"
+"MS=ms79491460"
+"MS=ms79807707"
+"443jr8e8btg9htcf9hzb"
+"6a13da0fef7540dc9d4123e78fee240e"
+"_4objuki7s5dy4q45r6yx1z3ggekmxsg"
+"_646wnsz7v8kz5ad2btm8tp8nz2aab5a"
+"_9r8elcelwq9x51w779q18yl9m2eyzb0"
+"_i0zpnb5kuweairlhzu52zwpj2kmvkhp"
+"_mt1xg6j66ig3hg69z7afwilnde3y2bt"
+"fmdx7yczjqgypv8b4xg2q3q16nssc8c3"
+"mfz43qv93ysw2vn6qrytzgzhvjrk44g9"
+"nht106h8cr5qnbbwd8kjf0xckvnqqq3w"
+"ca3-12a8b76c00ef48fabc50de7723037139"
+"ca3-1d72686a22914a5280046bc7076ae266"
+"mentimeter-756a4371-20c1-4457-b41f-56a88d9495e2"
+"v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+"auth0-domain-verification=8n2vk4uki2Ym4BRGYDVBpShsOJSRqjR7"
+"auth0-domain-verification=y1GLGGR8hsG51jScbfiXFjQf7jzNa9JF"
+"knowbe4-site-verification=0c00dc3beaeabc5a1bb3e17db0f29f45"
+"facebook-domain-verification=iedvbylq9nmv79z50ietepwfpvbhq8"
+"facebook-domain-verification=zp2vykfow0nezmuobryx6ky435uylm"
+"_globalsign-domain-verification=663328720705ae37c44dddd45eba95fe"
+"google-site-verification=8_Qmysxwezw12E0afndqZyRSSmn8Zj5zd44EHjh6MgY"
+"google-site-verification=AWONCuU6x4YL0AwKhJKu8TnfBiPDknRQAdvYqTBGDlc"
+"google-site-verification=Bxu6pj7n14Z_aqq7OQ8nS7VuppDlBwHaXfS_t1IwdSo"
+"google-site-verification=FRwsQNEW3Kxq3oqWSjssHeEGWofql3orA1mbTxXcOao"
+"google-site-verification=TkXxZk_vanMDwChVS6m3GdScPcrhwLZdcFDrha4Zcpg"
+"google-site-verification=Ulplhae9g3kBkw-zbDeLfOWZdw_huzxX1pOy6oxnyDw"
+"google-site-verification=V7QmHCdS3ub27Frn-yW4BvBQ4uVGc0ppZbvZ1mrtrPo"
+--- DMARC ---
+_dmarc.sonicdrivein.com.dmarc.has.pphosted.com.
+"v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+--- CAA ---
+--- DKIM Selectors ---
+  HIT: s1._domainkey.sonicdrivein.com
+    s1.domainkey.u29175196.wl197.sendgrid.net.
+  HIT: s2._domainkey.sonicdrivein.com
+    s2.domainkey.u29175196.wl197.sendgrid.net.
+  HIT: k1._domainkey.sonicdrivein.com
+    dkim.mcsv.net.
+  HIT: selector1._domainkey.sonicdrivein.com
+    selector1-sonicdrivein-com._domainkey.inspirebrands.onmicrosoft.com.
+  HIT: selector2._domainkey.sonicdrivein.com
+    selector2-sonicdrivein-com._domainkey.inspirebrands.onmicrosoft.com.
+  HIT: mandrill._domainkey.sonicdrivein.com
+    "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;"
+--- www CNAME chain ---
+  www.sonicdrivein.com → www.sonicdrivein.com.cdn.cloudflare.net.
+  www.sonicdrivein.com.cdn.cloudflare.net. → A: 104.18.43.79
+--- order CNAME chain ---
+  order.sonicdrivein.com → order.sonicdrivein.com.cdn.cloudflare.net.
+  order.sonicdrivein.com.cdn.cloudflare.net. → A: 104.18.43.163
+--- Root A Records ---
+104.18.14.52
+
+========================================
+BRAND: jimmyjohns.com
+========================================
+--- NS ---
+beau.ns.cloudflare.com.
+may.ns.cloudflare.com.
+--- SOA ---
+beau.ns.cloudflare.com. dns.cloudflare.com. 2399252022 10000 2400 604800 1800
+--- MX ---
+5 mxa-00919702.gslb.pphosted.com.
+5 mxb-00919702.gslb.pphosted.com.
+--- TXT ---
+"atlassian-domain-verification=aidW9t7tOLhsDOTRUDLxp1DN370F4JBygW5wZD2KMyVF+hjboR2COn1s+sPqUtIV"
+"facebook-domain-verification=npl75279uqrlvlxzw4353mmiy3tpyl"
+"fhfxfz4yqlrxgz4wr9clyl8jq79ysxpm"
+"google-site-verification: google38a900b9b2415d98.html"
+"google-site-verification=4JjRU7ixErMtH619pliU1-akXOibbUwn9_w6ojd4LYw"
+"google-site-verification=AKh_8JoeZWoubjT9-6aCuhImh0GVqgfknIWSAVRu1mQ"
+"google-site-verification=Hpvojd2h8FY12FPuEUlt_F_snY97792-haV9EocQlYo"
+"google-site-verification=ZYZZq0a7Zp1eXWQBxUPsbjpgs10bBmQC76Q9vM07LFQ"
+"google-site-verification=omTiFJeHTTTKoeRqbGOX7isv7DOSQ6unIHl4z7G-R0s"
+"google-site-verification=wXyxD47EIQ0Q40PgP7Ll2uAt8x9oah70FccIbkizRbA"
+"grf35s96vl6dvj7rgtkdd8lhjvs0r9p1"
+"kzvhh93571bxr60hkzcywtl2w5qpzts3"
+"mentimeter-c655bd6d-36b0-46f8-adde-e858da6de9c1"
+"n14yjhb3v2mbhyj0rnwldqdfqrsxc2hx"
+"v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+"vj3fhh15y58wgq7hl0xl9jwrh0nnbm7r"
+"6042c8a82d1c43feb21225a5ca5265e4"
+"MS=ms94381892"
+"_c3l8pw4ytp9t7qswpectvsq5dq2xkdu"
+"apple-domain-verification=V2qDFpymdKFzlsHP"
+--- DMARC ---
+_dmarc.jimmyjohns.com.dmarc.has.pphosted.com.
+"v=DMARC1; p=reject; fo=1; rua=mailto:dmarc_rua@emaildefense.proofpoint.com; ruf=mailto:dmarc_ruf@emaildefense.proofpoint.com;"
+--- CAA ---
+--- DKIM Selectors ---
+  HIT: s1._domainkey.jimmyjohns.com
+    s1.domainkey.u57117.wl118.sendgrid.net.
+  HIT: selector1._domainkey.jimmyjohns.com
+    selector1-jimmyjohns-com._domainkey.inspirebrands.onmicrosoft.com.
+  HIT: selector2._domainkey.jimmyjohns.com
+    selector2-jimmyjohns-com._domainkey.inspirebrands.onmicrosoft.com.
+--- www CNAME chain ---
+  www.jimmyjohns.com → A: 34.120.102.21
+--- order CNAME chain ---
+  order.jimmyjohns.com → NXDOMAIN
+--- Root A Records ---
+104.18.217.87
+104.18.218.87
+104.18.219.87
+104.18.220.87
+104.18.221.87
+
+=== DONE ===
+Completed: 2026-04-14T02:23:49Z

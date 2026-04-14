@@ -1,0 +1,11 @@
+[["timestamp","original","statuscode","mimetype"],
+["20230226164313","http://thecenter.dunkinbrands.com/","-","warc/revisit"],
+["20240321002451","https://thecenter.dunkinbrands.com/content/combo/us/en/header/learning-path-combo.html","200","text/html"],
+["20240320234319","https://thecenter.dunkinbrands.com/content/combo/us/en/header/learning-path-combo/dunkin-learning-path-11-27.html","200","text/html"],
+["20240320234355","https://thecenter.dunkinbrands.com/content/combo/us/en/header/readiness/spring-readiness-february-21-april-30.html","200","text/html"],
+["20240320234233","https://thecenter.dunkinbrands.com/content/combo/us/en/home.html","200","text/html"],
+["20240320234426","https://thecenter.dunkinbrands.com/content/combo/us/en/home/dunkin-equipment/bakery-equipment.html","200","text/html"],
+["20240320234215","https://thecenter.dunkinbrands.com/content/dam/public-facing-documents/Background_Login.png","200","image/png"],
+["20240320234215","https://thecenter.dunkinbrands.com/content/dam/public-facing-documents/okta-login-screen.css","200","text/css"],
+["20240320234216","https://thecenter.dunkinbrands.com/content/dam/public-facing-documents/TheCenter_Logo_090622.png","200","image/png"],
+["20240322010600","https://thecenter.dunkinbrands.com/system/sling/logout.html","302","text/html"]]

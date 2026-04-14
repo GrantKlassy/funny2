@@ -1,0 +1,65 @@
+{
+
+   "activitycontinuation":{
+
+      "apps":[
+
+         "7UARB5Z69S.com.dunkinbrands.otgo"
+
+      ]
+
+   },
+
+   "appclips":{
+
+      "apps":[
+
+         "7UARB5Z69S.com.dunkinbrands.otgo.Clip"
+
+      ]
+
+   },
+
+   "applinks":{
+
+      "apps":[
+
+         
+
+      ],
+
+      "details":[
+
+         {
+
+            "appID":"7UARB5Z69S.com.dunkinbrands.otgo",
+
+            "paths":[
+
+              "/en/menu/espresso-and-coffee/*",
+
+              "/en/menu/teas-and-more/*",
+
+              "/en/menu/frozen-drinks/*",
+
+              "/en/menu/sandwiches-and-more/*",
+
+              "/en/menu/snacks-and-wraps/*",
+
+              "/en/menu/bagels-and-muffins/*",
+
+              "/en/menu/donuts/*",
+
+              "/en/menu/brew-at-home/*",
+              "NOT /*",
+              "NOT /en/menu/*"
+
+            ]
+
+         }
+
+      ]
+
+   }
+
+}

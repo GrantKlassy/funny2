@@ -1,0 +1,17 @@
+=== TERRY URSINO CERTIFICATE TRANSPARENCY INVESTIGATION ===
+Date: 2026-04-14T02:25:58Z
+
+--- crt.sh: terry.ursino@dunkinbrands.com (exact) ---
+  HTTP: 502
+  FAILED
+
+--- crt.sh: terry.ursino (broader) ---
+  HTTP: 502
+  FAILED
+
+--- crt.sh: %@dunkinbrands.com (all employee emails in certs) ---
+  HTTP: 502
+  FAILED
+
+=== DONE ===
+Completed: 2026-04-14T02:26:06Z

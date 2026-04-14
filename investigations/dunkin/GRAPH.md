@@ -1,8 +1,8 @@
 # Dunkin' Ad Infrastructure Investigation
 
 > Started: 2026-04-13
-> Status: Active — Wave 2 probing complete
-> Last probed: 2026-04-13T21:00Z
+> Status: Active — Wave 3-5 probing complete (16 scripts, 30 artifacts)
+> Last probed: 2026-04-14T02:30Z
 
 ## Trigger
 
@@ -30,7 +30,7 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 | E16 | mobile-app | Dunkin' (iOS) | Bundle: `com.dunkinbrands.otgo` (OTGO = Order To Go). Team ID: `7UARB5Z69S`. App Store ID: 1056813463. App Clips: `com.dunkinbrands.otgo.Clip`. Seller: "Dunkin' Donuts". |
 | E17 | service | `mapi-dun.prod.ddmprod.dunkindonuts.com` | Mobile API — primary CN on the ddmprod TLS cert. The backbone API for the Dunkin' mobile app. Preprod uses Akamai staging config (`edgekey-staging.net`). |
 | E18 | service | `ode.prod.ddmprod.dunkindonuts.com` | Order Delivery Engine. On cert SANs (prod only — preprod does NOT resolve, possibly decommissioned). |
-| E19 | service | `swi.prod.ddmprod.dunkindonuts.com` | Unknown service ("SWI"). LIVE in prod (Akamai), preprod, AND all ddmdev environments (dev, dlt-dev, dlt-qa, qa). Not deprecated — actively maintained across 6+ environments. Prod 404 may just be no default route. |
+| E19 | service | `swi.prod.ddmprod.dunkindonuts.com` | Unknown service ("SWI"). LIVE in prod, preprod, dev, qa (all 404 on 35 paths). dlt-dev/dlt-qa return 503 (taken down). Rails backend confirmed (X-Runtime, X-Request-Id, Status header). Shares cert with mapi-dun, ode, ulink. 6 environments, actively maintained, purpose completely unknown. |
 | E20 | service | `dun-assets.prod.ddmprod.dunkindonuts.com` | Static asset CDN. Wayback captured `dunkin_logo@2x.png` (2024). |
 | E21 | ad-creative | "Toddler typing" promoted post | Crafted gibberish with 77% home-row keyboard distribution (adult typing pattern). Embedded words: cat, dog, kid, mom, dad, dada. Disguised as organic content to bypass ad fatigue. |
 | E22 | org | Dunkin' Brands, Inc. | TLS cert organization. Canton, Massachusetts. Pre-Inspire Brands entity name still on certs. |
@@ -44,7 +44,7 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 | E30 | service | `ssoprd.dunkindonuts.com` | Legacy DD Perks "Sip. Peel. Win Sweepstakes" login page. 149-byte body says "Application is running" + Akamai mPulse RUM. `/login` serves a form asking for DD Perks email/password. All OIDC discovery paths 302. Separate from social-sso (modern OAuth2). |
 | E31 | service | `menu-pricing-prd.dunkindonuts.com` | Menu pricing REST API. Returns JSON 404 with Spring Boot security headers (HSTS, X-Content-Type-Options, X-Frame-Options). Behind Akamai. |
 | E32 | service | `qrmenu.dunkinbrands.com` | QR menu service. Kestrel server (ASP.NET Core). HTTP 404. AWS hosted. |
-| E33 | service | `star.dunkinbrands.com` | Unknown service ("STAR"). GET returns 200, HEAD returns 405, Allow: GET only. Behind Akamai (`e5079`). Has staging variant (`star-stg.dunkinbrands.com` on cert). All other paths return 404. POST requires Content-Length (411). |
+| E33 | service | `star.dunkinbrands.com` | **IDENTIFIED**: Restaurant Administration Portal (RAP). Full login page exposed (18447 bytes). CrunchTime integration — login form has Username, Password, EntityID (4-digit CrunchTime store ID). ASP.NET Core backend. POST to `/User/LogInCrunchTime`. Google reCAPTCHA, jQuery 3.5.1, Poppins font, Akamai mPulse RUM (key: GFCZV-BTVLG-LZNSL-B55G9-NWDGT). Also has OTP email login flow (`/User/GenrateOTPForUser` — note the typo "Genrate"). Staging: `star-stg.dunkinbrands.com`. Behind Akamai e5079. |
 | E34 | mobile-app | Dunkin' (Android) | Package: `com.cardfree.android.dunkindonuts`. Built by CardFree. Environments: DEV, UAT, prod. Single signing key (SHA256: CE:A1:...:D8:64). Android Asset Links on ulink.prod.ddmprod. |
 | E35 | portal | `franchising.inspirebrands.com` | Centralized Inspire Brands franchising portal. Both `dunkinfranchising.com` and `baskinrobbinsfranchising.com` redirect here. Cloudflare hosted. |
 | E36 | domain | `baskinrobbins.com` | Sister brand domain. Shares A records (52.0.33.13, 35.169.92.22), AWS Route 53, AND the www TLS cert (47 SANs) with dunkindonuts.com. Literally the same infrastructure. |
@@ -52,22 +52,43 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 | E38 | ct-exposure | dunkinbrands.com CT logs | 931 cert entries exposing: Citrix, VPN (SSL/web/password), VDI, Xen, IBM collab (QuickPlace/Quickr/iNotes), Genesis platform, SmartSolve EQMS, PLM, RBOS, POSHC, STS, 3 smartphone mgmt endpoints. Email leak: terry.ursino@dunkinbrands.com in cert CN. |
 | E39 | vendor | Cloudflare | CDN for franchisee portal, franchising redirects, dunkinfranchising.com, baskinrobbinsfranchising.com. |
 | E40 | platform | `ddmdev` | "Dunkin' Donuts Mobile Development" — separate dev platform from ddmprod. Sub-environments: dev, dlt-dev, dlt-qa, qa. Has its own Akamai edgekey configs. Services mirror ddmprod: ulink, mapi-dun, ode, swi. |
-| E41 | service | `swagger.ddmdev.dunkindonuts.com` | Swagger API documentation. LIVE at 34.237.71.65 (bare AWS, no CDN). Potentially exposes full mobile API specification. |
+| E41 | service | `swagger.ddmdev.dunkindonuts.com` | **IDENTIFIED**: Swagger Editor (NOT Swagger UI/API docs). Nginx server. Last-modified: 2019-12-23 (6+ years). 3540 bytes. Only `/` returns 200, all API paths return 404. Bare AWS EC2 (34.237.71.65), no CDN. Wildcard cert `*.ddmdev.dunkindonuts.com`. A developer tool someone spun up in 2019 and forgot about. |
 | E42 | service | `auth0-stg.dunkindonuts.com` | Auth0 staging. CNAME → AWS API Gateway (`d-7p5rilj85g.execute-api.us-east-1.amazonaws.com`). Suggests Auth0 was considered/used for authentication. |
 | E43 | sso | Spring Authorization Server | Modern OAuth2/OIDC SSO. OIDC discovery exposed on social-sso (prd/preprod/stg) and ssostg. Supports: auth code, client credentials, refresh token, device auth, token exchange. PKCE (S256), DPoP, mTLS. |
 | E44 | vendor | ServiceNow | Customer service platform. `chat.dunkindonuts.com` → `inspirecustomer.service-now.com`. Dev/test instances exist (`chatdev`→`inspirecustomerdev`, `chattest`→`inspirecustomertest`). |
 | E45 | vendor | Paradox AI | AI-powered recruiting. `careers.dunkindonuts.com` → `careers-dunkindonuts-com.sites.paradox.ai`. |
 | E46 | vendor | Adobe Analytics | Web analytics. `smetrics.dunkindonuts.com` → `dunkindonuts.com.102.122.2o7.net` (Omniture/Adobe). |
 | E47 | vendor | Salesforce Marketing Cloud | Email marketing. `emailinfo.dunkindonuts.com` subdomains (click, cloud, image, view) → Salesforce SFMC content servers. |
-| E48 | service | POS API cluster | Point of Sale APIs on AWS API Gateway. `pos-api.dunkindonuts.com`, `pos-ws.dunkindonuts.com`, `opc-api.dunkindonuts.com`, `dbapi-ws.dunkindonuts.com`. All CNAME to `execute-api.us-east-1.amazonaws.com`. |
+| E48 | service | POS API cluster | Point of Sale APIs on AWS API Gateway. All return 403 Forbidden (`{"message":"Forbidden"}`). `pos-api`, `opc-api`, `dbapi` return 403 on all methods. `pos-ws`, `dbapi-ws` return 426 Upgrade Required on GET (WebSocket endpoints). `dbapi` also behind CloudFront. `ddapi` and `ddapi.staging` are DEAD (164.109.x IPs, no TLS). |
 | E49 | service | `international.dunkindonuts.com` | International Dunkin' site. A: 20.74.242.116 — Azure (Microsoft), completely different cloud from all other Dunkin' infrastructure. |
-| E50 | service | `thecenter.dunkinbrands.com` | Internal portal. CNAME → `d1zthqe9odn0bu.cloudfront.net` (CloudFront). Returns 200 on GET/POST/PUT. Accepts all methods. |
+| E50 | service | `thecenter.dunkinbrands.com` | **IDENTIFIED**: AEM (Adobe Experience Manager) franchisee learning portal. Cert: O=Inspire Brands, Inc., L=Sandy Springs (Inspire HQ). Apache + AEM dispatcher behind CloudFront. Content: "Dunkin Learning Path", bakery equipment training, spring readiness seasonal content. Okta login CSS. AEM admin login page (`/libs/granite/core/content/login.html`) returns 200 (12753 bytes). Security paths (crx/de, system/console, etc.) properly 404'd. Login background image and logo publicly accessible. |
 | E51 | service | `recognition.dunkinbrands.com` | Employee recognition platform. CNAME → `dunkin-brands.werecognize.com` (WeRecognize). 302 redirect on access. |
 | E52 | service | `rbos.dunkinbrands.com` | DEAD. Same CAAS ELB as fps (caas-prod-dunkinbrands-com). "Restaurant Business Operating System" — decommissioned with fps. |
 | E53 | service | `flq-prod-idp.dunkinbrands.com` | Identity Provider. A: 74.199.217.23. GET returns 302 (redirect to login). Same subnet as smartsolve (74.199.217.x). |
 | E54 | service | `login.dunkindonuts.com` | Login portal. A: 104.18.32.124 (Cloudflare). |
 | E55 | service | `api-idp.dunkindonuts.com` | Identity Provider API. A: 104.18.32.226 (Cloudflare). |
 | E56 | vendor | IBM Cloud Managed App Services | Hosts UAT environment. `uat.dunkindonuts.com` → 216.255.76.18 (Verizon Business / DIGEX-BLK-2 / IBM ICMAS network). UAT is completely unresponsive. |
+| E57 | vendor | CrunchTime | Restaurant operations platform. Integrated at star.dunkinbrands.com (RAP). Login requires Username + Password + 4-digit EntityID. POST endpoint: `/User/LogInCrunchTime`. Success redirects to `/dashboard`. |
+| E58 | service | `bam.dunkinbrands.com` | "BAM" — unknown purpose. 302 redirect to Okta SSO at `sso.inspirepartners.net/app/inspirepartners_bam_1/exk938s08y7yt4V9f697/sso/saml`. IIS 10.0, ASP.NET 4.0. Anti-XSRF tokens. Amazon RSA cert with SANs: `*.corporateportal.dunkinbrands.com`, `*.franchisee.dunkinbrands.com`. |
+| E59 | vendor | Okta (Inspire Partners) | SSO at `sso.inspirepartners.net`. SAML integration for internal apps. App ID `inspirepartners_bam_1` for BAM. |
+| E60 | service | `wsapi.dunkinbrands.com` | Web Service API. Returns 404 with Envoy proxy, `x-theorem-auth: nil`, `x-theorem-platform: nil`. TLS cert CN is `api-test.theoremlp.com` (Let's Encrypt, expires 2026-04-21) — **WRONG CERT**, Theorem LP's test cert serving on Dunkin's domain. |
+| E61 | vendor | Theorem LP | Digital product consultancy. Their test API cert (`api-test.theoremlp.com`) is being served by wsapi.dunkinbrands.com. Likely a current or former development vendor. |
+| E62 | service | `smartsolve.dunkinbrands.com` | SmartSolve EQMS. IP: 74.199.217.32. OPTIONS/PUT/DELETE return HTTP 200 on HTTPS. GET/POST fail (connection reset). HTTP GET returns 302. DigiCert wildcard cert `*.Dunkinbrands.com`. Same /24 subnet as flq-prod-idp. |
+| E63 | service | `sts.dunkinbrands.com` | DEAD Security Token Service. CNAME: `stsprod.itdns.dunkinbrands.com` → 12.170.52.233 (AT&T network). TLS failed. All ADFS federation metadata paths return 000. Legacy ADFS from pre-cloud era. |
+| E64 | service | `sslvpn.dunkinbrands.com` | DEAD SSL VPN. IP: 12.170.52.152 (AT&T network). Same AT&T /24 as STS. All connections 000. TLS failed. |
+| E65 | service | `citrix.dunkinbrands.com` | DEAD Citrix Gateway. IP: 164.109.80.73. All connections 000. TLS failed. |
+| E66 | brand | Arby's (`arbys.com`) | Inspire Brands sister. Cloudflare DNS+CDN. SendGrid DKIM (s1/s2). M365 DKIM (inspirebrands.onmicrosoft.com). Same Proofpoint MX (mxa/mxb-00919702). 110 CT subdomains. Ordering: Cloudflare direct. KnowBe4 phishing training. |
+| E67 | brand | Buffalo Wild Wings (`buffalowildwings.com`) | Inspire Brands sister. CSC DNS, Cloudflare CDN. SendGrid DKIM (s1/s2). M365 DKIM. Same Proofpoint MX. Firebase: `buffalo-united`. Cisco CI. No `order.` subdomain. |
+| E68 | brand | Sonic Drive-In (`sonicdrivein.com`) | Inspire Brands sister. CSC DNS, Cloudflare CDN. SendGrid+Mailchimp/Mandrill+M365 DKIM. Same Proofpoint MX. 281 CT subdomains. Auth0 verification present. Dynatrace APM. Atlassian. **DNS TXT includes chat message pasted with metadata**: `"[6:20 PM] Nelson, Brandi     atlassian-domain-verification=..."` |
+| E69 | brand | Jimmy John's (`jimmyjohns.com`) | Inspire Brands sister. Cloudflare DNS. SendGrid+M365 DKIM. Same Proofpoint MX. 86 CT subdomains. Mailgun for email. No `order.` subdomain. Docker + Portainer exposed in CT logs (dev-portainer, docker). |
+| E70 | domain | `clubdunkin.com` | Defunct loyalty program domain. Redirects → `www.dunkindonuts.com/en/clubdunkin`. Created 2020-09-03. CSC Corporate Domains. On vanity cert (CN: dunkinrun.com). |
+| E71 | domain | `dnkn.com` | Short redirect domain. **EXPIRED cert** (expired 2022-09-28, CN: brglobalfranchising.com). Still resolves. Redirects → dunkindonuts.com. Created 2003-12-20. Cert SANs: `*.dnkn.com`, `*.lsmnow.com`, catering.dunkindonuts.com, dunkinnation.com, staging.dunkinfranchising.com. |
+| E72 | domain | `lsmnow.com` | Local Store Marketing portal. Redirects to `lsm-prod-idp.dunkinbrands.com/my.policy` (F5 BIG-IP access policy). MX: mail.flairpromo.com (promotional marketing vendor). Created 2004-02-05. Same expired cert as dnkn.com. |
+| E73 | domain | `dunkinnation.com` | Redirect loop. Root → 301 → `https://www.dunkinnation.com/` → 000 (dead). The www subdomain is dead but root keeps redirecting to it forever. On www cert SANs (staging.dunkinnation.com, staging3.dunkinnation.com also listed). |
+| E74 | service | `news.dunkindonuts.com` | Brand newsroom. CNAME → `news.dunkindonuts.com.iprsoftware.com` (IPR Software). AMP version at `amp.news.dunkindonuts.com` → `amp.dunkin.iprsoftware.com` (GCP). |
+| E75 | service | `mi.dunkindonuts.com` | Marketing Intelligence (?). CNAME → `d187xgimezr5cv.cloudfront.net` (CloudFront). Returns 200. |
+| E76 | vendor | SendGrid | Transactional email for Arby's (u34483924), BWW (u30126554), Sonic (u29175196), Jimmy John's (u57117). Different account per brand. DKIM selectors s1/s2. |
+| E77 | vendor | KnowBe4 | Security awareness/phishing training. Domain verification present on arbys.com, buffalowildwings.com, sonicdrivein.com. Same verification token across all three brands. |
 
 ## Edges
 
@@ -128,6 +149,25 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 | E54 | hosted-on | E39 | A: 104.18.32.124 (Cloudflare) |
 | E55 | hosted-on | E39 | A: 104.18.32.226 (Cloudflare) |
 | E56 | hosts | E1 | UAT environment at 216.255.76.18 — Verizon Business / DIGEX / IBM ICMAS network |
+| E33 | integrates | E57 | RAP login form POSTs to `/User/LogInCrunchTime` with CrunchTime credentials |
+| E58 | auth-via | E59 | BAM redirects to `sso.inspirepartners.net` for SAML SSO (Okta) |
+| E60 | wrong-cert | E61 | wsapi.dunkinbrands.com serves Theorem LP's test cert (`api-test.theoremlp.com`) |
+| E62 | same-subnet | E53 | SmartSolve (74.199.217.32) and flq-prod-idp (74.199.217.23) — same managed hosting |
+| E63 | same-network | E64 | STS (12.170.52.233) and SSLVPN (12.170.52.152) — both AT&T, pre-cloud era |
+| E8 | parent-of | E66 | Inspire Brands → Arby's |
+| E8 | parent-of | E67 | Inspire Brands → Buffalo Wild Wings |
+| E8 | parent-of | E68 | Inspire Brands → Sonic Drive-In |
+| E8 | parent-of | E69 | Inspire Brands → Jimmy John's |
+| E66 | email-via | E13 | Same Proofpoint MX (mxa/mxb-00919702) as all Inspire brands |
+| E67 | email-via | E13 | Same Proofpoint MX as all Inspire brands |
+| E68 | email-via | E13 | Same Proofpoint MX as all Inspire brands |
+| E69 | email-via | E13 | Same Proofpoint MX as all Inspire brands |
+| E66 | dkim-via | E76 | SendGrid DKIM (s1/s2, account u34483924) |
+| E67 | dkim-via | E76 | SendGrid DKIM (s1/s2, account u30126554) |
+| E68 | dkim-via | E76 | SendGrid DKIM (s1/s2, account u29175196) |
+| E69 | dkim-via | E76 | SendGrid DKIM (s1/s2, account u57117) |
+| E50 | auth-via | E59 | The Center uses Okta login (CSS reference) |
+| E72 | auth-via | — | lsmnow.com → lsm-prod-idp.dunkinbrands.com (F5 BIG-IP access policy) |
 
 ## Clusters
 
@@ -246,22 +286,58 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 - Also had: cfdev, ctsdev, dddev, dbiddmobileprod — all now DEAD
 
 ### CL11: Legacy Managed Services (dunkinbrands.com)
-- E33 (star) — unknown service, GET-only, Akamai e5079, has staging variant star-stg
-- E37 (fps) + E52 (rbos) — dead CAAS platform (`caas-prod-dunkinbrands-com` ELB), all ports closed
-- E50 (thecenter) — internal portal, CloudFront, accepts GET/POST/PUT (permissive)
+- E33 (star) — **RAP: Restaurant Administration Portal** with CrunchTime login. Full login page exposed.
+- E58 (bam) — redirects to Okta SSO at sso.inspirepartners.net (SAML). IIS 10.0, ASP.NET 4.0. Cert reveals `*.corporateportal.dunkinbrands.com`, `*.franchisee.dunkinbrands.com` SANs.
+- E50 (thecenter) — AEM learning portal. Franchisee training: Dunkin Learning Path, bakery equipment, seasonal readiness. AEM admin login page accessible.
 - E51 (recognition) — employee recognition via WeRecognize third-party
-- E53 (flq-prod-idp) — identity provider, 74.199.217.x subnet (shared with smartsolve)
-- E29 (franchiseecentral) — Cloudflare + ASP.NET + AWSALB, last-modified 2016
-- Legacy infrastructure on 74.199.217.x subnet: flq-prod-idp (.23), smartsolve (.32) — likely same managed hosting provider
-- Two services confirmed dead: fps, rbos (CAAS). Genesis also dead (genesisproduction, genesissandbox both NXDOMAIN).
+- E62 (smartsolve) — SmartSolve EQMS. OPTIONS/PUT/DELETE return 200. HTTP 302. 74.199.217.32.
+- E53 (flq-prod-idp) — identity provider, 74.199.217.23 (same /24 as smartsolve)
+- E60 (wsapi) — serves WRONG CERT from Theorem LP. Envoy proxy. 404.
+- E29 (franchiseecentral) — Cloudflare + ASP.NET + AWSALB, last-modified 2016. Wayback: participation agreement PDF, FAST sales reports, DMB login.
+- E37 (fps) + E52 (rbos) — dead CAAS platform. ELB name: `caas-prod-dunkinbrands-com-261297133`. All variants dead (caas, caas-dev, caas-staging, caas-stg, caas-qa, caas-uat, caas-preprod).
+- Legacy AT&T infrastructure (all DEAD): E63 (sts, 12.170.52.233), E64 (sslvpn, 12.170.52.152), E65 (citrix, 164.109.80.73)
 
 ### CL12: SaaS Vendor Services
 - E44 (ServiceNow) — customer chat (`inspirecustomer.service-now.com`), has dev + test instances
 - E45 (Paradox AI) — recruiting/careers
 - E46 (Adobe Analytics) — web analytics (Omniture/2o7.net)
 - E47 (Salesforce Marketing Cloud) — email marketing (click/cloud/image/view subdomains)
-- All accessed via dunkindonuts.com CNAME aliases
+- E57 (CrunchTime) — restaurant operations, integrated at RAP (star.dunkinbrands.com)
+- E59 (Okta) — SSO at sso.inspirepartners.net for internal apps (BAM, The Center)
+- E61 (Theorem LP) — digital consultancy, cert on wsapi.dunkinbrands.com
+- E77 (KnowBe4) — phishing/security training (Arby's, BWW, Sonic — same verification token)
+- All accessed via dunkindonuts.com or dunkinbrands.com CNAME aliases
 - ServiceNow instance named "inspirecustomer" — Inspire Brands level, not Dunkin' specific
+
+### CL13: Inspire Brands Email Infrastructure (cross-brand)
+- ALL 7 brands (Dunkin', BR, Arby's, BWW, Sonic, JJ, Inspire) share identical Proofpoint MX: `mxa-00919702.gslb.pphosted.com` / `mxb-00919702.gslb.pphosted.com`
+- Dunkin' uses legacy MX naming (psmtp.com), other brands use modern pphosted naming — same Proofpoint tenant
+- ALL brands use identical SPF macro: `include:%{ir}.%{v}.%{d}.spf.has.pphosted.com`
+- ALL brands use identical DMARC: `p=reject`, reporting to `dmarc_rua@emaildefense.proofpoint.com`
+- ALL brands use M365 DKIM (selector1/selector2 → `inspirebrands.onmicrosoft.com`) — single tenant
+- Arby's, BWW, Sonic, JJ also use SendGrid for transactional email (separate accounts per brand)
+- Sonic additionally has Mailchimp/Mandrill DKIM (k1 → dkim.mcsv.net)
+- JJ also uses Mailgun (`email.jimmyjohns.com` → mailgun.org)
+- Salesforce Marketing Cloud: Dunkin', BWW, JJ, Inspire all have emailinfo subdomains (click/cloud/image)
+- IPR Software: Dunkin' and BR both have `news.` subdomains for brand PR
+
+### CL14: Ghost Domains & Redirect Graveyard
+- E70 (clubdunkin.com) — defunct loyalty, redirects to dunkindonuts.com/en/clubdunkin
+- E71 (dnkn.com) — **serving expired cert from 2022**. CN: brglobalfranchising.com. Still redirects.
+- E72 (lsmnow.com) — Local Store Marketing. Redirects to F5 BIG-IP IDP. MX: mail.flairpromo.com. Created 2004.
+- E73 (dunkinnation.com) — infinite redirect loop (root → www, www dead)
+- catering.dunkindonuts.com — LIVE, 301 redirect
+- shop.dunkindonuts.com — LIVE, 301 redirect
+- secureshop.dunkindonuts.com — CNAME → deliveryagent.com (connection refused)
+- international.dunkindonuts.com — LIVE on Azure (20.74.242.116), 200
+- All ghost domains on AWS ALB pool (35.171.76.215, 44.218.38.45)
+- Two cert groups: vanity pool (CN: dunkinrun.com) and franchising pool (CN: brglobalfranchising.com, EXPIRED)
+
+### CL15: Sandbox Graveyard
+- ALL sandbox endpoints are NXDOMAIN — entire sandbox environment decommissioned
+- Dead: loyalty-api.sandbox, loyalty-mock-api.sandbox, rewards-api.sandbox, oats-api.sandbox, oats-ws.sandbox, splunkelb.sandbox, swagger.sandbox, ecselb.sandbox
+- Wayback: oats-ws.sandbox returned 404 XML (2023), swagger.sandbox had robots.txt (2022)
+- These were operational as recently as 2023 — full loyalty/rewards testing environment, now gone
 
 ## Anomalies
 
@@ -288,6 +364,18 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 | A19 | menu-pricing API returns 401 on EVERY path (actuator, swagger, api, root) — Spring Boot security catches everything before routing. Error JSON includes timestamps but no version/stack info. | **New** — well-secured API, uniform 401 |
 | A20 | Vanity domain cert (CN: dunkinrun.com) covers `clubdunkin.com` and `*.dunkindonuts.co.uk` — previously unknown domains. Separate cert covers `*.dnkn.com` and `*.lsmnow.com`. | **New** — cert SANs reveal undiscovered domains |
 | A21 | dev2/qa/qa2/staging3 error pages leak Apache server signature with hostname and port (`Apache Server at qa.dunkindonuts.com Port 80`). QA on port 80 confirms no TLS termination by CDN. | **New** — minor info leak via default Apache error pages |
+| A22 | star.dunkinbrands.com exposes full RAP login page (18447 bytes) including CrunchTime login form with Username/Password/EntityID fields, CSRF tokens, OTP email flow, and Akamai mPulse RUM key. Function `GenrateOTPForUser` contains typo "Genrate" (not "Generate"). | **Confirmed** — full login page body captured |
+| A23 | wsapi.dunkinbrands.com serves TLS cert for `api-test.theoremlp.com` (Let's Encrypt, Theorem LP). Dunkin's subdomain serving a completely different company's test certificate. Either cert misconfiguration or vendor handoff gone wrong. | **New** — wrong cert on Dunkin domain |
+| A24 | SmartSolve (74.199.217.32) responds 200 to OPTIONS, PUT, and DELETE on HTTPS but connection-resets on GET/POST. HTTP GET returns 302. The 200 response is 247 bytes with `Cache-Control: no-cache` and `Content-Type: text/html`. Something is answering that shouldn't be. | **New** — partial service responding to unusual methods |
+| A25 | ALL 7 Inspire Brands share identical email infrastructure: same Proofpoint tenant (MX, SPF macro, DMARC), same M365 tenant (inspirebrands.onmicrosoft.com), same SendGrid for transactional. One company operating 6 fast food chains' email through identical pipes. | **Confirmed** — complete email vendor consolidation |
+| A26 | Sonic DNS TXT record contains a Slack/Teams chat message pasted with metadata: `"[6:20 PM] Nelson, Brandi     atlassian-domain-verification=ePV5FzMQ..."`. Someone copied the verification string from a chat message and pasted the ENTIRE message including timestamp and sender name into the DNS record. | **New** — chat metadata in DNS |
+| A27 | KnowBe4 phishing training verification token is IDENTICAL across Arby's, BWW, and Sonic: `0c00dc3beaeabc5a1bb3e17db0f29f45`. Single KnowBe4 account for all brands. | **New** — shared security training |
+| A28 | dnkn.com (created 2003) still serving an EXPIRED TLS cert from 2022 (CN: brglobalfranchising.com, expired Sep 28 2022). The cert has been expired for 3.5+ years but the domain still resolves and redirects. | **New** — multi-year expired cert in production |
+| A29 | The Center (AEM portal) serves the Granite login page at `/libs/granite/core/content/login.html` (12753 bytes) — this is the AEM author instance login. Security-sensitive paths (crx/de, OSGi console, etc.) are properly blocked, but the login page itself is exposed. Dispatcher header: `dispatcher1useast1-06105218`. | **New** — AEM admin login page accessible |
+| A30 | dunkinnation.com is stuck in an infinite redirect loop: HTTP root → 301 → HTTPS root → 301 → https://www.dunkinnation.com/ → connection refused. The www A record is dead but the root A record keeps trying to send people there. | **New** — broken redirect loop in production |
+| A31 | All 8 sandbox endpoints (loyalty-api, loyalty-mock-api, rewards-api, oats-api, oats-ws, splunkelb, swagger, ecselb) return NXDOMAIN. Entire sandbox.dunkindonuts.com environment decommissioned. Wayback shows they were alive in 2022-2023. | **Confirmed** — sandbox fully decommissioned |
+| A32 | SWI service: 35 paths probed across 6 live environments, ALL return 404 (or 503 on dlt-dev/dlt-qa). Rails backend (X-Runtime, X-Request-Id). Shares TLS cert with mapi-dun, ode, ulink. Actively maintained but purpose STILL completely unknown after exhaustive probing. | **Deepened** — remains the investigation's biggest mystery |
+| A33 | bam.dunkinbrands.com cert reveals two undiscovered wildcard scopes: `*.corporateportal.dunkinbrands.com` and `*.franchisee.dunkinbrands.com` — suggesting tiered portal infrastructure. | **New** — cert SANs reveal undiscovered domains |
 
 ## Resolved Questions
 
@@ -300,19 +388,22 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 
 ## Open Questions
 
-- [ ] What is `swi` in the ddmprod platform? LIVE in prod + all ddmdev envs (dev, dlt-dev, dlt-qa, qa). Not deprecated. Prod returns 404 (no default route). Purpose unknown.
+- [ ] What is `swi` in the ddmprod platform? 35 paths probed across 6 live environments — ALL 404. Rails backend confirmed. Remains completely unknown.
 - [ ] What is category 119 specifically? (All categories 100-130 return 302 — wildcard routing)
 - [ ] What specific Reddit interest categories triggered this ad?
-- [x] **What is `fps.dunkinbrands.com`?** → DEAD. Shares `caas-prod-dunkinbrands-com-261297133` ELB with rbos. CAAS platform fully decommissioned. All ports closed.
-- [x] **What is RBOS?** → DEAD. "Restaurant Business Operating System" — same CAAS ELB as fps. Both decommissioned.
-- [x] **What is the Genesis platform?** → DEAD. Both `genesisproduction.dunkinbrands.com` and `genesissandbox.dunkinbrands.com` return NXDOMAIN. Fully decommissioned. Purpose unknown but naming suggests an internal business platform.
-- [ ] What is `star.dunkinbrands.com`? GET returns 200 (body not captured), HEAD returns 405, Allow: GET only. Behind Akamai e5079. Has staging variant `star-stg`. All non-root paths 404.
-- [ ] Who is Terry Ursino? (Email leaked in CT logs)
-- [ ] What is swagger.ddmdev.dunkindonuts.com serving? Bare AWS 34.237.71.65, no CDN. Potentially live Swagger UI.
-- [ ] What are `dnkn.com` and `lsmnow.com`? Found on dunkinnation/brglobalfranchising TLS cert SANs.
-- [ ] What is `clubdunkin.com`? Found on vanity domain cert SANs alongside dunkinrun.com.
+- [x] **What is `fps.dunkinbrands.com`?** → DEAD. CAAS platform on `caas-prod-dunkinbrands-com-261297133` ELB. ALL CAAS variants dead (7 tested). Wayback: ASP.NET login.aspx.
+- [x] **What is RBOS?** → DEAD. Same CAAS ELB as fps. Both decommissioned.
+- [x] **What is the Genesis platform?** → DEAD. NXDOMAIN. Fully decommissioned.
+- [x] **What is `star.dunkinbrands.com`?** → **Restaurant Administration Portal (RAP)**. Full CrunchTime login page captured. Username + Password + 4-digit EntityID. ASP.NET Core. OTP email flow. Success → `/dashboard`.
+- [ ] Who is Terry Ursino? (Email leaked in CT logs — crt.sh returned 502 on all retry attempts)
+- [x] **What is swagger.ddmdev serving?** → Swagger Editor (not API docs). Nginx. Last-modified 2019-12-23. 3540 bytes. Only `/` works. A developer tool forgotten for 6+ years.
+- [x] **What are `dnkn.com` and `lsmnow.com`?** → dnkn.com is short redirect domain with EXPIRED cert (3.5 years). lsmnow.com is Local Store Marketing portal behind F5 BIG-IP IDP with Flair Promo MX.
+- [x] **What is `clubdunkin.com`?** → Defunct loyalty program redirect → dunkindonuts.com/en/clubdunkin. Created 2020.
 - [ ] Why does QA use a completely different TLS cert (Amazon RSA wildcard) with `*.awsprd`/`*.awsstg`/`*.awspt` SANs?
-- [ ] What is the star service GET response body? Only status codes captured in Wave 2.
+- [x] **What is the star service GET response body?** → 18447-byte RAP login page with CrunchTime integration.
+- [ ] What is BAM? (`bam.dunkinbrands.com` → Okta SSO, IIS 10.0, ASP.NET 4.0)
+- [ ] What does Theorem LP do for Dunkin'? Their test cert is on wsapi.dunkinbrands.com.
+- [ ] What are `*.corporateportal.dunkinbrands.com` and `*.franchisee.dunkinbrands.com`? (SANs on BAM cert)
 
 ## Evidence Index
 
@@ -337,3 +428,18 @@ Highly targeted Reddit promoted ad from `u/dunkin` using fake "toddler keyboard 
 | results.txt | `artifacts/loyalty-sso-2026-04-13/` | SSO/loyalty probing: OIDC discovery, Spring Auth Server, DD Perks login (probe 15, partial — died at dead loyalty DNS) |
 | results.txt | `artifacts/wayback-deep-dive-2026-04-13/` | Wayback CDX queries: mostly timed out due to rate limiting (probe 16, minimal) |
 | results.txt | `artifacts/vanity-domains-2026-04-13/` | Vanity domain mapping: DNS, redirect chains, TLS certs for 10 domains (probe 17) |
+| results.txt | `artifacts/swagger-probe-2026-04-13/` | Swagger Editor on bare EC2: DNS, whois, TLS, HTTP path sweep, nmap (probe 18) |
+| results.txt | `artifacts/swi-mystery-2026-04-13/` | SWI mystery: 7 environments, 35 paths each, Rails confirmed, all 404 (probe 19) |
+| results.txt | `artifacts/mystery-services-deep-2026-04-13/` | RAP login page, k.prod Host trick, auth0-stg OIDC (probe 20) |
+| results.txt | `artifacts/ghost-domains-2026-04-13/` | Ghost domains: clubdunkin, dnkn, lsmnow, dunkinnation, whois (probe 21) |
+| results.txt | `artifacts/sister-brands-deep-2026-04-13/` | Sister brand DNS: NS/MX/TXT/DMARC/CAA/SOA/DKIM for 6 brands (probe 22) |
+| results.txt | `artifacts/sister-brands-certs-2026-04-13/` | Sister brand certs, AASA, assetlinks, vendor detection (probe 23) |
+| results.txt | `artifacts/sister-brands-ct-2026-04-13/` | CT logs: Arby's 110, Sonic 281, JJ 86 subdomains (probe 24) |
+| results.txt | `artifacts/legacy-deep-2026-04-13/` | Legacy deep: smartsolve, bam, sts, wsapi, citrix, sslvpn (probe 25, partial) |
+| results.txt | `artifacts/pos-api-cluster-2026-04-13/` | POS API cluster: all 403 on API Gateway, WebSocket 426 (probe 26) |
+| results.txt | `artifacts/wayback-retry-2026-04-13/` | Wayback retries: franchiseecentral docs, fps login, sandbox history (probe 27) |
+| results.txt | `artifacts/terry-ursino-2026-04-13/` | Terry Ursino cert search: all crt.sh queries 502 (probe 28) |
+| results.txt | `artifacts/sandbox-loyalty-2026-04-13/` | Sandbox: all 8 endpoints NXDOMAIN, fully decommissioned (probe 29) |
+| results.txt | `artifacts/email-infrastructure-2026-04-13/` | Email: cross-brand comparison, Salesforce MC, Proofpoint (probe 30) |
+| results.txt | `artifacts/caas-archaeology-2026-04-13/` | CAAS: fps/rbos ELB, all variants dead, Wayback login (probe 32) |
+| results.txt | `artifacts/thecenter-deep-2026-04-13/` | The Center: AEM paths, login page, Wayback learning content (probe 33) |

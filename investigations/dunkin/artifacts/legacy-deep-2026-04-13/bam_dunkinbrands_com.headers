@@ -1,0 +1,13 @@
+HTTP/2 302 
+date: Tue, 14 Apr 2026 02:26:05 GMT
+content-type: text/html; charset=utf-8
+content-length: 204
+location: https://sso.inspirepartners.net/app/inspirepartners_bam_1/exk938s08y7yt4V9f697/sso/saml
+set-cookie: AWSALB=NLdXF6REEW/jy7pH9DZbgZhBGWkch1EbUpkBoGiJ09KnnwghW4z/Rf5nBNygW1WWn5OAM2XCzqT2HubIZYxOjWMUPVjTg9GYEVgoEgS6GU4wwUE6Q+5M9AWjZzOD; Expires=Tue, 21 Apr 2026 02:26:05 GMT; Path=/
+set-cookie: AWSALBCORS=NLdXF6REEW/jy7pH9DZbgZhBGWkch1EbUpkBoGiJ09KnnwghW4z/Rf5nBNygW1WWn5OAM2XCzqT2HubIZYxOjWMUPVjTg9GYEVgoEgS6GU4wwUE6Q+5M9AWjZzOD; Expires=Tue, 21 Apr 2026 02:26:05 GMT; Path=/; SameSite=None; Secure
+cache-control: private
+server: Microsoft-IIS/10.0
+x-aspnet-version: 4.0.30319
+set-cookie: __AntiXsrfToken=3b70fc2e9469484ea1eb178e4284dfdd; path=/; secure; HttpOnly
+x-powered-by: ASP.NET
+

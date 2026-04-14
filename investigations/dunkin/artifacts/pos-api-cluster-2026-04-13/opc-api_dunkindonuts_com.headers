@@ -1,0 +1,8 @@
+HTTP/2 403 
+date: Tue, 14 Apr 2026 02:26:04 GMT
+content-type: application/json
+content-length: 23
+x-amzn-requestid: 44b728aa-cf67-4f1b-aab8-1d65e0ce932c
+x-amzn-errortype: ForbiddenException
+x-amz-apigw-id: bybVkG3roAMEjUQ=
+

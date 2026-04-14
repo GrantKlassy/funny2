@@ -1,0 +1,12 @@
+[
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.sonic.sonicdrivein",
+            "sha256_cert_fingerprints": [
+                "79:05:F5:B3:74:1E:D9:8E:6C:3C:ED:2F:13:8F:F5:CB:AF:60:F2:D2:E2:AC:BF:09:11:C7:2B:9C:0A:FE:64:5F"
+            ]
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.buffalowildwings.blazinrewards",
+            "sha256_cert_fingerprints": [
+                "23:DA:5C:F4:22:F5:E5:4D:A7:55:74:AC:81:55:A8:B3:E9:4D:85:69:4F:1C:72:59:EF:79:59:18:37:2B:99:80"
+            ]
+        }
+    }
+]

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.79.0">
+<title>Dunkin'</title>
+<link rel="apple-touch-icon" sizes="57x57" href="assets/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="assets/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="assets/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="assets/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="assets/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="assets/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="assets/images/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script> 
+<script src="assets/js/lottie-player.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="assets/css/carousel.css" rel="stylesheet">
+<link href="assets/css/style-desktop.css" rel="stylesheet">
+<link href="assets/css/style-tab.css" rel="stylesheet">
+<link href="assets/css/style-mobile.css" rel="stylesheet">
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+<header>
+    <div class="fixed-top" id="header">
+
+    <div class="header-inner shadow bg-white">
+      <div class="container">
+        <div class="menu">
+     
+          <a href="Global-App-URL.html" class="logo-box" style="margin-left: 0;"> <img src="assets/images/logo-main.svg" alt=""> </a>
+          <div class="other-actions">
+			  
+			  <div  class="pull-left">
+				  
+				  
+				  
+				<a href="Global-App-URL-ar.html" class="btn" style="margin-top: 5px; box-shadow: none;"> العربية </a>
+           
+                                
+                                
+                            </div>
+			  
+           <div  class="pull-left"> <span> <a href="https://apps.apple.com/sa/app/dunkin-international/id6443659232" target="_blank"> <img  src="assets/images/apple-store.svg"  alt=""> </a> </span> </div>
+            <div  class="pull-left"> <span> <a href="https://play.google.com/store/apps/details?id=com.buzzparade.dunkin" target="_blank"> <img src="assets/images/google-play.svg"  alt=""> </a> </span> </div>
+			  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="py-5 text-center header-mr home-bg app-url-mr">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="fw-light">Welcome to Dunkin'</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- content. -->
+ 	
+	  <section>
+ 
+      <div class="container">
+		  
+		  
+		  
+		  
+        <div class="row">
+			
+		
+			
+			
+			<div class="col-md-12 mb-4"><p>Our Dunkin' app runs in different markets and each of these markets have their own terms and conditions for using the app. See below for a list of markets that this app will work in and the terms and conditions that are applicable to these markets.</p></div>
+			
+			<div class="col-lg-12 mb-5">
+			<h1 class="mb-3 color-dark"><a href="https://www.dunkinksa.com" target="_blank">KSA</a> </h1>
+			
+			<div class="row">
+					<div class="col-md-12">
+				<a class="privacy-link" href="terms-and-conditions.html" target="_blank">Terms and Conditions</a>
+					<a class="privacy-link" href="privacy-policy.html" target="blank">Privacy Policy</a>
+					<a class="privacy-link" href="contact-us.html" target="_blank">App Support</a>
+					<a class="privacy-link" href="Dunkin-app.html" target="blank">About App</a>
+				</div>
+				</div>
+				
+			</div>
+			
+	
+      </div>
+    </div>
+  </section>
+	
+	
+  <!-- FOOTER -->
+  
+
+</main>
+<script src="assets/js/bootstrap.bundle.min.js"></script> 
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script> 
+<script>
+	function openNav() {
+/*    document.getElementById("mySidenav").style.width = "300px";*/
+		document.getElementById("mySidenav").style.left = "0px";
+}
+
+function closeNav() {
+    /*document.getElementById("mySidenav").style.width = "0";*/
+	document.getElementById("mySidenav").style.left = "-500px";
+}
+	
+	</script> 
+<script>
+	function openNavRight() {
+/*    document.getElementById("mySidenav").style.width = "300px";*/
+		document.getElementById("mySidenav-right").style.right = "0px";
+}
+
+function closeNavRight() {
+    /*document.getElementById("mySidenav").style.width = "0";*/
+	document.getElementById("mySidenav-right").style.right = "-500px";
+}
+	
+	</script>
+	<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+	
+var currentScrollPos = window.pageYOffset;
+	
+	var isMobile = window.matchMedia("only screen and (max-width: 767px)");
+
+    if (isMobile.matches) {
+	
+		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+	
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("header").style.top = "0";
+  } else {
+    document.getElementById("header").style.top = "-38px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+}
+	}
+</script>
+</body>
+</html>

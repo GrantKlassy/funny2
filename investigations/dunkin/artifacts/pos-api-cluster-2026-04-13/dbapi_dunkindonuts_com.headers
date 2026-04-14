@@ -1,0 +1,12 @@
+HTTP/2 403 
+content-type: application/json
+content-length: 23
+date: Tue, 14 Apr 2026 02:26:07 GMT
+x-amz-apigw-id: bybWAGzqIAMEA-Q=
+x-amzn-requestid: 7a95e792-d301-4bf6-8942-28f4aea00867
+x-amzn-errortype: ForbiddenException
+x-cache: Error from cloudfront
+via: 1.1 9ac9ec8ce729b5717b7a88c7c815c0a6.cloudfront.net (CloudFront)
+x-amz-cf-pop: LAX54-P1
+x-amz-cf-id: RU48blkNHqhBsR0RKGmtlCBJZgPwNgrudESRN6W0zpXlyVu8R6eK1Q==
+

@@ -1,0 +1,105 @@
+=== WAYBACK MACHINE RETRY ===
+Date: 2026-04-14T02:25:57Z
+
+=== RETRIES FROM PREVIOUS WAVE ===
+--- Franchisee Central (franchiseecentral.dunkinbrands.com) ---
+  SUCCESS: 21 entries
+timestamp statuscode mimetype original
+20110208213654 302 text/html http://franchiseecentral.dunkinbrands.com/
+20240327111124 404 text/html https://franchiseecentral.dunkinbrands.com/.well-known/ai-plugin.json
+20240327135142 404 text/html https://franchiseecentral.dunkinbrands.com/.well-known/assetlinks.json
+20240327110720 404 text/html https://franchiseecentral.dunkinbrands.com/.well-known/dnt-policy.txt
+20240327113203 404 text/html https://franchiseecentral.dunkinbrands.com/.well-known/gpc.json
+20240327112421 404 text/html https://franchiseecentral.dunkinbrands.com/.well-known/nodeinfo
+20240328003147 404 text/html https://franchiseecentral.dunkinbrands.com/.well-known/openid-configuration
+20240327112259 404 text/html https://franchiseecentral.dunkinbrands.com/.well-known/security.txt
+20240327105831 404 text/html https://franchiseecentral.dunkinbrands.com/.well-known/trust.txt
+20240327112457 404 text/html https://franchiseecentral.dunkinbrands.com/ads.txt
+20240327110634 404 text/html https://franchiseecentral.dunkinbrands.com/app-ads.txt
+20210501190833 200 application/pdf https://franchiseecentral.dunkinbrands.com/cpg/content/documents/participation_agreement.pdf
+20221002121604 200 text/html https://franchiseecentral.dunkinbrands.com/DMB/login.aspx
+20210501191048 200 application/pdf https://franchiseecentral.dunkinbrands.com/fast/content/documents/FAST-CORRECTED%20SALES%20ON%20LINE%207-22-15.pdf
+20210501191031 200 application/pdf https://franchiseecentral.dunkinbrands.com/fast/content/documents/Reporting%20Sales%20with%20DDSR_Multibrand.pdf
+20220314014201 200 text/css https://franchiseecentral.dunkinbrands.com/fast/Content/Site.css
+20220314014201 404 text/html https://franchiseecentral.dunkinbrands.com/fast/favicon.ico
+20220314014214 200 image/png https://franchiseecentral.dunkinbrands.com/fast/Images/accent.png
+20220314014211 200 image/gif https://franchiseecentral.dunkinbrands.com/fast/images/btn_downarrow.gif
+  Fetching snapshot: 20210501190833 https://franchiseecentral.dunkinbrands.com/cpg/content/documents/participation_agreement.pdf
+  Snapshot size: 320712 bytes
+
+--- Star Service (star.dunkinbrands.com) ---
+  SUCCESS: 2 entries
+timestamp statuscode mimetype original
+20230214031049 - warc/revisit http://star.dunkinbrands.com/
+
+--- FPS (CAAS) (fps.dunkinbrands.com) ---
+  SUCCESS: 3 entries
+timestamp statuscode mimetype original
+20190819004742 200 text/html https://fps.dunkinbrands.com/login.aspx?ReturnUrl=%2F
+20180404042834 404 text/html https://fps.dunkinbrands.com/robots.txt
+  Fetching snapshot: 20190819004742 https://fps.dunkinbrands.com/login.aspx?ReturnUrl=%2F
+  Snapshot size: 9863 bytes
+
+--- RBOS (CAAS) (rbos.dunkinbrands.com) ---
+  SUCCESS: 1 entries
+
+--- Genesis Production (genesisproduction.dunkinbrands.com) ---
+  SUCCESS: 1 entries
+
+--- Dunkin Email (dunkinemail.com) ---
+  SUCCESS: 4 entries
+timestamp statuscode mimetype original
+20180805144244 301 unk http://dunkinemail.com/
+20180822194819 301 unk http://dunkinemail.com/favicon.ico
+20180623150654 301 unk http://dunkinemail.com/robots.txt
+
+--- PLM Supplier (plmsupplier.dunkinbrands.com) ---
+  SUCCESS: 2 entries
+timestamp statuscode mimetype original
+20230304054134 - warc/revisit http://plmsupplier.dunkinbrands.com/
+
+=== NEW TARGETS ===
+--- Auth0 Staging (auth0-stg.dunkindonuts.com) ---
+  SUCCESS: 1 entries
+
+--- Club Dunkin (clubdunkin.com) ---
+  SUCCESS: 4 entries
+timestamp statuscode mimetype original
+20211129042619 301 text/html http://clubdunkin.com/
+20220103144355 301 text/html https://clubdunkin.com/favicon.ico
+20211129042618 301 text/html http://clubdunkin.com/robots.txt
+
+--- DNKN (dnkn.com) ---
+  FAILED (HTTP 000)
+
+--- LSM Now (lsmnow.com) ---
+  FAILED (HTTP 000)
+
+=== SANDBOX DOMAINS ===
+--- Loyalty API Sandbox (loyalty-api.sandbox.dunkindonuts.com) ---
+  SUCCESS: 1 entries
+
+--- Loyalty Mock API Sandbox (loyalty-mock-api.sandbox.dunkindonuts.com) ---
+  SUCCESS: 1 entries
+
+--- Rewards API Sandbox (rewards-api.sandbox.dunkindonuts.com) ---
+  SUCCESS: 1 entries
+
+--- OATS API Sandbox (oats-api.sandbox.dunkindonuts.com) ---
+  SUCCESS: 1 entries
+
+--- OATS WebSocket Sandbox (oats-ws.sandbox.dunkindonuts.com) ---
+  SUCCESS: 2 entries
+timestamp statuscode mimetype original
+20230223215014 404 application/xml http://oats-ws.sandbox.dunkindonuts.com/
+
+--- Swagger Sandbox (swagger.sandbox.dunkindonuts.com) ---
+  SUCCESS: 2 entries
+timestamp statuscode mimetype original
+20220312081727 404 text/html https://swagger.sandbox.dunkindonuts.com/robots.txt
+
+--- Swagger DDM Dev (swagger.ddmdev.dunkindonuts.com) ---
+  SUCCESS: 1 entries
+
+=== DONE ===
+Completed: 2026-04-14T02:29:48Z

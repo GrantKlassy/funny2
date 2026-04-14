@@ -1,0 +1,49 @@
+{
+	"applinks": {
+		"apps": [],
+		"details": [
+			{
+			    "appID": "CUH3SHJHG7.com.jimmyjohns.jimmyjohns",
+				"paths": [
+					"/catering",
+					"/catering/*",
+					"/locations",
+					"/locations/*",
+					"/favorites",
+					"/favorites/*",
+					"/menu",
+					"/menu/*",
+					"/my-account",
+					"/my-account/*",
+					"/rewards",
+					"/rewards/*",
+					"/"
+				]
+			},
+			{
+				"appID": "CUH3SHJHG7.com.jimmyjohns.jimmyjohns.beta",
+				"paths": [
+                    "/catering",
+                    "/catering/*",
+                    "/locations",
+                    "/locations/*",
+                    "/favorites",
+                    "/favorites/*",
+                    "/menu",
+                    "/menu/*",
+                    "/my-account",
+                    "/my-account/*",
+                    "/rewards",
+                    "/rewards/*",
+                    "/"
+				]
+			}
+		]
+	},
+	"webcredentials": {
+		"apps": [
+			"CUH3SHJHG7.com.jimmyjohns.jimmyjohns",
+			"CUH3SHJHG7.com.jimmyjohns.jimmyjohns.beta"
+		]
+	}
+}
