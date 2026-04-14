@@ -1,6 +1,6 @@
 # I Reverse-Engineered Dunkin's Entire Mobile Infrastructure Because Their Reddit Ad Annoyed Me
 
-# [EXPLORE THE INTERACTIVE NETWORK GRAPH](https://grantklassy.github.io/funny2/)
+# [EXPLORE THE INTERACTIVE NETWORK GRAPH](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)
 
 56 entities, 57 connections, 12 clusters. Every vendor, every subdomain, every cert SAN — connected. Drag it. Zoom it. Search it. One Reddit ad, fully deconstructed in a force-directed D3.js visualization.
 
