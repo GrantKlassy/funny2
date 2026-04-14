@@ -401,7 +401,7 @@ More vendors than menu items.
 | :briefcase: **Vendors** | 37 |
 | :headstone: **Dead services** | 19 |
 | :arrows_counterclockwise: **Redirect loops** | 2 |
-| :fossil: **Fossilized redirect chains** | 5 *(up to 4 brand eras deep)* |
+| 🦴 **Fossilized redirect chains** | 5 *(up to 4 brand eras deep)* |
 | :lock: **Expired certs in production** | 1 *(3.5 years and counting)* |
 | :speech_balloon: **Slack messages in DNS** | 1 |
 | :abc: **Typos in production** | 4 *(two different misspellings of "generate," plus "quater" and "analityc")* |
