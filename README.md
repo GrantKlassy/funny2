@@ -6,7 +6,9 @@
 
 **All because a fake toddler tried to sell me a mango drink.**
 
-[![Explore the Network Graph](https://img.shields.io/badge/EXPLORE_THE_NETWORK_GRAPH-ff6600?style=for-the-badge&logo=d3dotjs&logoColor=white)](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)
+### [:globe_with_meridians: EXPLORE THE INTERACTIVE NETWORK GRAPH :globe_with_meridians:](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)
+
+[![Explore the Network Graph](https://img.shields.io/badge/CLICK_HERE_TO_EXPLORE_THE_GRAPH-ff6600?style=for-the-badge&logo=d3dotjs&logoColor=white&labelColor=222222)](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)
 [![Graph Data](https://img.shields.io/badge/GRAPH.md-222222?style=for-the-badge&logo=graphql&logoColor=white)](investigations/dunkin/GRAPH.md)
 
 </div>
@@ -287,6 +289,16 @@ What happened to firewalls 3 through 94.
 
 ---
 
+<div align="center">
+
+**See all 98 entities and their connections:**
+
+[![Explore the Network Graph](https://img.shields.io/badge/EXPLORE_THE_INTERACTIVE_GRAPH-ff6600?style=for-the-badge&logo=d3dotjs&logoColor=white&labelColor=222222)](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)
+
+</div>
+
+---
+
 ### :closed_lock_with_key: Schrodinger's TLS Certificate
 
 Remember `wsapi.dunkinbrands.com` — the endpoint serving another company's certificate? We investigated **Theorem LP** and it's worse than we thought.
@@ -434,6 +446,8 @@ More vendors than menu items.
 <div align="center">
 
 All probes ran in containers. Zero exploitation. Zero auth bypass. I just looked at what was already there.
+
+[![Explore the Network Graph](https://img.shields.io/badge/EXPLORE_THE_INTERACTIVE_GRAPH-ff6600?style=for-the-badge&logo=d3dotjs&logoColor=white&labelColor=222222)](https://grantklassy.github.io/funny2/investigations/dunkin/graph/network-visualization.html)
 
 [![Graph](https://img.shields.io/badge/GRAPH.md-98_entities,_57_anomalies-orange?style=flat-square)](investigations/dunkin/GRAPH.md) [![Scripts](https://img.shields.io/badge/Scripts-51_probe_scripts-green?style=flat-square)](investigations/dunkin/scripts/)
 
